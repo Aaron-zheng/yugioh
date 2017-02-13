@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lkw-10-HkU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="f4e-YP-rd1">
+            <objects>
+                <navigationController id="Lkw-10-HkU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Icx-l8-7vA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xgT-iu-NsK" kind="relationship" relationship="rootViewController" id="8rg-lM-cFp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qz4-rj-Qb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-897" y="78"/>
+        </scene>
+        <!--收藏-->
+        <scene sceneID="Dxr-ou-zCg">
+            <objects>
+                <viewController id="h5i-Tt-P9t" customClass="CardViewWithStarController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9uB-dT-9x4"/>
+                        <viewControllerLayoutGuide type="bottom" id="I27-GC-L4t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0km-PI-zkz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZVl-ko-ra3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZVl-ko-ra3" firstAttribute="width" secondItem="0km-PI-zkz" secondAttribute="width" id="7hg-Vq-K0a"/>
+                            <constraint firstItem="ZVl-ko-ra3" firstAttribute="leading" secondItem="0km-PI-zkz" secondAttribute="leading" id="Cw7-sK-2KM"/>
+                            <constraint firstItem="ZVl-ko-ra3" firstAttribute="top" secondItem="0km-PI-zkz" secondAttribute="top" id="Vbg-JT-IGg"/>
+                            <constraint firstAttribute="bottom" secondItem="ZVl-ko-ra3" secondAttribute="bottom" constant="48" id="YER-Am-vM0"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="收藏" image="ic_star_white" id="tjZ-92-Soc"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZVl-ko-ra3" id="IAL-Bh-8Hg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p31-Mc-2m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="896"/>
+        </scene>
+        <!--卡牌-->
+        <scene sceneID="aro-r0-QTS">
+            <objects>
+                <viewController id="rTF-46-KtB" customClass="CardViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uzp-5O-mnw"/>
+                        <viewControllerLayoutGuide type="bottom" id="mPf-6I-cbJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NvS-SE-27W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="csZ-O1-NNW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1I-e2-nX9">
+                                <rect key="frame" x="311" y="521" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="dde-Vy-lvv"/>
+                                    <constraint firstAttribute="height" constant="48" id="qJg-8c-Bje"/>
+                                </constraints>
+                                <state key="normal" image="ic_search_white"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="n1I-e2-nX9" secondAttribute="trailing" constant="16" id="CPP-cU-3Qh"/>
+                            <constraint firstItem="csZ-O1-NNW" firstAttribute="leading" secondItem="NvS-SE-27W" secondAttribute="leading" id="Mga-P3-dDu"/>
+                            <constraint firstAttribute="bottom" secondItem="n1I-e2-nX9" secondAttribute="bottom" constant="98" id="WNm-Xz-WoA"/>
+                            <constraint firstItem="csZ-O1-NNW" firstAttribute="width" secondItem="NvS-SE-27W" secondAttribute="width" id="mbX-8e-ZCP"/>
+                            <constraint firstItem="csZ-O1-NNW" firstAttribute="top" secondItem="NvS-SE-27W" secondAttribute="top" id="xNp-9t-atN"/>
+                            <constraint firstAttribute="bottom" secondItem="csZ-O1-NNW" secondAttribute="bottom" constant="48" id="ygb-3R-BR4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="卡牌" image="ic_view_carousel_white" id="14g-xH-QyR"/>
+                    <connections>
+                        <outlet property="searchButton" destination="n1I-e2-nX9" id="nTe-Bu-y6g"/>
+                        <outlet property="tableView" destination="csZ-O1-NNW" id="Mal-Cy-N0S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wwk-O1-RUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-673" y="897"/>
+        </scene>
+        <!--游戏王卡牌-->
+        <scene sceneID="qVe-DU-Jr7">
+            <objects>
+                <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="游戏王卡牌" id="2XC-NK-5In">
+                        <barButtonItem key="rightBarButtonItem" title="卡包" id="BRq-3Q-8aQ">
+                            <connections>
+                                <segue destination="2Hk-lc-VDZ" kind="show" identifier="PackTableViewSegue" id="GqE-8d-iNO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="YBu-lP-tnw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="packButton" destination="BRq-3Q-8aQ" id="xJJ-Hc-OdM"/>
+                        <segue destination="rTF-46-KtB" kind="relationship" relationship="viewControllers" id="nnU-MX-WiR"/>
+                        <segue destination="h5i-Tt-P9t" kind="relationship" relationship="viewControllers" id="Lur-oZ-TCJ"/>
+                        <segue destination="qAe-UN-Sad" kind="relationship" relationship="viewControllers" id="OGT-Bp-8Rg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="djQ-dx-Kro" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="78"/>
+        </scene>
+        <!--Pack Table View Controller-->
+        <scene sceneID="kDk-Gs-neC">
+            <objects>
+                <viewController id="2Hk-lc-VDZ" customClass="PackTableViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W32-i7-luZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="cUj-zf-DHx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gh2-Yg-6k7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="8" sectionFooterHeight="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mvl-kZ-uGp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PackTableViewCell" id="I5t-wA-ic2" customClass="PackTableViewCell" customModule="游戏王卡牌" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="8" width="375" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I5t-wA-ic2" id="N5f-t8-Kbd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1W-KA-FVX">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="40"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="U1W-KA-FVX" secondAttribute="bottom" id="4i4-WN-wav"/>
+                                                <constraint firstItem="U1W-KA-FVX" firstAttribute="leading" secondItem="N5f-t8-Kbd" secondAttribute="leading" constant="16" id="Qlp-zc-VRT"/>
+                                                <constraint firstAttribute="trailing" secondItem="U1W-KA-FVX" secondAttribute="trailing" constant="16" id="kUB-or-ejM"/>
+                                                <constraint firstItem="U1W-KA-FVX" firstAttribute="top" secondItem="N5f-t8-Kbd" secondAttribute="top" id="sOc-Va-4rc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="U1W-KA-FVX" id="VXA-lC-Mep"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mvl-kZ-uGp" firstAttribute="top" secondItem="gh2-Yg-6k7" secondAttribute="top" id="2HW-Rc-iv0"/>
+                            <constraint firstAttribute="bottom" secondItem="Mvl-kZ-uGp" secondAttribute="bottom" id="M0h-Jy-jsl"/>
+                            <constraint firstItem="Mvl-kZ-uGp" firstAttribute="leading" secondItem="gh2-Yg-6k7" secondAttribute="leading" id="h5C-Sc-EJd"/>
+                            <constraint firstAttribute="trailing" secondItem="Mvl-kZ-uGp" secondAttribute="trailing" id="vn6-Ry-Fv5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Mvl-kZ-uGp" id="6zH-cG-vhi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klP-CC-Wrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="-507"/>
+        </scene>
+        <!--关于-->
+        <scene sceneID="qbb-Ps-8le">
+            <objects>
+                <viewController id="qAe-UN-Sad" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7XO-eO-cfJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ues-qA-sEb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9fI-U8-znr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tj-pC-gtT" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                                <rect key="frame" x="16" y="80" width="343" height="522"/>
+                                <mutableString key="text">土生土长的广州人，目前在新西兰打工度假中。写这个应用，是因为自己从小学开始就接触游戏王。首先看的是漫画，然后看了动画，再然后当然就是游戏王卡牌对战。这份兴趣，从小学一直持续到我的高中。大学偶尔学了编码，毕业后就去了某银行做软件开发。因为工作限制，不能专心到自己的兴趣项目。现在腾空了时间，就决定为自己喜欢的东西作出点贡献。衷心希望你也喜欢我的这个作品。：）  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！另外如果你有一些想法或者创意，欢迎写邮件给我。  作者：Aaron 郑富成 邮箱：fucheng.zheng@gmail.com 博客：www.sightcorner.com 公众号：whvapp</mutableString>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9tj-pC-gtT" firstAttribute="top" secondItem="7XO-eO-cfJ" secondAttribute="bottom" constant="16" id="7Ef-kC-ikY"/>
+                            <constraint firstItem="ues-qA-sEb" firstAttribute="top" secondItem="9tj-pC-gtT" secondAttribute="bottom" constant="16" id="Acb-Pc-hsk"/>
+                            <constraint firstAttribute="trailing" secondItem="9tj-pC-gtT" secondAttribute="trailing" constant="16" id="M1S-KM-n2C"/>
+                            <constraint firstItem="9tj-pC-gtT" firstAttribute="leading" secondItem="9fI-U8-znr" secondAttribute="leading" constant="16" id="puy-WM-vBr"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="关于" image="ic_settings_white" id="jKg-Xr-mhT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTt-WD-hIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="899"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_search_white" width="24" height="24"/>
+        <image name="ic_settings_white" width="24" height="24"/>
+        <image name="ic_star_white" width="24" height="24"/>
+        <image name="ic_view_carousel_white" width="24" height="24"/>
+    </resources>
+</document>

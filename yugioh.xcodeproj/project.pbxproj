@@ -1,0 +1,883 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00EAA041DB9FF73001FD546 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA031DB9FF73001FD546 /* CardEntity.swift */; };
+		A00EAA061DBE862F001FD546 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA051DBE862F001FD546 /* Utility.swift */; };
+		A00EAA081DBE89CD001FD546 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */; };
+		A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */; };
+		A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6C71DC0957B00E7D8EE /* CardService.swift */; };
+		A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6E01DC343AA00E7D8EE /* CardPO.swift */; };
+		A039AE291D95F17E009ABFD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE281D95F17E009ABFD1 /* AppDelegate.swift */; };
+		A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE2A1D95F17E009ABFD1 /* ViewController.swift */; };
+		A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A039AE2C1D95F17F009ABFD1 /* Main.storyboard */; };
+		A039AE311D95F17F009ABFD1 /* yugioh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A039AE2F1D95F17F009ABFD1 /* yugioh.xcdatamodeld */; };
+		A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A039AE321D95F17F009ABFD1 /* Assets.xcassets */; };
+		A039AE361D95F17F009ABFD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A039AE341D95F17F009ABFD1 /* LaunchScreen.storyboard */; };
+		A039AE411D95F17F009ABFD1 /* yugiohTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE401D95F17F009ABFD1 /* yugiohTests.swift */; };
+		A039AE4C1D95F17F009ABFD1 /* yugiohUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE4B1D95F17F009ABFD1 /* yugiohUITests.swift */; };
+		A039AE601D95FA9C009ABFD1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE5F1D95FA9C009ABFD1 /* Constant.swift */; };
+		A039AE631D95FC35009ABFD1 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE621D95FC35009ABFD1 /* CardViewController.swift */; };
+		A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE661D95FDED009ABFD1 /* Extension.swift */; };
+		A039AE711D9734D6009ABFD1 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE701D9734D6009ABFD1 /* CardTableViewCell.swift */; };
+		A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039AE721D9734DF009ABFD1 /* CardTableViewCell.xib */; };
+		A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F47531DDB1870005533C9 /* RangeSlider.swift */; };
+		A0609C041E3F25CF005739B7 /* datasource.xml in Resources */ = {isa = PBXBuildFile; fileRef = A0609C031E3F25CF005739B7 /* datasource.xml */; };
+		A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */; };
+		A0609C081E3F4694005739B7 /* PackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C071E3F4694005739B7 /* PackTableViewController.swift */; };
+		A0609C0A1E3F4B46005739B7 /* PackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */; };
+		A0F93DC91DC9414B0001289D /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */; };
+		A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F93DCA1DC941550001289D /* CardSearchViewController.xib */; };
+		A0F93DCE1DC9D21F0001289D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F93DCD1DC9D21F0001289D /* SettingViewController.swift */; };
+		AA5D658A9BCDCEDB9F746979 /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EB2676EE67A73D7B6A761E /* Pods______.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A039AE3D1D95F17F009ABFD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A039AE1D1D95F17E009ABFD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A039AE241D95F17E009ABFD1;
+			remoteInfo = yugioh;
+		};
+		A039AE481D95F17F009ABFD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A039AE1D1D95F17E009ABFD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A039AE241D95F17E009ABFD1;
+			remoteInfo = yugioh;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06C2764091F7170821399B2E /* Pods-游戏王卡牌.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.debug.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.debug.xcconfig"; sourceTree = "<group>"; };
+		50365F2B87B58AC7AF110821 /* Pods-游戏王卡牌.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.release.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.release.xcconfig"; sourceTree = "<group>"; };
+		92EB2676EE67A73D7B6A761E /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00EAA031DB9FF73001FD546 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
+		A00EAA051DBE862F001FD546 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
+		A01E491E1DCDE169003D2F35 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/yugioh-afsqlygzbrafxjgunlidtampkyjt/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
+		A022E6C71DC0957B00E7D8EE /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		A022E6E01DC343AA00E7D8EE /* CardPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPO.swift; sourceTree = "<group>"; };
+		A039AE251D95F17E009ABFD1 /* 游戏王卡牌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "游戏王卡牌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A039AE281D95F17E009ABFD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A039AE2A1D95F17E009ABFD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A039AE2D1D95F17F009ABFD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A039AE301D95F17F009ABFD1 /* yugioh.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = yugioh.xcdatamodel; sourceTree = "<group>"; };
+		A039AE321D95F17F009ABFD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A039AE351D95F17F009ABFD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A039AE371D95F17F009ABFD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A039AE3C1D95F17F009ABFD1 /* yugiohTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yugiohTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A039AE401D95F17F009ABFD1 /* yugiohTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yugiohTests.swift; sourceTree = "<group>"; };
+		A039AE421D95F17F009ABFD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A039AE471D95F17F009ABFD1 /* yugiohUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yugiohUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A039AE4B1D95F17F009ABFD1 /* yugiohUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yugiohUITests.swift; sourceTree = "<group>"; };
+		A039AE4D1D95F17F009ABFD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A039AE5F1D95FA9C009ABFD1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A039AE621D95FC35009ABFD1 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		A039AE661D95FDED009ABFD1 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A039AE701D9734D6009ABFD1 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		A039AE721D9734DF009ABFD1 /* CardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
+		A039AE741D973CA3009ABFD1 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		A039AE751D973CA3009ABFD1 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		A039AE771D973CA3009ABFD1 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		A039AE781D973CA3009ABFD1 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		A05F47531DDB1870005533C9 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		A0609C031E3F25CF005739B7 /* datasource.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = datasource.xml; sourceTree = "<group>"; };
+		A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewWithStarController.swift; sourceTree = "<group>"; };
+		A0609C071E3F4694005739B7 /* PackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackTableViewController.swift; sourceTree = "<group>"; };
+		A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackTableViewCell.swift; sourceTree = "<group>"; };
+		A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; };
+		A0F93DCA1DC941550001289D /* CardSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSearchViewController.xib; sourceTree = "<group>"; };
+		A0F93DCD1DC9D21F0001289D /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CF85EBAD25E1EF5EC06EE811 /* Pods-游戏王卡牌.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.production.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.production.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A039AE221D95F17E009ABFD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA5D658A9BCDCEDB9F746979 /* Pods______.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A039AE391D95F17F009ABFD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A039AE441D95F17F009ABFD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A039AE1C1D95F17E009ABFD1 = {
+			isa = PBXGroup;
+			children = (
+				A039AE271D95F17E009ABFD1 /* yugioh */,
+				A039AE3F1D95F17F009ABFD1 /* yugiohTests */,
+				A039AE4A1D95F17F009ABFD1 /* yugiohUITests */,
+				A039AE261D95F17E009ABFD1 /* Products */,
+				ED1F89F4487E5E86FB5DB005 /* Pods */,
+				DA607805D5F01CCAD417EDF7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A039AE261D95F17E009ABFD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A039AE251D95F17E009ABFD1 /* 游戏王卡牌.app */,
+				A039AE3C1D95F17F009ABFD1 /* yugiohTests.xctest */,
+				A039AE471D95F17F009ABFD1 /* yugiohUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A039AE271D95F17E009ABFD1 /* yugioh */ = {
+			isa = PBXGroup;
+			children = (
+				A039AE5E1D95F94E009ABFD1 /* View */,
+				A039AE5D1D95F947009ABFD1 /* Service */,
+				A039AE5C1D95F940009ABFD1 /* Utility */,
+				A039AE5B1D95F93A009ABFD1 /* Entity */,
+				A039AE5A1D95F934009ABFD1 /* Resource */,
+				A039AE591D95F92E009ABFD1 /* Datasource */,
+				A039AE281D95F17E009ABFD1 /* AppDelegate.swift */,
+				A039AE2A1D95F17E009ABFD1 /* ViewController.swift */,
+				A039AE2C1D95F17F009ABFD1 /* Main.storyboard */,
+				A039AE321D95F17F009ABFD1 /* Assets.xcassets */,
+				A039AE341D95F17F009ABFD1 /* LaunchScreen.storyboard */,
+				A039AE371D95F17F009ABFD1 /* Info.plist */,
+			);
+			path = yugioh;
+			sourceTree = "<group>";
+		};
+		A039AE3F1D95F17F009ABFD1 /* yugiohTests */ = {
+			isa = PBXGroup;
+			children = (
+				A039AE401D95F17F009ABFD1 /* yugiohTests.swift */,
+				A039AE421D95F17F009ABFD1 /* Info.plist */,
+			);
+			path = yugiohTests;
+			sourceTree = "<group>";
+		};
+		A039AE4A1D95F17F009ABFD1 /* yugiohUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A039AE4B1D95F17F009ABFD1 /* yugiohUITests.swift */,
+				A039AE4D1D95F17F009ABFD1 /* Info.plist */,
+			);
+			path = yugiohUITests;
+			sourceTree = "<group>";
+		};
+		A039AE591D95F92E009ABFD1 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				A039AE2F1D95F17F009ABFD1 /* yugioh.xcdatamodeld */,
+			);
+			name = Datasource;
+			sourceTree = "<group>";
+		};
+		A039AE5A1D95F934009ABFD1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A0609C031E3F25CF005739B7 /* datasource.xml */,
+				A039AE741D973CA3009ABFD1 /* Roboto-Bold.ttf */,
+				A039AE751D973CA3009ABFD1 /* Roboto-Light.ttf */,
+				A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */,
+				A039AE771D973CA3009ABFD1 /* Roboto-Regular.ttf */,
+				A039AE781D973CA3009ABFD1 /* Roboto-Thin.ttf */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		A039AE5B1D95F93A009ABFD1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A022E6E01DC343AA00E7D8EE /* CardPO.swift */,
+				A00EAA031DB9FF73001FD546 /* CardEntity.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		A039AE5C1D95F940009ABFD1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A039AE5F1D95FA9C009ABFD1 /* Constant.swift */,
+				A039AE661D95FDED009ABFD1 /* Extension.swift */,
+				A00EAA051DBE862F001FD546 /* Utility.swift */,
+				A05F47531DDB1870005533C9 /* RangeSlider.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		A039AE5D1D95F947009ABFD1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A022E6C71DC0957B00E7D8EE /* CardService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		A039AE5E1D95F94E009ABFD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0F93DCD1DC9D21F0001289D /* SettingViewController.swift */,
+				A039AE621D95FC35009ABFD1 /* CardViewController.swift */,
+				A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */,
+				A039AE701D9734D6009ABFD1 /* CardTableViewCell.swift */,
+				A039AE721D9734DF009ABFD1 /* CardTableViewCell.xib */,
+				A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */,
+				A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */,
+				A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */,
+				A0F93DCA1DC941550001289D /* CardSearchViewController.xib */,
+				A0609C071E3F4694005739B7 /* PackTableViewController.swift */,
+				A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DA607805D5F01CCAD417EDF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A01E491E1DCDE169003D2F35 /* Kingfisher.framework */,
+				92EB2676EE67A73D7B6A761E /* Pods______.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED1F89F4487E5E86FB5DB005 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06C2764091F7170821399B2E /* Pods-游戏王卡牌.debug.xcconfig */,
+				50365F2B87B58AC7AF110821 /* Pods-游戏王卡牌.release.xcconfig */,
+				CF85EBAD25E1EF5EC06EE811 /* Pods-游戏王卡牌.production.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A039AE241D95F17E009ABFD1 /* 游戏王卡牌 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A039AE501D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "游戏王卡牌" */;
+			buildPhases = (
+				654E69EF3446987298A3A695 /* [CP] Check Pods Manifest.lock */,
+				A039AE211D95F17E009ABFD1 /* Sources */,
+				A039AE221D95F17E009ABFD1 /* Frameworks */,
+				A039AE231D95F17E009ABFD1 /* Resources */,
+				B17A87E154E597E636D6E510 /* [CP] Embed Pods Frameworks */,
+				4D800D310E8D13E4AE444CDA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "游戏王卡牌";
+			productName = yugioh;
+			productReference = A039AE251D95F17E009ABFD1 /* 游戏王卡牌.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A039AE3B1D95F17F009ABFD1 /* yugiohTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A039AE531D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "yugiohTests" */;
+			buildPhases = (
+				A039AE381D95F17F009ABFD1 /* Sources */,
+				A039AE391D95F17F009ABFD1 /* Frameworks */,
+				A039AE3A1D95F17F009ABFD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A039AE3E1D95F17F009ABFD1 /* PBXTargetDependency */,
+			);
+			name = yugiohTests;
+			productName = yugiohTests;
+			productReference = A039AE3C1D95F17F009ABFD1 /* yugiohTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A039AE461D95F17F009ABFD1 /* yugiohUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A039AE561D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "yugiohUITests" */;
+			buildPhases = (
+				A039AE431D95F17F009ABFD1 /* Sources */,
+				A039AE441D95F17F009ABFD1 /* Frameworks */,
+				A039AE451D95F17F009ABFD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A039AE491D95F17F009ABFD1 /* PBXTargetDependency */,
+			);
+			name = yugiohUITests;
+			productName = yugiohUITests;
+			productReference = A039AE471D95F17F009ABFD1 /* yugiohUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A039AE1D1D95F17E009ABFD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = sightcorner;
+				TargetAttributes = {
+					A039AE241D95F17E009ABFD1 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LW783GQGY7;
+						ProvisioningStyle = Automatic;
+					};
+					A039AE3B1D95F17F009ABFD1 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LW783GQGY7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A039AE241D95F17E009ABFD1;
+					};
+					A039AE461D95F17F009ABFD1 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LW783GQGY7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A039AE241D95F17E009ABFD1;
+					};
+				};
+			};
+			buildConfigurationList = A039AE201D95F17E009ABFD1 /* Build configuration list for PBXProject "yugioh" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A039AE1C1D95F17E009ABFD1;
+			productRefGroup = A039AE261D95F17E009ABFD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A039AE241D95F17E009ABFD1 /* 游戏王卡牌 */,
+				A039AE3B1D95F17F009ABFD1 /* yugiohTests */,
+				A039AE461D95F17F009ABFD1 /* yugiohUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A039AE231D95F17E009ABFD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0609C041E3F25CF005739B7 /* datasource.xml in Resources */,
+				A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */,
+				A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */,
+				A039AE361D95F17F009ABFD1 /* LaunchScreen.storyboard in Resources */,
+				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
+				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
+				A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A039AE3A1D95F17F009ABFD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A039AE451D95F17F009ABFD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D800D310E8D13E4AE444CDA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		654E69EF3446987298A3A695 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B17A87E154E597E636D6E510 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A039AE211D95F17E009ABFD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00EAA061DBE862F001FD546 /* Utility.swift in Sources */,
+				A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */,
+				A039AE631D95FC35009ABFD1 /* CardViewController.swift in Sources */,
+				A0609C081E3F4694005739B7 /* PackTableViewController.swift in Sources */,
+				A0609C0A1E3F4B46005739B7 /* PackTableViewCell.swift in Sources */,
+				A00EAA081DBE89CD001FD546 /* CardDetailViewController.swift in Sources */,
+				A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */,
+				A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */,
+				A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */,
+				A0F93DCE1DC9D21F0001289D /* SettingViewController.swift in Sources */,
+				A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */,
+				A039AE311D95F17F009ABFD1 /* yugioh.xcdatamodeld in Sources */,
+				A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */,
+				A039AE291D95F17E009ABFD1 /* AppDelegate.swift in Sources */,
+				A039AE601D95FA9C009ABFD1 /* Constant.swift in Sources */,
+				A0F93DC91DC9414B0001289D /* CardSearchViewController.swift in Sources */,
+				A00EAA041DB9FF73001FD546 /* CardEntity.swift in Sources */,
+				A039AE711D9734D6009ABFD1 /* CardTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A039AE381D95F17F009ABFD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A039AE411D95F17F009ABFD1 /* yugiohTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A039AE431D95F17F009ABFD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A039AE4C1D95F17F009ABFD1 /* yugiohUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A039AE3E1D95F17F009ABFD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A039AE241D95F17E009ABFD1 /* 游戏王卡牌 */;
+			targetProxy = A039AE3D1D95F17F009ABFD1 /* PBXContainerItemProxy */;
+		};
+		A039AE491D95F17F009ABFD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A039AE241D95F17E009ABFD1 /* 游戏王卡牌 */;
+			targetProxy = A039AE481D95F17F009ABFD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A039AE2C1D95F17F009ABFD1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A039AE2D1D95F17F009ABFD1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A039AE341D95F17F009ABFD1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A039AE351D95F17F009ABFD1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A039AE4E1D95F17F009ABFD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: fucheng zheng (LW783GQGY7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A039AE4F1D95F17F009ABFD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: fucheng zheng (LW783GQGY7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A039AE511D95F17F009ABFD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06C2764091F7170821399B2E /* Pods-游戏王卡牌.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: fucheng zheng (LW783GQGY7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugioh/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A039AE521D95F17F009ABFD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50365F2B87B58AC7AF110821 /* Pods-游戏王卡牌.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: fucheng zheng (LW783GQGY7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugioh/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A039AE541D95F17F009ABFD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugiohTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
+			};
+			name = Debug;
+		};
+		A039AE551D95F17F009ABFD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugiohTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
+			};
+			name = Release;
+		};
+		A039AE571D95F17F009ABFD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugiohUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = yugioh;
+			};
+			name = Debug;
+		};
+		A039AE581D95F17F009ABFD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugiohUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = yugioh;
+			};
+			name = Release;
+		};
+		A0C936F11DCB2AEF00281940 /* PRODUCTION */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: fucheng zheng (LW783GQGY7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = PRODUCTION;
+		};
+		A0C936F21DCB2AEF00281940 /* PRODUCTION */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF85EBAD25E1EF5EC06EE811 /* Pods-游戏王卡牌.production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: fucheng zheng (LW783GQGY7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugioh/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = PRODUCTION;
+		};
+		A0C936F31DCB2AEF00281940 /* PRODUCTION */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugiohTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
+			};
+			name = PRODUCTION;
+		};
+		A0C936F41DCB2AEF00281940 /* PRODUCTION */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = yugiohUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = yugioh;
+			};
+			name = PRODUCTION;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A039AE201D95F17E009ABFD1 /* Build configuration list for PBXProject "yugioh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A039AE4E1D95F17F009ABFD1 /* Debug */,
+				A039AE4F1D95F17F009ABFD1 /* Release */,
+				A0C936F11DCB2AEF00281940 /* PRODUCTION */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A039AE501D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "游戏王卡牌" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A039AE511D95F17F009ABFD1 /* Debug */,
+				A039AE521D95F17F009ABFD1 /* Release */,
+				A0C936F21DCB2AEF00281940 /* PRODUCTION */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A039AE531D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "yugiohTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A039AE541D95F17F009ABFD1 /* Debug */,
+				A039AE551D95F17F009ABFD1 /* Release */,
+				A0C936F31DCB2AEF00281940 /* PRODUCTION */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A039AE561D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "yugiohUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A039AE571D95F17F009ABFD1 /* Debug */,
+				A039AE581D95F17F009ABFD1 /* Release */,
+				A0C936F41DCB2AEF00281940 /* PRODUCTION */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A039AE2F1D95F17F009ABFD1 /* yugioh.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A039AE301D95F17F009ABFD1 /* yugioh.xcdatamodel */,
+			);
+			currentVersion = A039AE301D95F17F009ABFD1 /* yugioh.xcdatamodel */;
+			path = yugioh.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A039AE1D1D95F17E009ABFD1 /* Project object */;
+}

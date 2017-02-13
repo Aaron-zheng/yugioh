@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wru-YN-TBn" customClass="CardTableViewCell" customModule="游戏王卡牌" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wru-YN-TBn" id="y2h-cQ-xOF">
+                <frame key="frameInset" width="414" height="229"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-cH-B5b">
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultimg" translatesAutoresizingMaskIntoConstraints="NO" id="FDW-5G-6BU">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FDW-5G-6BU" secondAttribute="height" multiplier="160:230" id="879-La-v7P"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.87" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏王卡牌名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWS-Rq-MD3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="JFz-TF-L4A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏王卡牌类型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHg-3Z-6K6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="ucb-Jc-KRY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82V-fk-Eg6" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMb-QW-9Hs">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="CUS-9c-APd"/>
+                                    <constraint firstAttribute="height" constant="24" id="S1f-KK-y2g"/>
+                                </constraints>
+                                <state key="normal" title="b"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVM-xa-Ywm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="Ca0-10-V0D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="82V-fk-Eg6" firstAttribute="trailing" secondItem="qWS-Rq-MD3" secondAttribute="trailing" id="1OH-Xw-NUR"/>
+                            <constraint firstItem="mMb-QW-9Hs" firstAttribute="top" secondItem="y7K-cH-B5b" secondAttribute="top" constant="8" id="2cZ-0p-bxh"/>
+                            <constraint firstAttribute="bottom" secondItem="82V-fk-Eg6" secondAttribute="bottom" constant="8" id="3Nv-78-E4t"/>
+                            <constraint firstItem="kVM-xa-Ywm" firstAttribute="top" secondItem="JHg-3Z-6K6" secondAttribute="top" id="3xS-SS-tD0"/>
+                            <constraint firstItem="FDW-5G-6BU" firstAttribute="top" secondItem="y7K-cH-B5b" secondAttribute="top" id="5B5-i7-oXc"/>
+                            <constraint firstItem="kVM-xa-Ywm" firstAttribute="leading" secondItem="JHg-3Z-6K6" secondAttribute="leading" id="5ex-gk-L9E"/>
+                            <constraint firstItem="82V-fk-Eg6" firstAttribute="top" secondItem="JHg-3Z-6K6" secondAttribute="bottom" constant="4" id="EBV-yk-bry"/>
+                            <constraint firstItem="JHg-3Z-6K6" firstAttribute="trailing" secondItem="qWS-Rq-MD3" secondAttribute="trailing" id="GkI-4o-jCP"/>
+                            <constraint firstItem="qWS-Rq-MD3" firstAttribute="leading" secondItem="FDW-5G-6BU" secondAttribute="trailing" constant="8" id="HRa-Rh-qVW"/>
+                            <constraint firstAttribute="height" secondItem="FDW-5G-6BU" secondAttribute="height" id="I2h-4W-HQy"/>
+                            <constraint firstItem="FDW-5G-6BU" firstAttribute="width" secondItem="y7K-cH-B5b" secondAttribute="width" multiplier="1/3" id="Lx0-lD-3zb"/>
+                            <constraint firstItem="kVM-xa-Ywm" firstAttribute="trailing" secondItem="JHg-3Z-6K6" secondAttribute="trailing" id="MSU-s7-Sqb"/>
+                            <constraint firstItem="JHg-3Z-6K6" firstAttribute="leading" secondItem="qWS-Rq-MD3" secondAttribute="leading" id="Vdu-Qe-1bE"/>
+                            <constraint firstAttribute="trailing" secondItem="mMb-QW-9Hs" secondAttribute="trailing" constant="8" id="a0L-fj-X43"/>
+                            <constraint firstItem="qWS-Rq-MD3" firstAttribute="top" secondItem="y7K-cH-B5b" secondAttribute="top" constant="8" id="fYS-KY-kLw"/>
+                            <constraint firstItem="JHg-3Z-6K6" firstAttribute="top" secondItem="qWS-Rq-MD3" secondAttribute="bottom" id="g6s-5u-4Ii"/>
+                            <constraint firstAttribute="trailing" secondItem="qWS-Rq-MD3" secondAttribute="trailing" constant="8" id="g8V-yb-YMm"/>
+                            <constraint firstItem="FDW-5G-6BU" firstAttribute="leading" secondItem="y7K-cH-B5b" secondAttribute="leading" id="mfS-7q-K4M"/>
+                            <constraint firstItem="82V-fk-Eg6" firstAttribute="leading" secondItem="qWS-Rq-MD3" secondAttribute="leading" id="pJN-15-fbW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="y7K-cH-B5b" firstAttribute="top" secondItem="y2h-cQ-xOF" secondAttribute="top" constant="8" id="Agd-P6-ou9"/>
+                    <constraint firstAttribute="trailing" secondItem="y7K-cH-B5b" secondAttribute="trailing" constant="8" id="FWi-BQ-rRN"/>
+                    <constraint firstItem="y7K-cH-B5b" firstAttribute="leading" secondItem="y2h-cQ-xOF" secondAttribute="leading" constant="8" id="zzl-rn-JuS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="attack" destination="kVM-xa-Ywm" id="QVm-9D-rJs"/>
+                <outlet property="card" destination="FDW-5G-6BU" id="NzB-0b-DCF"/>
+                <outlet property="cellContentInnerView" destination="y7K-cH-B5b" id="0dE-qx-vm4"/>
+                <outlet property="cellContentView" destination="y2h-cQ-xOF" id="460-QW-Woj"/>
+                <outlet property="effect" destination="82V-fk-Eg6" id="Lge-qs-3jW"/>
+                <outlet property="star" destination="mMb-QW-9Hs" id="Bsk-nB-0XV"/>
+                <outlet property="title" destination="qWS-Rq-MD3" id="ox4-iR-VIa"/>
+                <outlet property="type" destination="JHg-3Z-6K6" id="ovR-eL-pQe"/>
+            </connections>
+            <point key="canvasLocation" x="37" y="-221"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="defaultimg" width="160" height="230"/>
+    </resources>
+</document>

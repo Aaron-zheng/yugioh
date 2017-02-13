@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardSearchViewController" customModule="游戏王卡牌" customModuleProvider="target">
+            <connections>
+                <outlet property="attackRangeLabel" destination="r7c-yN-B0T" id="dpf-jn-V2f"/>
+                <outlet property="attackRangeSlider" destination="VN5-lN-dtC" id="GwE-nM-Ma9"/>
+                <outlet property="cancelButton" destination="ACj-Bh-tkM" id="e8B-zN-txX"/>
+                <outlet property="defenseRangeLabel" destination="NjV-qo-JEk" id="z19-4G-l5w"/>
+                <outlet property="defenseRangeSlider" destination="Tlh-Yy-wOo" id="57h-X7-yJG"/>
+                <outlet property="inputField" destination="z4W-jO-yOn" id="dwS-TG-F4J"/>
+                <outlet property="searchBarView" destination="aOE-O8-HhB" id="VXZ-Qy-ml5"/>
+                <outlet property="tableView" destination="Q9F-Cc-lhT" id="DPZ-PW-luU"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Odg-dU-Wvv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="View1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOE-O8-HhB" userLabel="searchBarView">
+                    <rect key="frame" x="0.0" y="24" width="375" height="88"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACj-Bh-tkM">
+                            <rect key="frame" x="311" y="8" width="64" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="64" id="Ug6-XC-K96"/>
+                                <constraint firstAttribute="height" constant="24" id="upq-9r-Edu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                            <state key="normal" title="取消"/>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_search_white" translatesAutoresizingMaskIntoConstraints="NO" id="6uE-0v-ANf">
+                            <rect key="frame" x="16" y="8" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="MOU-Eu-ERf"/>
+                                <constraint firstAttribute="height" constant="24" id="rwb-QS-XKb"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="搜索卡牌名、效果" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-jO-yOn">
+                            <rect key="frame" x="56" y="8" width="239" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="W2p-IR-TH3"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="攻击力区间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7c-yN-B0T">
+                            <rect key="frame" x="56" y="32" width="110" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="1Wo-YG-vx7"/>
+                                <constraint firstAttribute="width" constant="110" id="9O9-m4-laG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="攻击力区间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjV-qo-JEk">
+                            <rect key="frame" x="56" y="56" width="110" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="uya-T4-l34"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VN5-lN-dtC" customClass="RangeSlider" customModule="游戏王卡牌" customModuleProvider="target">
+                            <rect key="frame" x="166" y="32" width="193" height="24"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="SAk-Vd-hnd"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="trackHighlightTintColor">
+                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                    <real key="value" value="10000"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
+                                    <real key="value" value="10000"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tlh-Yy-wOo" customClass="RangeSlider" customModule="游戏王卡牌" customModuleProvider="target">
+                            <rect key="frame" x="166" y="56" width="193" height="24"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="V9n-4r-ah4"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="trackHighlightTintColor">
+                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                    <real key="value" value="10000"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
+                                    <real key="value" value="10000"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="NjV-qo-JEk" firstAttribute="width" secondItem="r7c-yN-B0T" secondAttribute="width" id="6jj-CH-xkN"/>
+                        <constraint firstItem="VN5-lN-dtC" firstAttribute="leading" secondItem="r7c-yN-B0T" secondAttribute="trailing" id="8vX-La-1yw"/>
+                        <constraint firstItem="NjV-qo-JEk" firstAttribute="leading" secondItem="r7c-yN-B0T" secondAttribute="leading" id="E52-Bn-nOp"/>
+                        <constraint firstItem="NjV-qo-JEk" firstAttribute="top" secondItem="r7c-yN-B0T" secondAttribute="bottom" id="K7R-kI-aWi"/>
+                        <constraint firstItem="Tlh-Yy-wOo" firstAttribute="width" secondItem="VN5-lN-dtC" secondAttribute="width" id="MVE-ae-pnK"/>
+                        <constraint firstItem="r7c-yN-B0T" firstAttribute="leading" secondItem="z4W-jO-yOn" secondAttribute="leading" id="QTw-Ea-hKO"/>
+                        <constraint firstItem="z4W-jO-yOn" firstAttribute="top" secondItem="aOE-O8-HhB" secondAttribute="top" constant="8" id="QrL-cQ-rfx"/>
+                        <constraint firstItem="6uE-0v-ANf" firstAttribute="top" secondItem="aOE-O8-HhB" secondAttribute="top" constant="8" id="Wsg-oY-haH"/>
+                        <constraint firstItem="z4W-jO-yOn" firstAttribute="leading" secondItem="6uE-0v-ANf" secondAttribute="trailing" constant="16" id="dxo-Ow-qkt"/>
+                        <constraint firstItem="NjV-qo-JEk" firstAttribute="height" secondItem="r7c-yN-B0T" secondAttribute="height" id="e2B-KY-ZMx"/>
+                        <constraint firstAttribute="height" constant="88" id="efZ-ji-Wfx"/>
+                        <constraint firstItem="Tlh-Yy-wOo" firstAttribute="top" secondItem="VN5-lN-dtC" secondAttribute="bottom" id="elQ-vZ-wgd"/>
+                        <constraint firstAttribute="trailing" secondItem="VN5-lN-dtC" secondAttribute="trailing" constant="16" id="fTY-ES-e9K"/>
+                        <constraint firstItem="VN5-lN-dtC" firstAttribute="top" secondItem="r7c-yN-B0T" secondAttribute="top" id="gZP-ha-1cY"/>
+                        <constraint firstItem="r7c-yN-B0T" firstAttribute="top" secondItem="z4W-jO-yOn" secondAttribute="bottom" id="ktf-KF-ir3"/>
+                        <constraint firstAttribute="trailing" secondItem="ACj-Bh-tkM" secondAttribute="trailing" id="lqq-Fu-afM"/>
+                        <constraint firstItem="Tlh-Yy-wOo" firstAttribute="height" secondItem="VN5-lN-dtC" secondAttribute="height" id="mIj-bf-KFo"/>
+                        <constraint firstItem="ACj-Bh-tkM" firstAttribute="top" secondItem="aOE-O8-HhB" secondAttribute="top" constant="8" id="q2Q-Ln-HUZ"/>
+                        <constraint firstItem="Tlh-Yy-wOo" firstAttribute="leading" secondItem="VN5-lN-dtC" secondAttribute="leading" id="sbV-OD-mgB"/>
+                        <constraint firstItem="6uE-0v-ANf" firstAttribute="leading" secondItem="aOE-O8-HhB" secondAttribute="leading" constant="16" id="sdv-br-Khp"/>
+                        <constraint firstItem="ACj-Bh-tkM" firstAttribute="leading" secondItem="z4W-jO-yOn" secondAttribute="trailing" constant="16" id="v3Y-3p-DOc"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q9F-Cc-lhT">
+                    <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aOE-O8-HhB" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="0LM-3R-lWs"/>
+                <constraint firstItem="aOE-O8-HhB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="8Nk-on-Chm"/>
+                <constraint firstItem="Q9F-Cc-lhT" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="C6U-eH-BTS"/>
+                <constraint firstAttribute="trailing" secondItem="Q9F-Cc-lhT" secondAttribute="trailing" id="EG7-E8-fHg"/>
+                <constraint firstItem="Q9F-Cc-lhT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EN5-Zz-fWZ"/>
+                <constraint firstItem="aOE-O8-HhB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Nam-Ps-pSE"/>
+                <constraint firstItem="aOE-O8-HhB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kHj-R5-O6k"/>
+                <constraint firstAttribute="bottom" secondItem="Q9F-Cc-lhT" secondAttribute="bottom" id="p4E-fd-Uyu"/>
+                <constraint firstItem="Q9F-Cc-lhT" firstAttribute="top" secondItem="aOE-O8-HhB" secondAttribute="bottom" id="sTE-Pm-LiT"/>
+            </constraints>
+            <point key="canvasLocation" x="41.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_search_white" width="24" height="24"/>
+    </resources>
+</document>
