@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+@objc(CardPO)
 public class CardPO: NSManagedObject {
     
     @NSManaged public var id: String?
