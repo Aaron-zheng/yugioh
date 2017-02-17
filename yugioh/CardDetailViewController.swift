@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Kingfisher
 
+
 class CardDetailViewController: UIViewController {
     
     @IBOutlet weak var card: UIImageView!
@@ -21,9 +22,17 @@ class CardDetailViewController: UIViewController {
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var commentCountLabel: UILabel!
+    
+    @IBOutlet weak var commentInputTextField: UITextField!
     
     var cardEntity: CardEntity!
     var frameWidth: CGFloat!
+    var commentEntitys: Array<CommentEntity>! = []
+    
+    fileprivate var commentDAO = CommentDAO()
     
     
     override func viewDidLoad() {
@@ -40,6 +49,26 @@ class CardDetailViewController: UIViewController {
         
     }
     
+    private func prepareTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.backgroundColor = greyColor
+        self.tableView.separatorStyle = .singleLine
+        self.tableView.tableHeaderView = UIView(frame: CGRect.zero)
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.tableView.register(CardCommentTableCell.NibObject(), forCellReuseIdentifier: CardCommentTableCell.identifier())
+        
+        retriveComment()
+    }
+    
+    
+    func retriveComment() {
+        commentDAO.getComment(id: cardEntity.id) { (commentEntitys) in
+            self.commentEntitys = commentEntitys
+            self.commentCountLabel.text = "评论 (" + commentEntitys.count.description + ")"
+            self.tableView.reloadData()
+        }
+    }
     
     
     
@@ -65,8 +94,62 @@ class CardDetailViewController: UIViewController {
         
         setImage(card: self.card, url: cardEntity.url)
                 
-
+        prepareTableView()
+        
+        self.commentInputTextField.delegate = self
     }
     
     
-   }
+}
+
+extension CardDetailViewController: UITableViewDataSource {
+    
+    
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
+        return commentEntitys.count
+    }
+    
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: CardCommentTableCell.identifier(), for: indexPath) as! CardCommentTableCell
+        cell.prepare(commentEntity: commentEntitys[indexPath.row])
+        
+        return cell
+    }
+
+}
+
+extension CardDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+
+extension CardDetailViewController: UITextFieldDelegate {
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        let input = textField.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        
+        if input != nil && input != "" {
+            
+            let commentEntity = CommentEntity()
+            commentEntity.content = input!
+            commentEntity.id = cardEntity.id
+            self.commentDAO.addComment(commentEntity: commentEntity)
+            retriveComment()
+        }
+        
+        textField.text = ""
+        
+        return true
+    }
+    
+}

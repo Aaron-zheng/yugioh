@@ -30,11 +30,14 @@
 		A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */; };
 		A0609C081E3F4694005739B7 /* PackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C071E3F4694005739B7 /* PackTableViewController.swift */; };
 		A0609C0A1E3F4B46005739B7 /* PackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */; };
+		A09147251E56D70C00F4B851 /* CommentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09147241E56D70C00F4B851 /* CommentDAO.swift */; };
+		A09147271E56D73F00F4B851 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09147261E56D73F00F4B851 /* CommentEntity.swift */; };
+		A09147291E57087A00F4B851 /* CardCommentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09147281E57087A00F4B851 /* CardCommentTableCell.swift */; };
+		A091472B1E57088800F4B851 /* CardCommentTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A091472A1E57088800F4B851 /* CardCommentTableCell.xib */; };
 		A0EDEEFA1E55E75C00401416 /* LoadableFromXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */; };
 		A0EDEEFC1E55EDBE00401416 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDEEFB1E55EDBE00401416 /* Constant.swift */; };
 		A0F93DC91DC9414B0001289D /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */; };
 		A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F93DCA1DC941550001289D /* CardSearchViewController.xib */; };
-		A0F93DCE1DC9D21F0001289D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F93DCD1DC9D21F0001289D /* SettingViewController.swift */; };
 		AA5D658A9BCDCEDB9F746979 /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EB2676EE67A73D7B6A761E /* Pods______.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,11 +97,14 @@
 		A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewWithStarController.swift; sourceTree = "<group>"; };
 		A0609C071E3F4694005739B7 /* PackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackTableViewController.swift; sourceTree = "<group>"; };
 		A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackTableViewCell.swift; sourceTree = "<group>"; };
+		A09147241E56D70C00F4B851 /* CommentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDAO.swift; sourceTree = "<group>"; };
+		A09147261E56D73F00F4B851 /* CommentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
+		A09147281E57087A00F4B851 /* CardCommentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCommentTableCell.swift; sourceTree = "<group>"; };
+		A091472A1E57088800F4B851 /* CardCommentTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCommentTableCell.xib; sourceTree = "<group>"; };
 		A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableFromXibView.swift; sourceTree = "<group>"; };
 		A0EDEEFB1E55EDBE00401416 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; };
 		A0F93DCA1DC941550001289D /* CardSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSearchViewController.xib; sourceTree = "<group>"; };
-		A0F93DCD1DC9D21F0001289D /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CF85EBAD25E1EF5EC06EE811 /* Pods-游戏王卡牌.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.production.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.production.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +159,7 @@
 		A039AE271D95F17E009ABFD1 /* yugioh */ = {
 			isa = PBXGroup;
 			children = (
+				A09147231E56D6F600F4B851 /* DAO */,
 				A039AE5E1D95F94E009ABFD1 /* View */,
 				A039AE5D1D95F947009ABFD1 /* Service */,
 				A039AE5C1D95F940009ABFD1 /* Utility */,
@@ -213,6 +220,7 @@
 			children = (
 				A022E6E01DC343AA00E7D8EE /* CardPO.swift */,
 				A00EAA031DB9FF73001FD546 /* CardEntity.swift */,
+				A09147261E56D73F00F4B851 /* CommentEntity.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -240,19 +248,28 @@
 		A039AE5E1D95F94E009ABFD1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A0F93DCD1DC9D21F0001289D /* SettingViewController.swift */,
 				A039AE621D95FC35009ABFD1 /* CardViewController.swift */,
 				A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */,
 				A039AE701D9734D6009ABFD1 /* CardTableViewCell.swift */,
 				A039AE721D9734DF009ABFD1 /* CardTableViewCell.xib */,
 				A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */,
 				A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */,
+				A09147281E57087A00F4B851 /* CardCommentTableCell.swift */,
+				A091472A1E57088800F4B851 /* CardCommentTableCell.xib */,
 				A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */,
 				A0F93DCA1DC941550001289D /* CardSearchViewController.xib */,
 				A0609C071E3F4694005739B7 /* PackTableViewController.swift */,
 				A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A09147231E56D6F600F4B851 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				A09147241E56D70C00F4B851 /* CommentDAO.swift */,
+			);
+			name = DAO;
 			sourceTree = "<group>";
 		};
 		DA607805D5F01CCAD417EDF7 /* Frameworks */ = {
@@ -393,6 +410,7 @@
 				A039AE361D95F17F009ABFD1 /* LaunchScreen.storyboard in Resources */,
 				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
 				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
+				A091472B1E57088800F4B851 /* CardCommentTableCell.xib in Resources */,
 				A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +487,7 @@
 				A00EAA061DBE862F001FD546 /* Utility.swift in Sources */,
 				A0EDEEFA1E55E75C00401416 /* LoadableFromXibView.swift in Sources */,
 				A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */,
+				A09147271E56D73F00F4B851 /* CommentEntity.swift in Sources */,
 				A039AE631D95FC35009ABFD1 /* CardViewController.swift in Sources */,
 				A0609C081E3F4694005739B7 /* PackTableViewController.swift in Sources */,
 				A0609C0A1E3F4B46005739B7 /* PackTableViewCell.swift in Sources */,
@@ -476,11 +495,12 @@
 				A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */,
 				A0EDEEFC1E55EDBE00401416 /* Constant.swift in Sources */,
 				A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */,
+				A09147251E56D70C00F4B851 /* CommentDAO.swift in Sources */,
 				A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */,
-				A0F93DCE1DC9D21F0001289D /* SettingViewController.swift in Sources */,
 				A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */,
 				A039AE311D95F17F009ABFD1 /* yugioh.xcdatamodeld in Sources */,
 				A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */,
+				A09147291E57087A00F4B851 /* CardCommentTableCell.swift in Sources */,
 				A039AE291D95F17E009ABFD1 /* AppDelegate.swift in Sources */,
 				A0F93DC91DC9414B0001289D /* CardSearchViewController.swift in Sources */,
 				A00EAA041DB9FF73001FD546 /* CardEntity.swift in Sources */,

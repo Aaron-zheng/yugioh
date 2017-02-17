@@ -23,10 +23,13 @@
             <connections>
                 <outlet property="attack" destination="Obw-n7-rqL" id="4s0-05-aOE"/>
                 <outlet property="card" destination="Zgb-Ir-uhA" id="hOo-J9-S1A"/>
+                <outlet property="commentCountLabel" destination="VbE-S2-VoP" id="Req-2h-vEl"/>
+                <outlet property="commentInputTextField" destination="rfU-S7-N64" id="ury-BU-PZz"/>
                 <outlet property="effect" destination="ZWv-43-nhS" id="sy4-CS-Jlw"/>
                 <outlet property="heightConstraint" destination="6Ja-ap-Qa8" id="wU2-HW-h3N"/>
                 <outlet property="name" destination="Ap6-sJ-2V0" id="bah-4r-rZn"/>
                 <outlet property="star" destination="ELJ-7L-345" id="JUC-h8-5oZ"/>
+                <outlet property="tableView" destination="s7g-WY-N46" id="5Yg-Lh-HVH"/>
                 <outlet property="type" destination="aUB-Ro-f7Q" id="ORS-9c-dL8"/>
                 <outlet property="view" destination="EWx-OU-6G3" id="97O-Zb-Kbq"/>
             </connections>
@@ -110,11 +113,53 @@
                         <constraint firstItem="Obw-n7-rqL" firstAttribute="top" secondItem="aUB-Ro-f7Q" secondAttribute="top" id="t7P-xa-4VY"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkn-CW-s7a">
+                    <rect key="frame" x="8" y="248" width="359" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论 (#)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbE-S2-VoP">
+                            <rect key="frame" x="8" y="0.0" width="56" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="56" id="1Wk-MQ-IBg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfU-S7-N64">
+                            <rect key="frame" x="72" y="4" width="279" height="24"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="rfU-S7-N64" firstAttribute="top" secondItem="jkn-CW-s7a" secondAttribute="top" constant="4" id="Ggr-4c-ttm"/>
+                        <constraint firstItem="VbE-S2-VoP" firstAttribute="height" secondItem="jkn-CW-s7a" secondAttribute="height" id="Nrn-af-aOc"/>
+                        <constraint firstItem="rfU-S7-N64" firstAttribute="leading" secondItem="VbE-S2-VoP" secondAttribute="trailing" constant="8" id="Q9v-cH-v50"/>
+                        <constraint firstItem="VbE-S2-VoP" firstAttribute="leading" secondItem="jkn-CW-s7a" secondAttribute="leading" constant="8" id="WqR-w9-d35"/>
+                        <constraint firstAttribute="height" constant="32" id="aQy-kB-E62"/>
+                        <constraint firstItem="VbE-S2-VoP" firstAttribute="top" secondItem="jkn-CW-s7a" secondAttribute="top" id="giv-Xz-0FC"/>
+                        <constraint firstAttribute="bottom" secondItem="rfU-S7-N64" secondAttribute="bottom" constant="4" id="k5L-BP-90i"/>
+                        <constraint firstAttribute="trailing" secondItem="rfU-S7-N64" secondAttribute="trailing" constant="8" id="pNv-Bx-4FW"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s7g-WY-N46">
+                    <rect key="frame" x="8" y="284" width="359" height="375"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="jkn-CW-s7a" secondAttribute="trailing" constant="8" id="FOm-oA-8B5"/>
+                <constraint firstItem="s7g-WY-N46" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="Tgn-Ua-YZe"/>
                 <constraint firstAttribute="trailing" secondItem="ONo-Gh-HfM" secondAttribute="trailing" constant="8" id="Zv9-60-kCa"/>
+                <constraint firstAttribute="trailing" secondItem="s7g-WY-N46" secondAttribute="trailing" constant="8" id="aUP-AW-lQv"/>
+                <constraint firstItem="s7g-WY-N46" firstAttribute="top" secondItem="jkn-CW-s7a" secondAttribute="bottom" constant="4" id="cJW-lt-zR6"/>
+                <constraint firstItem="jkn-CW-s7a" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="cyd-zh-sex"/>
                 <constraint firstItem="ONo-Gh-HfM" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="dbt-re-zTe"/>
+                <constraint firstItem="jkn-CW-s7a" firstAttribute="top" secondItem="ONo-Gh-HfM" secondAttribute="bottom" constant="4" id="f9n-Wg-8zm"/>
+                <constraint firstAttribute="bottom" secondItem="s7g-WY-N46" secondAttribute="bottom" constant="8" id="g62-2W-wdr"/>
                 <constraint firstItem="ONo-Gh-HfM" firstAttribute="top" secondItem="EWx-OU-6G3" secondAttribute="top" constant="72" id="uPy-Cc-MNE"/>
             </constraints>
             <point key="canvasLocation" x="-189.5" y="-404.5"/>

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,17 +25,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wru-YN-TBn" id="y2h-cQ-xOF">
-                <frame key="frameInset" width="414" height="229"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="229"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-cH-B5b">
+                        <rect key="frame" x="8" y="8" width="398" height="190.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultimg" translatesAutoresizingMaskIntoConstraints="NO" id="FDW-5G-6BU">
+                                <rect key="frame" x="0.0" y="0.0" width="132.5" height="190.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FDW-5G-6BU" secondAttribute="height" multiplier="160:230" id="879-La-v7P"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.87" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏王卡牌名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWS-Rq-MD3">
+                                <rect key="frame" x="140.5" y="8" width="249.5" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="JFz-TF-L4A"/>
                                 </constraints>
@@ -41,6 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏王卡牌类型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHg-3Z-6K6">
+                                <rect key="frame" x="140.5" y="32" width="249.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="ucb-Jc-KRY"/>
                                 </constraints>
@@ -49,18 +56,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82V-fk-Eg6" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                                <rect key="frame" x="140.5" y="52" width="249.5" height="130.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMb-QW-9Hs">
+                                <rect key="frame" x="366" y="0.0" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="CUS-9c-APd"/>
-                                    <constraint firstAttribute="height" constant="24" id="S1f-KK-y2g"/>
+                                    <constraint firstAttribute="width" constant="32" id="CUS-9c-APd"/>
+                                    <constraint firstAttribute="height" constant="32" id="S1f-KK-y2g"/>
                                 </constraints>
-                                <state key="normal" title="b"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVM-xa-Ywm">
+                                <rect key="frame" x="140.5" y="32" width="249.5" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="Ca0-10-V0D"/>
                                 </constraints>
@@ -72,7 +81,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="82V-fk-Eg6" firstAttribute="trailing" secondItem="qWS-Rq-MD3" secondAttribute="trailing" id="1OH-Xw-NUR"/>
-                            <constraint firstItem="mMb-QW-9Hs" firstAttribute="top" secondItem="y7K-cH-B5b" secondAttribute="top" constant="8" id="2cZ-0p-bxh"/>
+                            <constraint firstItem="mMb-QW-9Hs" firstAttribute="top" secondItem="y7K-cH-B5b" secondAttribute="top" id="2cZ-0p-bxh"/>
                             <constraint firstAttribute="bottom" secondItem="82V-fk-Eg6" secondAttribute="bottom" constant="8" id="3Nv-78-E4t"/>
                             <constraint firstItem="kVM-xa-Ywm" firstAttribute="top" secondItem="JHg-3Z-6K6" secondAttribute="top" id="3xS-SS-tD0"/>
                             <constraint firstItem="FDW-5G-6BU" firstAttribute="top" secondItem="y7K-cH-B5b" secondAttribute="top" id="5B5-i7-oXc"/>
@@ -84,7 +93,7 @@
                             <constraint firstItem="FDW-5G-6BU" firstAttribute="width" secondItem="y7K-cH-B5b" secondAttribute="width" multiplier="1/3" id="Lx0-lD-3zb"/>
                             <constraint firstItem="kVM-xa-Ywm" firstAttribute="trailing" secondItem="JHg-3Z-6K6" secondAttribute="trailing" id="MSU-s7-Sqb"/>
                             <constraint firstItem="JHg-3Z-6K6" firstAttribute="leading" secondItem="qWS-Rq-MD3" secondAttribute="leading" id="Vdu-Qe-1bE"/>
-                            <constraint firstAttribute="trailing" secondItem="mMb-QW-9Hs" secondAttribute="trailing" constant="8" id="a0L-fj-X43"/>
+                            <constraint firstAttribute="trailing" secondItem="mMb-QW-9Hs" secondAttribute="trailing" id="a0L-fj-X43"/>
                             <constraint firstItem="qWS-Rq-MD3" firstAttribute="top" secondItem="y7K-cH-B5b" secondAttribute="top" constant="8" id="fYS-KY-kLw"/>
                             <constraint firstItem="JHg-3Z-6K6" firstAttribute="top" secondItem="qWS-Rq-MD3" secondAttribute="bottom" id="g6s-5u-4Ii"/>
                             <constraint firstAttribute="trailing" secondItem="qWS-Rq-MD3" secondAttribute="trailing" constant="8" id="g8V-yb-YMm"/>

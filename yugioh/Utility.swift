@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 
+public var Timestamp: String {
+    return "\(NSDate().timeIntervalSince1970 * 1000)"
+}
+
 public class UIVerticalAlignLabel: UILabel {
     
     enum VerticalAligment: Int {
