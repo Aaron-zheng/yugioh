@@ -10,8 +10,6 @@ import Foundation
 
 class CommentEntity {
     
-    var key: String = ""
     var id: String = ""
     var content: String = ""
-    var timestamp: String = Timestamp
 }

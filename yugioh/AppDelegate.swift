@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import LeanCloud
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.tintColor = UIColor.white
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        
+        //lean cloud initial data
+        LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)
         
         return true
     }

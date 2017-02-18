@@ -143,8 +143,9 @@ extension CardDetailViewController: UITextFieldDelegate {
             let commentEntity = CommentEntity()
             commentEntity.content = input!
             commentEntity.id = cardEntity.id
-            self.commentDAO.addComment(commentEntity: commentEntity)
-            retriveComment()
+            self.commentDAO.addComment(commentEntity: commentEntity, callback: {
+                self.retriveComment()
+            })
         }
         
         textField.text = ""

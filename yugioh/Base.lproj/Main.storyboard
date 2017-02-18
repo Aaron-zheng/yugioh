@@ -18,7 +18,7 @@
         <scene sceneID="f4e-YP-rd1">
             <objects>
                 <navigationController id="Lkw-10-HkU" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Icx-l8-7vA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Icx-l8-7vA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -210,8 +210,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tj-pC-gtT" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
                                 <rect key="frame" x="16" y="80" width="343" height="522"/>
-                                <string key="text">个人时间开发的作品啦，衷心希望你也喜欢。：）  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！！！如果你有任何建议或者想法，欢迎和我交流。 
-作者：Aaron 郑富成 邮箱：fucheng.zheng@gmail.com QQ群：489276338</string>
+                                <string key="text">个人时间开发的作品啦，衷心希望你也喜欢。：）另外，你在 App Store 对该作品的评论，会促使我努力开发下一个版本。  欢迎加入 QQ群：489276338 提出你的意见和想法噢！！！  作者：Aaron 郑富成 邮箱：fucheng.zheng@gmail.com</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
