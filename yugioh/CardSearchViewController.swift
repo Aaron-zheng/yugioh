@@ -123,7 +123,7 @@ class CardSearchViewController: UIViewController {
         self.tableView.deselectRow(at: indexPath, animated: true)
         let controller = CardDetailViewController()
         controller.cardEntity = searchResult[indexPath.row]
-        controller.frameWidth = self.tableView.frame.width
+        controller.proxy = self.tableView
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

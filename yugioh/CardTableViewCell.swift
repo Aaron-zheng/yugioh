@@ -21,9 +21,12 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var star: UIButton!
     @IBOutlet weak var attack: UILabel!
     
-    private let service = CardService()
+    
+    private var tableView: UITableView!
     
     func prepare(cardEntity: CardEntity, tableView: UITableView, indexPath: IndexPath) {
+        
+        self.tableView = tableView
         
         let img = UIImage(named: "ic_star_white")?.withRenderingMode(.alwaysTemplate)
         star.setImage(img, for: .normal)
@@ -32,8 +35,10 @@ class CardTableViewCell: UITableViewCell {
         } else {
             star.tintColor = greyColor
         }
-        star.addTarget(self, action: #selector(CardTableViewCell.clickStarButton(sender:)), for: .touchUpInside)
+        
         star.cardEntity = cardEntity
+        
+        
         cellContentView.backgroundColor = greyColor
         cellContentInnerView.backgroundColor = UIColor.white
         
@@ -54,21 +59,26 @@ class CardTableViewCell: UITableViewCell {
         
     }
     
-    
-    func clickStarButton(sender: UIButton) {
-        let cardEntity = sender.cardEntity
+    @IBAction func clickButton(_ sender: Any) {
+        let starButton = sender as! UIButton
+        let cardEntity = starButton.cardEntity
         
-        if sender.tintColor == greyColor {
-            sender.tintColor = yellowColor
+        if starButton.tintColor == greyColor {
+            starButton.tintColor = yellowColor
             cardEntity.isSelected = true
         } else {
             //delete
-            sender.tintColor = greyColor
+            starButton.tintColor = greyColor
             cardEntity.isSelected = false
         }
-        nc.post(name: Notification.Name("clickStarButton"), object: nil, userInfo: ["data": cardEntity])
-        
+        nc.post(name: Notification.Name("clickStarButton"), object: nil,
+                userInfo: [
+                    "data": cardEntity,
+                    "tableView": self.tableView
+            ])
     }
+    
+    
     
 }
 

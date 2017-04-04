@@ -16,18 +16,15 @@ class ViewController: UITabBarController {
     fileprivate var currentNodeName: String!
     fileprivate var cardEntity: CardEntity!
     var cardEntitys: Array<CardEntity> = []
-    
-    private let cardService = CardService()
+    let cardService = CardService()
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        
-        
-        
+
         if item.title!.description != tabBarItemCard {
             self.navigationItem.rightBarButtonItem = nil
         } else {
@@ -41,7 +38,7 @@ class ViewController: UITabBarController {
         
         self.setupData()
         self.setupTabBarStyle()
-        
+        self.setupObserver()
     }
     
     
@@ -58,6 +55,21 @@ class ViewController: UITabBarController {
     }
 
     
+    
+    private func setupObserver() {
+        nc.addObserver(self, selector: #selector(ViewController.clickStarButtonHandler(notification:)), name: Notification.Name("clickStarButton"), object: nil)
+    }
+    
+    func clickStarButtonHandler(notification: Notification) {
+        let cardEntity = notification.userInfo!["data"] as! CardEntity
+        let tableView = notification.userInfo!["tableView"] as! UITableView
+        if cardEntity.isSelected == true {
+            cardService.save(cardEntity: cardEntity)
+        } else {
+            cardService.delete(cardEntity: cardEntity)
+        }
+        tableView.reloadData()
+    }
     
 }
 

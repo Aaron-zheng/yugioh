@@ -29,15 +29,16 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var commentInputTextField: UITextField!
     
     var cardEntity: CardEntity!
-    var frameWidth: CGFloat!
     var commentEntitys: Array<CommentEntity>! = []
+    var proxy: UITableView!
     
-    fileprivate var commentDAO = CommentDAO()
+    fileprivate var commentDAO = CommentService()
     
     
     override func viewDidLoad() {
         
         self.view.backgroundColor = greyColor
+        let frameWidth = self.proxy.frame.width
         
         let h1 = preCalculateTextHeight(text: cardEntity.effect, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
         let h2 = (frameWidth - materialGap * 2) / 3 / 160 * 230 - materialGap * 7.5
@@ -70,14 +71,34 @@ class CardDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func clickStarButton(_ sender: UIButton) {
+        
+        if sender.tintColor == greyColor {
+            sender.tintColor = yellowColor
+            cardEntity.isSelected = true
+        } else {
+            sender.tintColor = greyColor
+            cardEntity.isSelected = false
+        }
+        
+        
+        
+        nc.post(name: Notification.Name("clickStarButton"), object: nil,
+                userInfo: [
+                    "data": cardEntity,
+                    "tableView": self.proxy
+            ])
+    }
     
     
     public func prepare() {
         let img = UIImage(named: "ic_star_white")?.withRenderingMode(.alwaysTemplate)
         star.setImage(img, for: .normal)
-        star.tintColor = greyColor
-        star.isHidden = true
-        
+        if cardEntity.isSelected {
+            star.tintColor = yellowColor
+        } else {
+            star.tintColor = greyColor
+        }
         
         self.name.text = cardEntity.title
         self.effect.text = cardEntity.effect

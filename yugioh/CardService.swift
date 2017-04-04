@@ -76,7 +76,7 @@ class CardService {
         }
     }
     
-    private func isExist(cardEntity: CardEntity) -> Bool {
+    func isExist(cardEntity: CardEntity) -> Bool {
         var flag = false
         do {
             let result = try managedContex.fetch(fetchRequest)

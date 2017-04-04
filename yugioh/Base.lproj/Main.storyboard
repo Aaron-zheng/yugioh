@@ -57,7 +57,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="收藏" image="ic_star_white" id="tjZ-92-Soc"/>
                     <connections>
-                        <outlet property="tableView" destination="ZVl-ko-ra3" id="IAL-Bh-8Hg"/>
+                        <outlet property="iTableView" destination="ZVl-ko-ra3" id="Yrr-BM-Fda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p31-Mc-2m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,8 +101,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="卡牌" image="ic_view_carousel_white" id="14g-xH-QyR"/>
                     <connections>
-                        <outlet property="searchButton" destination="n1I-e2-nX9" id="nTe-Bu-y6g"/>
-                        <outlet property="tableView" destination="csZ-O1-NNW" id="Mal-Cy-N0S"/>
+                        <outlet property="iTableView" destination="csZ-O1-NNW" id="QmR-1G-BnP"/>
+                        <outlet property="searchButton" destination="n1I-e2-nX9" id="5Wd-Vy-es2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwk-O1-RUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,6 +114,11 @@
             <objects>
                 <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="游戏王卡牌" id="2XC-NK-5In">
+                        <barButtonItem key="leftBarButtonItem" title="关于" id="tsg-bF-TJI">
+                            <connections>
+                                <segue destination="qAe-UN-Sad" kind="show" id="nHf-Ub-30o"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="卡包" id="BRq-3Q-8aQ">
                             <connections>
                                 <segue destination="2Hk-lc-VDZ" kind="show" identifier="PackTableViewSegue" id="GqE-8d-iNO"/>
@@ -129,7 +134,6 @@
                         <outlet property="packButton" destination="BRq-3Q-8aQ" id="xJJ-Hc-OdM"/>
                         <segue destination="rTF-46-KtB" kind="relationship" relationship="viewControllers" id="nnU-MX-WiR"/>
                         <segue destination="h5i-Tt-P9t" kind="relationship" relationship="viewControllers" id="Lur-oZ-TCJ"/>
-                        <segue destination="qAe-UN-Sad" kind="relationship" relationship="viewControllers" id="OGT-Bp-8Rg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djQ-dx-Kro" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,7 +214,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tj-pC-gtT" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
                                 <rect key="frame" x="16" y="80" width="343" height="522"/>
-                                <string key="text">个人时间开发的作品啦，衷心希望你也喜欢。：）另外，你在 App Store 对该作品的评论，会促使我努力开发下一个版本。  欢迎加入 QQ群：489276338 提出你的意见和想法噢！！！  作者：Aaron 郑富成 邮箱：fucheng.zheng@gmail.com</string>
+                                <string key="text">个人时间开发的作品啦，衷心希望你也喜欢。  如果你想到有新功能需求，可以发邮件告诉我的。目前都是靠自己猜想的功能进行开发的。  你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者：郑富成 (Aaron) 邮箱：fucheng.zheng@gmail.com 微信公众号：whvapp</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -228,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTt-WD-hIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="899"/>
+            <point key="canvasLocation" x="972" y="210"/>
         </scene>
     </scenes>
     <resources>

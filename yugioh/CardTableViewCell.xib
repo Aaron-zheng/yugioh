@@ -67,6 +67,9 @@
                                     <constraint firstAttribute="width" constant="32" id="CUS-9c-APd"/>
                                     <constraint firstAttribute="height" constant="32" id="S1f-KK-y2g"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="clickButton:" destination="Wru-YN-TBn" eventType="touchUpInside" id="CKy-e0-nO2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVM-xa-Ywm">
                                 <rect key="frame" x="140.5" y="32" width="249.5" height="16"/>

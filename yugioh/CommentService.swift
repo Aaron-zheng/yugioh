@@ -9,7 +9,7 @@
 import Foundation
 import LeanCloud
 
-class CommentDAO {
+class CommentService {
     
     
     
