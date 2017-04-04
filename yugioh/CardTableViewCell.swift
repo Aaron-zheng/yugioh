@@ -20,6 +20,7 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var effect: UIVerticalAlignLabel!
     @IBOutlet weak var star: UIButton!
     @IBOutlet weak var attack: UILabel!
+    @IBOutlet weak var pack: UILabel!
     
     
     private var tableView: UITableView!
@@ -55,6 +56,7 @@ class CardTableViewCell: UITableViewCell {
         } else {
             self.attack.text = ""
         }
+        self.pack.text = "卡包: " + cardEntity.pack
         
         
     }

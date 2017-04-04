@@ -19,6 +19,7 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var effect: UIVerticalAlignLabel!
     @IBOutlet weak var star: UIButton!
     @IBOutlet weak var attack: UILabel!
+    @IBOutlet weak var pack: UIVerticalAlignLabel!
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
@@ -40,7 +41,9 @@ class CardDetailViewController: UIViewController {
         self.view.backgroundColor = greyColor
         let frameWidth = self.proxy.frame.width
         
-        let h1 = preCalculateTextHeight(text: cardEntity.effect, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+        self.pack.verticalAligment = .VerticalAligmentBottom
+        
+        let h1 = preCalculateTextHeight(text: cardEntity.effect, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2) + 36
         let h2 = (frameWidth - materialGap * 2) / 3 / 160 * 230 - materialGap * 7.5
         if h1 > h2 {
             self.heightConstraint.constant = h1 - h2
@@ -112,6 +115,8 @@ class CardDetailViewController: UIViewController {
         } else {
             self.attack.text = ""
         }
+        self.pack.text = "卡包: " + cardEntity.pack
+        
         
         setImage(card: self.card, url: cardEntity.url)
                 
