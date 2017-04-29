@@ -27,6 +27,13 @@ class CardViewWithStarController: CardViewBaseController {
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.cardEntitys = self.rootController.cardService.list()
+        
+        for index in 0..<cardEntitys.count {
+            cardEntitys[index] = self.rootController.getCardEntity(id: cardEntitys[index].id);
+        }
+        
+        
+        
         return self.cardEntitys.count
     }
 }

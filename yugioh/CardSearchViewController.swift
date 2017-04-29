@@ -152,7 +152,7 @@ extension CardSearchViewController: UITextFieldDelegate {
                 let c = cardEntitys[i]
                 //input search
                 if input != "" {
-                    if !c.title.lowercased().contains(input!) && !c.effect.lowercased().contains(input!) {
+                    if !c.titleChinese.lowercased().contains(input!) && !c.effect.lowercased().contains(input!) {
                         continue
                     }
                 }

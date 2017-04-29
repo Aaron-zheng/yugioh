@@ -23,6 +23,8 @@ class ViewController: UITabBarController {
         
     }
     
+    
+    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
 
         if item.title!.description != tabBarItemCard {
@@ -39,6 +41,17 @@ class ViewController: UITabBarController {
         self.setupData()
         self.setupTabBarStyle()
         self.setupObserver()
+        
+        print(cardEntitys.count)
+    }
+    
+    public func getCardEntity(id: String) -> CardEntity {
+        for each in cardEntitys {
+            if id == each.id {
+                return each
+            }
+        }
+        return CardEntity()
     }
     
     
@@ -46,6 +59,8 @@ class ViewController: UITabBarController {
         self.tabBar.tintColor = greenColor
         self.tabBar.barTintColor = greyColor
     }
+    
+    
     
     private func setupData() {
         let xmlParser = XMLParser(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "datasource", ofType: "xml")!))
@@ -102,18 +117,32 @@ extension ViewController: XMLParserDelegate {
         case "id":
             cardEntity.id = str
             cardEntity.url = qiniuUrlPrefix + str + qiniuUrlSuffix
-        case "cname":
-            cardEntity.title = cardEntity.title + str
+        case "titleChinese":
+            cardEntity.titleChinese = cardEntity.titleChinese + str
+        case "titleJapanese":
+            cardEntity.titleJapanese = cardEntity.titleJapanese + str
+        case "titleEnglish":
+            cardEntity.titleEnglish = cardEntity.titleEnglish + str
         case "type":
             cardEntity.type = str
+        case "password":
+            cardEntity.password = cardEntity.password + str
+        case "usage":
+            cardEntity.usage = cardEntity.usage + str
+        case "race":
+            cardEntity.race = cardEntity.race + str
+        case "property":
+            cardEntity.property = cardEntity.property + str
         case "effect":
             cardEntity.effect = cardEntity.effect + str
-        case "starlevel":
+        case "star":
             cardEntity.star = cardEntity.star + str
         case "attack":
             cardEntity.attack = cardEntity.attack + str
         case "defense":
             cardEntity.defense = cardEntity.defense + str
+        case "rare":
+            cardEntity.rare = cardEntity.rare + str
         case "pack":
             cardEntity.pack = cardEntity.pack + str
         default:

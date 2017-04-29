@@ -39,15 +39,7 @@ class CardService {
             
             for i in 0 ..< r.count {
                 let cardEntity = CardEntity()
-                cardEntity.attack = r[i].value(forKey: "attack") as? String
-                cardEntity.defense = r[i].value(forKey: "defense") as? String
-                cardEntity.effect = r[i].value(forKey: "effect") as? String
                 cardEntity.id = r[i].value(forKey: "id") as? String
-                cardEntity.star = r[i].value(forKey: "star") as? String
-                cardEntity.title = r[i].value(forKey: "title") as? String
-                cardEntity.type = r[i].value(forKey: "type") as? String
-                cardEntity.url = r[i].value(forKey: "url") as? String
-                cardEntity.pack = r[i].value(forKey: "pack") as? String
                 result.append(cardEntity)
             }
         } catch {
@@ -102,15 +94,7 @@ class CardService {
         }
         
         let card = CardPO(entity: entity, insertInto: managedContex)
-        card.attack = cardEntity.attack
-        card.defense = cardEntity.defense
-        card.effect = cardEntity.effect
         card.id = cardEntity.id
-        card.star = cardEntity.star
-        card.title = cardEntity.title
-        card.type = cardEntity.type
-        card.url = cardEntity.url
-        card.pack = cardEntity.pack
         card.createAt = Date()
         
         do {

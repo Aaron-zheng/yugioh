@@ -44,7 +44,7 @@ class CardTableViewCell: UITableViewCell {
         cellContentInnerView.backgroundColor = UIColor.white
         
         
-        self.title.text = cardEntity.title
+        self.title.text = cardEntity.titleChinese
         self.effect.text = cardEntity.effect
         if cardEntity.star.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
             self.type.text = cardEntity.type + " (" + cardEntity.star + "星)"

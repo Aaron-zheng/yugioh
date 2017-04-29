@@ -9,15 +9,26 @@
 import Foundation
 
 class CardEntity {
+    
+    //和xml数据库对应的属性
     var id: String! = ""
-    var url: String! = ""
-    var title: String! = ""
+    var titleChinese: String! = ""
+    var titleJapanese: String! = ""
+    var titleEnglish: String! = ""
     var type: String! = ""
+    var password: String! = ""
+    var usage: String! = ""
+    var race: String! = ""
+    var property: String! = ""
     var star: String! = ""
     var attack: String! = ""
     var defense: String! = ""
+    var rare: String! = ""
     var effect: String! = ""
     var pack: String! = ""
     
+    
+    //额外添加属性
+    var url: String! = ""
     var isSelected: Bool = false
 }

@@ -103,7 +103,7 @@ class CardDetailViewController: UIViewController {
             star.tintColor = greyColor
         }
         
-        self.name.text = cardEntity.title
+        self.name.text = cardEntity.titleChinese
         self.effect.text = cardEntity.effect
         if cardEntity.star.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
             self.type.text = cardEntity.type + " (" + cardEntity.star + "星)"
