@@ -31,16 +31,14 @@ class CardService {
     }
     
     
-    func list() -> [CardEntity] {
-        var result = [CardEntity]()
+    func list() -> [String] {
+        var result = [String]()
         do {
             let r = try managedContex.fetch(fetchRequest)
             
             
             for i in 0 ..< r.count {
-                let cardEntity = CardEntity()
-                cardEntity.id = r[i].value(forKey: "id") as? String
-                result.append(cardEntity)
+                result.append(r[i].value(forKey: "id") as! String)
             }
         } catch {
             print("error: list")
@@ -52,11 +50,11 @@ class CardService {
     
     
     
-    func delete(cardEntity: CardEntity) {
+    func delete(id: String) {
         do {
             let result = try managedContex.fetch(fetchRequest)
             for i in 0 ..< result.count {
-                if cardEntity.id == result[i].value(forKey: "id") as! String {
+                if id == (result[i].value(forKey: "id") as! String) {
                     managedContex.delete(result[i])
                 }
             }
@@ -68,16 +66,15 @@ class CardService {
         }
     }
     
-    func isExist(cardEntity: CardEntity) -> Bool {
+    func isExist(id: String) -> Bool {
         var flag = false
         do {
             let result = try managedContex.fetch(fetchRequest)
             for i in 0 ..< result.count {
-                if cardEntity.id == result[i].value(forKey: "id") as! String {
+                if id == (result[i].value(forKey: "id") as! String) {
                     flag = true
                 }
             }
-            
         } catch {
             print("error: isExist")
         }
@@ -87,14 +84,14 @@ class CardService {
     }
     
     
-    func save(cardEntity: CardEntity) {
+    func save(id: String) {
         
-        if isExist(cardEntity: cardEntity) == true {
+        if isExist(id: id) {
             return
         }
         
         let card = CardPO(entity: entity, insertInto: managedContex)
-        card.id = cardEntity.id
+        card.id = id
         card.createAt = Date()
         
         do {

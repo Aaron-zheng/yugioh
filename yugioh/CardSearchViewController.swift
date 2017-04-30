@@ -250,7 +250,7 @@ extension CardSearchViewController: UITableViewDataSource {
         cardEntity.isSelected = false
         let list = cardService.list()
         for i in 0 ..< list.count {
-            if cardEntity.id == list[i].id {
+            if cardEntity.id == list[i] {
                 cardEntity.isSelected = true
                 break
             }

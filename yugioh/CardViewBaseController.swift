@@ -60,7 +60,7 @@ extension CardViewBaseController: UITableViewDataSource {
         
         let cell = self.tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier(), for: indexPath) as! CardTableViewCell
         let cardEntity = cardEntitys[indexPath.row]
-        if self.rootController.cardService.isExist(cardEntity: cardEntity) {
+        if self.rootController.cardService.isExist(id: cardEntity.id) {
             cardEntity.isSelected = true
         } else {
             cardEntity.isSelected = false

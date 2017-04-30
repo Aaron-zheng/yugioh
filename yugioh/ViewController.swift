@@ -78,10 +78,10 @@ class ViewController: UITabBarController {
     func clickStarButtonHandler(notification: Notification) {
         let cardEntity = notification.userInfo!["data"] as! CardEntity
         let tableView = notification.userInfo!["tableView"] as! UITableView
-        if cardEntity.isSelected == true {
-            cardService.save(cardEntity: cardEntity)
+        if cardEntity.isSelected {
+            cardService.save(id: cardEntity.id)
         } else {
-            cardService.delete(cardEntity: cardEntity)
+            cardService.delete(id: cardEntity.id)
         }
         tableView.reloadData()
     }

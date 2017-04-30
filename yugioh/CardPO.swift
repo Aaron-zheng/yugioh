@@ -12,7 +12,9 @@ import CoreData
 @objc(CardPO)
 public class CardPO: NSManagedObject {
     
-    @NSManaged public var id: String?
-    @NSManaged public var createAt: Date?
+    @NSManaged public var id: String!
+    @NSManaged public var createAt: Date!
 
+    
+    
 }
