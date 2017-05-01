@@ -20,7 +20,9 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var effect: UIVerticalAlignLabel!
     @IBOutlet weak var star: UIButton!
     @IBOutlet weak var attack: UILabel!
-    @IBOutlet weak var pack: UILabel!
+    @IBOutlet weak var property: UILabel!
+    @IBOutlet weak var usage: UILabel!
+    @IBOutlet weak var effectConstraint: NSLayoutConstraint!
     
     
     private var tableView: UITableView!
@@ -46,19 +48,24 @@ class CardTableViewCell: UITableViewCell {
         
         self.title.text = cardEntity.titleChinese
         self.effect.text = cardEntity.effect
+        self.type.text = cardEntity.type
+        self.usage.text = cardEntity.usage
+        
         if cardEntity.star.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
-            self.type.text = cardEntity.type + " (" + cardEntity.star + "星)"
+            self.property.text = ""
+                + cardEntity.property
+                + " / "
+                + cardEntity.race
+                + " / "
+                + cardEntity.star + "星"
         } else {
-            self.type.text = cardEntity.type
+            self.property.text = ""
         }
         if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 && cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
             self.attack.text = cardEntity.attack + " / " + cardEntity.defense
         } else {
             self.attack.text = ""
         }
-        self.pack.text = "卡包: " + cardEntity.pack
-        
-        
     }
     
     @IBAction func clickButton(_ sender: Any) {

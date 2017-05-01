@@ -20,59 +20,55 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var star: UIButton!
     @IBOutlet weak var attack: UILabel!
     @IBOutlet weak var pack: UIVerticalAlignLabel!
+    @IBOutlet weak var property: UILabel!
+    @IBOutlet weak var usage: UILabel!
+    @IBOutlet weak var password: UILabel!
+    @IBOutlet weak var rare: UILabel!
+    
+    @IBOutlet weak var innerView: UIView!
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var commentCountLabel: UILabel!
-    
-    @IBOutlet weak var commentInputTextField: UITextField!
     
     var cardEntity: CardEntity!
     var commentEntitys: Array<CommentEntity>! = []
     var proxy: UITableView!
     
-    fileprivate var commentDAO = CommentService()
+//    fileprivate var commentDAO = CommentService()
     
     
     override func viewDidLoad() {
         
         self.view.backgroundColor = greyColor
         let frameWidth = self.proxy.frame.width
-        
         self.pack.verticalAligment = .VerticalAligmentBottom
         
-        let h1 = preCalculateTextHeight(text: cardEntity.effect, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2) + 36
-        let h2 = (frameWidth - materialGap * 2) / 3 / 160 * 230 - materialGap * 7.5
-        if h1 > h2 {
-            self.heightConstraint.constant = h1 - h2
+        
+        
+        //卡牌最高度
+        let h0 = (frameWidth - materialGap * 2) / 3 / 160 * 230
+        //效果高度
+        let h1 = preCalculateTextHeight(text: cardEntity.effect, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+        //卡包高度
+        let h2 = preCalculateTextHeight(text: cardEntity.pack, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+        //总高度
+        let h3 = 8 + 24 + 16 + 16 + h1 + 8 + 16 + h2 + 8
+        
+        
+        if h0 > h3 {
+            self.heightConstraint.constant = h0
+        } else {
+            self.heightConstraint.constant = h3
         }
+        
+        
+        
         prepare()
         
         
     }
     
-    private func prepareTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.backgroundColor = greyColor
-        self.tableView.separatorStyle = .singleLine
-        self.tableView.tableHeaderView = UIView(frame: CGRect.zero)
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        self.tableView.register(CardCommentTableCell.NibObject(), forCellReuseIdentifier: CardCommentTableCell.identifier())
-        
-        retriveComment()
-    }
     
-    
-    func retriveComment() {
-        commentDAO.getComment(id: cardEntity.id) { (commentEntitys) in
-            self.commentEntitys = commentEntitys
-            self.commentCountLabel.text = "评论 (" + commentEntitys.count.description + ")"
-            self.tableView.reloadData()
-        }
-    }
     
     @IBAction func clickStarButton(_ sender: UIButton) {
         
@@ -95,6 +91,7 @@ class CardDetailViewController: UIViewController {
     
     
     public func prepare() {
+        
         let img = UIImage(named: "ic_star_white")?.withRenderingMode(.alwaysTemplate)
         star.setImage(img, for: .normal)
         if cardEntity.isSelected {
@@ -103,80 +100,39 @@ class CardDetailViewController: UIViewController {
             star.tintColor = greyColor
         }
         
+        
+        
         self.name.text = cardEntity.titleChinese
         self.effect.text = cardEntity.effect
+        self.type.text = cardEntity.type
+        self.usage.text = cardEntity.usage
+        
         if cardEntity.star.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
-            self.type.text = cardEntity.type + " (" + cardEntity.star + "星)"
+            self.property.text = ""
+                + cardEntity.property
+                + " / "
+                + cardEntity.race
+                + " / "
+                + cardEntity.star + "星"
+//            self.effectConstraint.constant = 0
         } else {
-            self.type.text = cardEntity.type
+            self.property.text = ""
+//            self.effectConstraint.constant = -14
         }
         if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 && cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
             self.attack.text = cardEntity.attack + " / " + cardEntity.defense
         } else {
             self.attack.text = ""
         }
+        self.password.text = ""
+        self.rare.text = "卡牌: " + cardEntity.rare
         self.pack.text = "卡包: " + cardEntity.pack
         
         
         setImage(card: self.card, url: cardEntity.url)
-                
-        prepareTableView()
         
-        self.commentInputTextField.delegate = self
     }
     
     
 }
 
-extension CardDetailViewController: UITableViewDataSource {
-    
-    
-    @available(iOS 2.0, *)
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
-        return commentEntitys.count
-    }
-    
-    @available(iOS 2.0, *)
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: CardCommentTableCell.identifier(), for: indexPath) as! CardCommentTableCell
-        cell.prepare(commentEntity: commentEntitys[indexPath.row])
-        
-        return cell
-    }
-
-}
-
-extension CardDetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-
-extension CardDetailViewController: UITextFieldDelegate {
-    
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        let input = textField.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        
-        if input != nil && input != "" {
-            
-            let commentEntity = CommentEntity()
-            commentEntity.content = input!
-            commentEntity.id = cardEntity.id
-            self.commentDAO.addComment(commentEntity: commentEntity, callback: {
-                self.retriveComment()
-            })
-        }
-        
-        textField.text = ""
-        
-        return true
-    }
-    
-}

@@ -1,20 +1,12 @@
 PODS:
-  - Alamofire (4.2.0)
-  - Kingfisher (3.1.4)
-  - LeanCloud (10.0.0):
-    - LeanCloud/Storage (= 10.0.0)
-  - LeanCloud/Storage (10.0.0):
-    - Alamofire (~> 4.2.0)
+  - Kingfisher (3.6.2)
 
 DEPENDENCIES:
   - Kingfisher (~> 3.0)
-  - LeanCloud
 
 SPEC CHECKSUMS:
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
-  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
-  LeanCloud: 0a6a0d52e33dd43d998ab256cc83f6c4954607b8
+  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
 
-PODFILE CHECKSUM: d657d1596e3005724d147877f3c495eac3fb1233
+PODFILE CHECKSUM: e6f35a1d2784809ea5d03afd0a27f78b375923a6
 
 COCOAPODS: 1.1.1
