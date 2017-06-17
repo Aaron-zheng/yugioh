@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import Agrume
 
 
 class CardDetailViewController: UIViewController {
@@ -62,10 +63,19 @@ class CardDetailViewController: UIViewController {
         }
         
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CardDetailViewController.imageTapped(tapGestureRecognizer:)))
+        card.isUserInteractionEnabled = true
+        card.addGestureRecognizer(tapGestureRecognizer)
         
         prepare()
         
         
+    }
+    
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let agrume = Agrume(image: card.image!, backgroundColor: .black)
+        agrume.hideStatusBar = true
+        agrume.showFrom(self)
     }
     
     

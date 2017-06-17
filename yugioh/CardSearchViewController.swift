@@ -62,13 +62,13 @@ class CardSearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        nc.addObserver(self, selector: #selector(CardSearchViewController.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        nc.addObserver(self, selector: #selector(CardSearchViewController.keyboardWillShow), name: .UIKeyboardWillChangeFrame, object: nil)
     }
     
     
     
     func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
             self.searchBarViewHeightConstraint.constant = self.rootFrame.height - keyboardHeight
         }
@@ -112,27 +112,24 @@ class CardSearchViewController: UIViewController {
     }
     
     private func setupTypeButtons() {
-        //
+        
+        //types
         var defaultHeight = 96
-        var line: Float = 0
-        self.addButtons(datas: types, selector: #selector(clickTypeButton), dataWidth: 64, dataHeight: 32, dataDefaultHeight: defaultHeight)
+        defaultHeight = self.addButtons(datas: types, selector: #selector(clickTypeButton), dataWidth: 64, dataHeight: 32, dataDefaultHeight: defaultHeight)
         
-        //
-        line = ceil(Float(types.count) / Float(Int(self.rootFrame.width) / (64 + 8)))
-        defaultHeight = defaultHeight + Int(line) * (32 + 4) + 8
-        self.addButtons(datas: propertys, selector: #selector(clickPropertyButton), dataWidth: 32, dataHeight: 32, dataDefaultHeight: defaultHeight)
+        //propertys
+        defaultHeight = self.addButtons(datas: propertys, selector: #selector(clickPropertyButton), dataWidth: 32, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
         
-        //
-        defaultHeight = defaultHeight + (32 + 4) + 8
-        self.addButtons(datas: races, selector: #selector(clickRaceButton), dataWidth: 48, dataHeight: 32, dataDefaultHeight: defaultHeight)
+        //races
+        defaultHeight = self.addButtons(datas: races, selector: #selector(clickRaceButton), dataWidth: 48, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
         
-        
-        self.contentHeight = CGFloat(defaultHeight + Int(races.count / (Int(self.rootFrame.width) / (48 + 4))) * (32 + 4) + 32)
+        self.contentHeight = CGFloat(defaultHeight + 32 + 8)
+//        self.contentHeight = CGFloat(defaultHeight + ceil(races.count / ((self.rootFrame.width) / (48 + 4))) * (32 + 4) + 32)
     }
     
     private func addButtons(datas: [String], selector: Selector,
                               dataWidth: Int, dataHeight: Int, dataDefaultHeight: Int
-                              ) {
+                              ) -> Int {
         let rootWidth = self.rootFrame.width
         let columnGap: Int = 8
         let rowGap: Int = 4
@@ -146,9 +143,12 @@ class CardSearchViewController: UIViewController {
         var row = 0
         var column = 0
         
+        var lastHeight: Int = 0
+        
         
         for data in datas {
             let f = CGRect(x: gap + column * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: dataWidth, height: dataHeight)
+            lastHeight = dataDefaultHeight + row * (dataHeight + rowGap)
             let button = DataButton(frame: f)
             button.layer.cornerRadius = 4
             button.setTitleColor(UIColor.white.withAlphaComponent(0.7), for: .normal)
@@ -165,7 +165,7 @@ class CardSearchViewController: UIViewController {
                 row = row + 1
             }
         }
-        
+        return lastHeight
         
     }
     
