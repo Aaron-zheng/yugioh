@@ -18,7 +18,7 @@
         <scene sceneID="f4e-YP-rd1">
             <objects>
                 <navigationController id="Lkw-10-HkU" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Icx-l8-7vA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Icx-l8-7vA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p31-Mc-2m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="896"/>
+            <point key="canvasLocation" x="-236" y="967"/>
         </scene>
         <!--卡牌-->
         <scene sceneID="aro-r0-QTS">
@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwk-O1-RUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-673" y="897"/>
+            <point key="canvasLocation" x="-993" y="967"/>
         </scene>
         <!--游戏王卡牌-->
         <scene sceneID="qVe-DU-Jr7">
@@ -134,6 +134,7 @@
                         <outlet property="packButton" destination="BRq-3Q-8aQ" id="xJJ-Hc-OdM"/>
                         <segue destination="rTF-46-KtB" kind="relationship" relationship="viewControllers" id="nnU-MX-WiR"/>
                         <segue destination="h5i-Tt-P9t" kind="relationship" relationship="viewControllers" id="Lur-oZ-TCJ"/>
+                        <segue destination="5ro-j0-kBB" kind="relationship" relationship="viewControllers" id="scV-RZ-Jqy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djQ-dx-Kro" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -234,8 +235,50 @@
             </objects>
             <point key="canvasLocation" x="972" y="210"/>
         </scene>
+        <!--卡组-->
+        <scene sceneID="e8K-V3-Am6">
+            <objects>
+                <viewController id="5ro-j0-kBB" customClass="CardDeckViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hyc-0X-ura"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cny-1c-wd7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qMt-4H-bxC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="roE-QF-b9u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="8pj-Fs-gtm">
+                                    <size key="itemSize" width="160" height="22"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="roE-QF-b9u" firstAttribute="bottom" secondItem="Cny-1c-wd7" secondAttribute="top" id="53t-B2-mZc"/>
+                            <constraint firstItem="roE-QF-b9u" firstAttribute="top" secondItem="qMt-4H-bxC" secondAttribute="top" id="B2K-q0-Vk0"/>
+                            <constraint firstItem="roE-QF-b9u" firstAttribute="leading" secondItem="qMt-4H-bxC" secondAttribute="leading" id="OSH-pg-ra7"/>
+                            <constraint firstAttribute="trailing" secondItem="roE-QF-b9u" secondAttribute="trailing" id="Sbw-HG-gZO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="卡组" image="ic_account_balance_wallet_white" id="cEl-I4-25P"/>
+                    <connections>
+                        <outlet property="tableView" destination="roE-QF-b9u" id="Qeg-w6-LpF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVQ-HD-ROx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504.80000000000001" y="966.56671664167925"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ic_account_balance_wallet_white" width="24" height="24"/>
         <image name="ic_search_white" width="24" height="24"/>
         <image name="ic_settings_white" width="24" height="24"/>
         <image name="ic_star_white" width="24" height="24"/>

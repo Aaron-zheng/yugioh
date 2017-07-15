@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g5R-P5-ey1" customClass="CardDeckCollectionViewCell" customModule="游戏王卡牌" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="566" height="236"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="566" height="236"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-xF-RpR">
+                        <rect key="frame" x="0.0" y="0.0" width="236" height="236"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zt8-7H-fb2">
+                        <rect key="frame" x="236" y="0.0" width="330" height="236"/>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Zt8-7H-fb2" firstAttribute="leading" secondItem="eAU-xF-RpR" secondAttribute="trailing" id="EvM-5t-R4p"/>
+                <constraint firstAttribute="trailing" secondItem="Zt8-7H-fb2" secondAttribute="trailing" id="NZj-hK-Sdc"/>
+                <constraint firstItem="eAU-xF-RpR" firstAttribute="height" secondItem="g5R-P5-ey1" secondAttribute="height" id="XX8-o5-Ipj"/>
+                <constraint firstItem="eAU-xF-RpR" firstAttribute="leading" secondItem="g5R-P5-ey1" secondAttribute="leading" id="f8y-p7-ukp"/>
+                <constraint firstItem="Zt8-7H-fb2" firstAttribute="top" secondItem="g5R-P5-ey1" secondAttribute="top" id="jqu-aL-Nxo"/>
+                <constraint firstItem="eAU-xF-RpR" firstAttribute="top" secondItem="g5R-P5-ey1" secondAttribute="top" id="pEg-6q-XWa"/>
+                <constraint firstItem="Zt8-7H-fb2" firstAttribute="height" secondItem="g5R-P5-ey1" secondAttribute="height" id="qQ1-yH-own"/>
+                <constraint firstItem="eAU-xF-RpR" firstAttribute="width" secondItem="g5R-P5-ey1" secondAttribute="height" multiplier="1:1" id="wc2-wJ-QfM"/>
+            </constraints>
+            <size key="customSize" width="566" height="236"/>
+            <connections>
+                <outlet property="cardImageView" destination="eAU-xF-RpR" id="bRc-0C-mwv"/>
+                <outlet property="titleLabel" destination="Zt8-7H-fb2" id="XOz-0r-tsI"/>
+            </connections>
+            <point key="canvasLocation" x="-220" y="-74"/>
+        </collectionViewCell>
+    </objects>
+</document>
