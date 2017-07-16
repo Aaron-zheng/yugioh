@@ -26,6 +26,9 @@
 		A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE661D95FDED009ABFD1 /* Extension.swift */; };
 		A039AE711D9734D6009ABFD1 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE701D9734D6009ABFD1 /* CardTableViewCell.swift */; };
 		A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039AE721D9734DF009ABFD1 /* CardTableViewCell.xib */; };
+		A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */; };
+		A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB581F1A01FA001EA6C2 /* DeckService.swift */; };
+		A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */; };
 		A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F47531DDB1870005533C9 /* RangeSlider.swift */; };
 		A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */; };
 		A0609C081E3F4694005739B7 /* PackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C071E3F4694005739B7 /* PackTableViewController.swift */; };
@@ -98,6 +101,9 @@
 		A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		A039AE771D973CA3009ABFD1 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A039AE781D973CA3009ABFD1 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckPO.swift; sourceTree = "<group>"; };
+		A03FDB581F1A01FA001EA6C2 /* DeckService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
+		A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
 		A05F47531DDB1870005533C9 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewWithStarController.swift; sourceTree = "<group>"; };
 		A0609C071E3F4694005739B7 /* PackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackTableViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +266,8 @@
 			children = (
 				A022E6E01DC343AA00E7D8EE /* CardPO.swift */,
 				A00EAA031DB9FF73001FD546 /* CardEntity.swift */,
+				A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */,
+				A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */,
 				A09147261E56D73F00F4B851 /* CommentEntity.swift */,
 			);
 			name = Entity;
@@ -282,6 +290,7 @@
 			children = (
 				A09147241E56D70C00F4B851 /* CommentService.swift */,
 				A022E6C71DC0957B00E7D8EE /* CardService.swift */,
+				A03FDB581F1A01FA001EA6C2 /* DeckService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -523,8 +532,11 @@
 				A0EDEEFC1E55EDBE00401416 /* Constant.swift in Sources */,
 				A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */,
 				A09147251E56D70C00F4B851 /* CommentService.swift in Sources */,
+				A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */,
+				A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */,
 				A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */,
 				A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */,
+				A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */,
 				A039AE311D95F17F009ABFD1 /* yugioh.xcdatamodeld in Sources */,
 				A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */,
 				A09147291E57087A00F4B851 /* CardCommentTableCell.swift in Sources */,

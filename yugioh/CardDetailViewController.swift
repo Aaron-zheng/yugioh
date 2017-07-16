@@ -13,7 +13,7 @@ import Agrume
 
 
 class CardDetailViewController: UIViewController {
-    
+    //first part
     @IBOutlet weak var card: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var type: UILabel!
@@ -31,9 +31,14 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     
+    
+    
+    //
     var cardEntity: CardEntity!
     var commentEntitys: Array<CommentEntity>! = []
-    var proxy: UITableView!
+    var proxy: UIScrollView!
+    
+    fileprivate var deckService: DeckService = DeckService()
     
 //    fileprivate var commentDAO = CommentService()
     
@@ -43,6 +48,7 @@ class CardDetailViewController: UIViewController {
         self.view.backgroundColor = greyColor
         let frameWidth = self.proxy.frame.width
         self.pack.verticalAligment = .VerticalAligmentBottom
+        
         
         
         
@@ -79,6 +85,14 @@ class CardDetailViewController: UIViewController {
     }
     
     
+    @IBAction func clickDeckDeleteButton(_ sender: Any) {
+        deckService.delete(id: cardEntity.id)
+    }
+    
+    
+    @IBAction func clickDeckButton(_ sender: UIButton) {
+        deckService.save(id: cardEntity.id)
+    }
     
     @IBAction func clickStarButton(_ sender: UIButton) {
         
@@ -101,7 +115,7 @@ class CardDetailViewController: UIViewController {
     
     
     public func prepare() {
-        
+        //star button
         let img = UIImage(named: "ic_star_white")?.withRenderingMode(.alwaysTemplate)
         star.setImage(img, for: .normal)
         if cardEntity.isSelected {
@@ -124,10 +138,8 @@ class CardDetailViewController: UIViewController {
                 + cardEntity.race
                 + " / "
                 + cardEntity.star + "星"
-//            self.effectConstraint.constant = 0
         } else {
             self.property.text = ""
-//            self.effectConstraint.constant = -14
         }
         if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 && cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
             self.attack.text = cardEntity.attack + " / " + cardEntity.defense

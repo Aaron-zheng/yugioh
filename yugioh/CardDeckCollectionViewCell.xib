@@ -28,7 +28,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="236" height="236"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zt8-7H-fb2">
-                        <rect key="frame" x="236" y="0.0" width="330" height="236"/>
+                        <rect key="frame" x="240" y="0.0" width="326" height="236"/>
                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Zt8-7H-fb2" firstAttribute="leading" secondItem="eAU-xF-RpR" secondAttribute="trailing" id="EvM-5t-R4p"/>
+                <constraint firstItem="Zt8-7H-fb2" firstAttribute="leading" secondItem="eAU-xF-RpR" secondAttribute="trailing" constant="4" id="EvM-5t-R4p"/>
                 <constraint firstAttribute="trailing" secondItem="Zt8-7H-fb2" secondAttribute="trailing" id="NZj-hK-Sdc"/>
                 <constraint firstItem="eAU-xF-RpR" firstAttribute="height" secondItem="g5R-P5-ey1" secondAttribute="height" id="XX8-o5-Ipj"/>
                 <constraint firstItem="eAU-xF-RpR" firstAttribute="leading" secondItem="g5R-P5-ey1" secondAttribute="leading" id="f8y-p7-ukp"/>
