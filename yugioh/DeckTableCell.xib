@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="217" id="3uC-Uf-JuT" customClass="DeckTableCell" customModule="游戏王卡牌" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="217"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3uC-Uf-JuT" id="Dqp-fG-ocz">
+                <rect key="frame" x="0.0" y="0.0" width="395" height="216.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.82999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1se-gg-3Ph">
+                        <rect key="frame" x="8" y="8" width="387" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="i9g-MH-fTZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="介绍" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOg-6B-t3G" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                        <rect key="frame" x="8" y="32" width="387" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="Xn9-3x-TlB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1se-gg-3Ph" firstAttribute="leading" secondItem="Dqp-fG-ocz" secondAttribute="leading" constant="8" id="3U9-37-rxF"/>
+                    <constraint firstAttribute="trailing" secondItem="KOg-6B-t3G" secondAttribute="trailing" id="AJX-Lp-3iO"/>
+                    <constraint firstItem="1se-gg-3Ph" firstAttribute="top" secondItem="Dqp-fG-ocz" secondAttribute="top" constant="8" id="FwF-7i-hbY"/>
+                    <constraint firstAttribute="trailing" secondItem="1se-gg-3Ph" secondAttribute="trailing" id="MJp-as-KYQ"/>
+                    <constraint firstItem="KOg-6B-t3G" firstAttribute="top" secondItem="1se-gg-3Ph" secondAttribute="bottom" id="eWT-eR-5kc"/>
+                    <constraint firstItem="KOg-6B-t3G" firstAttribute="leading" secondItem="Dqp-fG-ocz" secondAttribute="leading" constant="8" id="epl-kf-s5x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="introduction" destination="KOg-6B-t3G" id="smQ-g1-ONq"/>
+                <outlet property="title" destination="1se-gg-3Ph" id="hqt-aE-Awf"/>
+            </connections>
+            <point key="canvasLocation" x="-259.5" y="-103.5"/>
+        </tableViewCell>
+    </objects>
+</document>

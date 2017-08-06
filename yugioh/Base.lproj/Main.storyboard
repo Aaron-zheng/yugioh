@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lkw-10-HkU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lkw-10-HkU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -134,7 +134,7 @@
                         <outlet property="packButton" destination="BRq-3Q-8aQ" id="xJJ-Hc-OdM"/>
                         <segue destination="rTF-46-KtB" kind="relationship" relationship="viewControllers" id="nnU-MX-WiR"/>
                         <segue destination="h5i-Tt-P9t" kind="relationship" relationship="viewControllers" id="Lur-oZ-TCJ"/>
-                        <segue destination="5ro-j0-kBB" kind="relationship" relationship="viewControllers" id="scV-RZ-Jqy"/>
+                        <segue destination="GIp-p2-qFa" kind="relationship" relationship="viewControllers" id="V1r-sM-FBo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djQ-dx-Kro" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,45 +236,39 @@
             <point key="canvasLocation" x="972" y="210"/>
         </scene>
         <!--卡组-->
-        <scene sceneID="e8K-V3-Am6">
+        <scene sceneID="CaL-F2-RRU">
             <objects>
-                <viewController id="5ro-j0-kBB" customClass="CardDeckViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GIp-p2-qFa" customClass="DeckViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hyc-0X-ura"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cny-1c-wd7"/>
+                        <viewControllerLayoutGuide type="top" id="w17-eZ-tQB"/>
+                        <viewControllerLayoutGuide type="bottom" id="yq3-AB-WnB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qMt-4H-bxC">
+                    <view key="view" contentMode="scaleToFill" id="W8M-QA-PbO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="roE-QF-b9u">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ukj-vw-D6s">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="8" id="8pj-Fs-gtm">
-                                    <size key="itemSize" width="160" height="22"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="roE-QF-b9u" firstAttribute="bottom" secondItem="Cny-1c-wd7" secondAttribute="top" id="53t-B2-mZc"/>
-                            <constraint firstItem="roE-QF-b9u" firstAttribute="top" secondItem="qMt-4H-bxC" secondAttribute="top" id="B2K-q0-Vk0"/>
-                            <constraint firstItem="roE-QF-b9u" firstAttribute="leading" secondItem="qMt-4H-bxC" secondAttribute="leading" id="OSH-pg-ra7"/>
-                            <constraint firstAttribute="trailing" secondItem="roE-QF-b9u" secondAttribute="trailing" id="Sbw-HG-gZO"/>
+                            <constraint firstItem="ukj-vw-D6s" firstAttribute="leading" secondItem="W8M-QA-PbO" secondAttribute="leading" id="5Ff-Qi-8nX"/>
+                            <constraint firstItem="ukj-vw-D6s" firstAttribute="top" secondItem="W8M-QA-PbO" secondAttribute="top" id="R6D-eJ-EMH"/>
+                            <constraint firstItem="yq3-AB-WnB" firstAttribute="top" secondItem="ukj-vw-D6s" secondAttribute="bottom" id="W0W-UA-W4J"/>
+                            <constraint firstItem="ukj-vw-D6s" firstAttribute="width" secondItem="W8M-QA-PbO" secondAttribute="width" id="mau-bJ-Q6s"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="卡组" image="ic_account_balance_wallet_white" id="cEl-I4-25P"/>
+                    <tabBarItem key="tabBarItem" title="卡组" image="ic_account_balance_wallet_white" id="YUW-rd-6S8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tableView" destination="roE-QF-b9u" id="Qeg-w6-LpF"/>
+                        <outlet property="tableView" destination="ukj-vw-D6s" id="CNV-cr-KiW"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qVQ-HD-ROx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBG-UM-Ai6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="504.80000000000001" y="966.56671664167925"/>
+            <point key="canvasLocation" x="568.79999999999995" y="966.56671664167925"/>
         </scene>
     </scenes>
     <resources>

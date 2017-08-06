@@ -11,26 +11,26 @@ import UIKit
 
 class CardDeckViewController: UIViewController {
     
+    var rootController: ViewController!
+    var deckViewController: DeckViewController!
+    var deckViewEntity: DeckViewEntity!
     
     fileprivate var cardEntitys: Array<CardEntity>! = []
-    fileprivate var rootController: ViewController!
-    fileprivate var deckEntitys: [DeckEntity]! = []
-    
-    fileprivate let deckService = DeckService()
+    fileprivate var deckService = DeckService()
     
     
     @IBOutlet weak var tableView: UICollectionView!
     
+    
     override func viewWillAppear(_ animated: Bool) {
-        deckEntitys = deckService.list()
+        if deckViewEntity.id == "100" {
+            deckViewEntity.deckEntitys = deckService.list()
+        }
         self.tableView.reloadData()
     }
     
     
     override func viewDidLoad() {
-        deckEntitys = deckService.list()
-        //
-        rootController = self.tabBarController as! ViewController
         //
         self.cardEntitys = rootController.cardEntitys
         //
@@ -56,7 +56,7 @@ extension CardDeckViewController: UICollectionViewDelegateFlowLayout {
 extension CardDeckViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let deckEntity = deckEntitys[indexPath.row]
+        let deckEntity = deckViewEntity.deckEntitys[indexPath.row]
         let cardEntity = rootController.getCardEntity(id: deckEntity.id)
         let controller = CardDetailViewController()
         controller.cardEntity = cardEntity
@@ -72,7 +72,7 @@ extension CardDeckViewController: UICollectionViewDataSource {
     
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return deckEntitys.count
+        return deckViewEntity.deckEntitys.count
     }
     
     
@@ -85,8 +85,8 @@ extension CardDeckViewController: UICollectionViewDataSource {
         cell.titleLabel.text = ""
         cell.backgroundColor = UIColor.white
         
-        if indexPath.row < deckEntitys.count {
-            let deckEntity = deckEntitys[indexPath.row]
+        if indexPath.row < deckViewEntity.deckEntitys.count {
+            let deckEntity = deckViewEntity.deckEntitys[indexPath.row]
             let cardEntity = rootController.getCardEntity(id: deckEntity.id)
             
             cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description

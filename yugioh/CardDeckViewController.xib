@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardDeckViewController" customModule="游戏王卡牌" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="8RL-kQ-ySd" id="3hO-9s-0oZ"/>
+                <outlet property="view" destination="jU8-dA-IsY" id="knv-E8-1C7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="jU8-dA-IsY">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8RL-kQ-ySd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="8" id="pfS-bp-Q7n">
+                        <size key="itemSize" width="160" height="22"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8RL-kQ-ySd" secondAttribute="trailing" id="BAn-4q-y5h"/>
+                <constraint firstAttribute="bottom" secondItem="8RL-kQ-ySd" secondAttribute="bottom" id="Siv-TY-iua"/>
+                <constraint firstItem="8RL-kQ-ySd" firstAttribute="top" secondItem="jU8-dA-IsY" secondAttribute="top" id="TFd-B1-Dvj"/>
+                <constraint firstItem="8RL-kQ-ySd" firstAttribute="leading" secondItem="jU8-dA-IsY" secondAttribute="leading" id="hFS-4V-qjZ"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

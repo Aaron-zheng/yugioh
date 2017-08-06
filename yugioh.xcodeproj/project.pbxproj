@@ -44,6 +44,11 @@
 		A0B0489A1EB52B2200118D3B /* datasource.xml in Resources */ = {isa = PBXBuildFile; fileRef = A0B048991EB52B2200118D3B /* datasource.xml */; };
 		A0EDEEFA1E55E75C00401416 /* LoadableFromXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */; };
 		A0EDEEFC1E55EDBE00401416 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDEEFB1E55EDBE00401416 /* Constant.swift */; };
+		A0F0E83E1F36A3F7009B8E85 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E83D1F36A3F7009B8E85 /* DeckViewController.swift */; };
+		A0F0E8401F36A63E009B8E85 /* CardDeckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F0E83F1F36A63E009B8E85 /* CardDeckViewController.xib */; };
+		A0F0E8421F36AF76009B8E85 /* DeckTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E8411F36AF76009B8E85 /* DeckTableCell.swift */; };
+		A0F0E8441F36AF80009B8E85 /* DeckTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F0E8431F36AF80009B8E85 /* DeckTableCell.xib */; };
+		A0F0E8461F36B9B2009B8E85 /* DeckViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E8451F36B9B2009B8E85 /* DeckViewEntity.swift */; };
 		A0F93DC91DC9414B0001289D /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */; };
 		A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F93DCA1DC941550001289D /* CardSearchViewController.xib */; };
 		AA5D658A9BCDCEDB9F746979 /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EB2676EE67A73D7B6A761E /* Pods______.framework */; };
@@ -119,6 +124,11 @@
 		A0B048991EB52B2200118D3B /* datasource.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = datasource.xml; path = "../../../../Downloads/iOS-swift/yugioh/datasource.xml"; sourceTree = "<group>"; };
 		A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableFromXibView.swift; sourceTree = "<group>"; };
 		A0EDEEFB1E55EDBE00401416 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A0F0E83D1F36A3F7009B8E85 /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
+		A0F0E83F1F36A63E009B8E85 /* CardDeckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDeckViewController.xib; sourceTree = "<group>"; };
+		A0F0E8411F36AF76009B8E85 /* DeckTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTableCell.swift; sourceTree = "<group>"; };
+		A0F0E8431F36AF80009B8E85 /* DeckTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeckTableCell.xib; sourceTree = "<group>"; };
+		A0F0E8451F36B9B2009B8E85 /* DeckViewEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewEntity.swift; sourceTree = "<group>"; };
 		A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		A0F93DCA1DC941550001289D /* CardSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSearchViewController.xib; sourceTree = "<group>"; };
 		CF85EBAD25E1EF5EC06EE811 /* Pods-游戏王卡牌.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.production.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.production.xcconfig"; sourceTree = "<group>"; };
@@ -160,7 +170,7 @@
 				A0F93DCA1DC941550001289D /* CardSearchViewController.xib */,
 				A0609C071E3F4694005739B7 /* PackTableViewController.swift */,
 				A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */,
-				A0AB33041F079599005211BA /* CardDeckViewController.swift */,
+				A0F0E83D1F36A3F7009B8E85 /* DeckViewController.swift */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -177,6 +187,10 @@
 				A0972EF01EDB1C18005FAB9C /* DataButton.swift */,
 				A0AB33061F079820005211BA /* CardDeckCollectionViewCell.swift */,
 				A0AB33081F079830005211BA /* CardDeckCollectionViewCell.xib */,
+				A0AB33041F079599005211BA /* CardDeckViewController.swift */,
+				A0F0E83F1F36A63E009B8E85 /* CardDeckViewController.xib */,
+				A0F0E8411F36AF76009B8E85 /* DeckTableCell.swift */,
+				A0F0E8431F36AF80009B8E85 /* DeckTableCell.xib */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -269,6 +283,7 @@
 				A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */,
 				A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */,
 				A09147261E56D73F00F4B851 /* CommentEntity.swift */,
+				A0F0E8451F36B9B2009B8E85 /* DeckViewEntity.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -439,8 +454,10 @@
 				A0AB33091F079830005211BA /* CardDeckCollectionViewCell.xib in Resources */,
 				A0B0489A1EB52B2200118D3B /* datasource.xml in Resources */,
 				A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */,
+				A0F0E8441F36AF80009B8E85 /* DeckTableCell.xib in Resources */,
 				A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */,
 				A039AE361D95F17F009ABFD1 /* LaunchScreen.storyboard in Resources */,
+				A0F0E8401F36A63E009B8E85 /* CardDeckViewController.xib in Resources */,
 				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
 				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
 				A091472B1E57088800F4B851 /* CardCommentTableCell.xib in Resources */,
@@ -533,6 +550,8 @@
 				A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */,
 				A09147251E56D70C00F4B851 /* CommentService.swift in Sources */,
 				A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */,
+				A0F0E8461F36B9B2009B8E85 /* DeckViewEntity.swift in Sources */,
+				A0F0E83E1F36A3F7009B8E85 /* DeckViewController.swift in Sources */,
 				A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */,
 				A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */,
 				A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */,
@@ -545,6 +564,7 @@
 				A00EAA041DB9FF73001FD546 /* CardEntity.swift in Sources */,
 				A039AE711D9734D6009ABFD1 /* CardTableViewCell.swift in Sources */,
 				A0AB33051F079599005211BA /* CardDeckViewController.swift in Sources */,
+				A0F0E8421F36AF76009B8E85 /* DeckTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

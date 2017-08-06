@@ -13,4 +13,14 @@ class DeckEntity {
     public var id: String = ""
     public var number: Int = 0
     
+    
+    init() {
+        
+    }
+    
+    init(id: String, number: Int) {
+        self.id = id
+        self.number = number
+    }
+    
 }
