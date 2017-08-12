@@ -23,7 +23,7 @@ class CardDeckViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        if deckViewEntity.id == "100" {
+        if deckViewEntity.id == "0" {
             deckViewEntity.deckEntitys = deckService.list()
         }
         self.tableView.reloadData()

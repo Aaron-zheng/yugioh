@@ -15,6 +15,8 @@ class DeckViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    fileprivate var deckService: DeckService = DeckService()
+    
     
     fileprivate var deckViewEntitys: [DeckViewEntity] = deckViewEntitysConstant
     
@@ -24,6 +26,10 @@ class DeckViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.register(DeckTableCell.NibObject(), forCellReuseIdentifier: DeckTableCell.identifier())
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 }
 
@@ -35,7 +41,9 @@ extension DeckViewController: UITableViewDelegate {
         let controller = CardDeckViewController()
         let rootController: ViewController = self.tabBarController as! ViewController
         controller.rootController = rootController
-        controller.deckViewEntity = deckViewEntitys[indexPath.row]
+        let deckViewEntity = deckViewEntitys[indexPath.row]
+        controller.deckViewEntity = deckViewEntity
+        controller.title = deckViewEntity.title
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -52,6 +60,18 @@ extension DeckViewController: UITableViewDataSource {
         let deckViewEntity = deckViewEntitys[indexPath.row]
         cell.title.text = deckViewEntity.title
         cell.introduction.text = deckViewEntity.introduction
+        if deckViewEntity.id == "0" {
+            let array: [DeckEntity] = deckService.list()
+            cell.introduction.text = "当前卡牌数目为：" + count(array: array)
+        }
         return cell
+    }
+    
+    func count(array: [DeckEntity]) -> String {
+        var result = 0
+        for each in array {
+            result = result + each.number
+        }
+        return result.description
     }
 }
