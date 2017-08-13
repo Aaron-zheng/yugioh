@@ -18,7 +18,7 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var effect: UIVerticalAlignLabel!
-    @IBOutlet weak var star: UIButton!
+    @IBOutlet weak var star: DOFavoriteButton!
     @IBOutlet weak var attack: UILabel!
     @IBOutlet weak var property: UILabel!
     @IBOutlet weak var usage: UILabel!
@@ -29,16 +29,20 @@ class CardTableViewCell: UITableViewCell {
     
     private var cardService = CardService()
     
+    var afterDeselect: (() -> Void)?
+    
     func prepare(cardEntity: CardEntity, tableView: UITableView, indexPath: IndexPath) {
         
         self.tableView = tableView
         
         let img = UIImage(named: "ic_star_white")?.withRenderingMode(.alwaysTemplate)
-        star.setImage(img, for: .normal)
+        star.imageColorOn = yellowColor
+        star.imageColorOff = greyColor
+        star.image = img
         if cardEntity.isSelected {
-            star.tintColor = yellowColor
+            star.selectWithNoCATransaction()
         } else {
-            star.tintColor = greyColor
+            star.deselect()
         }
         
         star.cardEntity = cardEntity
@@ -71,18 +75,20 @@ class CardTableViewCell: UITableViewCell {
     }
     
     @IBAction func clickButton(_ sender: Any) {
-        let starButton = sender as! UIButton
+        let starButton = sender as! DOFavoriteButton
         let cardEntity = starButton.cardEntity
         
-        if starButton.tintColor == greyColor {
-            starButton.tintColor = yellowColor
-            cardEntity.isSelected = true
-            cardService.save(id: cardEntity.id)
-        } else {
-            //delete
-            starButton.tintColor = greyColor
+        if starButton.isSelected {
             cardEntity.isSelected = false
             cardService.delete(id: cardEntity.id)
+            starButton.deselect()
+            if let f = afterDeselect {
+                f()
+            }
+        } else {
+            cardEntity.isSelected = true
+            cardService.save(id: cardEntity.id)
+            starButton.select()
         }
         
     }

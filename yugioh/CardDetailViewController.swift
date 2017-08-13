@@ -18,7 +18,7 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var effect: UIVerticalAlignLabel!
-    @IBOutlet weak var star: UIButton!
+    @IBOutlet weak var star: DOFavoriteButton!
     @IBOutlet weak var attack: UILabel!
     @IBOutlet weak var pack: UIVerticalAlignLabel!
     @IBOutlet weak var property: UILabel!
@@ -95,19 +95,16 @@ class CardDetailViewController: UIViewController {
         deckService.save(id: cardEntity.id)
     }
     
-    @IBAction func clickStarButton(_ sender: UIButton) {
-        
-        if sender.tintColor == greyColor {//原为未收藏，修改为收藏
-            sender.tintColor = yellowColor
-            cardEntity.isSelected = true
-            cardService.save(id: cardEntity.id)
-        } else {//原为收藏，修改未收藏
-            sender.tintColor = greyColor
+    @IBAction func clickStarButton(_ sender: DOFavoriteButton) {
+        if sender.isSelected {
             cardEntity.isSelected = false
             cardService.delete(id: cardEntity.id)
+            sender.deselect()
+        } else {
+            cardEntity.isSelected = true
+            cardService.save(id: cardEntity.id)
+            sender.select()
         }
-        
-        
 
     }
     
@@ -115,11 +112,13 @@ class CardDetailViewController: UIViewController {
     public func prepare() {
         //star button
         let img = UIImage(named: "ic_star_white")?.withRenderingMode(.alwaysTemplate)
-        star.setImage(img, for: .normal)
+        star.imageColorOn = yellowColor
+        star.imageColorOff = greyColor
+        star.image = img
         if cardEntity.isSelected {
-            star.tintColor = yellowColor
+            star.selectWithNoCATransaction()
         } else {
-            star.tintColor = greyColor
+            star.deselect()
         }
         
         

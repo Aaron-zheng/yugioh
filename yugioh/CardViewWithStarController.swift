@@ -20,10 +20,17 @@ class CardViewWithStarController: CardViewBaseController {
     
     
     override func viewDidLoad() {
+        self.title = "收藏"
         self.tableView = iTableView
         self.setupTableView()
+        self.afterDeselect = starAfterDeselect
+        
+        
     }
     
+    func starAfterDeselect() {
+        self.tableView.reloadData()
+    }
     
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -18,7 +18,7 @@ class CardViewBaseController: UIViewController {
     
     fileprivate let cardService = CardService()
     
-    
+    var afterDeselect: (() -> Void)?
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -71,7 +71,9 @@ extension CardViewBaseController: UITableViewDataSource {
         } else {
             cardEntity.isSelected = false
         }
-        
+        if let f = afterDeselect {
+            cell.afterDeselect = f
+        }
         cell.prepare(cardEntity: cardEntity, tableView: tableView, indexPath: indexPath)
         return cell
     }

@@ -14,6 +14,7 @@
 		A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6C71DC0957B00E7D8EE /* CardService.swift */; };
 		A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6E01DC343AA00E7D8EE /* CardPO.swift */; };
 		A02BFF5C1E9155320096DEB7 /* CardViewBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */; };
+		A02ED0D41F40977D007C753C /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */; };
 		A039AE291D95F17E009ABFD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE281D95F17E009ABFD1 /* AppDelegate.swift */; };
 		A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE2A1D95F17E009ABFD1 /* ViewController.swift */; };
 		A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A039AE2C1D95F17F009ABFD1 /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 		A022E6C71DC0957B00E7D8EE /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		A022E6E01DC343AA00E7D8EE /* CardPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPO.swift; sourceTree = "<group>"; };
 		A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewBaseController.swift; sourceTree = "<group>"; };
+		A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
 		A039AE251D95F17E009ABFD1 /* 游戏王卡牌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "游戏王卡牌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A039AE281D95F17E009ABFD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A039AE2A1D95F17E009ABFD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				A00EAA051DBE862F001FD546 /* Utility.swift */,
 				A05F47531DDB1870005533C9 /* RangeSlider.swift */,
 				A099342E1F3A1B5B00788D44 /* DeckViewEntityConstant.swift */,
+				A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				A00EAA081DBE89CD001FD546 /* CardDetailViewController.swift in Sources */,
 				A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */,
 				A0EDEEFC1E55EDBE00401416 /* Constant.swift in Sources */,
+				A02ED0D41F40977D007C753C /* DOFavoriteButton.swift in Sources */,
 				A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */,
 				A09147251E56D70C00F4B851 /* CommentService.swift in Sources */,
 				A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */,
