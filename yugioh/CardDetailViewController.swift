@@ -39,6 +39,7 @@ class CardDetailViewController: UIViewController {
     var proxy: UIScrollView!
     
     fileprivate var deckService: DeckService = DeckService()
+    fileprivate var cardService: CardService = CardService()
     
 //    fileprivate var commentDAO = CommentService()
     
@@ -96,21 +97,18 @@ class CardDetailViewController: UIViewController {
     
     @IBAction func clickStarButton(_ sender: UIButton) {
         
-        if sender.tintColor == greyColor {
+        if sender.tintColor == greyColor {//原为未收藏，修改为收藏
             sender.tintColor = yellowColor
             cardEntity.isSelected = true
-        } else {
+            cardService.save(id: cardEntity.id)
+        } else {//原为收藏，修改未收藏
             sender.tintColor = greyColor
             cardEntity.isSelected = false
+            cardService.delete(id: cardEntity.id)
         }
         
         
-        
-        nc.post(name: Notification.Name("clickStarButton"), object: nil,
-                userInfo: [
-                    "data": cardEntity,
-                    "tableView": self.proxy
-            ])
+
     }
     
     

@@ -15,16 +15,19 @@ class CardViewBaseController: UIViewController {
 
     var tableView: UITableView!
     var cardEntitys: Array<CardEntity>! = []
-    var rootController: ViewController!
+    
+    fileprivate let cardService = CardService()
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
         self.tableView.reloadData()
     }
     
     
     func setupTableView() {
-        self.cardEntitys = self.rootController.cardEntitys
+        self.cardEntitys = globalCardEntitys
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -46,6 +49,9 @@ class CardViewBaseController: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    
+    
+    
 }
 
 
@@ -60,7 +66,7 @@ extension CardViewBaseController: UITableViewDataSource {
         
         let cell = self.tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier(), for: indexPath) as! CardTableViewCell
         let cardEntity = cardEntitys[indexPath.row]
-        if self.rootController.cardService.isExist(id: cardEntity.id) {
+        if cardService.isExist(id: cardEntity.id) {
             cardEntity.isSelected = true
         } else {
             cardEntity.isSelected = false

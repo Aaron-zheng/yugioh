@@ -18,7 +18,6 @@ class CardViewController: CardViewBaseController {
     private var originalCardEntitys: Array<CardEntity>! = []
     
     override func viewDidLoad() {
-        self.rootController = self.tabBarController as! ViewController
         self.tableView = iTableView
         self.setupTableView()
         self.setupSearchButton()

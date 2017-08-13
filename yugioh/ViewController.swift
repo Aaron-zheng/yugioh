@@ -40,8 +40,8 @@ class ViewController: UITabBarController {
         
         self.setupData()
         self.setupTabBarStyle()
-        self.setupObserver()
-        
+//        self.setupObserver()
+        globalCardEntitys = self.cardEntitys
         print(cardEntitys.count)
     }
     
@@ -71,7 +71,7 @@ class ViewController: UITabBarController {
     }
 
     
-    
+    /*
     private func setupObserver() {
         nc.addObserver(self, selector: #selector(ViewController.clickStarButtonHandler(notification:)), name: Notification.Name("clickStarButton"), object: nil)
     }
@@ -86,6 +86,7 @@ class ViewController: UITabBarController {
         }
         tableView.reloadData()
     }
+ */
     
 }
 

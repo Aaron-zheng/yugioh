@@ -27,6 +27,8 @@ class CardTableViewCell: UITableViewCell {
     
     private var tableView: UITableView!
     
+    private var cardService = CardService()
+    
     func prepare(cardEntity: CardEntity, tableView: UITableView, indexPath: IndexPath) {
         
         self.tableView = tableView
@@ -75,16 +77,14 @@ class CardTableViewCell: UITableViewCell {
         if starButton.tintColor == greyColor {
             starButton.tintColor = yellowColor
             cardEntity.isSelected = true
+            cardService.save(id: cardEntity.id)
         } else {
             //delete
             starButton.tintColor = greyColor
             cardEntity.isSelected = false
+            cardService.delete(id: cardEntity.id)
         }
-        nc.post(name: Notification.Name("clickStarButton"), object: nil,
-                userInfo: [
-                    "data": cardEntity,
-                    "tableView": self.tableView
-            ])
+        
     }
     
     

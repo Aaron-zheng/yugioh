@@ -16,9 +16,10 @@ class CardViewWithStarController: CardViewBaseController {
     
     @IBOutlet weak var iTableView: UITableView!
     
+    private var cardService = CardService()
+    
     
     override func viewDidLoad() {
-        self.rootController = self.tabBarController as! ViewController
         self.tableView = iTableView
         self.setupTableView()
     }
@@ -26,11 +27,11 @@ class CardViewWithStarController: CardViewBaseController {
     
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let ids = self.rootController.cardService.list()
+        let ids = cardService.list()
         self.cardEntitys = []
         
         for index in 0..<ids.count {
-            cardEntitys.append(self.rootController.getCardEntity(id: ids[index]))
+            cardEntitys.append(getCardEntity(id: ids[index]))
         }
         
         
