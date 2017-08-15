@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Kingfisher
 import Agrume
+import Floaty
 
 
 class CardDetailViewController: UIViewController {
@@ -30,6 +31,7 @@ class CardDetailViewController: UIViewController {
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var floatyButton: Floaty!
     
     
     
@@ -49,8 +51,6 @@ class CardDetailViewController: UIViewController {
         self.view.backgroundColor = greyColor
         let frameWidth = self.proxy.frame.width
         self.pack.verticalAligment = .VerticalAligmentBottom
-        
-        
         
         
         //卡牌最高度
@@ -86,14 +86,6 @@ class CardDetailViewController: UIViewController {
     }
     
     
-    @IBAction func clickDeckDeleteButton(_ sender: Any) {
-        deckService.delete(id: cardEntity.id)
-    }
-    
-    
-    @IBAction func clickDeckButton(_ sender: UIButton) {
-        deckService.save(id: cardEntity.id)
-    }
     
     @IBAction func clickStarButton(_ sender: DOFavoriteButton) {
         if sender.isSelected {
@@ -149,6 +141,55 @@ class CardDetailViewController: UIViewController {
         
         
         setImage(card: self.card, url: cardEntity.url)
+        
+        
+        
+        floatyButton.buttonColor = redColor
+        floatyButton.plusColor = UIColor.white
+        floatyButton.overlayColor = UIColor.clear
+        floatyButton.itemShadowColor = UIColor.clear
+        floatyButton.itemImageColor = UIColor.clear
+        floatyButton.itemTitleColor = UIColor.clear
+        floatyButton.itemButtonColor = UIColor.clear
+        floatyButton.tintColor = UIColor.clear
+        
+        
+        let negImg = UIImage(named: "ic_account_balance_wallet_white")?.withRenderingMode(.alwaysTemplate)
+        let item1 = FloatyItem()
+        item1.buttonColor = UIColor.white
+        item1.iconTintColor = UIColor.black.withAlphaComponent(0.12)
+        item1.circleShadowColor = UIColor.clear
+        item1.titleShadowColor = UIColor.clear
+        item1.title = "卡组-1"
+        item1.titleColor = UIColor.black.withAlphaComponent(0.38)
+        item1.icon = negImg
+        item1.tintColor = UIColor.clear
+        item1.itemBackgroundColor = UIColor.clear
+        item1.backgroundColor = UIColor.clear
+        item1.handler = {
+            item in
+            self.deckService.delete(id: self.cardEntity.id)
+        }
+        
+        let pluImg = UIImage(named: "ic_account_balance_wallet_white")?.withRenderingMode(.alwaysTemplate)
+        let item2 = FloatyItem()
+        item2.buttonColor = UIColor.white
+        item2.iconTintColor = UIColor.black.withAlphaComponent(0.38)
+        item2.circleShadowColor = UIColor.clear
+        item2.titleShadowColor = UIColor.clear
+        item2.title = "卡组+1"
+        item2.titleColor = UIColor.black.withAlphaComponent(0.38)
+        item2.icon = pluImg
+        item2.tintColor = UIColor.clear
+        item2.itemBackgroundColor = UIColor.clear
+        item2.backgroundColor = UIColor.clear
+        item2.handler = {
+            item in
+            self.deckService.save(id: self.cardEntity.id)
+        }
+        floatyButton.addItem(item: item1)
+        floatyButton.addItem(item: item2)
+
         
     }
     

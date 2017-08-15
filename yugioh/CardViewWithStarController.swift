@@ -20,7 +20,6 @@ class CardViewWithStarController: CardViewBaseController {
     
     
     override func viewDidLoad() {
-        self.title = "收藏"
         self.tableView = iTableView
         self.setupTableView()
         self.afterDeselect = starAfterDeselect

@@ -8,5 +8,6 @@ target '游戏王卡牌' do
   # pod 'Wilddog/Sync'
   # pod 'LeanCloud'
   pod 'Kingfisher', '~> 3.0'
+  pod 'Floaty', '~> 3.0.0'
   pod 'Agrume', :git => 'https://github.com/JanGorman/Agrume.git'
 end

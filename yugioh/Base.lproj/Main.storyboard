@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p31-Mc-2m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="273"/>
+            <point key="canvasLocation" x="900" y="299"/>
         </scene>
         <!--卡牌-->
         <scene sceneID="aro-r0-QTS">
@@ -79,7 +79,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1I-e2-nX9">
+                            <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1I-e2-nX9">
                                 <rect key="frame" x="311" y="521" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="dde-Vy-lvv"/>
@@ -171,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTt-WD-hIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560" y="-573"/>
+            <point key="canvasLocation" x="698" y="-567"/>
         </scene>
         <!--卡组-->
         <scene sceneID="CaL-F2-RRU">
@@ -206,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBG-UM-Ai6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="1003"/>
+            <point key="canvasLocation" x="108" y="1003"/>
         </scene>
     </scenes>
     <resources>

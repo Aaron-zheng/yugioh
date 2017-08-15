@@ -1,9 +1,11 @@
 PODS:
-  - Agrume (3.2.1)
-  - Kingfisher (3.6.2)
+  - Agrume (3.2.2)
+  - Floaty (3.0.1)
+  - Kingfisher (3.10.4)
 
 DEPENDENCIES:
   - Agrume (from `https://github.com/JanGorman/Agrume.git`)
+  - Floaty (~> 3.0.0)
   - Kingfisher (~> 3.0)
 
 EXTERNAL SOURCES:
@@ -12,13 +14,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Agrume:
-    :commit: 50ce3665bb7ae946dbed32d3e86306dd32a65b32
+    :commit: c66d07d5d1116ea2dbc141f39209cdc95cf34af7
     :git: https://github.com/JanGorman/Agrume.git
 
 SPEC CHECKSUMS:
-  Agrume: abf26210c3371bc6c74bbf2ced7a19d937bf8f0a
-  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
+  Agrume: 0f0308f2ce60fca0acf234cab1ae3cf7468b9168
+  Floaty: bb7a353deee9ddcc14c584ca9c538efdc19669f2
+  Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
 
-PODFILE CHECKSUM: e467126cd49299e36c75188674a9b8c98c08295f
+PODFILE CHECKSUM: 664279b1ef90f9c9ef0a1d7074a2fc6a40d375fa
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

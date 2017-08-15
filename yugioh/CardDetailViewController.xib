@@ -17,9 +17,6 @@
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
-        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardDetailViewController" customModule="游戏王卡牌" customModuleProvider="target">
@@ -27,6 +24,7 @@
                 <outlet property="attack" destination="mWR-6c-AO7" id="nFg-hh-1j8"/>
                 <outlet property="card" destination="15q-u2-8Rw" id="cgL-m1-F36"/>
                 <outlet property="effect" destination="Hc5-Q7-dQv" id="CeV-gt-y9K"/>
+                <outlet property="floatyButton" destination="uxT-qi-zxH" id="LiX-al-jwb"/>
                 <outlet property="heightConstraint" destination="4xa-ln-4MD" id="Cbj-k5-tPm"/>
                 <outlet property="innerView" destination="HmW-WK-tS2" id="2UJ-9H-VTs"/>
                 <outlet property="name" destination="jTx-5G-QQC" id="1IR-Zb-lUo"/>
@@ -109,13 +107,13 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc5-Q7-dQv" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" text="游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc5-Q7-dQv" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
                             <rect key="frame" x="128" y="64" width="223" height="129.5"/>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="卡片密码" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-RS-IFv">
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡片密码" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-RS-IFv">
                             <rect key="frame" x="128" y="201.5" width="223" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="6P8-hB-kEL"/>
@@ -124,7 +122,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="稀有度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49P-sW-e2d">
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="稀有度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49P-sW-e2d">
                             <rect key="frame" x="128" y="201.5" width="223" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="Tw8-x2-APl"/>
@@ -133,7 +131,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="卡包" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-i7-jLl" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡包" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-i7-jLl" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
                             <rect key="frame" x="128" y="217.5" width="223" height="16"/>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                             <nil key="textColor"/>
@@ -178,54 +176,23 @@
                         <constraint firstItem="WcV-Bc-Lw5" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="top" id="yPj-h9-Boo"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSm-dx-v54">
-                    <rect key="frame" x="8" y="321.5" width="359" height="48"/>
-                    <subviews>
-                        <button opaque="NO" alpha="0.54000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvf-IB-WX8">
-                            <rect key="frame" x="303" y="8" width="48" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="48" id="0Vz-AY-od2"/>
-                                <constraint firstAttribute="height" constant="32" id="1Zi-tg-U7b"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
-                            <state key="normal" title="卡组+1">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="clickDeckButton:" destination="-1" eventType="touchUpInside" id="SGt-qx-Thg"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" alpha="0.54000002145767212" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btH-Pk-W7m">
-                            <rect key="frame" x="247" y="7.5" width="48" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="D6P-9S-Yr6"/>
-                                <constraint firstAttribute="width" constant="48" id="SRl-Xo-GYR"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
-                            <state key="normal" title="卡组-1">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="clickDeckDeleteButton:" destination="-1" eventType="touchUpInside" id="zEa-Lp-f0q"/>
-                            </connections>
-                        </button>
-                    </subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxT-qi-zxH" customClass="Floaty" customModule="Floaty">
+                    <rect key="frame" x="311" y="523" width="48" height="48"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="btH-Pk-W7m" firstAttribute="centerY" secondItem="SSm-dx-v54" secondAttribute="centerY" id="E9h-bj-8pl"/>
-                        <constraint firstItem="btH-Pk-W7m" firstAttribute="trailing" secondItem="mvf-IB-WX8" secondAttribute="leading" constant="-8" id="Zim-mi-BZN"/>
-                        <constraint firstAttribute="trailing" secondItem="mvf-IB-WX8" secondAttribute="trailing" constant="8" id="o6J-IP-HJO"/>
-                        <constraint firstItem="mvf-IB-WX8" firstAttribute="centerY" secondItem="SSm-dx-v54" secondAttribute="centerY" id="pWd-FH-a9n"/>
-                        <constraint firstAttribute="height" constant="48" id="z97-a8-adW"/>
+                        <constraint firstAttribute="width" constant="48" id="bac-hp-dDs"/>
+                        <constraint firstAttribute="height" constant="48" id="cqT-0K-1fd"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="HmW-WK-tS2" secondAttribute="trailing" constant="8" id="5kc-f8-Jzc"/>
-                <constraint firstItem="SSm-dx-v54" firstAttribute="leading" secondItem="HmW-WK-tS2" secondAttribute="leading" id="B0P-iQ-S80"/>
-                <constraint firstItem="SSm-dx-v54" firstAttribute="trailing" secondItem="HmW-WK-tS2" secondAttribute="trailing" id="eRW-mS-rQc"/>
-                <constraint firstItem="SSm-dx-v54" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="bottom" constant="8" id="kIF-Ky-Gat"/>
+                <constraint firstAttribute="bottom" secondItem="uxT-qi-zxH" secondAttribute="bottom" constant="96" id="7zB-jE-TRb"/>
+                <constraint firstAttribute="trailing" secondItem="uxT-qi-zxH" secondAttribute="trailing" constant="16" id="Pc2-1W-xsh"/>
                 <constraint firstItem="HmW-WK-tS2" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="pps-Qg-URh"/>
                 <constraint firstItem="HmW-WK-tS2" firstAttribute="top" secondItem="EWx-OU-6G3" secondAttribute="top" constant="72" id="vXg-UD-iAx"/>
             </constraints>
