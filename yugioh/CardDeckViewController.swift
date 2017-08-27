@@ -89,7 +89,12 @@ extension CardDeckViewController: UICollectionViewDataSource {
             let deckEntity = deckViewEntity.deckEntitys[indexPath.row]
             let cardEntity = rootController.getCardEntity(id: deckEntity.id)
             
-            cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
+            if deckViewEntity.id == "forbid" || deckViewEntity.id == "limit1" || deckViewEntity.id == "limit2" {
+                cell.titleLabel.text = cardEntity.titleChinese
+            } else {
+                cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
+            }
+            
             setImage(card: cell.cardImageView, url: cardEntity.url)
         }
         
