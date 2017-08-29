@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,7 +19,7 @@
         <scene sceneID="f4e-YP-rd1">
             <objects>
                 <navigationController id="Lkw-10-HkU" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Icx-l8-7vA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Icx-l8-7vA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -61,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p31-Mc-2m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="299"/>
+            <point key="canvasLocation" x="860" y="153"/>
         </scene>
         <!--卡牌-->
         <scene sceneID="aro-r0-QTS">
@@ -106,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwk-O1-RUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-721" y="1003"/>
+            <point key="canvasLocation" x="-1409" y="881"/>
         </scene>
         <!--游戏王卡牌-->
         <scene sceneID="qVe-DU-Jr7">
@@ -133,6 +134,7 @@
                         <outlet property="packButton" destination="BRq-3Q-8aQ" id="xJJ-Hc-OdM"/>
                         <segue destination="rTF-46-KtB" kind="relationship" relationship="viewControllers" id="nnU-MX-WiR"/>
                         <segue destination="GIp-p2-qFa" kind="relationship" relationship="viewControllers" id="V1r-sM-FBo"/>
+                        <segue destination="TVz-PC-CYe" kind="relationship" relationship="viewControllers" id="sRH-jo-qoZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djQ-dx-Kro" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,7 +155,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tj-pC-gtT" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
                                 <rect key="frame" x="16" y="80" width="343" height="522"/>
-                                <string key="text">目前的功能有点变动，为之后的对战功能进行让位，不过这个功能貌似很麻烦，再构思中，有好想法的同学来点意见哈。  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者：郑富成 (Aaron) 邮箱：fucheng.zheng@gmail.com 微信公众号：whvapp</string>
+                                <string key="text">评论要求添加禁卡列表，所以添加了。
+
+目前在考虑新功能，构思中，有好想法的同学来评论意见。  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者：郑富成 (Aaron) 邮箱：fucheng.zheng@gmail.com 微信公众号：whvapp</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -206,13 +210,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBG-UM-Ai6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="1003"/>
+            <point key="canvasLocation" x="-561" y="880"/>
+        </scene>
+        <!--对战-->
+        <scene sceneID="t9t-yg-wsY">
+            <objects>
+                <viewController id="TVz-PC-CYe" customClass="BattleViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T3C-Mh-iZV"/>
+                        <viewControllerLayoutGuide type="bottom" id="0kr-kv-pAu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="heQ-Xy-3JN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-f3-CFN">
+                                <rect key="frame" x="0.0" y="176" width="375" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hcQ-f3-CFN" secondAttribute="height" multiplier="1000:837" id="VAZ-fP-A5g"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qc4-ER-zh0">
+                                <rect key="frame" x="327" y="572" width="32" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="B8B-fL-KeN"/>
+                                    <constraint firstAttribute="height" constant="30" id="yri-zG-6OE"/>
+                                </constraints>
+                                <state key="normal" title="抽卡"/>
+                                <connections>
+                                    <action selector="clickButtonHandler:" destination="TVz-PC-CYe" eventType="touchUpInside" id="OTT-Ec-d9S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hcQ-f3-CFN" firstAttribute="centerX" secondItem="heQ-Xy-3JN" secondAttribute="centerX" id="96L-cf-lL5"/>
+                            <constraint firstItem="0kr-kv-pAu" firstAttribute="top" secondItem="Qc4-ER-zh0" secondAttribute="bottom" constant="16" id="eiS-gY-UOP"/>
+                            <constraint firstItem="hcQ-f3-CFN" firstAttribute="width" secondItem="heQ-Xy-3JN" secondAttribute="width" id="hFo-bL-ddd"/>
+                            <constraint firstAttribute="trailing" secondItem="Qc4-ER-zh0" secondAttribute="trailing" constant="16" id="rP7-qZ-ei4"/>
+                            <constraint firstItem="hcQ-f3-CFN" firstAttribute="centerY" secondItem="heQ-Xy-3JN" secondAttribute="centerY" id="vFX-8E-cvR"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="对战" image="ic_surround_sound_white" id="wvp-90-POo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="button" destination="Qc4-ER-zh0" id="SRr-I3-Pcw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5W0-UZ-g0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415" y="879"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_account_balance_wallet_white" width="24" height="24"/>
         <image name="ic_search_white" width="24" height="24"/>
         <image name="ic_settings_white" width="24" height="24"/>
+        <image name="ic_surround_sound_white" width="24" height="24"/>
         <image name="ic_view_carousel_white" width="24" height="24"/>
+        <image name="table" width="1000" height="837"/>
     </resources>
 </document>

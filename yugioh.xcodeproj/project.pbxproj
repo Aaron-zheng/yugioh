@@ -11,6 +11,9 @@
 		A00EAA061DBE862F001FD546 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA051DBE862F001FD546 /* Utility.swift */; };
 		A00EAA081DBE89CD001FD546 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */; };
 		A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */; };
+		A015245A1F5300F7006BD54D /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01524591F5300F7006BD54D /* BattleViewController.swift */; };
+		A01524601F5316D1006BD54D /* BattleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015245F1F5316D1006BD54D /* BattleCollectionViewCell.swift */; };
+		A01524631F532192006BD54D /* BattleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01524621F532192006BD54D /* BattleCollectionViewCell.xib */; };
 		A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6C71DC0957B00E7D8EE /* CardService.swift */; };
 		A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6E01DC343AA00E7D8EE /* CardPO.swift */; };
 		A02BFF5C1E9155320096DEB7 /* CardViewBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */; };
@@ -81,6 +84,9 @@
 		A00EAA051DBE862F001FD546 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
+		A01524591F5300F7006BD54D /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		A015245F1F5316D1006BD54D /* BattleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleCollectionViewCell.swift; sourceTree = "<group>"; };
+		A01524621F532192006BD54D /* BattleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleCollectionViewCell.xib; sourceTree = "<group>"; };
 		A01E491E1DCDE169003D2F35 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/yugioh-afsqlygzbrafxjgunlidtampkyjt/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		A022E6C71DC0957B00E7D8EE /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		A022E6E01DC343AA00E7D8EE /* CardPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPO.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 				A0609C071E3F4694005739B7 /* PackTableViewController.swift */,
 				A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */,
 				A0F0E83D1F36A3F7009B8E85 /* DeckViewController.swift */,
+				A01524591F5300F7006BD54D /* BattleViewController.swift */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -182,6 +189,8 @@
 		A02BFF581E91459B0096DEB7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				A015245F1F5316D1006BD54D /* BattleCollectionViewCell.swift */,
+				A01524621F532192006BD54D /* BattleCollectionViewCell.xib */,
 				A039AE701D9734D6009ABFD1 /* CardTableViewCell.swift */,
 				A039AE721D9734DF009ABFD1 /* CardTableViewCell.xib */,
 				A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */,
@@ -461,6 +470,7 @@
 				A0B0489A1EB52B2200118D3B /* datasource.xml in Resources */,
 				A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */,
 				A0F0E8441F36AF80009B8E85 /* DeckTableCell.xib in Resources */,
+				A01524631F532192006BD54D /* BattleCollectionViewCell.xib in Resources */,
 				A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */,
 				A039AE361D95F17F009ABFD1 /* LaunchScreen.storyboard in Resources */,
 				A0F0E8401F36A63E009B8E85 /* CardDeckViewController.xib in Resources */,
@@ -570,12 +580,14 @@
 				A099342F1F3A1B5B00788D44 /* DeckViewEntityConstant.swift in Sources */,
 				A0F0E8461F36B9B2009B8E85 /* DeckViewEntity.swift in Sources */,
 				A0F0E83E1F36A3F7009B8E85 /* DeckViewController.swift in Sources */,
+				A01524601F5316D1006BD54D /* BattleCollectionViewCell.swift in Sources */,
 				A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */,
 				A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */,
 				A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */,
 				A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */,
 				A039AE311D95F17F009ABFD1 /* yugioh.xcdatamodeld in Sources */,
 				A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */,
+				A015245A1F5300F7006BD54D /* BattleViewController.swift in Sources */,
 				A09147291E57087A00F4B851 /* CardCommentTableCell.swift in Sources */,
 				A039AE291D95F17E009ABFD1 /* AppDelegate.swift in Sources */,
 				A0F93DC91DC9414B0001289D /* CardSearchViewController.swift in Sources */,

@@ -78,7 +78,7 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
         ]),
     DeckViewEntity(id: "limit1",
                    title: "2017年7月OCG限制卡",
-                   introduction: "2017年7月OCG限制卡，限制卡指一套卡组里仅能放一张",
+                   introduction: "2017年7月OCG限制卡，一套卡组里仅能放一张",
                    deckEntitys: [
                     DeckEntity(id: "8155", number: 1),
                     DeckEntity(id: "7790", number: 1),
@@ -148,7 +148,7 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
         ]),
     DeckViewEntity(id: "limit2",
                    title: "2017年7月OCG准限制卡",
-                   introduction: "2017年7月OCG准限制卡，限制卡指一套卡组里仅能放两张",
+                   introduction: "2017年7月OCG准限制卡，一套卡组里仅能放两张",
                    deckEntitys: [
                     
                     DeckEntity(id: "6875", number: 1),
