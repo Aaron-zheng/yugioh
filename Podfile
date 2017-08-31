@@ -10,4 +10,5 @@ target '游戏王卡牌' do
   pod 'Kingfisher', '~> 3.0'
   pod 'Floaty', '~> 3.0.0'
   pod 'Agrume', :git => 'https://github.com/JanGorman/Agrume.git'
+  pod 'LeanCloud'
 end

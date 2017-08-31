@@ -21,6 +21,15 @@ class BattleViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
     
+    override func viewDidLoad() {
+        
+        let img = UIImage(named: "ic_view_carousel_white")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(img, for: .normal)
+        button.tintColor = UIColor.white
+        button.layer.cornerRadius = 25
+        button.backgroundColor = redColor
+    }
+    
     @IBAction func clickButtonHandler(_ sender: UIButton) {
         while(true) {
             

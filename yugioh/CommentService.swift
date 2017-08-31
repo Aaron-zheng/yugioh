@@ -6,7 +6,7 @@
 //  Copyright © 2017 sightcorner. All rights reserved.
 //
 
-/*
+
 import Foundation
 import LeanCloud
 
@@ -59,4 +59,4 @@ class CommentService {
         
     }
 }
- */
+

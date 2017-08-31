@@ -230,31 +230,43 @@
                                     <constraint firstAttribute="width" secondItem="hcQ-f3-CFN" secondAttribute="height" multiplier="1000:837" id="VAZ-fP-A5g"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qc4-ER-zh0">
-                                <rect key="frame" x="327" y="572" width="32" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="模拟“我的卡组”与个人现实卡组对战。其中，抽卡动作是从“我的卡组“抽取，然后个人拖动到对应位置，实现个人模拟对战。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utn-Iy-lN9" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                                <rect key="frame" x="8" y="72" width="359" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="B8B-fL-KeN"/>
-                                    <constraint firstAttribute="height" constant="30" id="yri-zG-6OE"/>
+                                    <constraint firstAttribute="height" constant="64" id="0vU-wj-fpX"/>
                                 </constraints>
-                                <state key="normal" title="抽卡"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewS-up-Rxh">
+                                <rect key="frame" x="311" y="522" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Jqy-ut-z3Q"/>
+                                    <constraint firstAttribute="width" constant="48" id="Mk2-rD-dwS"/>
+                                </constraints>
+                                <state key="normal" image="ic_search_white"/>
                                 <connections>
-                                    <action selector="clickButtonHandler:" destination="TVz-PC-CYe" eventType="touchUpInside" id="OTT-Ec-d9S"/>
+                                    <action selector="clickButtonHandler:" destination="TVz-PC-CYe" eventType="touchUpInside" id="4ti-rI-PbQ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hcQ-f3-CFN" firstAttribute="centerX" secondItem="heQ-Xy-3JN" secondAttribute="centerX" id="96L-cf-lL5"/>
-                            <constraint firstItem="0kr-kv-pAu" firstAttribute="top" secondItem="Qc4-ER-zh0" secondAttribute="bottom" constant="16" id="eiS-gY-UOP"/>
+                            <constraint firstItem="0kr-kv-pAu" firstAttribute="top" secondItem="ewS-up-Rxh" secondAttribute="bottom" constant="48" id="AaF-X7-BNq"/>
+                            <constraint firstItem="Utn-Iy-lN9" firstAttribute="leading" secondItem="heQ-Xy-3JN" secondAttribute="leading" constant="8" id="GSa-41-bbF"/>
+                            <constraint firstAttribute="trailing" secondItem="Utn-Iy-lN9" secondAttribute="trailing" constant="8" id="PJx-rw-ZgA"/>
                             <constraint firstItem="hcQ-f3-CFN" firstAttribute="width" secondItem="heQ-Xy-3JN" secondAttribute="width" id="hFo-bL-ddd"/>
-                            <constraint firstAttribute="trailing" secondItem="Qc4-ER-zh0" secondAttribute="trailing" constant="16" id="rP7-qZ-ei4"/>
+                            <constraint firstItem="Utn-Iy-lN9" firstAttribute="top" secondItem="T3C-Mh-iZV" secondAttribute="bottom" constant="8" id="lSa-Ct-DlL"/>
+                            <constraint firstAttribute="trailing" secondItem="ewS-up-Rxh" secondAttribute="trailing" constant="16" id="q4b-vw-YJ2"/>
                             <constraint firstItem="hcQ-f3-CFN" firstAttribute="centerY" secondItem="heQ-Xy-3JN" secondAttribute="centerY" id="vFX-8E-cvR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="对战" image="ic_surround_sound_white" id="wvp-90-POo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="button" destination="Qc4-ER-zh0" id="SRr-I3-Pcw"/>
+                        <outlet property="button" destination="ewS-up-Rxh" id="994-Z2-tc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5W0-UZ-g0N" userLabel="First Responder" sceneMemberID="firstResponder"/>

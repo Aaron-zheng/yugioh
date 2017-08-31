@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+import LeanCloud
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
         //lean cloud initial data
-//        LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)
+        LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)
         
         return true
     }

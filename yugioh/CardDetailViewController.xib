@@ -23,6 +23,8 @@
             <connections>
                 <outlet property="attack" destination="mWR-6c-AO7" id="nFg-hh-1j8"/>
                 <outlet property="card" destination="15q-u2-8Rw" id="cgL-m1-F36"/>
+                <outlet property="commentCountLabel" destination="Y8h-qG-4aA" id="BzK-yI-Hnl"/>
+                <outlet property="commentInputTextField" destination="6KR-5G-ZI9" id="ROW-7M-dEe"/>
                 <outlet property="effect" destination="Hc5-Q7-dQv" id="CeV-gt-y9K"/>
                 <outlet property="floatyButton" destination="uxT-qi-zxH" id="LiX-al-jwb"/>
                 <outlet property="heightConstraint" destination="4xa-ln-4MD" id="Cbj-k5-tPm"/>
@@ -33,6 +35,7 @@
                 <outlet property="property" destination="3il-Hf-Kuo" id="cXl-hF-M8y"/>
                 <outlet property="rare" destination="49P-sW-e2d" id="LEt-YS-f6O"/>
                 <outlet property="star" destination="WcV-Bc-Lw5" id="Jdl-rd-4KF"/>
+                <outlet property="tableView" destination="W8o-I8-wpA" id="Vht-w5-D1O"/>
                 <outlet property="type" destination="k9Y-vR-bem" id="nMF-uT-x4F"/>
                 <outlet property="usage" destination="Mh1-cR-MuI" id="xNY-d2-i5r"/>
                 <outlet property="view" destination="EWx-OU-6G3" id="97O-Zb-Kbq"/>
@@ -108,13 +111,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" text="游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc5-Q7-dQv" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
-                            <rect key="frame" x="128" y="64" width="223" height="129.5"/>
+                            <rect key="frame" x="128" y="64" width="223" height="131.5"/>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡片密码" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-RS-IFv">
-                            <rect key="frame" x="128" y="201.5" width="223" height="16"/>
+                            <rect key="frame" x="128" y="203.5" width="223" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="6P8-hB-kEL"/>
                             </constraints>
@@ -123,7 +126,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="稀有度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49P-sW-e2d">
-                            <rect key="frame" x="128" y="201.5" width="223" height="16"/>
+                            <rect key="frame" x="128" y="203.5" width="223" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="Tw8-x2-APl"/>
                             </constraints>
@@ -132,7 +135,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡包" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-i7-jLl" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
-                            <rect key="frame" x="128" y="217.5" width="223" height="16"/>
+                            <rect key="frame" x="128" y="219.5" width="223" height="14"/>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -176,6 +179,41 @@
                         <constraint firstItem="WcV-Bc-Lw5" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="top" id="yPj-h9-Boo"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmX-Vw-P7d">
+                    <rect key="frame" x="8" y="317.5" width="359" height="32"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论 (#)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8h-qG-4aA">
+                            <rect key="frame" x="8" y="0.0" width="56" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="56" id="VkZ-sf-atw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" alpha="0.82999998331069946" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6KR-5G-ZI9">
+                            <rect key="frame" x="72" y="4" width="279" height="24"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Y8h-qG-4aA" firstAttribute="leading" secondItem="FmX-Vw-P7d" secondAttribute="leading" constant="8" id="8X0-Ic-uQk"/>
+                        <constraint firstItem="Y8h-qG-4aA" firstAttribute="top" secondItem="FmX-Vw-P7d" secondAttribute="top" id="Hca-ih-CGw"/>
+                        <constraint firstAttribute="bottom" secondItem="6KR-5G-ZI9" secondAttribute="bottom" constant="4" id="U6S-aF-jgk"/>
+                        <constraint firstAttribute="height" constant="32" id="Uvo-To-ONm"/>
+                        <constraint firstItem="6KR-5G-ZI9" firstAttribute="leading" secondItem="Y8h-qG-4aA" secondAttribute="trailing" constant="8" id="bYE-OQ-sAB"/>
+                        <constraint firstItem="6KR-5G-ZI9" firstAttribute="top" secondItem="FmX-Vw-P7d" secondAttribute="top" constant="4" id="bfc-3y-15f"/>
+                        <constraint firstItem="Y8h-qG-4aA" firstAttribute="height" secondItem="FmX-Vw-P7d" secondAttribute="height" id="hUB-7O-E6E"/>
+                        <constraint firstAttribute="trailing" secondItem="6KR-5G-ZI9" secondAttribute="trailing" constant="8" id="ii6-cK-gxR"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-I8-wpA">
+                    <rect key="frame" x="8" y="353.5" width="359" height="305.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxT-qi-zxH" customClass="Floaty" customModule="Floaty">
                     <rect key="frame" x="311" y="523" width="48" height="48"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,9 +230,16 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="HmW-WK-tS2" secondAttribute="trailing" constant="8" id="5kc-f8-Jzc"/>
                 <constraint firstAttribute="bottom" secondItem="uxT-qi-zxH" secondAttribute="bottom" constant="96" id="7zB-jE-TRb"/>
+                <constraint firstItem="W8o-I8-wpA" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="CnR-jW-goy"/>
+                <constraint firstItem="W8o-I8-wpA" firstAttribute="top" secondItem="FmX-Vw-P7d" secondAttribute="bottom" constant="4" id="Dzq-WQ-nVg"/>
                 <constraint firstAttribute="trailing" secondItem="uxT-qi-zxH" secondAttribute="trailing" constant="16" id="Pc2-1W-xsh"/>
+                <constraint firstItem="FmX-Vw-P7d" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="SMy-2P-uPK"/>
+                <constraint firstItem="FmX-Vw-P7d" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="bottom" constant="4" id="VE6-jP-bPr"/>
+                <constraint firstAttribute="trailing" secondItem="W8o-I8-wpA" secondAttribute="trailing" constant="8" id="ZUz-qQ-xt5"/>
                 <constraint firstItem="HmW-WK-tS2" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="pps-Qg-URh"/>
+                <constraint firstAttribute="bottom" secondItem="W8o-I8-wpA" secondAttribute="bottom" constant="8" id="txs-dk-utu"/>
                 <constraint firstItem="HmW-WK-tS2" firstAttribute="top" secondItem="EWx-OU-6G3" secondAttribute="top" constant="72" id="vXg-UD-iAx"/>
+                <constraint firstAttribute="trailing" secondItem="FmX-Vw-P7d" secondAttribute="trailing" constant="8" id="xaJ-LK-CtZ"/>
             </constraints>
             <point key="canvasLocation" x="-189.5" y="-404.5"/>
         </view>
