@@ -166,7 +166,7 @@ class CardDetailViewController: UIViewController {
         item1.iconTintColor = UIColor.black.withAlphaComponent(0.12)
         item1.circleShadowColor = UIColor.clear
         item1.titleShadowColor = UIColor.clear
-        item1.title = "卡组-1"
+        item1.title = "我的卡组-1"
         item1.titleColor = UIColor.black.withAlphaComponent(0.38)
         item1.icon = negImg
         item1.tintColor = UIColor.clear
@@ -183,7 +183,7 @@ class CardDetailViewController: UIViewController {
         item2.iconTintColor = UIColor.black.withAlphaComponent(0.38)
         item2.circleShadowColor = UIColor.clear
         item2.titleShadowColor = UIColor.clear
-        item2.title = "卡组+1"
+        item2.title = "我的卡组+1"
         item2.titleColor = UIColor.black.withAlphaComponent(0.38)
         item2.icon = pluImg
         item2.tintColor = UIColor.clear
@@ -193,14 +193,66 @@ class CardDetailViewController: UIViewController {
             item in
             self.deckService.save(id: self.cardEntity.id)
         }
+        
+        let shareImg = UIImage(named: "ic_share_white")?.withRenderingMode(.alwaysTemplate)
+        let item3 = FloatyItem()
+        item3.buttonColor = UIColor.white
+        item3.iconTintColor = UIColor.black.withAlphaComponent(0.38)
+        item3.circleShadowColor = UIColor.clear
+        item3.titleShadowColor = UIColor.clear
+        item3.title = "转发到微信"
+        item3.titleColor = UIColor.black.withAlphaComponent(0.38)
+        item3.icon = shareImg
+        item3.tintColor = UIColor.clear
+        item3.itemBackgroundColor = UIColor.clear
+        item3.backgroundColor = UIColor.clear
+        item3.handler = {
+            item in
+            
+            let img = self.getShareViewImage()
+            let ext = WXImageObject()
+            ext.imageData = UIImageJPEGRepresentation(img, 1)
+
+            let message = WXMediaMessage()
+            message.title = nil
+            message.description = nil
+            message.mediaObject = ext
+            message.mediaTagName = "游戏王卡牌"
+            //生成缩略图
+            UIGraphicsBeginImageContext(CGSize(width: 100, height: 50))
+            img.draw(in: CGRect(x: 0, y: 0, width: 100, height: 50))
+            let thumbImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            message.thumbData = UIImagePNGRepresentation(thumbImage!)
+            
+            let req = SendMessageToWXReq()
+            req.text = nil
+            req.message = message
+            req.bText = false
+            req.scene = 0
+            WXApi.send(req)
+        }
+        
         floatyButton.addItem(item: item1)
         floatyButton.addItem(item: item2)
+        floatyButton.addItem(item: item3)
         
         
         prepareTableView()
 
         self.commentInputTextField.delegate = self
         
+    }
+    
+    func getShareViewImage() -> UIImage {
+        
+        UIGraphicsBeginImageContextWithOptions(innerView.frame.size, false, 0)
+        innerView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        
+        return image
     }
     
     

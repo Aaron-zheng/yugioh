@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 import LeanCloud
 
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
 
     var window: UIWindow?
 
@@ -20,16 +21,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
+        //初始化洁面颜色
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.barTintColor = UIColor.black
         navigationBarAppearance.tintColor = UIColor.white
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
-        //lean cloud initial data
+        //lean cloud 评论用到的初始化注册
         LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)
         
+        //微信接口初始化
+        WXApi.registerApp("wx13153ecd85ee39a9")
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        
+        return WXApi.handleOpen(url, delegate: self)
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        return WXApi.handleOpen(url, delegate: self)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
