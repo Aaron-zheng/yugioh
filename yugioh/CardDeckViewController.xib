@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardDeckViewController" customModule="游戏王卡牌" customModuleProvider="target">
             <connections>
+                <outlet property="floatyButton" destination="qsY-0J-iZj" id="5mi-qm-G54"/>
                 <outlet property="tableView" destination="8RL-kQ-ySd" id="3hO-9s-0oZ"/>
                 <outlet property="view" destination="jU8-dA-IsY" id="knv-E8-1C7"/>
             </connections>
@@ -31,13 +32,26 @@
                     </collectionViewFlowLayout>
                     <cells/>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsY-0J-iZj" customClass="Floaty" customModule="Floaty">
+                    <rect key="frame" x="311" y="523" width="48" height="48"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Sh2-JQ-5kc"/>
+                        <constraint firstAttribute="width" constant="48" id="caB-Se-i2L"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="8RL-kQ-ySd" secondAttribute="trailing" id="BAn-4q-y5h"/>
                 <constraint firstAttribute="bottom" secondItem="8RL-kQ-ySd" secondAttribute="bottom" id="Siv-TY-iua"/>
                 <constraint firstItem="8RL-kQ-ySd" firstAttribute="top" secondItem="jU8-dA-IsY" secondAttribute="top" id="TFd-B1-Dvj"/>
+                <constraint firstAttribute="bottom" secondItem="qsY-0J-iZj" secondAttribute="bottom" constant="96" id="flh-qm-fw8"/>
                 <constraint firstItem="8RL-kQ-ySd" firstAttribute="leading" secondItem="jU8-dA-IsY" secondAttribute="leading" id="hFS-4V-qjZ"/>
+                <constraint firstAttribute="trailing" secondItem="qsY-0J-iZj" secondAttribute="trailing" constant="16" id="lXc-6L-Fqp"/>
             </constraints>
         </view>
     </objects>

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Floaty
 
 class CardDeckViewController: UIViewController {
     
@@ -20,7 +21,7 @@ class CardDeckViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UICollectionView!
-    
+    @IBOutlet weak var floatyButton: Floaty!
     
     override func viewWillAppear(_ animated: Bool) {
         if deckViewEntity.id == "0" {
@@ -39,6 +40,84 @@ class CardDeckViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.register(CardDeckCollectionViewCell.NibObject(), forCellWithReuseIdentifier: CardDeckCollectionViewCell.identifier())
         //
+        prepareFloatyButtion()
+        
+        
+    }
+    
+    func prepareFloatyButtion() {
+        
+        floatyButton.buttonColor = redColor
+        floatyButton.plusColor = UIColor.white
+        floatyButton.overlayColor = UIColor.clear
+        floatyButton.itemShadowColor = UIColor.clear
+        floatyButton.itemImageColor = UIColor.clear
+        floatyButton.itemTitleColor = UIColor.clear
+        floatyButton.itemButtonColor = UIColor.clear
+        floatyButton.tintColor = UIColor.clear
+        
+        
+        let shareImg = UIImage(named: "ic_share_white")?.withRenderingMode(.alwaysTemplate)
+        let item3 = FloatyItem()
+        item3.buttonColor = redColor
+        item3.iconTintColor = UIColor.white
+        item3.circleShadowColor = UIColor.clear
+        item3.titleShadowColor = UIColor.clear
+        item3.icon = shareImg
+        item3.tintColor = UIColor.clear
+        item3.itemBackgroundColor = UIColor.clear
+        item3.backgroundColor = UIColor.clear
+        item3.handler = {
+            item in
+            
+            let img = self.getShareViewImage()
+            let ext = WXImageObject()
+            ext.imageData = UIImageJPEGRepresentation(img, 1)
+            
+            let message = WXMediaMessage()
+            message.title = nil
+            message.description = nil
+            message.mediaObject = ext
+            message.mediaTagName = "游戏王卡牌"
+            //生成缩略图
+            UIGraphicsBeginImageContext(CGSize(width: 100, height: 200))
+            img.draw(in: CGRect(x: 0, y: 0, width: 100, height: 200))
+            let thumbImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            message.thumbData = UIImagePNGRepresentation(thumbImage!)
+            
+            let req = SendMessageToWXReq()
+            req.text = nil
+            req.message = message
+            req.bText = false
+            req.scene = 0
+            WXApi.send(req)
+        }
+        
+        
+        floatyButton.addItem(item: item3)
+    }
+    
+    
+    
+    func getShareViewImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(tableView.contentSize, false, 0)
+        
+        tableView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let row = tableView.numberOfItems(inSection: 0)
+        let numberOfRowThatShowInScreen = 4
+        let scrollCount = row / numberOfRowThatShowInScreen
+        for i in 0 ..< scrollCount {
+            let indexPath = IndexPath(row: ( i + 1 ) * numberOfRowThatShowInScreen, section: 0)
+            tableView.scrollToItem(at: indexPath, at: .top, animated: false)
+            tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        }
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        
+        return image
     }
 }
 

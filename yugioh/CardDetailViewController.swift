@@ -160,14 +160,12 @@ class CardDetailViewController: UIViewController {
         floatyButton.tintColor = UIColor.clear
         
         
-        let negImg = UIImage(named: "ic_account_balance_wallet_white")?.withRenderingMode(.alwaysTemplate)
+        let negImg = UIImage(named: "ic_exposure_neg_1_white")?.withRenderingMode(.alwaysTemplate)
         let item1 = FloatyItem()
-        item1.buttonColor = UIColor.white
-        item1.iconTintColor = UIColor.black.withAlphaComponent(0.12)
+        item1.buttonColor = redColor
+        item1.iconTintColor = UIColor.white
         item1.circleShadowColor = UIColor.clear
         item1.titleShadowColor = UIColor.clear
-        item1.title = "我的卡组-1"
-        item1.titleColor = UIColor.black.withAlphaComponent(0.38)
         item1.icon = negImg
         item1.tintColor = UIColor.clear
         item1.itemBackgroundColor = UIColor.clear
@@ -177,14 +175,12 @@ class CardDetailViewController: UIViewController {
             self.deckService.delete(id: self.cardEntity.id)
         }
         
-        let pluImg = UIImage(named: "ic_account_balance_wallet_white")?.withRenderingMode(.alwaysTemplate)
+        let pluImg = UIImage(named: "ic_exposure_plus_1_white")?.withRenderingMode(.alwaysTemplate)
         let item2 = FloatyItem()
-        item2.buttonColor = UIColor.white
-        item2.iconTintColor = UIColor.black.withAlphaComponent(0.38)
+        item2.buttonColor = redColor
+        item2.iconTintColor = UIColor.white
         item2.circleShadowColor = UIColor.clear
         item2.titleShadowColor = UIColor.clear
-        item2.title = "我的卡组+1"
-        item2.titleColor = UIColor.black.withAlphaComponent(0.38)
         item2.icon = pluImg
         item2.tintColor = UIColor.clear
         item2.itemBackgroundColor = UIColor.clear
@@ -196,12 +192,10 @@ class CardDetailViewController: UIViewController {
         
         let shareImg = UIImage(named: "ic_share_white")?.withRenderingMode(.alwaysTemplate)
         let item3 = FloatyItem()
-        item3.buttonColor = UIColor.white
-        item3.iconTintColor = UIColor.black.withAlphaComponent(0.38)
+        item3.buttonColor = redColor //UIColor.white
+        item3.iconTintColor = UIColor.white //UIColor.black.withAlphaComponent(0.38)
         item3.circleShadowColor = UIColor.clear
         item3.titleShadowColor = UIColor.clear
-        item3.title = "转发到微信"
-        item3.titleColor = UIColor.black.withAlphaComponent(0.38)
         item3.icon = shareImg
         item3.tintColor = UIColor.clear
         item3.itemBackgroundColor = UIColor.clear
@@ -245,12 +239,19 @@ class CardDetailViewController: UIViewController {
     }
     
     func getShareViewImage() -> UIImage {
-        
-        UIGraphicsBeginImageContextWithOptions(innerView.frame.size, false, 0)
+        let w = innerView.frame.width
+        let h = innerView.frame.height
+//        let watermark = UILabel(frame: CGRect(x: (w - 152) / 2, y: h + 8, width: 152, height: 24))
+//        watermark.font = UIFont(name: "Helvetica", size: 12)
+//        watermark.alpha = 0.12
+//        watermark.text = "App Store: 游戏王卡牌图鉴"
+//        innerView.addSubview(watermark)
+        let size = CGSize(width: w, height: h)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
         innerView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        
+//        watermark.removeFromSuperview()
         
         return image
     }
