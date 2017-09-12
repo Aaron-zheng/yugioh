@@ -33,6 +33,7 @@
 		A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */; };
 		A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB581F1A01FA001EA6C2 /* DeckService.swift */; };
 		A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */; };
+		A059F8FF1F68470600D019F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */; };
 		A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F47531DDB1870005533C9 /* RangeSlider.swift */; };
 		A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */; };
 		A0609C081E3F4694005739B7 /* PackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C071E3F4694005739B7 /* PackTableViewController.swift */; };
@@ -79,7 +80,7 @@
 /* Begin PBXFileReference section */
 		06C2764091F7170821399B2E /* Pods-游戏王卡牌.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.debug.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.debug.xcconfig"; sourceTree = "<group>"; };
 		50365F2B87B58AC7AF110821 /* Pods-游戏王卡牌.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.release.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.release.xcconfig"; sourceTree = "<group>"; };
-		92EB2676EE67A73D7B6A761E /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92EB2676EE67A73D7B6A761E /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods______.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00EAA031DB9FF73001FD546 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		A00EAA051DBE862F001FD546 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckPO.swift; sourceTree = "<group>"; };
 		A03FDB581F1A01FA001EA6C2 /* DeckService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
+		A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A05F47531DDB1870005533C9 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewWithStarController.swift; sourceTree = "<group>"; };
 		A0609C071E3F4694005739B7 /* PackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackTableViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				A039AE321D95F17F009ABFD1 /* Assets.xcassets */,
 				A039AE341D95F17F009ABFD1 /* LaunchScreen.storyboard */,
 				A039AE371D95F17F009ABFD1 /* Info.plist */,
+				A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */,
 			);
 			path = yugioh;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A059F8FF1F68470600D019F7 /* GoogleService-Info.plist in Resources */,
 				A0AB33091F079830005211BA /* CardDeckCollectionViewCell.xib in Resources */,
 				A0B0489A1EB52B2200118D3B /* datasource.xml in Resources */,
 				A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */,
@@ -543,16 +547,20 @@
 				"${BUILT_PRODUCTS_DIR}/Agrume/Agrume.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LeanCloud/LeanCloud.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Agrume.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LeanCloud.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

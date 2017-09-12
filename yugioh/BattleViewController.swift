@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Wilddog
 
 
 class BattleViewController: UIViewController {
@@ -17,7 +17,7 @@ class BattleViewController: UIViewController {
     private var result: [DeckEntity] = []
     private var original: [String] = []
     private var imgArray: [UIImageView] = []
-    
+    private var ref: WDGSyncReference!
     
     @IBOutlet weak var button: UIButton!
     
@@ -28,32 +28,44 @@ class BattleViewController: UIViewController {
         button.tintColor = UIColor.white
         button.layer.cornerRadius = 25
         button.backgroundColor = redColor
+        
+        
+        let options = WDGOptions.init(syncURL: "https://yugioh.wilddogio.com")
+        WDGApp.configure(with: options)
+        ref = WDGSync.sync().reference()
     }
     
     @IBAction func clickButtonHandler(_ sender: UIButton) {
-        while(true) {
             
-            if original.count <= 0 {
-                break
-            }
-            
-            let randomIndex = Int(arc4random_uniform(UInt32(original.count)))
-            let val: String = original[randomIndex]
-            original.remove(at: randomIndex)
-            
-            
-            let imgView = UIImageView(frame: CGRect(x: 64 + (40 - original.count) * 2, y: Int(UIScreen.main.bounds.height - 160), width: 50, height: 72))
-            setImage(card: imgView, url: getCardEntity(id: val).url)
-            
-            var panGesture  = UIPanGestureRecognizer()
-            panGesture = UIPanGestureRecognizer(target: self, action: #selector(BattleViewController.draggedView(_:)))
-            imgView.isUserInteractionEnabled = true
-            imgView.addGestureRecognizer(panGesture)
-            self.view.addSubview(imgView)
-            imgArray.append(imgView)
-            break
+        if original.count <= 0 {
+            return
         }
         
+        let randomIndex = Int(arc4random_uniform(UInt32(original.count)))
+        let val: String = original[randomIndex]
+        original.remove(at: randomIndex)
+        
+        
+        let imgView = UIImageView(frame: CGRect(x: 64 + (40 - original.count) * 2, y: Int(UIScreen.main.bounds.height - 160), width: 50, height: 72))
+        setImage(card: imgView, url: getCardEntity(id: val).url)
+        
+        var panGesture  = UIPanGestureRecognizer()
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(BattleViewController.draggedView(_:)))
+        imgView.isUserInteractionEnabled = true
+        imgView.addGestureRecognizer(panGesture)
+        self.view.addSubview(imgView)
+        imgArray.append(imgView)
+        
+        /*
+        //
+        let roomRef = ref.child("room1").child("operator1")
+        roomRef.childByAutoId().setValue(["card": val.description])
+        //
+        let oppositeRef = WDGSync.sync().reference(withPath: "room1")
+        oppositeRef.observe(.value, with: {snapshot in
+            print(snapshot.value)
+        })
+        */
         
     }
     

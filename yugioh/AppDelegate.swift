@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import LeanCloud
-
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
@@ -33,6 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         
         //微信接口初始化
         WXApi.registerApp("wx13153ecd85ee39a9")
+        
+        
+        //初始化Firebase
+        FirebaseApp.configure()
+        
         
         return true
     }
