@@ -97,8 +97,7 @@ extension CardViewBaseController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         let cell = (cell as! CardTableViewCell)
-        
-        setImage(card: cell.card, url: cardEntitys[indexPath.row].url)
+        setImage(card: cell.card, id: cardEntitys[indexPath.row].id)
         
     }
     

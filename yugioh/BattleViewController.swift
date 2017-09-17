@@ -19,6 +19,7 @@ class BattleViewController: UIViewController {
     private var imgArray: [UIImageView] = []
     private var ref: WDGSyncReference!
     
+    
     @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
@@ -47,7 +48,7 @@ class BattleViewController: UIViewController {
         
         
         let imgView = UIImageView(frame: CGRect(x: 64 + (40 - original.count) * 2, y: Int(UIScreen.main.bounds.height - 160), width: 50, height: 72))
-        setImage(card: imgView, url: getCardEntity(id: val).url)
+        setImage(card: imgView, id: val)
         
         var panGesture  = UIPanGestureRecognizer()
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(BattleViewController.draggedView(_:)))
@@ -59,11 +60,23 @@ class BattleViewController: UIViewController {
         /*
         //
         let roomRef = ref.child("room1").child("operator1")
-        roomRef.childByAutoId().setValue(["card": val.description])
+        roomRef.childByAutoId().setValue(["cardId": val.description, "x": imgView.frame.origin.x, "y": imgView.frame.origin.y])
         //
         let oppositeRef = WDGSync.sync().reference(withPath: "room1")
         oppositeRef.observe(.value, with: {snapshot in
-            print(snapshot.value)
+            
+            let room1 = snapshot.value as! NSDictionary
+            let operator1 = room1["operator1"] as! NSDictionary
+            for card in operator1 {
+                let cardDict = card.value as! NSDictionary
+                let x = cardDict["x"] as! Int
+                let y = cardDict["y"] as! Int
+                let cardId = cardDict["cardId"] as! String
+                let imgView = UIImageView(frame: CGRect(x: x, y: y - 100, width: 50, height: 72))
+                setImage(card: imgView, )
+                self.view.addSubview(imgView)
+            }
+            
         })
         */
         

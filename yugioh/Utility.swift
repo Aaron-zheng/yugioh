@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 
 public var Timestamp: String {
@@ -67,9 +68,25 @@ func preCalculateTextHeight(text: String, font: UIFont, width: CGFloat) -> CGFlo
     return label.frame.height
 }
 
+func getCardUrl(id: String) -> String {
+    return qiniuUrlPrefix + id + qiniuUrlSuffix
+}
 
 
-func setImage(card: UIImageView, url: String) {
+func getCardEntity(id: String) -> CardEntity {
+    for each in globalCardEntitys {
+        if id == each.id {
+            return each
+        }
+    }
+    return CardEntity()
+}
+
+
+
+
+func setImage(card: UIImageView, id: String) {
+    let url = getCardUrl(id: id)
     
     card.kf.setImage(with: URL(string: url),
                           placeholder: UIImage(named: "defaultimg"),
@@ -79,4 +96,13 @@ func setImage(card: UIImageView, url: String) {
                           completionHandler: { image, error, cacheType, imageURL in
                             
     })
+}
+
+
+func setLog(event: String, description: String?) {
+    var outputDescription = ""
+    if let d = description {
+        outputDescription = d
+    }
+    Analytics.logEvent(event, parameters: ["description": outputDescription])
 }

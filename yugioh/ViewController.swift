@@ -45,15 +45,6 @@ class ViewController: UITabBarController {
         print(cardEntitys.count)
     }
     
-    public func getCardEntity(id: String) -> CardEntity {
-        for each in cardEntitys {
-            if id == each.id {
-                return each
-            }
-        }
-        return CardEntity()
-    }
-    
     
     private func setupTabBarStyle() {
         self.tabBar.tintColor = greenColor
@@ -118,7 +109,6 @@ extension ViewController: XMLParserDelegate {
         switch currentNodeName {
         case "id":
             cardEntity.id = str
-            cardEntity.url = qiniuUrlPrefix + str + qiniuUrlSuffix
         case "titleChinese":
             cardEntity.titleChinese = cardEntity.titleChinese + str
         case "titleJapanese":

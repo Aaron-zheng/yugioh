@@ -29,6 +29,6 @@ class CardEntity {
     
     
     //额外添加属性
-    var url: String! = ""
+    //var url: String! = ""
     var isSelected: Bool = false
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class CardSearchViewController: UIViewController {
     
@@ -266,6 +267,8 @@ extension CardSearchViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         var result: Array<CardEntity> = []
         let input = textField.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        setLog(event: AnalyticsEventSearch, description: input)
     
         
         for i in 0 ..< cardEntitys.count {
@@ -426,8 +429,7 @@ extension CardSearchViewController: UITableViewDataSource {
         
         let cell = (cell as! CardTableViewCell)
         
-        
-        setImage(card: cell.card, url: searchResult[indexPath.row].url)
+        setImage(card: cell.card, id: searchResult[indexPath.row].id)
         
         
         

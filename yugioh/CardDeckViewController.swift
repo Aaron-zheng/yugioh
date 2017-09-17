@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Floaty
+import Firebase
 
 class CardDeckViewController: UIViewController {
     
@@ -69,7 +70,11 @@ class CardDeckViewController: UIViewController {
         item3.backgroundColor = UIColor.clear
         item3.handler = {
             item in
-            
+            var title = "";
+            if let t = self.title {
+                title = t
+            }
+            setLog(event: AnalyticsEventShare, description: title)
             let img = self.getShareViewImage()
             let ext = WXImageObject()
             ext.imageData = UIImageJPEGRepresentation(img, 1)
@@ -136,7 +141,7 @@ extension CardDeckViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let deckEntity = deckViewEntity.deckEntitys[indexPath.row]
-        let cardEntity = rootController.getCardEntity(id: deckEntity.id)
+        let cardEntity = getCardEntity(id: deckEntity.id)
         let controller = CardDetailViewController()
         controller.cardEntity = cardEntity
         controller.hidesBottomBarWhenPushed = true
@@ -166,15 +171,14 @@ extension CardDeckViewController: UICollectionViewDataSource {
         
         if indexPath.row < deckViewEntity.deckEntitys.count {
             let deckEntity = deckViewEntity.deckEntitys[indexPath.row]
-            let cardEntity = rootController.getCardEntity(id: deckEntity.id)
+            let cardEntity = getCardEntity(id: deckEntity.id)
             
             if deckViewEntity.id == "forbid" || deckViewEntity.id == "limit1" || deckViewEntity.id == "limit2" {
                 cell.titleLabel.text = cardEntity.titleChinese
             } else {
                 cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
             }
-            
-            setImage(card: cell.cardImageView, url: cardEntity.url)
+            setImage(card: cell.cardImageView, id: cardEntity.id)
         }
         
         

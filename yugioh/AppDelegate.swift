@@ -38,6 +38,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         //初始化Firebase
         FirebaseApp.configure()
         
+        //日志
+        let deviceName = UIDevice.current.name  //获取设备名称
+        let sysName = UIDevice.current.systemName //获取系统名称
+        let sysVersion = UIDevice.current.systemVersion //获取系统版本
+        var deviceUUID = "" //获取设备唯一标识符
+        if let uuid = UIDevice.current.identifierForVendor {
+            deviceUUID = uuid.description
+        }
+        let deviceModel = UIDevice.current.model //获取设备的型号
+        let deviceDescription = deviceName + " " + sysName + " " + sysVersion + " " + deviceUUID + " " + deviceModel
+        setLog(event: AnalyticsEventAppOpen, description: deviceDescription)
+        
         
         return true
     }
