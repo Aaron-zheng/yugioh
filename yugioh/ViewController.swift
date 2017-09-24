@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite
 
 
 class ViewController: UITabBarController {
@@ -40,9 +41,8 @@ class ViewController: UITabBarController {
         
         self.setupData()
         self.setupTabBarStyle()
-//        self.setupObserver()
-        globalCardEntitys = self.cardEntitys
-        print(cardEntitys.count)
+        
+        
     }
     
     
@@ -51,96 +51,37 @@ class ViewController: UITabBarController {
         self.tabBar.barTintColor = greyColor
     }
     
-    
-    
     private func setupData() {
-        let xmlParser = XMLParser(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "datasource", ofType: "xml")!))
-        xmlParser?.delegate = self
-        xmlParser?.parse()
-        
-        
-    }
-
-    
-    /*
-    private func setupObserver() {
-        nc.addObserver(self, selector: #selector(ViewController.clickStarButtonHandler(notification:)), name: Notification.Name("clickStarButton"), object: nil)
-    }
-    
-    func clickStarButtonHandler(notification: Notification) {
-        let cardEntity = notification.userInfo!["data"] as! CardEntity
-        let tableView = notification.userInfo!["tableView"] as! UITableView
-        if cardEntity.isSelected {
-            cardService.save(id: cardEntity.id)
-        } else {
-            cardService.delete(id: cardEntity.id)
+        do {
+            let path = Bundle.main.path(forResource: "cards", ofType: "cdb")
+            
+            let db = try Connection(path!)
+            
+            for each in try db.prepare("select * from info") {
+                cardEntity = CardEntity()
+                cardEntity.id = each[0] as! String
+                cardEntity.titleChinese = each[1] as! String
+                cardEntity.titleJapanese = each[2] as! String
+                cardEntity.titleEnglish = each[3] as! String
+                cardEntity.type = each[4] as! String
+                cardEntity.password = each[5] as! String
+                cardEntity.usage = each[6] as! String
+                cardEntity.race = each[7] as! String
+                cardEntity.property = each[8] as! String
+                cardEntity.star = each[9] as! String
+                cardEntity.attack = each[10] as! String
+                cardEntity.defense = each[11] as! String
+                cardEntity.rare = each[12] as! String
+                cardEntity.effect = each[13] as! String
+                cardEntity.pack = each[14] as! String
+                cardEntitys.append(cardEntity)
+            }
+            
+            globalCardEntitys = self.cardEntitys
+            
+        } catch {
+            print(error.localizedDescription)
         }
-        tableView.reloadData()
-    }
- */
-    
-}
-
-
-extension ViewController: XMLParserDelegate {
-    
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        
-        currentNodeName = elementName
-        if currentNodeName == "element" {
-            cardEntity = CardEntity()
-        }
-    }
-    
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
-        if elementName == "element" {
-            cardEntitys.append(cardEntity!)
-        }
-        
-    }
-    
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        let str = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        if str.isEmpty {
-            return
-        }
-        
-        switch currentNodeName {
-        case "id":
-            cardEntity.id = str
-        case "titleChinese":
-            cardEntity.titleChinese = cardEntity.titleChinese + str
-        case "titleJapanese":
-            cardEntity.titleJapanese = cardEntity.titleJapanese + str
-        case "titleEnglish":
-            cardEntity.titleEnglish = cardEntity.titleEnglish + str
-        case "type":
-            cardEntity.type = str
-        case "password":
-            cardEntity.password = cardEntity.password + str
-        case "usage":
-            cardEntity.usage = cardEntity.usage + str
-        case "race":
-            cardEntity.race = cardEntity.race + str
-        case "property":
-            cardEntity.property = cardEntity.property + str
-        case "effect":
-            cardEntity.effect = cardEntity.effect + str
-        case "star":
-            cardEntity.star = cardEntity.star + str
-        case "attack":
-            cardEntity.attack = cardEntity.attack + str
-        case "defense":
-            cardEntity.defense = cardEntity.defense + str
-        case "rare":
-            cardEntity.rare = cardEntity.rare + str
-        case "pack":
-            cardEntity.pack = cardEntity.pack + str
-        default:
-            break
-        }
-
     }
     
 }

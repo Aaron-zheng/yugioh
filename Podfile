@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target '游戏王卡牌' do
@@ -26,4 +26,7 @@ target '游戏王卡牌' do
 
   ## 添加用户统计工具
   pod 'Firebase/Core'
+
+  ## sqlite工具
+  pod 'SQLite.swift', '~> 0.11.3'
 end
