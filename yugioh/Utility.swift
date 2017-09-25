@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import SQLite
 
 
 public var Timestamp: String {
@@ -74,10 +75,12 @@ func getCardUrl(id: String) -> String {
 
 
 func getCardEntity(id: String) -> CardEntity {
-    for each in globalCardEntitys {
-        if id == each.id {
-            return each
+    do {
+        for each in try getDB().prepare("select * from info where id = \"\(id)\"") {
+            return buildCardEntity(element: each)
         }
+    } catch {
+        print(error.localizedDescription)
     }
     return CardEntity()
 }
@@ -105,4 +108,26 @@ func setLog(event: String, description: String?) {
         outputDescription = d
     }
     Analytics.logEvent(event, parameters: ["description": outputDescription])
+}
+
+
+
+func buildCardEntity(element: [Binding?]) -> CardEntity {
+    let cardEntity = CardEntity()
+    cardEntity.id = element[0] as! String
+    cardEntity.titleChinese = element[1] as! String
+    cardEntity.titleJapanese = element[2] as! String
+    cardEntity.titleEnglish = element[3] as! String
+    cardEntity.type = element[4] as! String
+    cardEntity.password = element[5] as! String
+    cardEntity.usage = element[6] as! String
+    cardEntity.race = element[7] as! String
+    cardEntity.property = element[8] as! String
+    cardEntity.star = element[9] as! String
+    cardEntity.attack = element[10] as! String
+    cardEntity.defense = element[11] as! String
+    cardEntity.rare = element[12] as! String
+    cardEntity.effect = element[13] as! String
+    cardEntity.pack = element[14] as! String
+    return cardEntity
 }
