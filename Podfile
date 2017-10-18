@@ -22,10 +22,10 @@ target '游戏王卡牌' do
   pod 'WechatOpenSDK'
 
   ## 野狗实时通讯
-  pod 'Wilddog/Sync'
+  ## pod 'Wilddog/Sync'
 
   ## 添加用户统计工具
-  pod 'Firebase/Core'
+  ## pod 'Firebase/Core'
 
   ## sqlite工具
   pod 'SQLite.swift', '~> 0.11.3'

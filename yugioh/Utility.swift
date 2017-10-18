@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Firebase
+
 import SQLite
 
 
@@ -101,7 +101,7 @@ func setImage(card: UIImageView, id: String) {
     })
 }
 
-
+/*
 func setLog(event: String, description: String?) {
     var outputDescription = ""
     if let d = description {
@@ -109,7 +109,7 @@ func setLog(event: String, description: String?) {
     }
     Analytics.logEvent(event, parameters: ["description": outputDescription])
 }
-
+*/
 
 
 func buildCardEntity(element: [Binding?]) -> CardEntity {

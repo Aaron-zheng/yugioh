@@ -11,7 +11,6 @@ import UIKit
 import Kingfisher
 import Agrume
 import Floaty
-import Firebase
 
 
 class CardDetailViewController: UIViewController {
@@ -95,7 +94,7 @@ class CardDetailViewController: UIViewController {
     
     
     @IBAction func clickStarButton(_ sender: DOFavoriteButton) {
-        setLog(event: AnalyticsEventAddToCart, description: cardEntity.id)
+        //setLog(event: AnalyticsEventAddToCart, description: cardEntity.id)
         if sender.isSelected {
             cardEntity.isSelected = false
             cardService.delete(id: cardEntity.id)
@@ -203,7 +202,7 @@ class CardDetailViewController: UIViewController {
         item3.backgroundColor = UIColor.clear
         item3.handler = {
             item in
-            setLog(event: AnalyticsEventShare, description: self.cardEntity.id)
+            //setLog(event: AnalyticsEventShare, description: self.cardEntity.id)
             let img = self.getShareViewImage()
             let ext = WXImageObject()
             ext.imageData = UIImageJPEGRepresentation(img, 1)

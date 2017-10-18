@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Wilddog
+
 
 
 class BattleViewController: UIViewController {
@@ -17,7 +17,7 @@ class BattleViewController: UIViewController {
     private var result: [DeckEntity] = []
     private var original: [String] = []
     private var imgArray: [UIImageView] = []
-    private var ref: WDGSyncReference!
+//    private var ref: WDGSyncReference!
     
     
     @IBOutlet weak var button: UIButton!
@@ -31,9 +31,9 @@ class BattleViewController: UIViewController {
         button.backgroundColor = redColor
         
         
-        let options = WDGOptions.init(syncURL: "https://yugioh.wilddogio.com")
-        WDGApp.configure(with: options)
-        ref = WDGSync.sync().reference()
+//        let options = WDGOptions.init(syncURL: "https://yugioh.wilddogio.com")
+//        WDGApp.configure(with: options)
+//        ref = WDGSync.sync().reference()
     }
     
     @IBAction func clickButtonHandler(_ sender: UIButton) {

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Floaty
-import Firebase
+
 
 class CardDeckViewController: UIViewController {
     
@@ -74,7 +74,7 @@ class CardDeckViewController: UIViewController {
             if let t = self.title {
                 title = t
             }
-            setLog(event: AnalyticsEventShare, description: title)
+            //setLog(event: AnalyticsEventShare, description: title)
             let img = self.getShareViewImage()
             let ext = WXImageObject()
             ext.imageData = UIImageJPEGRepresentation(img, 1)

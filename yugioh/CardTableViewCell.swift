@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Kingfisher
-import Firebase
+
 
 class CardTableViewCell: UITableViewCell {
     
@@ -80,7 +80,7 @@ class CardTableViewCell: UITableViewCell {
         let cardEntity = starButton.cardEntity
         
         
-        setLog(event: AnalyticsEventAddToCart, description: cardEntity.id)
+        //setLog(event: AnalyticsEventAddToCart, description: cardEntity.id)
         
         if starButton.isSelected {
             cardEntity.isSelected = false

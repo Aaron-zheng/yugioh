@@ -1,55 +1,24 @@
 PODS:
   - Agrume (3.2.2)
   - Alamofire (4.5.0)
-  - Firebase/Core (4.1.0):
-    - FirebaseAnalytics (= 4.0.3)
-    - FirebaseCore (= 4.0.5)
-  - FirebaseAnalytics (4.0.3):
-    - FirebaseCore (~> 4.0)
-    - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-    - nanopb (~> 0.3)
-  - FirebaseCore (4.0.5):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-    - nanopb (~> 0.3)
-  - FirebaseInstanceID (2.0.0):
-    - FirebaseCore (~> 4.0)
   - Floaty (3.0.1)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
   - Kingfisher (3.10.4)
   - LeanCloud (10.1.0):
     - LeanCloud/Storage (= 10.1.0)
   - LeanCloud/Storage (10.1.0):
     - Alamofire (~> 4.5)
-  - nanopb (0.3.8):
-    - nanopb/decode (= 0.3.8)
-    - nanopb/encode (= 0.3.8)
-  - nanopb/decode (0.3.8)
-  - nanopb/encode (0.3.8)
   - SQLite.swift (0.11.3):
     - SQLite.swift/standard (= 0.11.3)
   - SQLite.swift/standard (0.11.3)
   - WechatOpenSDK (1.7.9)
-  - Wilddog/Public (2.3.10):
-    - WilddogCore (~> 2.0.11)
-  - Wilddog/Sync (2.3.10):
-    - Wilddog/Public
-    - WilddogSync (~> 2.3.10)
-  - WilddogCore (2.0.11)
-  - WilddogSync (2.3.10):
-    - WilddogCore (~> 2.0.11)
 
 DEPENDENCIES:
   - Agrume (from `https://github.com/JanGorman/Agrume.git`)
-  - Firebase/Core
   - Floaty (~> 3.0.0)
   - Kingfisher (~> 3.0)
   - LeanCloud
   - SQLite.swift (~> 0.11.3)
   - WechatOpenSDK
-  - Wilddog/Sync
 
 EXTERNAL SOURCES:
   Agrume:
@@ -63,21 +32,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Agrume: 0f0308f2ce60fca0acf234cab1ae3cf7468b9168
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Firebase: ebebf41db7f10e0c7668b6eaaa857fbe599aa478
-  FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
-  FirebaseCore: 7d876ea97a830cbe62ba7fbbe7670c833a324ba0
-  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   Floaty: bb7a353deee9ddcc14c584ca9c538efdc19669f2
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
   LeanCloud: 2a6ac9da4fcf4b6b26f519d05a31998ddc59223a
-  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
   WechatOpenSDK: 1fe7e3b07db860d6a936c3ff4a5aba6b890958d9
-  Wilddog: a09a45d105ca0ec8df867b54647204c4a13c5918
-  WilddogCore: 515371b98a3298ced567033df3348f9f0e3b2dc0
-  WilddogSync: 95740b88bb313bb17c3a372092a0d7185554a7a8
 
-PODFILE CHECKSUM: 7bc88079fc146b77a66af4b7c4e2cdc2c2e12600
+PODFILE CHECKSUM: 1c1a360c7cd4aa8c9bd8843c2312f9be13d69637
 
 COCOAPODS: 1.3.1

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Firebase
+
 
 class CardSearchViewController: UIViewController {
     
@@ -268,7 +268,7 @@ extension CardSearchViewController: UITextFieldDelegate {
         var result: Array<CardEntity> = []
         let input = textField.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
-        setLog(event: AnalyticsEventSearch, description: input)
+        //setLog(event: AnalyticsEventSearch, description: input)
     
         
         for i in 0 ..< cardEntitys.count {
