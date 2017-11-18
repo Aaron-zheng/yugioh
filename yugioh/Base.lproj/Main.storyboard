@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lkw-10-HkU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lkw-10-HkU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
             <objects>
                 <navigationController id="Lkw-10-HkU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Icx-l8-7vA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -154,10 +154,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tj-pC-gtT" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
-                                <rect key="frame" x="16" y="80" width="343" height="522"/>
-                                <string key="text">评论要求添加禁卡列表，所以添加了。
-
-目前在考虑新功能，构思中，有好想法的同学来评论意见。  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者：郑富成 (Aaron) 邮箱：fucheng.zheng@gmail.com 微信公众号：whvapp</string>
+                                <rect key="frame" x="16" y="80" width="343" height="571"/>
+                                <string key="text">1. 有同学反映，没有卡片编号搜索，于是特意添加了，可以根据卡牌底部的“数字”进行搜索。  2. 调整记录，在下个版本的时候会添加上去的。  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者：郑富成 (Aaron) 邮箱：fucheng.zheng@gmail.com 微信公众号：whvapp</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

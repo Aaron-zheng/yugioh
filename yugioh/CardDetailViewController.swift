@@ -142,7 +142,7 @@ class CardDetailViewController: UIViewController {
         } else {
             self.attack.text = ""
         }
-        self.password.text = ""
+        self.password.text = "编号: " + cardEntity.password
         self.rare.text = "卡牌: " + cardEntity.rare
         self.pack.text = "卡包: " + cardEntity.pack
         

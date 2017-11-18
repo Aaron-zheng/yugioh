@@ -24,7 +24,7 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var property: UILabel!
     @IBOutlet weak var usage: UILabel!
     @IBOutlet weak var effectConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var password: UILabel!
     
     private var tableView: UITableView!
     
@@ -57,6 +57,7 @@ class CardTableViewCell: UITableViewCell {
         self.effect.text = cardEntity.effect
         self.type.text = cardEntity.type
         self.usage.text = cardEntity.usage
+        self.password.text = "编号: " + cardEntity.password
         
         if cardEntity.star.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
             self.property.text = ""

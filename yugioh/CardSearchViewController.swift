@@ -93,7 +93,7 @@ class CardSearchViewController: UIViewController {
         self.cancelButton.tintColor = UIColor.white
         self.cancelButton.addTarget(self, action: #selector(CardSearchViewController.clickCancelButton), for: .touchUpInside)
         
-        self.inputField.attributedPlaceholder = NSAttributedString(string: "点击输入，搜索卡牌或效果", attributes: [NSForegroundColorAttributeName: UIColor.white])
+        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（卡牌，效果，编号）", attributes: [NSForegroundColorAttributeName: UIColor.white])
         self.inputField.textColor = UIColor.white
         self.inputField.text = nil
         self.inputField.becomeFirstResponder()
@@ -275,7 +275,9 @@ extension CardSearchViewController: UITextFieldDelegate {
             let c = cardEntitys[i]
             //input search
             if input != "" {
-                if !c.titleChinese.lowercased().contains(input!) && !c.effect.lowercased().contains(input!) {
+                if !c.titleChinese.lowercased().contains(input!)
+                    && !c.effect.lowercased().contains(input!)
+                    && !c.password.lowercased().contains(input!) {
                     continue
                 }
             }

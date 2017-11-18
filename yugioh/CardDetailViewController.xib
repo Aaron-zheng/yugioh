@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,10 +47,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmW-WK-tS2">
-                    <rect key="frame" x="8" y="72" width="359" height="241.5"/>
+                    <rect key="frame" x="8" y="72" width="359" height="256"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultimg" translatesAutoresizingMaskIntoConstraints="NO" id="15q-u2-8Rw">
-                            <rect key="frame" x="0.0" y="34.5" width="120" height="173"/>
+                            <rect key="frame" x="0.0" y="42" width="120" height="173"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="15q-u2-8Rw" secondAttribute="height" multiplier="160:230" id="oZv-yI-0z4"/>
                             </constraints>
@@ -111,13 +111,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" text="游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc5-Q7-dQv" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
-                            <rect key="frame" x="128" y="64" width="223" height="129.5"/>
+                            <rect key="frame" x="128" y="64" width="223" height="138"/>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡片密码" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-RS-IFv">
-                            <rect key="frame" x="128" y="201.5" width="223" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡片密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-RS-IFv">
+                            <rect key="frame" x="128" y="202" width="223" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="6P8-hB-kEL"/>
                             </constraints>
@@ -126,7 +126,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="稀有度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49P-sW-e2d">
-                            <rect key="frame" x="128" y="201.5" width="223" height="16"/>
+                            <rect key="frame" x="128" y="218" width="223" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="Tw8-x2-APl"/>
                             </constraints>
@@ -135,7 +135,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡包" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-i7-jLl" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
-                            <rect key="frame" x="128" y="217.5" width="223" height="16"/>
+                            <rect key="frame" x="128" y="234" width="223" height="14"/>
                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -144,10 +144,9 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="15q-u2-8Rw" firstAttribute="width" secondItem="HmW-WK-tS2" secondAttribute="width" multiplier="1/3" id="1jY-QM-61R"/>
-                        <constraint firstItem="49P-sW-e2d" firstAttribute="top" secondItem="Yhj-RS-IFv" secondAttribute="top" id="2ZQ-9g-nLx"/>
                         <constraint firstItem="Mh1-cR-MuI" firstAttribute="top" secondItem="k9Y-vR-bem" secondAttribute="top" id="3wc-Su-hMH"/>
                         <constraint firstAttribute="bottom" secondItem="VnC-i7-jLl" secondAttribute="bottom" constant="8" id="4wP-mz-FNo"/>
-                        <constraint firstAttribute="height" constant="241.5" id="4xa-ln-4MD"/>
+                        <constraint firstAttribute="height" constant="256" id="4xa-ln-4MD"/>
                         <constraint firstItem="jTx-5G-QQC" firstAttribute="leading" secondItem="15q-u2-8Rw" secondAttribute="trailing" constant="8" id="5nY-2T-etH"/>
                         <constraint firstItem="Yhj-RS-IFv" firstAttribute="trailing" secondItem="Hc5-Q7-dQv" secondAttribute="trailing" id="6RP-En-7wK"/>
                         <constraint firstItem="mWR-6c-AO7" firstAttribute="trailing" secondItem="k9Y-vR-bem" secondAttribute="trailing" id="EYq-Ur-FqE"/>
@@ -165,6 +164,7 @@
                         <constraint firstItem="k9Y-vR-bem" firstAttribute="trailing" secondItem="jTx-5G-QQC" secondAttribute="trailing" id="XgE-eT-nNZ"/>
                         <constraint firstItem="Hc5-Q7-dQv" firstAttribute="trailing" secondItem="jTx-5G-QQC" secondAttribute="trailing" id="XqB-bZ-j2j"/>
                         <constraint firstItem="15q-u2-8Rw" firstAttribute="centerY" secondItem="HmW-WK-tS2" secondAttribute="centerY" id="ZyH-wN-bgG"/>
+                        <constraint firstItem="Hc5-Q7-dQv" firstAttribute="bottom" secondItem="Yhj-RS-IFv" secondAttribute="top" id="a2h-cG-adh"/>
                         <constraint firstItem="k9Y-vR-bem" firstAttribute="leading" secondItem="jTx-5G-QQC" secondAttribute="leading" id="aCw-HB-V4j"/>
                         <constraint firstItem="Hc5-Q7-dQv" firstAttribute="leading" secondItem="jTx-5G-QQC" secondAttribute="leading" id="ax0-RG-ObB"/>
                         <constraint firstItem="Yhj-RS-IFv" firstAttribute="leading" secondItem="Hc5-Q7-dQv" secondAttribute="leading" id="hbj-L9-hr0"/>
@@ -174,13 +174,13 @@
                         <constraint firstItem="jTx-5G-QQC" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="top" constant="8" id="uPm-n3-e9O"/>
                         <constraint firstItem="VnC-i7-jLl" firstAttribute="leading" secondItem="Hc5-Q7-dQv" secondAttribute="leading" id="vaM-K9-JWs"/>
                         <constraint firstItem="VnC-i7-jLl" firstAttribute="trailing" secondItem="Hc5-Q7-dQv" secondAttribute="trailing" id="vpo-gB-Rvn"/>
-                        <constraint firstItem="Yhj-RS-IFv" firstAttribute="top" secondItem="Hc5-Q7-dQv" secondAttribute="bottom" constant="8" id="wVv-EV-dw9"/>
                         <constraint firstItem="49P-sW-e2d" firstAttribute="leading" secondItem="Hc5-Q7-dQv" secondAttribute="leading" id="wsd-rX-COM"/>
                         <constraint firstItem="WcV-Bc-Lw5" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="top" id="yPj-h9-Boo"/>
+                        <constraint firstItem="Yhj-RS-IFv" firstAttribute="bottom" secondItem="49P-sW-e2d" secondAttribute="top" id="zxV-nP-0rA"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmX-Vw-P7d">
-                    <rect key="frame" x="8" y="317.5" width="359" height="32"/>
+                    <rect key="frame" x="8" y="332" width="359" height="32"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论 (#)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8h-qG-4aA">
                             <rect key="frame" x="8" y="0.0" width="56" height="32"/>
@@ -211,7 +211,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-I8-wpA">
-                    <rect key="frame" x="8" y="353.5" width="359" height="305.5"/>
+                    <rect key="frame" x="8" y="368" width="359" height="291"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxT-qi-zxH" customClass="Floaty" customModule="Floaty">
