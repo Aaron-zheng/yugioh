@@ -40,7 +40,9 @@ class CardDetailViewController: UIViewController {
     
     @IBOutlet weak var commentInputTextField: UITextField!
 
+    @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var innerViewHeader: NSLayoutConstraint!
     //
     var cardEntity: CardEntity!
     var commentEntitys: Array<CommentEntity>! = []
@@ -53,7 +55,17 @@ class CardDetailViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        //如果是ihonex 则高度需要改变
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+                case 2436:
+                    innerViewHeader.constant = 96
+                default:
+                    print("")
+            }
+        }
         
+        self.contentView.backgroundColor = greyColor
         self.view.backgroundColor = greyColor
         let frameWidth = self.proxy.frame.width
         self.pack.verticalAligment = .VerticalAligmentBottom
@@ -66,7 +78,8 @@ class CardDetailViewController: UIViewController {
         //卡包高度
         let h2 = preCalculateTextHeight(text: cardEntity.pack, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
         //总高度
-        let h3 = 8 + 24 + 16 + 16 + h1 + 8 + 16 + h2 + 8
+        //头部gap8 + title24 + type16 + property16 + effect + gap8 + password16 + pack + rare + gap8
+        let h3 = 8 + 24 + 16 + 16 + h1 + 8 + 16 + h2 + 16 + 8
         
         
         if h0 > h3 {
