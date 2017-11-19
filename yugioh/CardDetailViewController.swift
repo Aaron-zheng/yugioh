@@ -26,6 +26,9 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var usage: UILabel!
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var rare: UILabel!
+    @IBOutlet weak var adjust: UIVerticalAlignLabel!
+    @IBOutlet weak var scale: UILabel!
+    
     
     @IBOutlet weak var innerView: UIView!
     
@@ -156,8 +159,16 @@ class CardDetailViewController: UIViewController {
             self.attack.text = ""
         }
         self.password.text = "编号: " + cardEntity.password
+        self.scale.text = cardEntity.scale
         self.rare.text = "卡牌: " + cardEntity.rare
         self.pack.text = "卡包: " + cardEntity.pack
+        if cardEntity.adjust == "" {
+            self.adjust.text = "调整: 无"
+        } else {
+            self.adjust.text = "调整: " + cardEntity.adjust
+        }
+        
+        
         
         setImage(card: self.card, id: cardEntity.id)
         

@@ -20,13 +20,19 @@ class CardDeckViewController: UIViewController {
     fileprivate var cardEntitys: Array<CardEntity>! = []
     fileprivate var deckService = DeckService()
     
+    @IBOutlet weak var guide: UIImageView!
     
     @IBOutlet weak var tableView: UICollectionView!
     @IBOutlet weak var floatyButton: Floaty!
     
     override func viewWillAppear(_ animated: Bool) {
+        self.guide.alpha = 0
+        
         if deckViewEntity.id == "0" {
             deckViewEntity.deckEntitys = deckService.list()
+            if deckViewEntity.deckEntitys.count <= 0 {
+                self.guide.alpha = 1
+            }
         }
         self.tableView.reloadData()
     }
@@ -70,11 +76,11 @@ class CardDeckViewController: UIViewController {
         item3.backgroundColor = UIColor.clear
         item3.handler = {
             item in
-            var title = "";
-            if let t = self.title {
-                title = t
+            
+            if self.deckViewEntity.deckEntitys.count <= 0 {
+                return
             }
-            //setLog(event: AnalyticsEventShare, description: title)
+            
             let img = self.getShareViewImage()
             let ext = WXImageObject()
             ext.imageData = UIImageJPEGRepresentation(img, 1)
@@ -114,7 +120,11 @@ class CardDeckViewController: UIViewController {
         let numberOfRowThatShowInScreen = 4
         let scrollCount = row / numberOfRowThatShowInScreen
         for i in 0 ..< scrollCount {
-            let indexPath = IndexPath(row: ( i + 1 ) * numberOfRowThatShowInScreen, section: 0)
+            var row = ( i + 1 ) * numberOfRowThatShowInScreen
+            if row > 0 {
+                row = row - 1
+            }
+            let indexPath = IndexPath(row: row, section: 0)
             tableView.scrollToItem(at: indexPath, at: .top, animated: false)
             tableView.layer.render(in: UIGraphicsGetCurrentContext()!)
         }

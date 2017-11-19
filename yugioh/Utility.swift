@@ -129,5 +129,7 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     cardEntity.rare = element[12] as! String
     cardEntity.effect = element[13] as! String
     cardEntity.pack = element[14] as! String
+    cardEntity.scale = element[15] as! String
+    cardEntity.adjust = element[16] as! String 
     return cardEntity
 }

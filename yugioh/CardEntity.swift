@@ -26,6 +26,8 @@ class CardEntity {
     var rare: String! = ""
     var effect: String! = ""
     var pack: String! = ""
+    var scale: String! = ""
+    var adjust: String! = ""
     
     
     //额外添加属性

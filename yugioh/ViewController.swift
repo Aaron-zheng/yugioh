@@ -51,7 +51,7 @@ class ViewController: UITabBarController {
     
     private func setupData() {
         do {
-            for each in try getDB().prepare("select * from info") {
+            for each in try getDB().prepare("select id, titleChinese, titleJapanese, titleEnglish, type, password, usage, race, property, star, attack, defense, rare, effect, pack, scale, adjust from info") {
                 cardEntitys.append(buildCardEntity(element: each))
             }
             

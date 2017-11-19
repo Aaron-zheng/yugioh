@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardDeckViewController" customModule="游戏王卡牌" customModuleProvider="target">
             <connections>
                 <outlet property="floatyButton" destination="qsY-0J-iZj" id="5mi-qm-G54"/>
+                <outlet property="guide" destination="Ctu-W4-2Bp" id="hKh-aG-JeB"/>
                 <outlet property="tableView" destination="8RL-kQ-ySd" id="3hO-9s-0oZ"/>
                 <outlet property="view" destination="jU8-dA-IsY" id="knv-E8-1C7"/>
             </connections>
@@ -43,16 +44,26 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide" translatesAutoresizingMaskIntoConstraints="NO" id="Ctu-W4-2Bp">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Ctu-W4-2Bp" firstAttribute="leading" secondItem="jU8-dA-IsY" secondAttribute="leading" id="5TP-Gu-Sgr"/>
                 <constraint firstAttribute="trailing" secondItem="8RL-kQ-ySd" secondAttribute="trailing" id="BAn-4q-y5h"/>
                 <constraint firstAttribute="bottom" secondItem="8RL-kQ-ySd" secondAttribute="bottom" id="Siv-TY-iua"/>
                 <constraint firstItem="8RL-kQ-ySd" firstAttribute="top" secondItem="jU8-dA-IsY" secondAttribute="top" id="TFd-B1-Dvj"/>
+                <constraint firstItem="Ctu-W4-2Bp" firstAttribute="top" secondItem="jU8-dA-IsY" secondAttribute="top" id="TzT-gW-wIC"/>
+                <constraint firstAttribute="trailing" secondItem="Ctu-W4-2Bp" secondAttribute="trailing" id="emk-j8-fpR"/>
                 <constraint firstAttribute="bottom" secondItem="qsY-0J-iZj" secondAttribute="bottom" constant="96" id="flh-qm-fw8"/>
                 <constraint firstItem="8RL-kQ-ySd" firstAttribute="leading" secondItem="jU8-dA-IsY" secondAttribute="leading" id="hFS-4V-qjZ"/>
                 <constraint firstAttribute="trailing" secondItem="qsY-0J-iZj" secondAttribute="trailing" constant="16" id="lXc-6L-Fqp"/>
+                <constraint firstAttribute="bottom" secondItem="Ctu-W4-2Bp" secondAttribute="bottom" id="uAe-av-P9j"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="guide" width="1125" height="1903"/>
+    </resources>
 </document>
