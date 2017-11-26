@@ -99,9 +99,6 @@ class CardDetailViewController: UIViewController {
         
         prepare()
         
-        //添加关闭键盘
-        let keyboardCloseTapGesture = UITapGestureRecognizer(target: self, action: #selector(CardDetailViewController.keyboardCloseTap))
-        self.view.addGestureRecognizer(keyboardCloseTapGesture)
     }
     
     func keyboardCloseTap() {
