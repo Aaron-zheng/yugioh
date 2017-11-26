@@ -57,6 +57,7 @@ class CardDetailViewController: UIViewController {
     fileprivate var commentDAO = CommentService()
     
     
+    
     override func viewDidLoad() {
         //如果是ihonex 则高度需要改变
         if UIDevice().userInterfaceIdiom == .phone {
@@ -81,8 +82,8 @@ class CardDetailViewController: UIViewController {
         //卡包高度
         let h2 = preCalculateTextHeight(text: cardEntity.pack, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
         //总高度
-        //头部gap8 + title24 + type16 + property16 + effect + gap8 + password16 + pack + rare + gap8
-        let h3 = 8 + 24 + 16 + 16 + h1 + 8 + 16 + h2 + 16 + 8
+        //头部gap8 + title24 + type16 + property16 + effect + gap4 + password16 + pack + rare + gap8
+        let h3 = 8 + 24 + 16 + 16 + h1 + 4 + 16 + h2 + 16 + 8
         
         
         if h0 > h3 {
@@ -98,7 +99,13 @@ class CardDetailViewController: UIViewController {
         
         prepare()
         
-        
+        //添加关闭键盘
+        let keyboardCloseTapGesture = UITapGestureRecognizer(target: self, action: #selector(CardDetailViewController.keyboardCloseTap))
+        self.view.addGestureRecognizer(keyboardCloseTapGesture)
+    }
+    
+    func keyboardCloseTap() {
+        self.commentInputTextField.resignFirstResponder()
     }
     
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -356,5 +363,4 @@ extension CardDetailViewController: UITextFieldDelegate {
     }
     
 }
-
 
