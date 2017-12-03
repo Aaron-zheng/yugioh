@@ -155,7 +155,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tj-pC-gtT" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
                                 <rect key="frame" x="16" y="80" width="343" height="571"/>
-                                <string key="text">1. 有同学反映，没有卡片编号搜索，于是特意添加了，可以根据卡牌底部的“数字”进行搜索。  2. 调整记录，在下个版本的时候会添加上去的。  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者：郑富成 (Aaron) 邮箱：fucheng.zheng@gmail.com 微信公众号：whvapp</string>
+                                <string key="text">1. 更新到最新卡牌，目前收集数大概在8500+  2. 分享按钮移动到右上角，感觉好看点  3. 争取先建立账号系统  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者：郑富成 (Aaron) 邮箱：fucheng.zheng@gmail.com 微信公众号：whvapp</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

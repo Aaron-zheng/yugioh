@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2fY-Ym-RKU" customClass="CardDeckViewSectionHeaderView" customModule="游戏王卡牌" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="157"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVE-Po-4sz">
+                    <rect key="frame" x="8" y="0.0" width="343" height="157"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.82999999999999996" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡组" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3d4-IG-L7y">
+                    <rect key="frame" x="8" y="66.5" width="343" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="bei-Sa-2SD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Jhf-3m-lNa" firstAttribute="trailing" secondItem="3d4-IG-L7y" secondAttribute="trailing" constant="8" id="5bY-JC-tFr"/>
+                <constraint firstItem="Jhf-3m-lNa" firstAttribute="trailing" secondItem="FVE-Po-4sz" secondAttribute="trailing" constant="8" id="EKW-b3-z1A"/>
+                <constraint firstItem="3d4-IG-L7y" firstAttribute="leading" secondItem="Jhf-3m-lNa" secondAttribute="leading" constant="8" id="MhS-6Z-5xT"/>
+                <constraint firstItem="Jhf-3m-lNa" firstAttribute="bottom" secondItem="FVE-Po-4sz" secondAttribute="bottom" id="PSO-Ck-HPn"/>
+                <constraint firstItem="FVE-Po-4sz" firstAttribute="leading" secondItem="Jhf-3m-lNa" secondAttribute="leading" constant="8" id="ST4-6E-XgL"/>
+                <constraint firstItem="3d4-IG-L7y" firstAttribute="centerX" secondItem="Jhf-3m-lNa" secondAttribute="centerX" id="aqv-MW-Qbt"/>
+                <constraint firstItem="FVE-Po-4sz" firstAttribute="top" secondItem="Jhf-3m-lNa" secondAttribute="top" id="nUt-tE-QrU"/>
+                <constraint firstItem="3d4-IG-L7y" firstAttribute="centerY" secondItem="Jhf-3m-lNa" secondAttribute="centerY" id="wLD-by-fdd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Jhf-3m-lNa"/>
+            <connections>
+                <outlet property="sectionHeaderLabel" destination="3d4-IG-L7y" id="jgC-tO-UMS"/>
+            </connections>
+            <point key="canvasLocation" x="26.5" y="186.5"/>
+        </collectionReusableView>
+    </objects>
+</document>

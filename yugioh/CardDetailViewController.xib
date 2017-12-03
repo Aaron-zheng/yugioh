@@ -222,16 +222,16 @@
                             <rect key="frame" x="8" y="416" width="359" height="32"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论 (#)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8h-qG-4aA">
-                                    <rect key="frame" x="8" y="0.0" width="56" height="32"/>
+                                    <rect key="frame" x="8" y="0.0" width="64" height="32"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="56" id="VkZ-sf-atw"/>
+                                        <constraint firstAttribute="width" constant="64" id="VkZ-sf-atw"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" alpha="0.82999998331069946" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6KR-5G-ZI9">
-                                    <rect key="frame" x="72" y="4" width="279" height="24"/>
+                                    <rect key="frame" x="80" y="4" width="271" height="24"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>

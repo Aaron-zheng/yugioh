@@ -48,8 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         }
         let deviceModel = UIDevice.current.model //获取设备的型号
         let deviceDescription = deviceName + " " + sysName + " " + sysVersion + " " + deviceUUID + " " + deviceModel
-        //setLog(event: AnalyticsEventAppOpen, description: deviceDescription)
-        
+        print(deviceDescription)
         
         return true
     }

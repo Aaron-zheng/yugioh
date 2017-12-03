@@ -133,3 +133,17 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     cardEntity.adjust = element[16] as! String 
     return cardEntity
 }
+
+
+
+func getShareViewImage(v: UIView) -> UIImage {
+    let w = v.frame.width
+    let h = v.frame.height
+    let size = CGSize(width: w, height: h)
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    v.layer.render(in: UIGraphicsGetCurrentContext()!)
+    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    
+    return image
+}

@@ -13,6 +13,8 @@ import Agrume
 import Floaty
 
 
+
+
 class CardDetailViewController: UIViewController {
     //first part
     @IBOutlet weak var card: UIImageView!
@@ -99,10 +101,43 @@ class CardDetailViewController: UIViewController {
         
         prepare()
         
+        
+        
+        let shareButton = UIBarButtonItem.init(
+            title: "分享",
+            style: .done,
+            target: self,
+            action: #selector(CardDetailViewController.shareButtonHandler)
+        )
+        
+        self.navigationItem.rightBarButtonItem = shareButton
+
     }
     
-    func keyboardCloseTap() {
-        self.commentInputTextField.resignFirstResponder()
+    
+    func shareButtonHandler() {
+        let img = getShareViewImage(v: innerView)
+        let ext = WXImageObject()
+        ext.imageData = UIImageJPEGRepresentation(img, 1)
+        
+        let message = WXMediaMessage()
+        message.title = nil
+        message.description = nil
+        message.mediaObject = ext
+        message.mediaTagName = "游戏王卡牌"
+        //生成缩略图
+        UIGraphicsBeginImageContext(CGSize(width: 100, height: 50))
+        img.draw(in: CGRect(x: 0, y: 0, width: 100, height: 50))
+        let thumbImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        message.thumbData = UIImagePNGRepresentation(thumbImage!)
+        
+        let req = SendMessageToWXReq()
+        req.text = nil
+        req.message = message
+        req.bText = false
+        req.scene = 0
+        WXApi.send(req)
     }
     
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -201,6 +236,7 @@ class CardDetailViewController: UIViewController {
         item1.handler = {
             item in
             self.deckService.delete(id: self.cardEntity.id)
+            
         }
         
         let pluImg = UIImage(named: "ic_exposure_plus_1_white")?.withRenderingMode(.alwaysTemplate)
@@ -218,46 +254,11 @@ class CardDetailViewController: UIViewController {
             self.deckService.save(id: self.cardEntity.id)
         }
         
-        let shareImg = UIImage(named: "ic_share_white")?.withRenderingMode(.alwaysTemplate)
-        let item3 = FloatyItem()
-        item3.buttonColor = redColor //UIColor.white
-        item3.iconTintColor = UIColor.white //UIColor.black.withAlphaComponent(0.38)
-        item3.circleShadowColor = UIColor.clear
-        item3.titleShadowColor = UIColor.clear
-        item3.icon = shareImg
-        item3.tintColor = UIColor.clear
-        item3.itemBackgroundColor = UIColor.clear
-        item3.backgroundColor = UIColor.clear
-        item3.handler = {
-            item in
-            //setLog(event: AnalyticsEventShare, description: self.cardEntity.id)
-            let img = self.getShareViewImage()
-            let ext = WXImageObject()
-            ext.imageData = UIImageJPEGRepresentation(img, 1)
-
-            let message = WXMediaMessage()
-            message.title = nil
-            message.description = nil
-            message.mediaObject = ext
-            message.mediaTagName = "游戏王卡牌"
-            //生成缩略图
-            UIGraphicsBeginImageContext(CGSize(width: 100, height: 50))
-            img.draw(in: CGRect(x: 0, y: 0, width: 100, height: 50))
-            let thumbImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            message.thumbData = UIImagePNGRepresentation(thumbImage!)
-            
-            let req = SendMessageToWXReq()
-            req.text = nil
-            req.message = message
-            req.bText = false
-            req.scene = 0
-            WXApi.send(req)
-        }
+        
         
         floatyButton.addItem(item: item1)
         floatyButton.addItem(item: item2)
-        floatyButton.addItem(item: item3)
+        
         
         
         prepareTableView()
@@ -266,23 +267,7 @@ class CardDetailViewController: UIViewController {
         
     }
     
-    func getShareViewImage() -> UIImage {
-        let w = innerView.frame.width
-        let h = innerView.frame.height
-//        let watermark = UILabel(frame: CGRect(x: (w - 152) / 2, y: h + 8, width: 152, height: 24))
-//        watermark.font = UIFont(name: "Helvetica", size: 12)
-//        watermark.alpha = 0.12
-//        watermark.text = "App Store: 游戏王卡牌图鉴"
-//        innerView.addSubview(watermark)
-        let size = CGSize(width: w, height: h)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        innerView.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-//        watermark.removeFromSuperview()
-        
-        return image
-    }
+    
     
     
     func retriveComment() {
