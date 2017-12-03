@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.barTintColor = UIColor.black
         navigationBarAppearance.tintColor = UIColor.white
-        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
         //lean cloud 评论用到的初始化注册

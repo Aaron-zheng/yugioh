@@ -58,7 +58,7 @@ class CardViewController: CardViewBaseController {
         searchButton.addTarget(self, action: #selector(CardViewController.clickSearchButton), for: .touchUpInside)
     }
     
-    func clickSearchButton() {
+    @objc func clickSearchButton() {
         let controller = CardSearchViewController()
         controller.cardEntitys = cardEntitys
         controller.hidesBottomBarWhenPushed = true

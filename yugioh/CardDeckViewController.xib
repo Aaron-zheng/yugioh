@@ -31,7 +31,7 @@
                         <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="8"/>
                     </collectionViewFlowLayout>
                     <cells/>
-                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="" id="ocR-0P-TI2">
+                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="identifier1234" id="ocR-0P-TI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </collectionReusableView>

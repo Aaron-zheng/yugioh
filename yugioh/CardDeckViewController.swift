@@ -73,7 +73,7 @@ class CardDeckViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = shareButton
     }
     
-    func shareButtonHandler() {
+    @objc func shareButtonHandler() {
         
         if self.deckViewEntity.deckEntitys.count <= 0 {
             return

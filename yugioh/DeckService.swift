@@ -40,7 +40,7 @@ class DeckService {
             for i in 0 ..< r.count {
                 let d = DeckEntity()
                 d.id = r[i].value(forKey: "id") as! String
-                d.number = Int(r[i].value(forKey: "number") as! NSNumber)
+                d.number = Int(truncating: r[i].value(forKey: "number") as! NSNumber)
                 result.append(d)
             }
         } catch {

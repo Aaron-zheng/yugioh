@@ -82,7 +82,7 @@ class BattleViewController: UIViewController {
         
     }
     
-    func draggedView(_ sender:UIPanGestureRecognizer){
+    @objc func draggedView(_ sender:UIPanGestureRecognizer){
         let viewDrag = sender.view!
         self.view.bringSubview(toFront: viewDrag)
         let translation = sender.translation(in: self.view)

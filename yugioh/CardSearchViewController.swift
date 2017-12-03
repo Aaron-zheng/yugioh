@@ -68,7 +68,7 @@ class CardSearchViewController: UIViewController {
     
     
     
-    func keyboardWillShow(notification: NSNotification) {
+    @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
             self.searchBarViewHeightConstraint.constant = self.rootFrame.height - keyboardHeight
@@ -93,7 +93,7 @@ class CardSearchViewController: UIViewController {
         self.cancelButton.tintColor = UIColor.white
         self.cancelButton.addTarget(self, action: #selector(CardSearchViewController.clickCancelButton), for: .touchUpInside)
         
-        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（卡牌，效果，编号）", attributes: [NSForegroundColorAttributeName: UIColor.white])
+        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（卡牌，效果，编号）", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         self.inputField.textColor = UIColor.white
         self.inputField.text = nil
         self.inputField.becomeFirstResponder()
@@ -181,15 +181,15 @@ class CardSearchViewController: UIViewController {
     }
     
     
-    func clickTypeButton(button: DataButton) {
+    @objc func clickTypeButton(button: DataButton) {
         self.clickButton(button: button, set: searchType)
     }
     
-    func clickPropertyButton(button: DataButton) {
+    @objc func clickPropertyButton(button: DataButton) {
         self.clickButton(button: button, set: searchProperty)
     }
     
-    func clickRaceButton(button: DataButton) {
+    @objc func clickRaceButton(button: DataButton) {
         self.clickButton(button: button, set: searchRace)
     }
     
@@ -212,11 +212,11 @@ class CardSearchViewController: UIViewController {
     }
     
     
-    func clickCancelButton() {
+    @objc func clickCancelButton() {
         _ = self.navigationController?.popViewController(animated: false)
     }
     
-    func attackRangeSliderHandler(sender: RangeSlider) {
+    @objc func attackRangeSliderHandler(sender: RangeSlider) {
         attackLow = Int(sender.lowerValue / 500) * 500
         attackUp = Int(sender.upperValue / 500) * 500
         
@@ -228,7 +228,7 @@ class CardSearchViewController: UIViewController {
         
     }
     
-    func defenseRangeSliderHandler(sender: RangeSlider) {
+    @objc func defenseRangeSliderHandler(sender: RangeSlider) {
         defenseLow = Int(sender.lowerValue / 500) * 500
         defenseUp = Int(sender.upperValue / 500) * 500
         

@@ -60,12 +60,13 @@ class CardTableViewCell: UITableViewCell {
         self.password.text = "编号: " + cardEntity.password
         
         if cardEntity.star.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
+            
             self.property.text = ""
-                + cardEntity.property
-                + " / "
-                + cardEntity.race
-                + " / "
-                + cardEntity.star + "星"
+            self.property.text = self.property.text! + cardEntity.property
+            self.property.text = self.property.text! + " / "
+            self.property.text = self.property.text! + cardEntity.race
+            self.property.text = self.property.text! + " / "
+            self.property.text = self.property.text! + cardEntity.star + "星"
         } else {
             self.property.text = ""
         }

@@ -115,7 +115,7 @@ class CardDetailViewController: UIViewController {
     }
     
     
-    func shareButtonHandler() {
+    @objc func shareButtonHandler() {
         let img = getShareViewImage(v: innerView)
         let ext = WXImageObject()
         ext.imageData = UIImageJPEGRepresentation(img, 1)
@@ -140,7 +140,7 @@ class CardDetailViewController: UIViewController {
         WXApi.send(req)
     }
     
-    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let agrume = Agrume(image: card.image!, backgroundColor: .black)
         agrume.hideStatusBar = true
         agrume.showFrom(self)
@@ -184,11 +184,11 @@ class CardDetailViewController: UIViewController {
         
         if cardEntity.star.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
             self.property.text = ""
-                + cardEntity.property
-                + " / "
-                + cardEntity.race
-                + " / "
-                + cardEntity.star + "星"
+            self.property.text = self.property.text! + cardEntity.property
+            self.property.text = self.property.text! + " / "
+            self.property.text = self.property.text! + cardEntity.race
+            self.property.text = self.property.text! + " / "
+            self.property.text = self.property.text! + cardEntity.star + "星"
         } else {
             self.property.text = ""
         }
