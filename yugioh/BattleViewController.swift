@@ -99,7 +99,7 @@ class BattleViewController: UIViewController {
         
         original = []
         imgArray = []
-        result = deckService.list()
+        result = deckService.list()["0"]!
         for each in result {
             for _ in 0 ..< each.number {
                 original.append(each.id)

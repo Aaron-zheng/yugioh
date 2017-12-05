@@ -43,7 +43,6 @@ extension DeckViewController: UITableViewDelegate {
         controller.rootController = rootController
         let deckViewEntity = deckViewEntitys[indexPath.row]
         controller.deckViewEntity = deckViewEntity
-        controller.title = deckViewEntity.title
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -61,8 +60,8 @@ extension DeckViewController: UITableViewDataSource {
         cell.title.text = deckViewEntity.title
         cell.introduction.text = deckViewEntity.introduction
         if deckViewEntity.id == "0" {
-            let array: [DeckEntity] = deckService.list()
-            cell.introduction.text = "当前卡牌数目为：" + count(array: array)
+            let array: [String: [DeckEntity]] = deckService.list()
+            cell.introduction.text = "当前主卡组：" + count(array: array["0"]!) + "   副卡组：" + count(array:array["1"]!) + "   额外卡组：" + count(array:array["2"]!)
         }
         return cell
     }

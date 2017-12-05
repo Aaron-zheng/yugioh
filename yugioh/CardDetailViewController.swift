@@ -235,8 +235,7 @@ class CardDetailViewController: UIViewController {
         item1.backgroundColor = UIColor.clear
         item1.handler = {
             item in
-            self.deckService.delete(id: self.cardEntity.id)
-            
+            self.cardInsertSelection(id: self.cardEntity.id, type: "del")
         }
         
         let pluImg = UIImage(named: "ic_exposure_plus_1_white")?.withRenderingMode(.alwaysTemplate)
@@ -251,7 +250,7 @@ class CardDetailViewController: UIViewController {
         item2.backgroundColor = UIColor.clear
         item2.handler = {
             item in
-            self.deckService.save(id: self.cardEntity.id)
+            self.cardInsertSelection(id: self.cardEntity.id, type: "add")
         }
         
         
@@ -268,7 +267,58 @@ class CardDetailViewController: UIViewController {
     }
     
     
-    
+    func cardInsertSelection(id: String, type: String) {
+        
+        var typeTitle = ""
+        var isAdd = true
+        
+        if type == "add" {
+            typeTitle = "添加"
+            isAdd = true
+        } else if type == "del" {
+            typeTitle = "删除"
+            isAdd = false
+        }
+        
+        let alertController = UIAlertController(title: typeTitle + "操作", message: "我的卡组中" + typeTitle + "，选择：", preferredStyle: .actionSheet)
+        
+        let mainButton = UIAlertAction(title: "主卡组", style: .default, handler: { (action) -> Void in
+            if isAdd {
+                self.deckService.save(id: id, type: "0")
+            } else {
+                self.deckService.delete(id: id, type: "0")
+            }
+        })
+        
+        let viceButton = UIAlertAction(title: "副卡组", style: .default, handler: { (action) -> Void in
+            if isAdd {
+                self.deckService.save(id: id, type: "1")
+            } else {
+                self.deckService.delete(id: id, type: "1")
+            }
+        })
+        
+        let extraButton = UIAlertAction(title: "额外卡组", style: .default, handler: { (action) -> Void in
+            if isAdd {
+                self.deckService.save(id: id, type: "2")
+            } else {
+                self.deckService.delete(id: id, type: "2")
+            }
+        })
+        
+        let cancelButton = UIAlertAction(title: "取消", style: .cancel, handler: { (action) -> Void in
+            print("Cancel button tapped")
+        })
+        
+        
+        alertController.addAction(mainButton)
+        alertController.addAction(viceButton)
+        alertController.addAction(extraButton)
+        alertController.addAction(cancelButton)
+        
+        self.navigationController!.present(alertController, animated: true, completion: nil)
+        
+    }
     
     func retriveComment() {
         commentDAO.getComment(id: cardEntity.id) { (commentEntitys) in

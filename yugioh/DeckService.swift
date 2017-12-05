@@ -30,18 +30,35 @@ class DeckService {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
     }
     
+    func conversion() {
+        do {
+            let result = try managedContex.fetch(fetchRequest)
+            for i in 0 ..< result.count {
+                let deckPO = result[i] as! DeckPO
+                if deckPO.type == nil {
+                    deckPO.type = "0"
+                }
+            }
+            try managedContex.save()
+        } catch {
+            print("error: conversion")
+        }
+    }
     
-    func list() -> [DeckEntity] {
-        var result = [DeckEntity]()
+    
+    func list() -> [String: [DeckEntity]] {
+        var result = [String: [DeckEntity]]()
+        result["0"] = []
+        result["1"] = []
+        result["2"] = []
         do {
             let r = try managedContex.fetch(fetchRequest)
-            
-            
             for i in 0 ..< r.count {
                 let d = DeckEntity()
                 d.id = r[i].value(forKey: "id") as! String
                 d.number = Int(truncating: r[i].value(forKey: "number") as! NSNumber)
-                result.append(d)
+                d.type = r[i].value(forKey: "type") as! String
+                result[d.type]!.append(d)
             }
         } catch {
             print("error: list")
@@ -51,22 +68,16 @@ class DeckService {
         
     }
     
-    func total() -> Int {
-        let list: [DeckEntity] = self.list()
-        var total = 0
-        for each in list {
-            total = total + each.number
-        }
-        return total
-    }
     
     
-    func isExist(id: String) -> DeckPO? {
+    
+    private func isExist(id: String, type: String) -> DeckPO? {
         
         do {
             let result = try managedContex.fetch(fetchRequest)
             for i in 0 ..< result.count {
-                if id == (result[i].value(forKey: "id") as! String) {
+                if id == (result[i].value(forKey: "id") as! String) &&
+                    type == (result[i].value(forKey: "type") as! String) {
                     return (result[i] as! DeckPO)
                 }
             }
@@ -79,12 +90,9 @@ class DeckService {
     }
     
     
-    func save(id: String) {
-        if total() >= 40 {
-            return
-        }
+    func save(id: String, type: String) {
         
-        if let existedDeck = isExist(id: id) {
+        if let existedDeck = isExist(id: id, type: type) {
             if existedDeck.number.intValue >= 3  {
                 return
             }
@@ -93,8 +101,8 @@ class DeckService {
             let deck = DeckPO(entity: entity, insertInto: managedContex)
             deck.id = id
             deck.number = 1
+            deck.type = type
         }
-        
         
         do {
             try managedContex.save()
@@ -104,8 +112,8 @@ class DeckService {
     }
     
     
-    func delete(id: String) {
-        if let existedDeck = isExist(id: id) {
+    func delete(id: String, type: String) {
+        if let existedDeck = isExist(id: id, type: type) {
             
             if existedDeck.number.intValue <= 1 {
                 managedContex.delete(existedDeck)

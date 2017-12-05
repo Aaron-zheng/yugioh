@@ -16,6 +16,7 @@ class ViewController: UITabBarController {
     fileprivate var currentNodeName: String!
     var cardEntitys: Array<CardEntity> = []
     let cardService = CardService()
+    let deckService = DeckService()
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,11 +37,13 @@ class ViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.conversion()
         self.setupData()
         self.setupTabBarStyle()
-        
-        
+    }
+    
+    private func conversion() {
+        self.deckService.conversion()
     }
     
     

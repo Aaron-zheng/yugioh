@@ -11,11 +11,11 @@ import Foundation
 
 
 var deckViewEntitysConstant: [DeckViewEntity] = [
-    DeckViewEntity(id: "0", title: "我的卡组", introduction: "我的卡组", deckEntitys: []),
+    DeckViewEntity(id: "0", title: "我的卡组", introduction: "我的卡组", deckEntitys: [String: [DeckEntity]]()),
     DeckViewEntity(id: "forbid",
                    title: "2017年7月OCG禁止卡",
                    introduction: "2017年7月OCG禁止卡，不能出现在卡组里",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "8007", number: 1),
                     DeckEntity(id: "3098", number: 1),
                     DeckEntity(id: "1243", number: 1),
@@ -75,11 +75,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "96", number: 1),
                     DeckEntity(id: "1896", number: 1),
                     DeckEntity(id: "633", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "limit1",
                    title: "2017年7月OCG限制卡",
                    introduction: "2017年7月OCG限制卡，一套卡组里仅能放一张",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "8155", number: 1),
                     DeckEntity(id: "7790", number: 1),
                     DeckEntity(id: "8184", number: 1),
@@ -145,12 +145,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "119", number: 1),
                     DeckEntity(id: "1171", number: 1),
                     DeckEntity(id: "1690", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "limit2",
                    title: "2017年7月OCG准限制卡",
                    introduction: "2017年7月OCG准限制卡，一套卡组里仅能放两张",
-                   deckEntitys: [
-                    
+                   deckEntitys: ["0": [
                     DeckEntity(id: "6875", number: 1),
                     DeckEntity(id: "454", number: 1),
                     DeckEntity(id: "6706", number: 1),
@@ -174,11 +173,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "6976", number: 1),
                     DeckEntity(id: "2049", number: 1),
                     DeckEntity(id: "1100", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "2011",
                    title: "2011年第9届冠军",
                    introduction: "使用时间：2011年8月13日-14日 使用地点：荷兰阿姆斯特丹 使用者：Takashi Ogawa（アーサー） 所属国家地区：日本 卡组类型：【代行天使】",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "3621", number: 2),
                     DeckEntity(id: "4696", number: 3),
                     DeckEntity(id: "1069", number: 3),
@@ -200,11 +199,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "626", number: 1),
                     DeckEntity(id: "100", number: 2),
                     DeckEntity(id: "676", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "2010",
                    title: "2010年第8届冠军",
                    introduction: "使用时间：2010年8月14日-15日 使用地点：美国长滩 使用者：Galileo De Obaldia 所属国：巴拿马 卡组类型：【青蛙OTK】",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "1662", number: 2),
                     DeckEntity(id: "1813", number: 1),
                     DeckEntity(id: "3919", number: 3),
@@ -224,11 +223,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "38", number: 1),
                     DeckEntity(id: "823", number: 1),
                     DeckEntity(id: "3666", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "2009",
                    title: "2009年第7届冠军",
                    introduction: "使用时间：2009年8月8日-9日 使用地点：日本东京 使用者：Benjamin Tan Hong Hwee 所属国家地区：新加坡 卡组类型：【BF】",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "2987", number: 1),
                     DeckEntity(id: "3490", number: 3),
                     DeckEntity(id: "3632", number: 3),
@@ -251,11 +250,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "335", number: 1),
                     DeckEntity(id: "1053", number: 2),
                     DeckEntity(id: "676", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "2008",
                    title: "2008年第6届冠军",
                    introduction: "使用时间：2008年8月9日-10日 使用地点：德国柏林 使用者：Mutsuoka Kazuki(グリフィス） 所属国家地区：日本 卡组类型：【剑斗兽】",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "2230", number: 2),
                     DeckEntity(id: "2969", number: 1),
                     DeckEntity(id: "2850", number: 2),
@@ -282,11 +281,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "626", number: 3),
                     DeckEntity(id: "2953", number: 1),
                     DeckEntity(id: "676", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "2007",
                    title: "2007年第5届冠军",
                    introduction: "使用时间：2007年7月28-29日 使用地点：美国圣迭戈 使用者：Andres Toro 所属国家地区：智利 卡组类型：【帝Control】",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "6416", number: 3),
                     DeckEntity(id: "6317", number: 3),
                     DeckEntity(id: "2230", number: 1),
@@ -313,11 +312,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "1171", number: 1),
                     DeckEntity(id: "101", number: 1),
                     DeckEntity(id: "676", number: 2)
-        ]),
+        ]]),
     DeckViewEntity(id: "2006",
                    title: "2006年第4届冠军",
                    introduction: "使用时间：2006年8月5日-6日 使用地点：日本东京 使用者：Dario Longo 所属国家地区：意大利 卡组类型:【遗言混沌】",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "1084", number: 1),
                     DeckEntity(id: "971", number: 2),
                     DeckEntity(id: "2230", number: 2),
@@ -348,11 +347,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "474", number: 1),
                     DeckEntity(id: "335", number: 1),
                     DeckEntity(id: "524", number: 2)
-        ]),
+        ]]),
     DeckViewEntity(id: "2005",
                    title: "2005年第3届冠军",
                    introduction: "使用时间：2005年8月7日 使用地点：日本东京 使用者：Markou Miltiadis 所属国家地区：希腊 卡组类型：【变异混沌凤凰神】",
-                   deckEntitys: [
+                   deckEntitys: ["0": [
                     DeckEntity(id: "895", number: 1),
                     DeckEntity(id: "1501", number: 1),
                     DeckEntity(id: "91", number: 1),
@@ -389,11 +388,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "474", number: 1),
                     DeckEntity(id: "335", number: 1),
                     DeckEntity(id: "626", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "2004",
                title: "2004年第2届冠军",
                introduction: "使用时间：2004年7月25日 使用地点：美国洛杉矶 使用者：Togawa Masatoshi 所属国家地区：日本卡 组类型：【混沌Control】",
-               deckEntitys: [
+               deckEntitys: ["0": [
                 DeckEntity(id: "1004", number: 1),
                 DeckEntity(id: "973", number: 1),
                 DeckEntity(id: "91", number: 1),
@@ -426,11 +425,11 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                 DeckEntity(id: "335", number: 2),
                 DeckEntity(id: "1171", number: 1),
                 DeckEntity(id: "101", number: 1)
-        ]),
+        ]]),
     DeckViewEntity(id: "2003",
                title: "2003年第1届冠军",
                introduction: "使用时间：2003年8月10日 使用地点：美国纽约 使用者：Ng Yu Leung 所属国家地区：中国香港 卡组类型：【手札破坏】",
-               deckEntitys: [
+               deckEntitys: ["0": [
                 DeckEntity(id: "91", number: 1),
                 DeckEntity(id: "498", number: 3),
                 DeckEntity(id: "366", number: 1),
@@ -463,6 +462,6 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                 DeckEntity(id: "1171", number: 1),
                 DeckEntity(id: "101", number: 1),
                 DeckEntity(id: "631", number: 3)
-        ])
+        ]])
 
 ]

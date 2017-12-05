@@ -43,7 +43,9 @@ class CardDeckViewController: UIViewController {
         
         if self.cardDeckType() == 0 {
             deckViewEntity.deckEntitys = deckService.list()
-            if deckViewEntity.deckEntitys.count <= 0 {
+            if deckViewEntity.deckEntitys["0"]!.count <= 0 &&
+                deckViewEntity.deckEntitys["1"]!.count <= 0 &&
+                deckViewEntity.deckEntitys["2"]!.count <= 0 {
                 //当前为我的卡组，并且卡牌为0，展示引导页
                 self.guide.alpha = 1
             }
@@ -75,8 +77,11 @@ class CardDeckViewController: UIViewController {
     
     @objc func shareButtonHandler() {
         
-        if self.deckViewEntity.deckEntitys.count <= 0 {
+        if deckViewEntity.deckEntitys["0"]!.count <= 0 &&
+            deckViewEntity.deckEntitys["1"]!.count <= 0 &&
+            deckViewEntity.deckEntitys["2"]!.count <= 0 {
             return
+            
         }
         
         let img = self.getShareViewImage()
@@ -143,7 +148,8 @@ extension CardDeckViewController: UICollectionViewDelegateFlowLayout {
 extension CardDeckViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let deckEntity = deckViewEntity.deckEntitys[indexPath.row]
+        
+        let deckEntity = deckViewEntity.deckEntitys[indexPath.section.description]![indexPath.row]
         let cardEntity = getCardEntity(id: deckEntity.id)
         let controller = CardDetailViewController()
         controller.cardEntity = cardEntity
@@ -154,13 +160,7 @@ extension CardDeckViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        if self.cardDeckType() == 0 {
-            return CGSize.init(width: 50, height: 24)
-        }
-        
-        return CGSize.init(width: 50, height: 8)
-        
+        return CGSize.init(width: 50, height: 24)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -178,7 +178,9 @@ extension CardDeckViewController: UICollectionViewDelegate {
                 } else if indexPath.section == 2 {
                     v.sectionHeaderLabel.text = "额外卡组"
                 }
-            } 
+            } else {
+                v.sectionHeaderLabel.text = self.deckViewEntity.title
+            }
         }
         
         return v
@@ -199,16 +201,7 @@ extension CardDeckViewController: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return deckViewEntity.deckEntitys.count
-        } else if section == 1 {
-            return deckViewEntity.deckEntitys.count
-        } else if section == 2 {
-            return deckViewEntity.deckEntitys.count
-        } else {
-            return 0
-        }
-        
+        return deckViewEntity.deckEntitys[section.description]!.count
     }
     
     
@@ -221,18 +214,16 @@ extension CardDeckViewController: UICollectionViewDataSource {
         cell.titleLabel.text = ""
         cell.backgroundColor = UIColor.white
         
-        if indexPath.row < deckViewEntity.deckEntitys.count {
-            let deckEntity = deckViewEntity.deckEntitys[indexPath.row]
-            let cardEntity = getCardEntity(id: deckEntity.id)
-            
-            if self.cardDeckType() == 1 {
-                cell.titleLabel.text = cardEntity.titleChinese
-            } else {
-                cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
-            }
-            setImage(card: cell.cardImageView, id: cardEntity.id)
-        }
+        let deckEntity = deckViewEntity.deckEntitys[indexPath.section.description]![indexPath.row]
+        let cardEntity = getCardEntity(id: deckEntity.id)
         
+        if self.cardDeckType() == 1 {
+            cell.titleLabel.text = cardEntity.titleChinese
+        } else {
+            cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
+        }
+        setImage(card: cell.cardImageView, id: cardEntity.id)
+
         
         return cell
     }
