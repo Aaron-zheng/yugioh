@@ -11,6 +11,7 @@ import CoreData
 import LeanCloud
 
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
 
@@ -32,8 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)
         
         //微信接口初始化
-        WXApi.registerApp("wx13153ecd85ee39a9")
+        WXApi.registerApp(wechatKey)
         
+        //初始化talkingdata
+        TalkingData.sessionStarted(takingDataID, withChannelId: "fucheng-ios")
         
         //初始化Firebase
         //FirebaseApp.configure()

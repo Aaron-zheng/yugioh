@@ -33,6 +33,7 @@
 		A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */; };
 		A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB581F1A01FA001EA6C2 /* DeckService.swift */; };
 		A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */; };
+		A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A054587B1FDCF78E00916E3D /* libTalkingData.a */; };
 		A059F8FF1F68470600D019F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */; };
 		A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F47531DDB1870005533C9 /* RangeSlider.swift */; };
 		A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */; };
@@ -121,6 +122,8 @@
 		A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckPO.swift; sourceTree = "<group>"; };
 		A03FDB581F1A01FA001EA6C2 /* DeckService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
+		A054587B1FDCF78E00916E3D /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
+		A054587C1FDCF78E00916E3D /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
 		A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A05F47531DDB1870005533C9 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewWithStarController.swift; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */,
 				AA5D658A9BCDCEDB9F746979 /* Pods______.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +318,8 @@
 		A039AE5C1D95F940009ABFD1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A054587B1FDCF78E00916E3D /* libTalkingData.a */,
+				A054587C1FDCF78E00916E3D /* TalkingData.h */,
 				A0EDEEFB1E55EDBE00401416 /* Constant.swift */,
 				A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */,
 				A039AE661D95FDED009ABFD1 /* Extension.swift */,
@@ -792,6 +798,10 @@
 				DEVELOPMENT_TEAM = LW783GQGY7;
 				INFOPLIST_FILE = yugioh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/yugioh",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -813,6 +823,10 @@
 				DEVELOPMENT_TEAM = LW783GQGY7;
 				INFOPLIST_FILE = yugioh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/yugioh",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -947,6 +961,10 @@
 				DEVELOPMENT_TEAM = LW783GQGY7;
 				INFOPLIST_FILE = yugioh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/yugioh",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
