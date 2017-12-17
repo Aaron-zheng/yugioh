@@ -34,6 +34,13 @@
 		A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB581F1A01FA001EA6C2 /* DeckService.swift */; };
 		A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */; };
 		A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A054587B1FDCF78E00916E3D /* libTalkingData.a */; };
+		A05458841FE6AAC000916E3D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05458831FE6AAC000916E3D /* SignupViewController.swift */; };
+		A054588D1FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05458891FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift */; };
+		A054588E1FE6ABF300916E3D /* LFLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054588A1FE6ABF300916E3D /* LFLoginController.swift */; };
+		A054588F1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054588B1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift */; };
+		A05458901FE6ABF300916E3D /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054588C1FE6ABF300916E3D /* AutoCompleteTextField.swift */; };
+		A05458921FE6CFBE00916E3D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05458911FE6CFBE00916E3D /* AboutViewController.swift */; };
+		A05458941FE6CFCF00916E3D /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05458931FE6CFCF00916E3D /* AboutViewController.xib */; };
 		A059F8FF1F68470600D019F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */; };
 		A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F47531DDB1870005533C9 /* RangeSlider.swift */; };
 		A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */; };
@@ -124,6 +131,13 @@
 		A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
 		A054587B1FDCF78E00916E3D /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
 		A054587C1FDCF78E00916E3D /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
+		A05458831FE6AAC000916E3D /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A05458891FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextFieldProtocols.swift; sourceTree = "<group>"; };
+		A054588A1FE6ABF300916E3D /* LFLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLoginController.swift; sourceTree = "<group>"; };
+		A054588B1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextFieldConstants.swift; sourceTree = "<group>"; };
+		A054588C1FE6ABF300916E3D /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		A05458911FE6CFBE00916E3D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A05458931FE6CFCF00916E3D /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A05F47531DDB1870005533C9 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		A0609C051E3F3F14005739B7 /* CardViewWithStarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewWithStarController.swift; sourceTree = "<group>"; };
@@ -193,6 +207,7 @@
 				A0609C091E3F4B46005739B7 /* PackTableViewCell.swift */,
 				A0F0E83D1F36A3F7009B8E85 /* DeckViewController.swift */,
 				A01524591F5300F7006BD54D /* BattleViewController.swift */,
+				A05458831FE6AAC000916E3D /* SignupViewController.swift */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -217,6 +232,8 @@
 				A0F0E83F1F36A63E009B8E85 /* CardDeckViewController.xib */,
 				A0F0E8411F36AF76009B8E85 /* DeckTableCell.swift */,
 				A0F0E8431F36AF80009B8E85 /* DeckTableCell.xib */,
+				A05458911FE6CFBE00916E3D /* AboutViewController.swift */,
+				A05458931FE6CFCF00916E3D /* AboutViewController.xib */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -318,16 +335,16 @@
 		A039AE5C1D95F940009ABFD1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				A054587B1FDCF78E00916E3D /* libTalkingData.a */,
-				A054587C1FDCF78E00916E3D /* TalkingData.h */,
+				A05458881FE6ABCE00916E3D /* LFLogin */,
+				A05458871FE6ABA700916E3D /* DOFavoriteButton */,
+				A05458861FE6AB9C00916E3D /* Wexin */,
+				A05458851FE6AB8500916E3D /* Talkingdata */,
 				A0EDEEFB1E55EDBE00401416 /* Constant.swift */,
 				A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */,
 				A039AE661D95FDED009ABFD1 /* Extension.swift */,
 				A00EAA051DBE862F001FD546 /* Utility.swift */,
 				A05F47531DDB1870005533C9 /* RangeSlider.swift */,
 				A099342E1F3A1B5B00788D44 /* DeckViewEntityConstant.swift */,
-				A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */,
-				A0899E231F5BD13700E1D37F /* WeixinShareTest-Bridging-Header.h */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -349,6 +366,42 @@
 				A02BFF561E9145860096DEB7 /* Card */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A05458851FE6AB8500916E3D /* Talkingdata */ = {
+			isa = PBXGroup;
+			children = (
+				A054587B1FDCF78E00916E3D /* libTalkingData.a */,
+				A054587C1FDCF78E00916E3D /* TalkingData.h */,
+			);
+			name = Talkingdata;
+			sourceTree = "<group>";
+		};
+		A05458861FE6AB9C00916E3D /* Wexin */ = {
+			isa = PBXGroup;
+			children = (
+				A0899E231F5BD13700E1D37F /* WeixinShareTest-Bridging-Header.h */,
+			);
+			name = Wexin;
+			sourceTree = "<group>";
+		};
+		A05458871FE6ABA700916E3D /* DOFavoriteButton */ = {
+			isa = PBXGroup;
+			children = (
+				A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */,
+			);
+			name = DOFavoriteButton;
+			sourceTree = "<group>";
+		};
+		A05458881FE6ABCE00916E3D /* LFLogin */ = {
+			isa = PBXGroup;
+			children = (
+				A054588C1FE6ABF300916E3D /* AutoCompleteTextField.swift */,
+				A054588B1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift */,
+				A05458891FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift */,
+				A054588A1FE6ABF300916E3D /* LFLoginController.swift */,
+			);
+			name = LFLogin;
 			sourceTree = "<group>";
 		};
 		DA607805D5F01CCAD417EDF7 /* Frameworks */ = {
@@ -490,6 +543,7 @@
 				A0AB33091F079830005211BA /* CardDeckCollectionViewCell.xib in Resources */,
 				A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */,
 				A0F0E8441F36AF80009B8E85 /* DeckTableCell.xib in Resources */,
+				A05458941FE6CFCF00916E3D /* AboutViewController.xib in Resources */,
 				A01524631F532192006BD54D /* BattleCollectionViewCell.xib in Resources */,
 				A069A8821FCA9CA5004888CF /* CardDeckViewSectionHeaderView.xib in Resources */,
 				A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */,
@@ -591,6 +645,8 @@
 				A00EAA061DBE862F001FD546 /* Utility.swift in Sources */,
 				A0EDEEFA1E55E75C00401416 /* LoadableFromXibView.swift in Sources */,
 				A0AB33071F079820005211BA /* CardDeckCollectionViewCell.swift in Sources */,
+				A054588D1FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift in Sources */,
+				A05458901FE6ABF300916E3D /* AutoCompleteTextField.swift in Sources */,
 				A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */,
 				A02BFF5C1E9155320096DEB7 /* CardViewBaseController.swift in Sources */,
 				A09147271E56D73F00F4B851 /* CommentEntity.swift in Sources */,
@@ -610,10 +666,13 @@
 				A0F0E83E1F36A3F7009B8E85 /* DeckViewController.swift in Sources */,
 				A01524601F5316D1006BD54D /* BattleCollectionViewCell.swift in Sources */,
 				A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */,
+				A05458921FE6CFBE00916E3D /* AboutViewController.swift in Sources */,
+				A054588F1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift in Sources */,
 				A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */,
 				A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */,
 				A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */,
 				A039AE311D95F17F009ABFD1 /* yugioh.xcdatamodeld in Sources */,
+				A054588E1FE6ABF300916E3D /* LFLoginController.swift in Sources */,
 				A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */,
 				A069A8801FCA9C07004888CF /* CardDeckViewSectionHeaderView.swift in Sources */,
 				A015245A1F5300F7006BD54D /* BattleViewController.swift in Sources */,
@@ -624,6 +683,7 @@
 				A039AE711D9734D6009ABFD1 /* CardTableViewCell.swift in Sources */,
 				A0AB33051F079599005211BA /* CardDeckViewController.swift in Sources */,
 				A0F0E8421F36AF76009B8E85 /* DeckTableCell.swift in Sources */,
+				A05458841FE6AAC000916E3D /* SignupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
