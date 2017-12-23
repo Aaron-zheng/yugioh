@@ -27,6 +27,8 @@
                 <outlet property="inputField" destination="z4W-jO-yOn" id="dwS-TG-F4J"/>
                 <outlet property="searchBarView" destination="aOE-O8-HhB" id="VXZ-Qy-ml5"/>
                 <outlet property="searchBarViewHeightConstraint" destination="LNw-zC-f4C" id="RXb-GP-Pum"/>
+                <outlet property="starRangeLabel" destination="9lo-w8-Rxy" id="MDn-Ch-EGg"/>
+                <outlet property="starRangeSlider" destination="DLf-EB-BPZ" id="eeq-5H-Rq6"/>
                 <outlet property="tableView" destination="Q9F-Cc-lhT" id="DPZ-PW-luU"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Odg-dU-Wvv"/>
             </connections>
@@ -89,6 +91,15 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星级区间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lo-w8-Rxy">
+                            <rect key="frame" x="56" y="80" width="110" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="HzA-Ho-TFJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VN5-lN-dtC" customClass="RangeSlider" customModule="游戏王卡牌" customModuleProvider="target">
                             <rect key="frame" x="166" y="32" width="193" height="24"/>
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,21 +148,51 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLf-EB-BPZ" customClass="RangeSlider" customModule="游戏王卡牌" customModuleProvider="target">
+                            <rect key="frame" x="166" y="80" width="193" height="24"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="aBH-1e-lgF"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="trackHighlightTintColor">
+                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="9lo-w8-Rxy" firstAttribute="top" secondItem="NjV-qo-JEk" secondAttribute="bottom" id="1qV-pC-nZy"/>
                         <constraint firstItem="NjV-qo-JEk" firstAttribute="width" secondItem="r7c-yN-B0T" secondAttribute="width" id="6jj-CH-xkN"/>
                         <constraint firstItem="ACj-Bh-tkM" firstAttribute="trailing" secondItem="Ev5-gg-ByW" secondAttribute="trailing" id="6vM-1m-1Jc"/>
                         <constraint firstItem="VN5-lN-dtC" firstAttribute="leading" secondItem="r7c-yN-B0T" secondAttribute="trailing" id="8vX-La-1yw"/>
                         <constraint firstItem="NjV-qo-JEk" firstAttribute="leading" secondItem="r7c-yN-B0T" secondAttribute="leading" id="E52-Bn-nOp"/>
+                        <constraint firstItem="DLf-EB-BPZ" firstAttribute="top" secondItem="Tlh-Yy-wOo" secondAttribute="bottom" id="ErC-F7-FeO"/>
                         <constraint firstItem="NjV-qo-JEk" firstAttribute="top" secondItem="r7c-yN-B0T" secondAttribute="bottom" id="K7R-kI-aWi"/>
                         <constraint firstAttribute="height" constant="500" id="LNw-zC-f4C"/>
                         <constraint firstItem="Tlh-Yy-wOo" firstAttribute="width" secondItem="VN5-lN-dtC" secondAttribute="width" id="MVE-ae-pnK"/>
                         <constraint firstItem="r7c-yN-B0T" firstAttribute="leading" secondItem="z4W-jO-yOn" secondAttribute="leading" id="QTw-Ea-hKO"/>
                         <constraint firstItem="z4W-jO-yOn" firstAttribute="trailing" secondItem="ACj-Bh-tkM" secondAttribute="leading" constant="-16" id="QWr-db-cKz"/>
                         <constraint firstItem="z4W-jO-yOn" firstAttribute="top" secondItem="aOE-O8-HhB" secondAttribute="top" constant="8" id="QrL-cQ-rfx"/>
+                        <constraint firstItem="9lo-w8-Rxy" firstAttribute="trailing" secondItem="NjV-qo-JEk" secondAttribute="trailing" id="QyV-C1-b3h"/>
                         <constraint firstItem="6uE-0v-ANf" firstAttribute="top" secondItem="aOE-O8-HhB" secondAttribute="top" constant="8" id="Wsg-oY-haH"/>
                         <constraint firstItem="ACj-Bh-tkM" firstAttribute="top" secondItem="Ev5-gg-ByW" secondAttribute="top" id="Y8e-1Y-4tq"/>
+                        <constraint firstItem="9lo-w8-Rxy" firstAttribute="leading" secondItem="NjV-qo-JEk" secondAttribute="leading" id="YKz-gn-8r4"/>
+                        <constraint firstItem="DLf-EB-BPZ" firstAttribute="leading" secondItem="Tlh-Yy-wOo" secondAttribute="leading" id="ZI8-Id-QM1"/>
+                        <constraint firstItem="DLf-EB-BPZ" firstAttribute="trailing" secondItem="Tlh-Yy-wOo" secondAttribute="trailing" id="a8o-MT-hCd"/>
                         <constraint firstItem="z4W-jO-yOn" firstAttribute="leading" secondItem="6uE-0v-ANf" secondAttribute="trailing" constant="16" id="dxo-Ow-qkt"/>
                         <constraint firstItem="NjV-qo-JEk" firstAttribute="height" secondItem="r7c-yN-B0T" secondAttribute="height" id="e2B-KY-ZMx"/>
                         <constraint firstItem="Tlh-Yy-wOo" firstAttribute="top" secondItem="VN5-lN-dtC" secondAttribute="bottom" id="elQ-vZ-wgd"/>

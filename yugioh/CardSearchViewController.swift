@@ -19,8 +19,13 @@ class CardSearchViewController: UIViewController {
     @IBOutlet weak var attackRangeSlider: RangeSlider!
     @IBOutlet weak var attackRangeLabel: UILabel!
     @IBOutlet weak var defenseRangeSlider: RangeSlider!
+    
     @IBOutlet weak var defenseRangeLabel: UILabel!
     @IBOutlet weak var searchBarViewHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var starRangeLabel: UILabel!
+    @IBOutlet weak var starRangeSlider: RangeSlider!
+    
     
     var cardEntitys = Array<CardEntity>()
     var searchResult = Array<CardEntity>()
@@ -31,6 +36,9 @@ class CardSearchViewController: UIViewController {
     
     var defenseLow: Int = 0
     var defenseUp: Int = 10000
+    
+    var starLow: Int = 0
+    var starUp: Int = 12
     
     var rootFrame: CGSize = CGSize.zero
     var contentHeight: CGFloat = 0
@@ -115,7 +123,7 @@ class CardSearchViewController: UIViewController {
     private func setupTypeButtons() {
         
         //types
-        var defaultHeight = 96
+        var defaultHeight = 120
         defaultHeight = self.addButtons(datas: types, selector: #selector(clickTypeButton), dataWidth: 64, dataHeight: 32, dataDefaultHeight: defaultHeight)
         
         //propertys
@@ -201,6 +209,10 @@ class CardSearchViewController: UIViewController {
         setupRangeSliderStyle(rangeSlider: self.defenseRangeSlider)
         self.defenseRangeSlider.addTarget(self, action: #selector(CardSearchViewController.defenseRangeSliderHandler), for: .valueChanged)
         self.defenseRangeLabel.text = "守 无限制"
+        
+        setupRangeSliderStyle(rangeSlider: self.starRangeSlider)
+        self.starRangeSlider.addTarget(self, action: #selector(CardSearchViewController.starRangeSliderHandler), for: .valueChanged)
+        self.starRangeLabel.text = "星 无限制"
     }
     
     private func setupRangeSliderStyle(rangeSlider: RangeSlider) {
@@ -239,6 +251,16 @@ class CardSearchViewController: UIViewController {
         }
     }
     
+    @objc func starRangeSliderHandler(sender: RangeSlider) {
+        starLow = Int(sender.lowerValue)
+        starUp = Int(sender.upperValue)
+        
+        if starLow == 0 && starUp == 12 {
+            starRangeLabel.text = "星 无限制"
+        } else {
+            starRangeLabel.text = "星 " + starLow.description + " ~ " + starUp.description
+        }
+    }
     
     @objc(tableView:didSelectRowAtIndexPath:)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -347,6 +369,25 @@ extension CardSearchViewController: UITextFieldDelegate {
                 }
             }
             
+            //star search
+            if starLow != 0 {
+                if let star = Int.init(c.star) {
+                    if star < starLow {
+                        continue
+                    }
+                } else {
+                    continue
+                }
+            }
+            if starUp != 12 {
+                if let star = Int.init(c.star) {
+                    if star > starUp {
+                        continue
+                    }
+                } else {
+                    continue
+                }
+            }
             
             
             //
