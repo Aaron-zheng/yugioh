@@ -73,6 +73,10 @@ func getCardUrl(id: String) -> String {
     return qiniuUrlPrefix + id + qiniuUrlSuffix
 }
 
+func getCardUrl(password: String) -> String {
+    return qiniuUrlPrefix + "/jp/" + password + qiniuUrlSuffix
+}
+
 
 func getCardEntity(id: String) -> CardEntity {
     do {

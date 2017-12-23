@@ -11,7 +11,7 @@ import UIKit
 import Kingfisher
 import Agrume
 import Floaty
-
+import Alamofire
 
 
 
@@ -141,9 +141,21 @@ class CardDetailViewController: UIViewController {
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let agrume = Agrume(image: card.image!, backgroundColor: .black)
-        agrume.hideStatusBar = true
-        agrume.showFrom(self)
+        let url = getCardUrl(password: cardEntity.password)
+        Alamofire.request(url).response { response in
+            let agrume: Agrume
+            if response.error != nil ||
+                response.data == nil ||
+                response.data!.count <= 50 {
+                agrume = Agrume(image: self.card.image!, backgroundColor: .black)
+            } else {
+                let img = UIImage(data: response.data!)
+                agrume = Agrume(image: img!, backgroundColor: .black)
+            }
+            agrume.hideStatusBar = true
+            agrume.showFrom(self)
+        }
+        
     }
     
     
