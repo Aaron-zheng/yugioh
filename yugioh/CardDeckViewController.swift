@@ -152,9 +152,13 @@ extension CardDeckViewController: UICollectionViewDelegate {
         let deckEntity = deckViewEntity.deckEntitys[indexPath.section.description]![indexPath.row]
         let cardEntity = getCardEntity(id: deckEntity.id)
         let controller = CardDetailViewController()
+        
         controller.cardEntity = cardEntity
         controller.hidesBottomBarWhenPushed = true
         controller.proxy = self.tableView
+        let back = UIBarButtonItem()
+        back.title = navigationBarTitleText
+        self.navigationItem.backBarButtonItem = back
         self.navigationController?.pushViewController(controller, animated: true)
         
     }

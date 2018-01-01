@@ -275,6 +275,10 @@ class CardSearchViewController: UIViewController {
         controller.cardEntity = searchResult[indexPath.row]
         controller.proxy = self.tableView
         controller.hidesBottomBarWhenPushed = true
+        
+        let back = UIBarButtonItem()
+        back.title = navigationBarTitleText
+        self.navigationItem.backBarButtonItem = back
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

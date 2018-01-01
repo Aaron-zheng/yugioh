@@ -63,6 +63,7 @@ class CardViewController: CardViewBaseController {
         controller.cardEntitys = cardEntitys
         controller.hidesBottomBarWhenPushed = true
         controller.rootFrame = self.view.frame.size
+        
         self.navigationController?.pushViewController(controller, animated: false)
     }
 
