@@ -27,6 +27,9 @@ class CardSearchViewController: UIViewController {
     @IBOutlet weak var starRangeSlider: RangeSlider!
     
     
+    @IBOutlet weak var searchBarViewTopConstraint: NSLayoutConstraint!
+    
+    
     var cardEntitys = Array<CardEntity>()
     var searchResult = Array<CardEntity>()
     var cardService = CardService()
@@ -62,6 +65,9 @@ class CardSearchViewController: UIViewController {
     override func viewDidLoad() {
         setup()
         
+        if isIPhoneX() {
+            self.searchBarViewTopConstraint.constant = 10
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -133,7 +139,7 @@ class CardSearchViewController: UIViewController {
         defaultHeight = self.addButtons(datas: races, selector: #selector(clickRaceButton), dataWidth: 48, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
         
         self.contentHeight = CGFloat(defaultHeight + 32 + 8)
-//        self.contentHeight = CGFloat(defaultHeight + ceil(races.count / ((self.rootFrame.width) / (48 + 4))) * (32 + 4) + 32)
+
     }
     
     private func addButtons(datas: [String], selector: Selector,
@@ -286,6 +292,7 @@ extension CardSearchViewController: UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.searchBarView.isScrollEnabled = false
         textField.resignFirstResponder()
         var result: Array<CardEntity> = []
         let input = textField.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
@@ -413,12 +420,13 @@ extension CardSearchViewController: UITextFieldDelegate {
     func hideRangeSlider(flag: Bool) {
         self.attackRangeSlider.isHidden = flag
         self.defenseRangeSlider.isHidden = flag
+        self.starRangeSlider.isHidden = flag
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.searchResult = []
         self.tableView.reloadData()
-        
+        self.searchBarView.isScrollEnabled = true
     }
     
     

@@ -27,6 +27,7 @@
                 <outlet property="inputField" destination="z4W-jO-yOn" id="dwS-TG-F4J"/>
                 <outlet property="searchBarView" destination="aOE-O8-HhB" id="VXZ-Qy-ml5"/>
                 <outlet property="searchBarViewHeightConstraint" destination="LNw-zC-f4C" id="RXb-GP-Pum"/>
+                <outlet property="searchBarViewTopConstraint" destination="jTd-CG-Hwe" id="AIn-mG-qBC"/>
                 <outlet property="starRangeLabel" destination="9lo-w8-Rxy" id="MDn-Ch-EGg"/>
                 <outlet property="starRangeSlider" destination="DLf-EB-BPZ" id="eeq-5H-Rq6"/>
                 <outlet property="tableView" destination="Q9F-Cc-lhT" id="DPZ-PW-luU"/>
@@ -214,12 +215,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="aOE-O8-HhB" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="0LM-3R-lWs"/>
-                <constraint firstItem="aOE-O8-HhB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8Nk-on-Chm"/>
                 <constraint firstItem="Q9F-Cc-lhT" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="C6U-eH-BTS"/>
                 <constraint firstAttribute="trailing" secondItem="Q9F-Cc-lhT" secondAttribute="trailing" id="EG7-E8-fHg"/>
                 <constraint firstItem="Q9F-Cc-lhT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EN5-Zz-fWZ"/>
                 <constraint firstItem="aOE-O8-HhB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Nam-Ps-pSE"/>
                 <constraint firstItem="Ev5-gg-ByW" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="ftB-iO-eax"/>
+                <constraint firstItem="aOE-O8-HhB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jTd-CG-Hwe"/>
                 <constraint firstItem="aOE-O8-HhB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kHj-R5-O6k"/>
                 <constraint firstAttribute="bottom" secondItem="Q9F-Cc-lhT" secondAttribute="bottom" id="p4E-fd-Uyu"/>
                 <constraint firstItem="Q9F-Cc-lhT" firstAttribute="top" secondItem="aOE-O8-HhB" secondAttribute="bottom" id="sTE-Pm-LiT"/>

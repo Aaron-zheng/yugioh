@@ -61,14 +61,9 @@ class CardDetailViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        //如果是ihonex 则高度需要改变
-        if UIDevice().userInterfaceIdiom == .phone {
-            switch UIScreen.main.nativeBounds.height {
-                case 2436:
-                    innerViewHeader.constant = 96
-                default:
-                    print("")
-            }
+        //如果是iphonex 则高度需要改变
+        if isIPhoneX() {
+            innerViewHeader.constant = 96
         }
         
         self.contentView.backgroundColor = greyColor
