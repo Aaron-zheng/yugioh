@@ -12,4 +12,5 @@ class CommentEntity {
     
     var id: String = ""
     var content: String = ""
+    var userName: String = ""
 }

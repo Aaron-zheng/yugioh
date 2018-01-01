@@ -15,6 +15,12 @@ class CardCommentTableCell: UITableViewCell {
     
     
     func prepare(commentEntity: CommentEntity) {
-        self.commentLabel.text = commentEntity.content
+        var username = commentEntity.userName
+        if username.count <= 0 {
+            username = "路人"
+        } else {
+            username = "[No." + username + "]用户"
+        }
+        self.commentLabel.text = username + "：" + commentEntity.content
     }
 }

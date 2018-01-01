@@ -19,6 +19,13 @@ class CommentService {
         let post = LCObject(className: "Comment")
         post.set("id", value: commentEntity.id)
         post.set("content", value: commentEntity.content)
+        if let user = LCUser.current {
+            if let number = user.get("number") {
+                
+                post.set("userName", value: number.intValue?.description)
+            }
+            post.set("userId", value: user.objectId)
+        }
         post.save { (result) in
             switch result {
             case .success :
@@ -43,8 +50,19 @@ class CommentService {
                 var result = Array<CommentEntity>()
                 for obj in objects {
                     let commentEntity = CommentEntity()
-                    commentEntity.id = (obj.get("id") as! LCString).jsonString
-                    commentEntity.content = (obj.get("content") as! LCString).jsonString
+                    
+                    if let id = obj.get("id") {
+                        commentEntity.id = id.jsonString
+                    }
+                    
+                    if let content = obj.get("content") {
+                        commentEntity.content = content.jsonString
+                    }
+                    
+                    if let userName = obj.get("userName") {
+                        commentEntity.userName = userName.jsonString
+                    }
+                    
                     result.append(commentEntity)
                 }
                 callback(result)
