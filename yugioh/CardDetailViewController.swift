@@ -141,20 +141,25 @@ class CardDetailViewController: UIViewController {
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let url = getCardUrl(password: cardEntity.password)
-        Alamofire.request(url).response { response in
-            let agrume: Agrume
-            if response.error != nil ||
-                response.data == nil ||
-                response.data!.count <= 50 {
-                agrume = Agrume(image: self.card.image!, backgroundColor: .black)
-            } else {
-                let img = UIImage(data: response.data!)
-                agrume = Agrume(image: img!, backgroundColor: .black)
+        
+        let url = getCardUrl(password: self.cardEntity.password)
+        let agrume = Agrume(imageUrl: URL(string: url)!, backgroundBlurStyle: nil, backgroundColor: UIColor.black)
+        agrume.hideStatusBar = true
+        agrume.download = {url, completion in
+            completion(self.card.image)
+            Alamofire.request(url).response { response in
+                if response.error != nil ||
+                    response.data == nil ||
+                    response.data!.count <= 50 {
+                    return
+                }
+                let image = UIImage(data: response.data!)!
+                completion(image)
             }
-            agrume.hideStatusBar = true
-            agrume.showFrom(self)
         }
+        agrume.showFrom(self)
+        
+        
         
     }
     
