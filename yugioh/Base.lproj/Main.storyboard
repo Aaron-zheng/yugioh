@@ -114,7 +114,7 @@
             <objects>
                 <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="游戏王卡牌" id="2XC-NK-5In">
-                        <barButtonItem key="leftBarButtonItem" title="个人" id="tsg-bF-TJI">
+                        <barButtonItem key="leftBarButtonItem" title="关于" id="tsg-bF-TJI">
                             <connections>
                                 <action selector="signupHandle:" destination="xgT-iu-NsK" id="ohP-b5-y5u"/>
                             </connections>

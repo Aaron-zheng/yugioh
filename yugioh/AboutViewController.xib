@@ -17,6 +17,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="游戏王卡牌" customModuleProvider="target">
             <connections>
+                <outlet property="signupButton" destination="Zgp-3n-gRg" id="YFR-cg-1vy"/>
+                <outlet property="userLabel" destination="weN-S5-yJb" id="ACt-c7-bro"/>
                 <outlet property="view" destination="X2p-Vv-Qhj" id="Q2s-OV-mCj"/>
             </connections>
         </placeholder>
@@ -25,22 +27,43 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBm-Ya-EoJ" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
-                    <rect key="frame" x="16" y="36" width="343" height="615"/>
-                    <string key="text">1. 见到这个页面，代表你已经注册，和登陆成功了！  2. 先推出注册功能，后续会推出个人功能。  3. 更新到最新卡牌，目前收集数大概在8500+  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者：郑富成 (Aaron) 邮箱：fucheng.zheng@gmail.com 微信公众号：whvapp 个人网站：http://www.sightcorner.com</string>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你好" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weN-S5-yJb" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                    <rect key="frame" x="16" y="36" width="343" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="fyO-l5-6ol"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBm-Ya-EoJ" customClass="UIVerticalAlignLabel" customModule="游戏王卡牌" customModuleProvider="target">
+                    <rect key="frame" x="16" y="68" width="343" height="240.5"/>
+                    <string key="text">本次更新内容： 1. 更新卡牌收集， 目前在8800+ 2. 更新禁卡列表  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  之前刚刚入职了BAT的一间，工作很累，春节终于有时间写写自己的代码更新了。  作者的微信公众号：whvapp，欢迎和我聊下，或者读一下我之前写的新西兰打工旅行周记</string>
+                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgp-3n-gRg">
+                    <rect key="frame" x="311" y="523" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="vaL-1A-v4d"/>
+                        <constraint firstAttribute="height" constant="48" id="zsj-Xi-6gK"/>
+                    </constraints>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="dBm-Ya-EoJ" secondAttribute="trailing" constant="16" id="8p3-ag-GPo"/>
+                <constraint firstItem="rE0-AX-JxG" firstAttribute="trailing" secondItem="Zgp-3n-gRg" secondAttribute="trailing" constant="16" id="CqD-q8-CA3"/>
                 <constraint firstItem="dBm-Ya-EoJ" firstAttribute="leading" secondItem="X2p-Vv-Qhj" secondAttribute="leading" constant="16" id="RtC-Jr-pTF"/>
-                <constraint firstItem="dBm-Ya-EoJ" firstAttribute="top" secondItem="rE0-AX-JxG" secondAttribute="top" constant="16" id="cSK-r9-WFl"/>
-                <constraint firstItem="rE0-AX-JxG" firstAttribute="bottom" secondItem="dBm-Ya-EoJ" secondAttribute="bottom" constant="16" id="lAV-CZ-Jzr"/>
+                <constraint firstItem="rE0-AX-JxG" firstAttribute="bottom" secondItem="Zgp-3n-gRg" secondAttribute="bottom" constant="96" id="Xnf-ue-wOv"/>
+                <constraint firstItem="weN-S5-yJb" firstAttribute="top" secondItem="rE0-AX-JxG" secondAttribute="top" constant="16" id="dOZ-jG-hz2"/>
+                <constraint firstItem="rE0-AX-JxG" firstAttribute="trailing" secondItem="weN-S5-yJb" secondAttribute="trailing" constant="16" id="fYG-z5-TV7"/>
+                <constraint firstItem="weN-S5-yJb" firstAttribute="leading" secondItem="rE0-AX-JxG" secondAttribute="leading" constant="16" id="hZp-VM-Xnu"/>
+                <constraint firstItem="dBm-Ya-EoJ" firstAttribute="top" secondItem="weN-S5-yJb" secondAttribute="top" constant="32" id="n6T-zs-Sab"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="rE0-AX-JxG"/>
+            <point key="canvasLocation" x="58.5" y="93.5"/>
         </view>
     </objects>
 </document>

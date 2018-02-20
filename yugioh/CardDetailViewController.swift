@@ -235,6 +235,7 @@ class CardDetailViewController: UIViewController {
         floatyButton.tintColor = UIColor.clear
         
         
+        
         let negImg = UIImage(named: "ic_exposure_neg_1_white")?.withRenderingMode(.alwaysTemplate)
         let item1 = FloatyItem()
         item1.buttonColor = redColor
