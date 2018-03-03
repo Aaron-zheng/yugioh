@@ -194,16 +194,18 @@ class CardDetailViewController: UIViewController {
         self.type.text = cardEntity.type
         self.usage.text = cardEntity.usage
         
-        if cardEntity.star.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
-            self.property.text = ""
-            self.property.text = self.property.text! + cardEntity.property
+        
+        self.property.text = ""
+        self.property.text = self.property.text! + cardEntity.property
+        if cardEntity.race != "" {
             self.property.text = self.property.text! + " / "
             self.property.text = self.property.text! + cardEntity.race
+        }
+        if cardEntity.star != "" {
             self.property.text = self.property.text! + " / "
             self.property.text = self.property.text! + cardEntity.star + "星"
-        } else {
-            self.property.text = ""
         }
+        
         if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 && cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
             self.attack.text = cardEntity.attack + " / " + cardEntity.defense
         } else {

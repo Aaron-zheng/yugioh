@@ -49,10 +49,10 @@ class CardSearchViewController: UIViewController {
     var searchType = NSMutableSet()
     var searchProperty = NSMutableSet()
     var searchRace = NSMutableSet()
+    var searchEffect = NSMutableSet()
     
     
-    
-    let types = ["怪兽", "通常怪兽", "效果怪兽", "同调怪兽", "连接怪兽", "融合怪兽", "仪式怪兽",
+    let types = ["怪兽", "通常怪兽", "效果怪兽", "同调怪兽", "连接怪兽", "融合怪兽", "仪式怪兽", "XYZ怪兽",
                  "通常魔法", "装备魔法", "速攻魔法", "永续魔法", "场地魔法", "仪式魔法",
                  "通常陷阱", "反击陷阱", "永续陷阱"
     ]
@@ -60,6 +60,8 @@ class CardSearchViewController: UIViewController {
     let propertys = ["暗", "地", "神", "光", "风", "水", "炎"]
     
     let races = ["鱼", "幻龙", "兽战士", "岩石", "炎", "恐龙", "兽", "天使", "创造神", "机械", "植物", "魔法师", "龙", "昆虫", "战士", "念动力", "电子界", "鸟兽", "雷", "水", "幻神兽", "不死", "恶魔", "海龙", "爬虫类"]
+    
+    let effects = ["效果·卡通", "效果·同盟", "效果·灵魂", "效果·调整", "效果·二重", "效果·灵摆", "效果·反转", "效果·特殊"]
 
     
     override func viewDidLoad() {
@@ -132,13 +134,18 @@ class CardSearchViewController: UIViewController {
         var defaultHeight = 120
         defaultHeight = self.addButtons(datas: types, selector: #selector(clickTypeButton), dataWidth: 64, dataHeight: 32, dataDefaultHeight: defaultHeight)
         
+        
+        //effects
+        defaultHeight = self.addButtons(datas: effects, selector: #selector(clickEffectButton), dataWidth: 72, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
+        
         //propertys
         defaultHeight = self.addButtons(datas: propertys, selector: #selector(clickPropertyButton), dataWidth: 32, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
         
         //races
         defaultHeight = self.addButtons(datas: races, selector: #selector(clickRaceButton), dataWidth: 48, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
         
-        self.contentHeight = CGFloat(defaultHeight + 32 + 8)
+        
+        self.contentHeight = CGFloat(defaultHeight + 32 + 16)
 
     }
     
@@ -205,6 +212,10 @@ class CardSearchViewController: UIViewController {
     
     @objc func clickRaceButton(button: DataButton) {
         self.clickButton(button: button, set: searchRace)
+    }
+    
+    @objc func clickEffectButton(button: DataButton) {
+        self.clickButton(button: button, set: searchEffect)
     }
     
     private func setupRangeSlider() {
@@ -308,9 +319,17 @@ extension CardSearchViewController: UITextFieldDelegate {
             let c = cardEntitys[i]
             //input search
             if input != "" {
-                if !c.titleChinese.lowercased().contains(input!)
-                    && !c.effect.lowercased().contains(input!)
-                    && !c.password.lowercased().contains(input!) {
+                let inputArray = input?.split(separator: " ")
+                var inputFound = true
+                for inputTmp in inputArray! {
+                    if !c.titleChinese.lowercased().contains(inputTmp.description)
+                        && !c.effect.lowercased().contains(inputTmp.description)
+                        && !c.password.lowercased().contains(inputTmp.description) {
+                        inputFound = false
+                        break
+                    }
+                }
+                if !inputFound {
                     continue
                 }
             }
@@ -334,6 +353,21 @@ extension CardSearchViewController: UITextFieldDelegate {
             //property search
             if searchProperty.count > 0 {
                 if !searchProperty.contains(c.property) {
+                    continue
+                }
+            }
+            
+            //effect search
+            if searchEffect.count > 0 {
+                var isFound = false
+                for effectTmp in searchEffect {
+                    if c.effect.contains(effectTmp as! String){
+                        isFound = true
+                        break
+                    }
+                }
+                
+                if !isFound {
                     continue
                 }
             }
