@@ -49,19 +49,20 @@ class CardSearchViewController: UIViewController {
     var searchType = NSMutableSet()
     var searchProperty = NSMutableSet()
     var searchRace = NSMutableSet()
-    var searchEffect = NSMutableSet()
     
     
-    let types = ["怪兽", "通常怪兽", "效果怪兽", "同调怪兽", "连接怪兽", "融合怪兽", "仪式怪兽", "XYZ怪兽",
-                 "通常魔法", "装备魔法", "速攻魔法", "永续魔法", "场地魔法", "仪式魔法",
-                 "通常陷阱", "反击陷阱", "永续陷阱"
+    let types = [
+        "通常","怪兽","特殊召唤",
+        "效果","反转",
+        "同盟","同调","灵摆","连接","XYZ","二重","调整","灵魂","卡通",
+        "陷阱","反击",
+        "魔法","装备","永续","融合","仪式","速攻","场地"
     ]
     
     let propertys = ["暗", "地", "神", "光", "风", "水", "炎"]
     
     let races = ["鱼", "幻龙", "兽战士", "岩石", "炎", "恐龙", "兽", "天使", "创造神", "机械", "植物", "魔法师", "龙", "昆虫", "战士", "念动力", "电子界", "鸟兽", "雷", "水", "幻神兽", "不死", "恶魔", "海龙", "爬虫类"]
     
-    let effects = ["效果·卡通", "效果·同盟", "效果·灵魂", "效果·调整", "效果·二重", "效果·灵摆", "效果·反转", "效果·特殊"]
 
     
     override func viewDidLoad() {
@@ -133,10 +134,6 @@ class CardSearchViewController: UIViewController {
         //types
         var defaultHeight = 120
         defaultHeight = self.addButtons(datas: types, selector: #selector(clickTypeButton), dataWidth: 64, dataHeight: 32, dataDefaultHeight: defaultHeight)
-        
-        
-        //effects
-        defaultHeight = self.addButtons(datas: effects, selector: #selector(clickEffectButton), dataWidth: 72, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
         
         //propertys
         defaultHeight = self.addButtons(datas: propertys, selector: #selector(clickPropertyButton), dataWidth: 32, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
@@ -214,9 +211,7 @@ class CardSearchViewController: UIViewController {
         self.clickButton(button: button, set: searchRace)
     }
     
-    @objc func clickEffectButton(button: DataButton) {
-        self.clickButton(button: button, set: searchEffect)
-    }
+    
     
     private func setupRangeSlider() {
         setupRangeSliderStyle(rangeSlider: self.attackRangeSlider)
@@ -336,7 +331,15 @@ extension CardSearchViewController: UITextFieldDelegate {
             
             //type search
             if searchType.count > 0 {
-                if !searchType.contains(c.type) {
+                var searchTypeFound = false
+                
+                for case let t as String in searchType {
+                    if c.type.split(separator: " ").map(String.init).contains(t) {
+                        searchTypeFound = true
+                    }
+                }
+                
+                if !searchTypeFound {
                     continue
                 }
                 
@@ -357,20 +360,6 @@ extension CardSearchViewController: UITextFieldDelegate {
                 }
             }
             
-            //effect search
-            if searchEffect.count > 0 {
-                var isFound = false
-                for effectTmp in searchEffect {
-                    if c.effect.contains(effectTmp as! String){
-                        isFound = true
-                        break
-                    }
-                }
-                
-                if !isFound {
-                    continue
-                }
-            }
             
             
             //attack search

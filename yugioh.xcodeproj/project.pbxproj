@@ -11,6 +11,7 @@
 		A00EAA061DBE862F001FD546 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA051DBE862F001FD546 /* Utility.swift */; };
 		A00EAA081DBE89CD001FD546 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */; };
 		A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */; };
+		A0149B6F206BE98F0062605A /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A0149B6E206BE98F0062605A /* cards.cdb */; };
 		A015245A1F5300F7006BD54D /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01524591F5300F7006BD54D /* BattleViewController.swift */; };
 		A01524601F5316D1006BD54D /* BattleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015245F1F5316D1006BD54D /* BattleCollectionViewCell.swift */; };
 		A01524631F532192006BD54D /* BattleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01524621F532192006BD54D /* BattleCollectionViewCell.xib */; };
@@ -33,7 +34,6 @@
 		A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */; };
 		A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB581F1A01FA001EA6C2 /* DeckService.swift */; };
 		A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */; };
-		A04ABD72203C2B4700714285 /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A04ABD71203C2B4700714285 /* cards.cdb */; };
 		A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A054587B1FDCF78E00916E3D /* libTalkingData.a */; };
 		A05458841FE6AAC000916E3D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05458831FE6AAC000916E3D /* SignupViewController.swift */; };
 		A054588D1FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05458891FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift */; };
@@ -95,6 +95,7 @@
 		A00EAA051DBE862F001FD546 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
+		A0149B6E206BE98F0062605A /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A01524591F5300F7006BD54D /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		A015245F1F5316D1006BD54D /* BattleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleCollectionViewCell.swift; sourceTree = "<group>"; };
 		A01524621F532192006BD54D /* BattleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -129,7 +130,6 @@
 		A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckPO.swift; sourceTree = "<group>"; };
 		A03FDB581F1A01FA001EA6C2 /* DeckService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
-		A04ABD71203C2B4700714285 /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A054587B1FDCF78E00916E3D /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
 		A054587C1FDCF78E00916E3D /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
 		A05458831FE6AAC000916E3D /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 		A039AE5A1D95F934009ABFD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A04ABD71203C2B4700714285 /* cards.cdb */,
+				A0149B6E206BE98F0062605A /* cards.cdb */,
 				A039AE741D973CA3009ABFD1 /* Roboto-Bold.ttf */,
 				A039AE751D973CA3009ABFD1 /* Roboto-Light.ttf */,
 				A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */,
@@ -549,7 +549,7 @@
 				A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */,
 				A039AE361D95F17F009ABFD1 /* LaunchScreen.storyboard in Resources */,
 				A0F0E8401F36A63E009B8E85 /* CardDeckViewController.xib in Resources */,
-				A04ABD72203C2B4700714285 /* cards.cdb in Resources */,
+				A0149B6F206BE98F0062605A /* cards.cdb in Resources */,
 				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
 				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
 				A091472B1E57088800F4B851 /* CardCommentTableCell.xib in Resources */,
