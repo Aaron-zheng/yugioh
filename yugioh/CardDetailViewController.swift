@@ -72,6 +72,7 @@ class CardDetailViewController: UIViewController {
         self.pack.verticalAligment = .VerticalAligmentBottom
         
         
+        print(cardEntity.effect.characters.count)
         //卡牌最高度
         let h0 = (frameWidth - materialGap * 2) / 3 / 160 * 230
         //效果高度
@@ -187,9 +188,7 @@ class CardDetailViewController: UIViewController {
             star.deselect()
         }
         
-        
-        
-        self.name.text = cardEntity.titleChinese
+                self.name.text = cardEntity.titleChinese
         self.effect.text = cardEntity.effect
         self.type.text = cardEntity.type
         self.usage.text = cardEntity.usage
@@ -206,11 +205,15 @@ class CardDetailViewController: UIViewController {
             self.property.text = self.property.text! + cardEntity.star + "星"
         }
         
-        if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 && cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
-            self.attack.text = cardEntity.attack + " / " + cardEntity.defense
+        if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
+            self.attack.text = cardEntity.attack
         } else {
             self.attack.text = ""
         }
+        if cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
+            self.attack.text = self.attack.text! + " / " + cardEntity.defense
+        }
+        
         self.password.text = "编号: " + cardEntity.password
         self.scale.text = cardEntity.scale
         self.rare.text = "卡牌: " + cardEntity.rare

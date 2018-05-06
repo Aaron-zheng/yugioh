@@ -71,11 +71,16 @@ class CardTableViewCell: UITableViewCell {
             self.property.text = self.property.text! + cardEntity.star + "星"
         }
         
-        if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 && cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
-            self.attack.text = cardEntity.attack + " / " + cardEntity.defense
+        
+        if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
+            self.attack.text = cardEntity.attack
         } else {
             self.attack.text = ""
         }
+        if cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
+            self.attack.text = self.attack.text! + " / " + cardEntity.defense
+        }
+        
     }
     
     @IBAction func clickButton(_ sender: Any) {
