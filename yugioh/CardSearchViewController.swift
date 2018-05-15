@@ -157,7 +157,7 @@ class CardSearchViewController: UIViewController {
         if num > datas.count {
             num = datas.count
         }
-        let gap = (Int(rootWidth) - (dataWidth + columnGap) * num) / 2
+        let gap = (Int(rootWidth) - (dataWidth + columnGap) * num - columnGap) / 2 + columnGap
         
         var row = 0
         var column = 0

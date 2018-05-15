@@ -17,7 +17,6 @@ class BattleViewController: UIViewController {
     private var result: [DeckEntity] = []
     private var original: [String] = []
     private var imgArray: [UIImageView] = []
-//    private var ref: WDGSyncReference!
     
     
     @IBOutlet weak var button: UIButton!
@@ -30,10 +29,6 @@ class BattleViewController: UIViewController {
         button.layer.cornerRadius = 25
         button.backgroundColor = redColor
         
-        
-//        let options = WDGOptions.init(syncURL: "https://yugioh.wilddogio.com")
-//        WDGApp.configure(with: options)
-//        ref = WDGSync.sync().reference()
     }
     
     @IBAction func clickButtonHandler(_ sender: UIButton) {
@@ -56,30 +51,7 @@ class BattleViewController: UIViewController {
         imgView.addGestureRecognizer(panGesture)
         self.view.addSubview(imgView)
         imgArray.append(imgView)
-        
-        /*
-        //
-        let roomRef = ref.child("room1").child("operator1")
-        roomRef.childByAutoId().setValue(["cardId": val.description, "x": imgView.frame.origin.x, "y": imgView.frame.origin.y])
-        //
-        let oppositeRef = WDGSync.sync().reference(withPath: "room1")
-        oppositeRef.observe(.value, with: {snapshot in
-            
-            let room1 = snapshot.value as! NSDictionary
-            let operator1 = room1["operator1"] as! NSDictionary
-            for card in operator1 {
-                let cardDict = card.value as! NSDictionary
-                let x = cardDict["x"] as! Int
-                let y = cardDict["y"] as! Int
-                let cardId = cardDict["cardId"] as! String
-                let imgView = UIImageView(frame: CGRect(x: x, y: y - 100, width: 50, height: 72))
-                setImage(card: imgView, )
-                self.view.addSubview(imgView)
-            }
-            
-        })
-        */
-        
+      
     }
     
     @objc func draggedView(_ sender:UIPanGestureRecognizer){
