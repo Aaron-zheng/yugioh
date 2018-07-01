@@ -21,5 +21,5 @@ class DataButton: UIButton {
     }
     
     var data: String = ""
-    
+    var index: Int = 0
 }
