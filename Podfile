@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-target '游戏王卡牌' do
+target 'yugioh' do
 
   ## 加载图片
   pod 'Kingfisher', '~> 4.8.1'

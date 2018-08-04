@@ -66,7 +66,7 @@
 		A0F0E8461F36B9B2009B8E85 /* DeckViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E8451F36B9B2009B8E85 /* DeckViewEntity.swift */; };
 		A0F93DC91DC9414B0001289D /* CardSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */; };
 		A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F93DCA1DC941550001289D /* CardSearchViewController.xib */; };
-		AA5D658A9BCDCEDB9F746979 /* Pods______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EB2676EE67A73D7B6A761E /* Pods______.framework */; };
+		C7E28034866CB4189C5C8DE5 /* Pods_yugioh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0305D7B0B45950B42C0C6634 /* Pods_yugioh.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,9 +87,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06C2764091F7170821399B2E /* Pods-游戏王卡牌.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.debug.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.debug.xcconfig"; sourceTree = "<group>"; };
-		50365F2B87B58AC7AF110821 /* Pods-游戏王卡牌.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.release.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.release.xcconfig"; sourceTree = "<group>"; };
-		92EB2676EE67A73D7B6A761E /* Pods______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods______.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		027AF3D9CC21C2AEBB7A81F4 /* Pods-yugioh.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yugioh.production.xcconfig"; path = "Pods/Target Support Files/Pods-yugioh/Pods-yugioh.production.xcconfig"; sourceTree = "<group>"; };
+		0305D7B0B45950B42C0C6634 /* Pods_yugioh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yugioh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75E55B288F727D07B48452E2 /* Pods-yugioh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yugioh.release.xcconfig"; path = "Pods/Target Support Files/Pods-yugioh/Pods-yugioh.release.xcconfig"; sourceTree = "<group>"; };
 		A00EAA031DB9FF73001FD546 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		A00EAA051DBE862F001FD546 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		A022E6E01DC343AA00E7D8EE /* CardPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPO.swift; sourceTree = "<group>"; };
 		A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewBaseController.swift; sourceTree = "<group>"; };
 		A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
-		A039AE251D95F17E009ABFD1 /* 游戏王卡牌.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "游戏王卡牌.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A039AE251D95F17E009ABFD1 /* yugioh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yugioh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A039AE281D95F17E009ABFD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A039AE2A1D95F17E009ABFD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A039AE2D1D95F17F009ABFD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		A0F0E8451F36B9B2009B8E85 /* DeckViewEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewEntity.swift; sourceTree = "<group>"; };
 		A0F93DC81DC9414B0001289D /* CardSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSearchViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		A0F93DCA1DC941550001289D /* CardSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSearchViewController.xib; sourceTree = "<group>"; };
-		CF85EBAD25E1EF5EC06EE811 /* Pods-游戏王卡牌.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-游戏王卡牌.production.xcconfig"; path = "Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌.production.xcconfig"; sourceTree = "<group>"; };
+		F277A06B470FF8C64E06C9BB /* Pods-yugioh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yugioh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yugioh/Pods-yugioh.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */,
-				AA5D658A9BCDCEDB9F746979 /* Pods______.framework in Frameworks */,
+				C7E28034866CB4189C5C8DE5 /* Pods_yugioh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +193,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84E3D914F05E937C63BA0C1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F277A06B470FF8C64E06C9BB /* Pods-yugioh.debug.xcconfig */,
+				75E55B288F727D07B48452E2 /* Pods-yugioh.release.xcconfig */,
+				027AF3D9CC21C2AEBB7A81F4 /* Pods-yugioh.production.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A02BFF561E9145860096DEB7 /* Card */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,15 +252,15 @@
 				A039AE3F1D95F17F009ABFD1 /* yugiohTests */,
 				A039AE4A1D95F17F009ABFD1 /* yugiohUITests */,
 				A039AE261D95F17E009ABFD1 /* Products */,
-				ED1F89F4487E5E86FB5DB005 /* Pods */,
 				DA607805D5F01CCAD417EDF7 /* Frameworks */,
+				84E3D914F05E937C63BA0C1C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		A039AE261D95F17E009ABFD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A039AE251D95F17E009ABFD1 /* 游戏王卡牌.app */,
+				A039AE251D95F17E009ABFD1 /* yugioh.app */,
 				A039AE3C1D95F17F009ABFD1 /* yugiohTests.xctest */,
 				A039AE471D95F17F009ABFD1 /* yugiohUITests.xctest */,
 			);
@@ -405,41 +415,31 @@
 			isa = PBXGroup;
 			children = (
 				A01E491E1DCDE169003D2F35 /* Kingfisher.framework */,
-				92EB2676EE67A73D7B6A761E /* Pods______.framework */,
+				0305D7B0B45950B42C0C6634 /* Pods_yugioh.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		ED1F89F4487E5E86FB5DB005 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				06C2764091F7170821399B2E /* Pods-游戏王卡牌.debug.xcconfig */,
-				50365F2B87B58AC7AF110821 /* Pods-游戏王卡牌.release.xcconfig */,
-				CF85EBAD25E1EF5EC06EE811 /* Pods-游戏王卡牌.production.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A039AE241D95F17E009ABFD1 /* 游戏王卡牌 */ = {
+		A039AE241D95F17E009ABFD1 /* yugioh */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A039AE501D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "游戏王卡牌" */;
+			buildConfigurationList = A039AE501D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "yugioh" */;
 			buildPhases = (
-				654E69EF3446987298A3A695 /* [CP] Check Pods Manifest.lock */,
+				1952CC83EE9F11A0B8AAF2AE /* [CP] Check Pods Manifest.lock */,
 				A039AE211D95F17E009ABFD1 /* Sources */,
 				A039AE221D95F17E009ABFD1 /* Frameworks */,
 				A039AE231D95F17E009ABFD1 /* Resources */,
-				B17A87E154E597E636D6E510 /* [CP] Embed Pods Frameworks */,
+				CEA98D5537E196070AA4F757 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "游戏王卡牌";
+			name = yugioh;
 			productName = yugioh;
-			productReference = A039AE251D95F17E009ABFD1 /* 游戏王卡牌.app */;
+			productReference = A039AE251D95F17E009ABFD1 /* yugioh.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A039AE3B1D95F17F009ABFD1 /* yugiohTests */ = {
@@ -523,7 +523,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A039AE241D95F17E009ABFD1 /* 游戏王卡牌 */,
+				A039AE241D95F17E009ABFD1 /* yugioh */,
 				A039AE3B1D95F17F009ABFD1 /* yugiohTests */,
 				A039AE461D95F17F009ABFD1 /* yugiohUITests */,
 			);
@@ -570,7 +570,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		654E69EF3446987298A3A695 /* [CP] Check Pods Manifest.lock */ = {
+		1952CC83EE9F11A0B8AAF2AE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -581,20 +581,20 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-游戏王卡牌-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-yugioh-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B17A87E154E597E636D6E510 /* [CP] Embed Pods Frameworks */ = {
+		CEA98D5537E196070AA4F757 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-yugioh/Pods-yugioh-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Agrume/Agrume.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
@@ -613,7 +613,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-游戏王卡牌/Pods-游戏王卡牌-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yugioh/Pods-yugioh-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -688,12 +688,12 @@
 /* Begin PBXTargetDependency section */
 		A039AE3E1D95F17F009ABFD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A039AE241D95F17E009ABFD1 /* 游戏王卡牌 */;
+			target = A039AE241D95F17E009ABFD1 /* yugioh */;
 			targetProxy = A039AE3D1D95F17F009ABFD1 /* PBXContainerItemProxy */;
 		};
 		A039AE491D95F17F009ABFD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A039AE241D95F17E009ABFD1 /* 游戏王卡牌 */;
+			target = A039AE241D95F17E009ABFD1 /* yugioh */;
 			targetProxy = A039AE481D95F17F009ABFD1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -833,7 +833,7 @@
 		};
 		A039AE511D95F17F009ABFD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06C2764091F7170821399B2E /* Pods-游戏王卡牌.debug.xcconfig */;
+			baseConfigurationReference = F277A06B470FF8C64E06C9BB /* Pods-yugioh.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -858,7 +858,7 @@
 		};
 		A039AE521D95F17F009ABFD1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50365F2B87B58AC7AF110821 /* Pods-游戏王卡牌.release.xcconfig */;
+			baseConfigurationReference = 75E55B288F727D07B48452E2 /* Pods-yugioh.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -998,7 +998,7 @@
 		};
 		A0C936F21DCB2AEF00281940 /* PRODUCTION */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF85EBAD25E1EF5EC06EE811 /* Pods-游戏王卡牌.production.xcconfig */;
+			baseConfigurationReference = 027AF3D9CC21C2AEBB7A81F4 /* Pods-yugioh.production.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1065,7 +1065,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A039AE501D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "游戏王卡牌" */ = {
+		A039AE501D95F17F009ABFD1 /* Build configuration list for PBXNativeTarget "yugioh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A039AE511D95F17F009ABFD1 /* Debug */,

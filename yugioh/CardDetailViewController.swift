@@ -77,7 +77,10 @@ class CardDetailViewController: UIViewController {
         //效果高度
         let h1 = preCalculateTextHeight(text: cardEntity.effect, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
         //卡包高度
-        let h2 = preCalculateTextHeight(text: cardEntity.pack, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+        var h2 = preCalculateTextHeight(text: cardEntity.pack, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+        if h2 < 16 {
+            h2 = 16
+        }
         //总高度
         //头部gap8 + title24 + type16 + property16 + effect + gap4 + password16 + pack + rare + gap8
         let h3 = 8 + 24 + 16 + 16 + h1 + 4 + 16 + h2 + 16 + 8
@@ -138,10 +141,12 @@ class CardDetailViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         
         let url = getCardUrl(password: self.cardEntity.password)
+//        let agrume = Agrume(url: URL(string: url)!, background: .colored(.black), dismissal: .withPhysics)
         let agrume = Agrume(imageUrl: URL(string: url)!, backgroundBlurStyle: nil, backgroundColor: UIColor.black)
         agrume.hideStatusBar = true
         agrume.download = {url, completion in
             completion(self.card.image)
+            
             Alamofire.request(url).response { response in
                 if response.error != nil ||
                     response.data == nil ||
@@ -204,12 +209,12 @@ class CardDetailViewController: UIViewController {
             self.property.text = self.property.text! + cardEntity.star + "星"
         }
         
-        if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if !cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = cardEntity.attack
         } else {
             self.attack.text = ""
         }
-        if cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if !cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = self.attack.text! + " / " + cardEntity.defense
         }
         

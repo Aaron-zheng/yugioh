@@ -72,12 +72,12 @@ class CardTableViewCell: UITableViewCell {
         }
         
         
-        if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if !cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = cardEntity.attack
         } else {
             self.attack.text = ""
         }
-        if cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if !cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = self.attack.text! + " / " + cardEntity.defense
         }
         
