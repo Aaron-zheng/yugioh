@@ -85,7 +85,10 @@ extension CardViewBaseController: UITableViewDataSource {
             ifLastRowWillAddGap = 8
         }
         
-        return (self.view.frame.width - materialGap * 2) / 3 / 160 * 230 + materialGap + ifLastRowWillAddGap
+        var result = (self.view.frame.width - materialGap * 2) / 3 / 160 * 230
+        result = result + materialGap + ifLastRowWillAddGap
+        
+        return result
     }
     
     @objc(tableView:didEndDisplayingCell:forRowAtIndexPath:)

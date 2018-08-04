@@ -71,8 +71,7 @@ class CardDetailViewController: UIViewController {
         let frameWidth = self.proxy.frame.width
         self.pack.verticalAligment = .VerticalAligmentBottom
         
-        
-        print(cardEntity.effect.characters.count)
+        print(cardEntity.effect.count)
         //卡牌最高度
         let h0 = (frameWidth - materialGap * 2) / 3 / 160 * 230
         //效果高度
@@ -205,12 +204,12 @@ class CardDetailViewController: UIViewController {
             self.property.text = self.property.text! + cardEntity.star + "星"
         }
         
-        if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
+        if cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = cardEntity.attack
         } else {
             self.attack.text = ""
         }
-        if cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).characters.count > 0 {
+        if cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = self.attack.text! + " / " + cardEntity.defense
         }
         

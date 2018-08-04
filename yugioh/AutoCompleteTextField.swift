@@ -207,7 +207,7 @@ open class AutoCompleteTextField: UITextField {
         }else{
 
             let suggestedString = suggestedStrings.sorted(by: { (elementOne, elementTwo) -> Bool in
-                return elementOne.characters.count < elementTwo.characters.count
+                return elementOne.count < elementTwo.count
             }).first ?? ""
             return performStringReplacement(suggestedString, stringFilter: stringFilter)
         }

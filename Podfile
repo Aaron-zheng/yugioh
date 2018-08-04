@@ -6,7 +6,7 @@ use_frameworks!
 target '游戏王卡牌' do
 
   ## 加载图片
-  pod 'Kingfisher', '~> 4.0'
+  pod 'Kingfisher', '~> 4.8.1'
 
   ## 图片放大
   pod 'Agrume', :git => 'https://github.com/JanGorman/Agrume.git'
@@ -15,13 +15,13 @@ target '游戏王卡牌' do
   pod 'WechatOpenSDK'
 
   ## sqlite工具
-  pod 'SQLite.swift', '~> 0.11.4'
+  pod 'SQLite.swift', '~> 0.11.5'
 
   ## 评论功能
-  pod 'LeanCloud', '~> 11.0.0'
+  pod 'LeanCloud', '~> 11.0.1'
   
   ## 浮动按钮
-  pod 'Floaty', '~> 4.0.0'
+  pod 'Floaty', '~> 4.0.1'
 
 
   ############## 注释不用的 ##############
