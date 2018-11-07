@@ -24,6 +24,7 @@ target 'yugioh' do
   pod 'Floaty', '~> 4.0.1'
 
 
+
   ############## 注释不用的 ##############
   
   ## 野狗实时通讯
@@ -33,5 +34,7 @@ target 'yugioh' do
   ## pod 'Firebase/Core'
 
 
+  ## 添加阿里云oss
+  ## pod 'AliyunOSSiOS'
   
 end

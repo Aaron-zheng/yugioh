@@ -141,7 +141,6 @@ class CardDetailViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         
         let url = getCardUrl(password: self.cardEntity.password)
-//        let agrume = Agrume(url: URL(string: url)!, background: .colored(.black), dismissal: .withPhysics)
         let agrume = Agrume(imageUrl: URL(string: url)!, backgroundBlurStyle: nil, backgroundColor: UIColor.black)
         agrume.hideStatusBar = true
         agrume.download = {url, completion in
@@ -153,7 +152,10 @@ class CardDetailViewController: UIViewController {
                     response.data!.count <= 50 {
                     return
                 }
-                let image = UIImage(data: response.data!)!
+                let image = UIImage(data: response.data!)
+                if image == nil {
+                    return
+                }
                 completion(image)
             }
         }

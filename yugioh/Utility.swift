@@ -34,10 +34,10 @@ public class UIVerticalAlignLabel: UILabel {
     /**
      顶部和左对齐的标签
      
-     - parameter bounds:        <#bounds description#>
-     - parameter numberOfLines: <#numberOfLines description#>
+     - parameter bounds:
+     - parameter numberOfLines:
      
-     - returns: <#return value description#>
+     - returns:
      */
     public override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         let rect = super.textRect(forBounds: bounds, limitedToNumberOfLines: numberOfLines)
@@ -74,7 +74,7 @@ func getCardUrl(id: String) -> String {
 }
 
 func getCardUrl(password: String) -> String {
-    return qiniuUrlPrefix + "/jp/" + password + qiniuUrlSuffix
+    return qiniuUrlPrefix + "jp/" + password + qiniuUrlSuffix
 }
 
 
@@ -92,8 +92,13 @@ func getCardEntity(id: String) -> CardEntity {
 
 
 
+fileprivate func extractedFunc(_ id: String) -> String {
+    return getCardUrl(id: id)
+}
+
 func setImage(card: UIImageView, id: String) {
-    let url = getCardUrl(id: id)
+    
+    let url = extractedFunc(id)
     
     card.kf.setImage(with: URL(string: url),
                           placeholder: UIImage(named: "defaultimg"),
