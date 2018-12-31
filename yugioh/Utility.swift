@@ -143,6 +143,29 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     return cardEntity
 }
 
+func getUsage(id: String) -> String {
+    
+    for deck in deckViewEntitysConstant[1].deckEntitys["0"]! {
+        if id == deck.id {
+            return yearAndMonthLimitConstant + "禁止卡"
+        }
+    }
+    
+    for deck in deckViewEntitysConstant[2].deckEntitys["0"]! {
+        if id == deck.id {
+            return yearAndMonthLimitConstant + "限制卡"
+        }
+    }
+    
+    for deck in deckViewEntitysConstant[3].deckEntitys["0"]! {
+        if id == deck.id {
+            return yearAndMonthLimitConstant + "准限制卡"
+        }
+    }
+    
+    return "无限制"
+    
+}
 
 
 func getShareViewImage(v: UIView) -> UIImage {

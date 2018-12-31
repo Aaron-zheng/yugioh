@@ -56,7 +56,8 @@ class CardTableViewCell: UITableViewCell {
         self.title.text = cardEntity.titleChinese
         self.effect.text = cardEntity.effect
         self.type.text = cardEntity.type
-        self.usage.text = cardEntity.usage
+        //从常量池中判断使用范围：禁止，限制，准限制，无限制
+        self.usage.text = getUsage(id: cardEntity.id)
         self.password.text = "编号: " + cardEntity.password
         
         

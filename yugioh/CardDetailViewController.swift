@@ -194,10 +194,11 @@ class CardDetailViewController: UIViewController {
             star.deselect()
         }
         
-                self.name.text = cardEntity.titleChinese
+        self.name.text = cardEntity.titleChinese
         self.effect.text = cardEntity.effect
         self.type.text = cardEntity.type
-        self.usage.text = cardEntity.usage
+        //修改为根据常量池中的判断
+        self.usage.text = getUsage(id: cardEntity.id)
         
         
         self.property.text = ""
