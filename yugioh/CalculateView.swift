@@ -52,6 +52,7 @@ class CalculateView: UIView {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //添加计分版按钮
         addButtons(datas: datas, dataWidth: 56, dataHeight: 56, dataDefaultHeight: 200)
+        self.contentView.backgroundColor = greyColor
     }
     
     

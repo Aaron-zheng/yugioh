@@ -19,8 +19,14 @@ class ToolViewController: UIViewController {
     
     @IBOutlet weak var battleView: BattleView!
     
+    override func viewDidLoad() {
+        self.view.backgroundColor = greyColor
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         display()
+        self.battleView.initialCard()
     }
     
     
@@ -35,7 +41,6 @@ class ToolViewController: UIViewController {
         } else if segmentedControl.selectedSegmentIndex == 1 {
             self.calculateView.isHidden = true
             self.battleView.isHidden = false
-            self.battleView.initialCard()
         } else {
             
         }

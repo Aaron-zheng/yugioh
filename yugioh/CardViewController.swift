@@ -55,6 +55,7 @@ class CardViewController: CardViewBaseController {
         searchButton.layer.cornerRadius = 25
         searchButton.backgroundColor = redColor
         
+        
         searchButton.addTarget(self, action: #selector(CardViewController.clickSearchButton), for: .touchUpInside)
     }
     

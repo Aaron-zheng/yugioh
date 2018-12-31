@@ -44,6 +44,7 @@ class BattleView: UIView {
         button.layer.cornerRadius = 25
         button.backgroundColor = redColor
         
+        self.contentView.backgroundColor = greyColor
     }
     
     func initialCard() {
