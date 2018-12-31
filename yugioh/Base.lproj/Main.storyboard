@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lkw-10-HkU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lkw-10-HkU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,7 +28,7 @@
         <!--Card View With Star Controller-->
         <scene sceneID="Dxr-ou-zCg">
             <objects>
-                <viewController id="h5i-Tt-P9t" customClass="CardViewWithStarController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h5i-Tt-P9t" customClass="CardViewWithStarController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9uB-dT-9x4"/>
                         <viewControllerLayoutGuide type="bottom" id="I27-GC-L4t"/>
@@ -56,12 +56,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p31-Mc-2m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="153"/>
+            <point key="canvasLocation" x="881" y="78"/>
         </scene>
         <!--卡牌-->
         <scene sceneID="aro-r0-QTS">
             <objects>
-                <viewController id="rTF-46-KtB" customClass="CardViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rTF-46-KtB" customClass="CardViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uzp-5O-mnw"/>
                         <viewControllerLayoutGuide type="bottom" id="mPf-6I-cbJ"/>
@@ -106,7 +106,7 @@
         <!--游戏王卡牌-->
         <scene sceneID="qVe-DU-Jr7">
             <objects>
-                <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="游戏王卡牌" id="2XC-NK-5In">
                         <barButtonItem key="leftBarButtonItem" title="关于" id="tsg-bF-TJI">
                             <connections>
@@ -128,7 +128,7 @@
                         <outlet property="packButton" destination="BRq-3Q-8aQ" id="xJJ-Hc-OdM"/>
                         <segue destination="rTF-46-KtB" kind="relationship" relationship="viewControllers" id="nnU-MX-WiR"/>
                         <segue destination="GIp-p2-qFa" kind="relationship" relationship="viewControllers" id="V1r-sM-FBo"/>
-                        <segue destination="TVz-PC-CYe" kind="relationship" relationship="viewControllers" id="sRH-jo-qoZ"/>
+                        <segue destination="lSs-ao-QMB" kind="relationship" relationship="viewControllers" id="DC6-2V-MBC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djQ-dx-Kro" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,7 +138,7 @@
         <!--卡组-->
         <scene sceneID="CaL-F2-RRU">
             <objects>
-                <viewController id="GIp-p2-qFa" customClass="DeckViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GIp-p2-qFa" customClass="DeckViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w17-eZ-tQB"/>
                         <viewControllerLayoutGuide type="bottom" id="yq3-AB-WnB"/>
@@ -171,81 +171,64 @@
             <point key="canvasLocation" x="-561" y="880"/>
         </scene>
         <!--工具-->
-        <scene sceneID="t9t-yg-wsY">
+        <scene sceneID="T2T-HG-L38">
             <objects>
-                <viewController id="TVz-PC-CYe" customClass="CalculateViewController" customModule="游戏王卡牌" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lSs-ao-QMB" customClass="ToolViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="T3C-Mh-iZV"/>
-                        <viewControllerLayoutGuide type="bottom" id="0kr-kv-pAu"/>
+                        <viewControllerLayoutGuide type="top" id="pUM-GV-Jh2"/>
+                        <viewControllerLayoutGuide type="bottom" id="sdM-Eb-WHX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="heQ-Xy-3JN">
+                    <view key="view" contentMode="scaleToFill" id="6Vx-pZ-7fQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="actor2" translatesAutoresizingMaskIntoConstraints="NO" id="2lW-5Y-fB5">
-                                <rect key="frame" x="295" y="72" width="64" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="as3-7o-Sff"/>
-                                    <constraint firstAttribute="height" constant="64" id="p3L-cT-Jw6"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2d-Xa-Yyv">
-                                <rect key="frame" x="16" y="136" width="64" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="FOb-pm-x4W"/>
-                                    <constraint firstAttribute="width" constant="64" id="fMo-v4-Xrh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tn7-bY-Trj">
-                                <rect key="frame" x="295" y="136" width="64" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="H8G-32-F57"/>
-                                    <constraint firstAttribute="height" constant="32" id="X52-wN-sUD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="actor1" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-VU-k2R">
-                                <rect key="frame" x="16" y="72" width="64" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="Rae-Qe-tdP"/>
-                                    <constraint firstAttribute="height" constant="64" id="pug-ft-REj"/>
-                                </constraints>
-                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Kde-sg-sVi">
+                                <rect key="frame" x="119" y="72" width="137" height="29"/>
+                                <segments>
+                                    <segment title="计分器"/>
+                                    <segment title="模拟对战"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChange:" destination="lSs-ao-QMB" eventType="valueChanged" id="N81-ya-B72"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qv3-SY-6Xn" customClass="CalculateView" customModule="yugioh" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="132" width="375" height="486"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CU-cw-4h8" customClass="BattleView" customModule="yugioh" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="132" width="375" height="486"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2lW-5Y-fB5" firstAttribute="top" secondItem="T3C-Mh-iZV" secondAttribute="bottom" constant="8" id="9id-Tf-FnC"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X2d-Xa-Yyv" secondAttribute="trailing" constant="20" symbolic="YES" id="B33-6V-HRq"/>
-                            <constraint firstItem="Tn7-bY-Trj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="heQ-Xy-3JN" secondAttribute="leading" constant="20" symbolic="YES" id="B8g-0B-zIa"/>
-                            <constraint firstItem="4z2-VU-k2R" firstAttribute="leading" secondItem="heQ-Xy-3JN" secondAttribute="leading" constant="16" id="Bmm-ph-t3T"/>
-                            <constraint firstItem="Tn7-bY-Trj" firstAttribute="trailing" secondItem="2lW-5Y-fB5" secondAttribute="trailing" id="NYm-0F-1q9"/>
-                            <constraint firstAttribute="trailing" secondItem="2lW-5Y-fB5" secondAttribute="trailing" constant="16" id="X2o-R7-1E0"/>
-                            <constraint firstItem="Tn7-bY-Trj" firstAttribute="top" secondItem="X2d-Xa-Yyv" secondAttribute="top" id="aDP-zi-aka"/>
-                            <constraint firstItem="X2d-Xa-Yyv" firstAttribute="leading" secondItem="4z2-VU-k2R" secondAttribute="leading" id="j3t-iB-KSg"/>
-                            <constraint firstItem="X2d-Xa-Yyv" firstAttribute="top" secondItem="4z2-VU-k2R" secondAttribute="bottom" id="shX-lR-Nh1"/>
-                            <constraint firstItem="4z2-VU-k2R" firstAttribute="top" secondItem="T3C-Mh-iZV" secondAttribute="bottom" constant="8" id="xem-YA-jfs"/>
+                            <constraint firstAttribute="trailing" secondItem="8CU-cw-4h8" secondAttribute="trailing" id="A0y-it-bdA"/>
+                            <constraint firstItem="Kde-sg-sVi" firstAttribute="centerX" secondItem="6Vx-pZ-7fQ" secondAttribute="centerX" id="GAW-XH-ncJ"/>
+                            <constraint firstItem="sdM-Eb-WHX" firstAttribute="top" secondItem="8CU-cw-4h8" secondAttribute="bottom" id="Mec-L9-ghB"/>
+                            <constraint firstItem="8CU-cw-4h8" firstAttribute="top" secondItem="Kde-sg-sVi" secondAttribute="bottom" constant="32" id="QjE-dJ-W0M"/>
+                            <constraint firstItem="qv3-SY-6Xn" firstAttribute="leading" secondItem="6Vx-pZ-7fQ" secondAttribute="leading" id="dWZ-0Q-Tfe"/>
+                            <constraint firstAttribute="trailing" secondItem="qv3-SY-6Xn" secondAttribute="trailing" id="jQ2-dr-AcB"/>
+                            <constraint firstItem="sdM-Eb-WHX" firstAttribute="top" secondItem="qv3-SY-6Xn" secondAttribute="bottom" id="kDC-9m-LHA"/>
+                            <constraint firstItem="8CU-cw-4h8" firstAttribute="leading" secondItem="6Vx-pZ-7fQ" secondAttribute="leading" id="qn8-35-iPt"/>
+                            <constraint firstItem="qv3-SY-6Xn" firstAttribute="top" secondItem="Kde-sg-sVi" secondAttribute="bottom" constant="32" id="tPu-K7-Efu"/>
+                            <constraint firstItem="Kde-sg-sVi" firstAttribute="top" secondItem="pUM-GV-Jh2" secondAttribute="bottom" constant="8" id="xuR-5p-cfH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="工具" image="ic_surround_sound_white" id="wvp-90-POo"/>
+                    <tabBarItem key="tabBarItem" title="工具" image="ic_surround_sound_white" id="0ZX-ts-ORz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="scoreLableOne" destination="X2d-Xa-Yyv" id="SR9-cd-8U9"/>
-                        <outlet property="scoreLableTwo" destination="Tn7-bY-Trj" id="2Qw-Pq-Xif"/>
+                        <outlet property="battleView" destination="8CU-cw-4h8" id="8G8-Z6-rXc"/>
+                        <outlet property="calculateView" destination="qv3-SY-6Xn" id="BgI-GZ-6bE"/>
+                        <outlet property="segmentedControl" destination="Kde-sg-sVi" id="MBy-TQ-zLH"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5W0-UZ-g0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Siz-4m-PIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413.60000000000002" y="878.41079460269873"/>
+            <point key="canvasLocation" x="325.60000000000002" y="879.31034482758628"/>
         </scene>
     </scenes>
     <resources>
-        <image name="actor1" width="561" height="592"/>
-        <image name="actor2" width="561" height="592"/>
         <image name="ic_account_balance_wallet_white" width="24" height="24"/>
         <image name="ic_search_white" width="24" height="24"/>
         <image name="ic_surround_sound_white" width="24" height="24"/>

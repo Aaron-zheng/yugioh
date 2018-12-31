@@ -1,15 +1,35 @@
 //
-//  CalculateViewController.swift
-//  游戏王卡牌
+//  CalculateView.swift
+//  yugioh
 //
-//  Created by Aaron on 16/5/2018.
+//  Created by Aaron on 31/12/2018.
 //  Copyright © 2018 sightcorner. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CalculateViewController: UIViewController {
+class CalculateView: UIView {
+    
+    
+    @IBOutlet var contentView: UIView!
+    
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        setup()
+    }
+    
+    
+    
     
     let datas = ["", "", "", "清除", "",
                  "-", "1", "2", "3", "-",
@@ -18,17 +38,18 @@ class CalculateViewController: UIViewController {
                  "变成", "0", "00", "000", "变成"]
     
     var calculateButton: DataButton!
- 
+    
     @IBOutlet weak var scoreLableOne: UILabel!
     @IBOutlet weak var scoreLableTwo: UILabel!
     
-    override func viewDidLoad() {
-        setup()
-    }
+    
     
     
     func setup() {
-        self.view.backgroundColor = greyColor
+        Bundle.main.loadNibNamed("CalculateView", owner: self, options: nil)
+        self.addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //添加计分版按钮
         addButtons(datas: datas, dataWidth: 56, dataHeight: 56, dataDefaultHeight: 200)
     }
@@ -38,7 +59,7 @@ class CalculateViewController: UIViewController {
     private func addButtons(datas: [String],
                             dataWidth: Int, dataHeight: Int, dataDefaultHeight: Int
         ) {
-        let rootWidth = self.view.frame.width
+        let rootWidth = self.frame.width
         let columnGap: Int = 8
         let rowGap: Int = 4
         
@@ -85,8 +106,8 @@ class CalculateViewController: UIViewController {
             button.setTitle(data, for: .normal)
             button.data = data
             button.index = column
-            button.addTarget(self, action: #selector(CalculateViewController.performButton), for: .touchUpInside)
-            self.view.addSubview(button)
+            button.addTarget(self, action: #selector(CalculateView.performButton), for: .touchUpInside)
+            self.addSubview(button)
             
             column = column + 1
             if column == num {
@@ -159,7 +180,7 @@ class CalculateViewController: UIViewController {
         }
         
         if sender.data == "清除" {
-           self.calculateButton.setTitle("", for: .normal)
+            self.calculateButton.setTitle("", for: .normal)
         }
         
         if isStringAnInt(string: sender.data) {
@@ -172,4 +193,6 @@ class CalculateViewController: UIViewController {
     func isStringAnInt(string: String) -> Bool {
         return Int(string) != nil
     }
+    
+    
 }
