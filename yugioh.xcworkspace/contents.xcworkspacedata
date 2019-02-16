@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/zhengfucheng/Documents/github_workspace/yugioh/yugioh/BattleView.swift">
-   </FileRef>
-   <FileRef
       location = "group:yugioh.xcodeproj">
    </FileRef>
    <FileRef
