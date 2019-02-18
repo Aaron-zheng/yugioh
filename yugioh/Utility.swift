@@ -185,6 +185,10 @@ func isIPhoneX() -> Bool {
         switch UIScreen.main.nativeBounds.height {
         case 2436:
             return true
+        case 2688:
+            return true
+        case 1792:
+            return true
         default:
             return false
         }
