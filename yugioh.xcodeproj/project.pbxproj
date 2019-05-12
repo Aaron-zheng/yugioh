@@ -901,7 +901,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/游戏王卡牌.app/游戏王卡牌";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
 			};
 			name = Debug;
 		};
@@ -917,7 +917,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/游戏王卡牌.app/游戏王卡牌";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
 			};
 			name = Release;
 		};
@@ -1041,7 +1041,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/游戏王卡牌.app/游戏王卡牌";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
 			};
 			name = PRODUCTION;
 		};

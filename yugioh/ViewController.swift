@@ -24,6 +24,9 @@ class ViewController: UITabBarController {
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent;
+    }
     
     @IBAction func signupHandle(_ sender: Any) {
         
@@ -46,6 +49,7 @@ class ViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNeedsStatusBarAppearanceUpdate()
         self.conversion()
         self.setupData()
         self.setupTabBarStyle()

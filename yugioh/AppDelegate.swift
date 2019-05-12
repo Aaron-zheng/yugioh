@@ -16,6 +16,8 @@ import LeanCloud
 class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
 
     var window: UIWindow?
+    
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -27,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         navigationBarAppearance.barTintColor = UIColor.black
         navigationBarAppearance.tintColor = UIColor.white
         navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        
         
         //lean cloud 评论用到的初始化注册
         LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)

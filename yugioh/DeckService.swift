@@ -23,7 +23,7 @@ class DeckService {
     private let fetchRequest: NSFetchRequest<NSManagedObject>!
     
     init() {
-        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
         managedContex = appDelegate.persistentContainer.viewContext
         entity = NSEntityDescription.entity(forEntityName: entityName, in: managedContex)!
         fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)

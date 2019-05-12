@@ -123,23 +123,23 @@ func setLog(event: String, description: String?) {
 
 func buildCardEntity(element: [Binding?]) -> CardEntity {
     let cardEntity = CardEntity()
-    cardEntity.id = element[0] as! String
-    cardEntity.titleChinese = element[1] as! String
-    cardEntity.titleJapanese = element[2] as! String
-    cardEntity.titleEnglish = element[3] as! String
-    cardEntity.type = element[4] as! String
-    cardEntity.password = element[5] as! String
-    cardEntity.usage = element[6] as! String
-    cardEntity.race = element[7] as! String
-    cardEntity.property = element[8] as! String
-    cardEntity.star = element[9] as! String
-    cardEntity.attack = element[10] as! String
-    cardEntity.defense = element[11] as! String
-    cardEntity.rare = element[12] as! String
-    cardEntity.effect = element[13] as! String
-    cardEntity.pack = element[14] as! String
-    cardEntity.scale = element[15] as! String
-    cardEntity.adjust = element[16] as! String 
+    cardEntity.id = element[0] as? String
+    cardEntity.titleChinese = element[1] as? String
+    cardEntity.titleJapanese = element[2] as? String
+    cardEntity.titleEnglish = element[3] as? String
+    cardEntity.type = element[4] as? String
+    cardEntity.password = element[5] as? String
+    cardEntity.usage = element[6] as? String
+    cardEntity.race = element[7] as? String
+    cardEntity.property = element[8] as? String
+    cardEntity.star = element[9] as? String
+    cardEntity.attack = element[10] as? String
+    cardEntity.defense = element[11] as? String
+    cardEntity.rare = element[12] as? String
+    cardEntity.effect = element[13] as? String
+    cardEntity.pack = element[14] as? String
+    cardEntity.scale = element[15] as? String
+    cardEntity.adjust = element[16] as? String 
     return cardEntity
 }
 
