@@ -30,11 +30,9 @@
 		A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */; };
 		A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB581F1A01FA001EA6C2 /* DeckService.swift */; };
 		A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */; };
+		A04B4D9E22BFFA4F00FD58C4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04B4D9C22BFFA4F00FD58C4 /* libWeChatSDK.a */; };
+		A04B4DA022BFFB6300FD58C4 /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A04B4D9F22BFFB6300FD58C4 /* cards.cdb */; };
 		A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A054587B1FDCF78E00916E3D /* libTalkingData.a */; };
-		A054588D1FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05458891FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift */; };
-		A054588E1FE6ABF300916E3D /* LFLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054588A1FE6ABF300916E3D /* LFLoginController.swift */; };
-		A054588F1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054588B1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift */; };
-		A05458901FE6ABF300916E3D /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054588C1FE6ABF300916E3D /* AutoCompleteTextField.swift */; };
 		A05458921FE6CFBE00916E3D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05458911FE6CFBE00916E3D /* AboutViewController.swift */; };
 		A05458941FE6CFCF00916E3D /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05458931FE6CFCF00916E3D /* AboutViewController.xib */; };
 		A059F8FF1F68470600D019F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */; };
@@ -58,7 +56,6 @@
 		A0AB33071F079820005211BA /* CardDeckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB33061F079820005211BA /* CardDeckCollectionViewCell.swift */; };
 		A0AB33091F079830005211BA /* CardDeckCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AB33081F079830005211BA /* CardDeckCollectionViewCell.xib */; };
 		A0C2AF7F20A9F2D500030D55 /* BattleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C2AF7E20A9F2D500030D55 /* BattleView.xib */; };
-		A0EC754D22748604003E1D11 /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A0EC754C22748604003E1D11 /* cards.cdb */; };
 		A0EDEEFA1E55E75C00401416 /* LoadableFromXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */; };
 		A0EDEEFC1E55EDBE00401416 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDEEFB1E55EDBE00401416 /* Constant.swift */; };
 		A0F0E83E1F36A3F7009B8E85 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E83D1F36A3F7009B8E85 /* DeckViewController.swift */; };
@@ -127,12 +124,12 @@
 		A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckPO.swift; sourceTree = "<group>"; };
 		A03FDB581F1A01FA001EA6C2 /* DeckService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
+		A04B4D9B22BFFA4E00FD58C4 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		A04B4D9C22BFFA4F00FD58C4 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		A04B4D9D22BFFA4F00FD58C4 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		A04B4D9F22BFFB6300FD58C4 /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A054587B1FDCF78E00916E3D /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
 		A054587C1FDCF78E00916E3D /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
-		A05458891FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextFieldProtocols.swift; sourceTree = "<group>"; };
-		A054588A1FE6ABF300916E3D /* LFLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLoginController.swift; sourceTree = "<group>"; };
-		A054588B1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextFieldConstants.swift; sourceTree = "<group>"; };
-		A054588C1FE6ABF300916E3D /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		A05458911FE6CFBE00916E3D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A05458931FE6CFCF00916E3D /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -157,7 +154,6 @@
 		A0AB33061F079820005211BA /* CardDeckCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDeckCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0AB33081F079830005211BA /* CardDeckCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDeckCollectionViewCell.xib; sourceTree = "<group>"; };
 		A0C2AF7E20A9F2D500030D55 /* BattleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattleView.xib; sourceTree = "<group>"; };
-		A0EC754C22748604003E1D11 /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableFromXibView.swift; sourceTree = "<group>"; };
 		A0EDEEFB1E55EDBE00401416 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A0F0E83D1F36A3F7009B8E85 /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +173,7 @@
 			files = (
 				A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */,
 				C7E28034866CB4189C5C8DE5 /* Pods_yugioh.framework in Frameworks */,
+				A04B4D9E22BFFA4F00FD58C4 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +319,7 @@
 		A039AE5A1D95F934009ABFD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A0EC754C22748604003E1D11 /* cards.cdb */,
+				A04B4D9F22BFFB6300FD58C4 /* cards.cdb */,
 				A039AE741D973CA3009ABFD1 /* Roboto-Bold.ttf */,
 				A039AE751D973CA3009ABFD1 /* Roboto-Light.ttf */,
 				A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */,
@@ -348,7 +345,6 @@
 		A039AE5C1D95F940009ABFD1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				A05458881FE6ABCE00916E3D /* LFLogin */,
 				A05458871FE6ABA700916E3D /* DOFavoriteButton */,
 				A05458861FE6AB9C00916E3D /* Wexin */,
 				A05458851FE6AB8500916E3D /* Talkingdata */,
@@ -393,6 +389,9 @@
 		A05458861FE6AB9C00916E3D /* Wexin */ = {
 			isa = PBXGroup;
 			children = (
+				A04B4D9C22BFFA4F00FD58C4 /* libWeChatSDK.a */,
+				A04B4D9D22BFFA4F00FD58C4 /* WXApi.h */,
+				A04B4D9B22BFFA4E00FD58C4 /* WXApiObject.h */,
 				A0899E231F5BD13700E1D37F /* WeixinShareTest-Bridging-Header.h */,
 			);
 			name = Wexin;
@@ -404,17 +403,6 @@
 				A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */,
 			);
 			name = DOFavoriteButton;
-			sourceTree = "<group>";
-		};
-		A05458881FE6ABCE00916E3D /* LFLogin */ = {
-			isa = PBXGroup;
-			children = (
-				A054588C1FE6ABF300916E3D /* AutoCompleteTextField.swift */,
-				A054588B1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift */,
-				A05458891FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift */,
-				A054588A1FE6ABF300916E3D /* LFLoginController.swift */,
-			);
-			name = LFLogin;
 			sourceTree = "<group>";
 		};
 		DA607805D5F01CCAD417EDF7 /* Frameworks */ = {
@@ -518,7 +506,7 @@
 			};
 			buildConfigurationList = A039AE201D95F17E009ABFD1 /* Build configuration list for PBXProject "yugioh" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -554,7 +542,7 @@
 				A08E9A8B21DA43F100936C40 /* CalculateView.xib in Resources */,
 				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
 				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
-				A0EC754D22748604003E1D11 /* cards.cdb in Resources */,
+				A04B4DA022BFFB6300FD58C4 /* cards.cdb in Resources */,
 				A091472B1E57088800F4B851 /* CardCommentTableCell.xib in Resources */,
 				A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */,
 			);
@@ -604,19 +592,27 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-yugioh/Pods-yugioh-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Agrume/Agrume.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LeanCloud/LeanCloud.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Agrume.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LeanCloud.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -633,9 +629,7 @@
 				A00EAA061DBE862F001FD546 /* Utility.swift in Sources */,
 				A0EDEEFA1E55E75C00401416 /* LoadableFromXibView.swift in Sources */,
 				A0AB33071F079820005211BA /* CardDeckCollectionViewCell.swift in Sources */,
-				A054588D1FE6ABF300916E3D /* AutoCompleteTextFieldProtocols.swift in Sources */,
 				A08E9A8F21DA466200936C40 /* CalculateView.swift in Sources */,
-				A05458901FE6ABF300916E3D /* AutoCompleteTextField.swift in Sources */,
 				A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */,
 				A02BFF5C1E9155320096DEB7 /* CardViewBaseController.swift in Sources */,
 				A09147271E56D73F00F4B851 /* CommentEntity.swift in Sources */,
@@ -657,12 +651,10 @@
 				A0F0E83E1F36A3F7009B8E85 /* DeckViewController.swift in Sources */,
 				A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */,
 				A05458921FE6CFBE00916E3D /* AboutViewController.swift in Sources */,
-				A054588F1FE6ABF300916E3D /* AutoCompleteTextFieldConstants.swift in Sources */,
 				A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */,
 				A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */,
 				A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */,
 				A039AE311D95F17F009ABFD1 /* yugioh.xcdatamodeld in Sources */,
-				A054588E1FE6ABF300916E3D /* LFLoginController.swift in Sources */,
 				A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */,
 				A069A8801FCA9C07004888CF /* CardDeckViewSectionHeaderView.swift in Sources */,
 				A09147291E57087A00F4B851 /* CardCommentTableCell.swift in Sources */,
@@ -783,6 +775,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -835,6 +828,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -860,7 +854,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "yugioh/WeixinShareTest-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -885,7 +879,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "yugioh/WeixinShareTest-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -900,7 +894,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
 			};
 			name = Debug;
@@ -916,7 +910,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
 			};
 			name = Release;
@@ -931,7 +925,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = yugioh;
 			};
 			name = Debug;
@@ -946,7 +940,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = yugioh;
 			};
 			name = Release;
@@ -1000,6 +994,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = PRODUCTION;
@@ -1025,7 +1020,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "yugioh/WeixinShareTest-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = PRODUCTION;
 		};
@@ -1040,7 +1035,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yugioh.app/yugioh";
 			};
 			name = PRODUCTION;
@@ -1055,7 +1050,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugiohUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = yugioh;
 			};
 			name = PRODUCTION;

@@ -1,52 +1,65 @@
 PODS:
-  - Agrume (3.2.2)
-  - Alamofire (4.7.3)
-  - Floaty (4.0.1)
-  - Kingfisher (4.8.1)
-  - LeanCloud (11.0.1):
-    - LeanCloud/Storage (= 11.0.1)
-  - LeanCloud/Storage (11.0.1):
-    - Alamofire (~> 4.7)
-  - SQLite.swift (0.11.5):
-    - SQLite.swift/standard (= 0.11.5)
-  - SQLite.swift/standard (0.11.5)
+  - Agrume (5.3.1):
+    - SwiftyGif
+  - Alamofire (4.8.2)
+  - Floaty (4.2.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - Kingfisher (5.6.0)
+  - LeanCloud (16.1.0):
+    - LeanCloud/IM (= 16.1.0)
+    - LeanCloud/Storage (= 16.1.0)
+  - LeanCloud/IM (16.1.0):
+    - FMDB (~> 2.7.0)
+    - LeanCloud/Storage
+    - Starscream (~> 3.1.0)
+    - SwiftProtobuf (~> 1.5.0)
+  - LeanCloud/Storage (16.1.0):
+    - Alamofire (~> 4.8.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+  - Starscream (3.1.0)
+  - SwiftProtobuf (1.5.0)
+  - SwiftyGif (5.1.1)
   - WechatOpenSDK (1.7.9)
 
 DEPENDENCIES:
-  - Agrume (from `https://github.com/JanGorman/Agrume.git`)
-  - Floaty (~> 4.0.1)
-  - Kingfisher (~> 4.8.1)
-  - LeanCloud (~> 11.0.1)
-  - SQLite.swift (~> 0.11.5)
+  - Agrume
+  - Floaty (~> 4.2.0)
+  - Kingfisher (~> 5.0)
+  - LeanCloud (~> 16.1.0)
+  - SQLite.swift (~> 0.12.0)
   - WechatOpenSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Agrume
     - Alamofire
     - Floaty
+    - FMDB
     - Kingfisher
     - LeanCloud
     - SQLite.swift
+    - Starscream
+    - SwiftProtobuf
+    - SwiftyGif
     - WechatOpenSDK
 
-EXTERNAL SOURCES:
-  Agrume:
-    :git: https://github.com/JanGorman/Agrume.git
-
-CHECKOUT OPTIONS:
-  Agrume:
-    :commit: c66d07d5d1116ea2dbc141f39209cdc95cf34af7
-    :git: https://github.com/JanGorman/Agrume.git
-
 SPEC CHECKSUMS:
-  Agrume: 0f0308f2ce60fca0acf234cab1ae3cf7468b9168
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Floaty: 82854e1a5ef4fa208281ebd4da2f3d1e51ba67a6
-  Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
-  LeanCloud: f9776746a4cd62bdb441f2768017a91c9516d219
-  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  Agrume: dd627819c7965ca99b08d2f76054bf3a3e824d34
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
+  LeanCloud: f9c74424b819acaed6b1524050f98c79bceb2b9b
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
+  SwiftyGif: f7702483db93586a41f04f4927cd682852a2fa10
   WechatOpenSDK: 1fe7e3b07db860d6a936c3ff4a5aba6b890958d9
 
-PODFILE CHECKSUM: bb6d5a2e4516d4c8a2c2ceca20fd59c1c67a28a6
+PODFILE CHECKSUM: e4b06547aeabc093baf3f75537ea83866aeea431
 
 COCOAPODS: 1.5.3

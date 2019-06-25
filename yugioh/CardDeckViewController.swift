@@ -62,7 +62,7 @@ class CardDeckViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(CardDeckCollectionViewCell.NibObject(), forCellWithReuseIdentifier: CardDeckCollectionViewCell.identifier())
-        self.tableView.register(CardDeckViewSectionHeaderView.NibObject(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: CardDeckViewSectionHeaderView.identifier())
+        self.tableView.register(CardDeckViewSectionHeaderView.NibObject(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CardDeckViewSectionHeaderView.identifier())
         
         //
         let shareButton = UIBarButtonItem.init(
@@ -86,11 +86,11 @@ class CardDeckViewController: UIViewController {
         
         let img = self.getShareViewImage()
         let ext = WXImageObject()
-        ext.imageData = UIImageJPEGRepresentation(img, 1)
+        ext.imageData = img.jpegData(compressionQuality: 1)!
         
         let message = WXMediaMessage()
-        message.title = nil
-        message.description = nil
+        message.title = ""
+        message.description = ""
         message.mediaObject = ext
         message.mediaTagName = "游戏王卡牌"
         //生成缩略图
@@ -98,10 +98,10 @@ class CardDeckViewController: UIViewController {
         img.draw(in: CGRect(x: 0, y: 0, width: 100, height: 200))
         let thumbImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        message.thumbData = UIImagePNGRepresentation(thumbImage!)
+        message.thumbData = thumbImage?.pngData()
         
         let req = SendMessageToWXReq()
-        req.text = nil
+        req.text = ""
         req.message = message
         req.bText = false
         req.scene = 0
@@ -170,7 +170,7 @@ extension CardDeckViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let v = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CardDeckViewSectionHeaderView.identifier(), for: indexPath) as! CardDeckViewSectionHeaderView
         
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             
             v.sectionHeaderLabel.text = ""
             

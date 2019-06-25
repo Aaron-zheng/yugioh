@@ -116,11 +116,12 @@ class CardDetailViewController: UIViewController {
     @objc func shareButtonHandler() {
         let img = getShareViewImage(v: innerView)
         let ext = WXImageObject()
-        ext.imageData = UIImageJPEGRepresentation(img, 1)
+        ext.imageData = img.jpegData(compressionQuality: 1)!
+        
         
         let message = WXMediaMessage()
-        message.title = nil
-        message.description = nil
+        message.title = ""
+        message.description = ""
         message.mediaObject = ext
         message.mediaTagName = "游戏王卡牌"
         //生成缩略图
@@ -128,10 +129,10 @@ class CardDetailViewController: UIViewController {
         img.draw(in: CGRect(x: 0, y: 0, width: 100, height: 50))
         let thumbImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        message.thumbData = UIImagePNGRepresentation(thumbImage!)
+        message.thumbData = thumbImage!.pngData()
         
         let req = SendMessageToWXReq()
-        req.text = nil
+        req.text = ""
         req.message = message
         req.bText = false
         req.scene = 0
@@ -141,25 +142,26 @@ class CardDetailViewController: UIViewController {
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         
         let url = getCardUrl(password: self.cardEntity.password)
-        let agrume = Agrume(imageUrl: URL(string: url)!, backgroundBlurStyle: nil, backgroundColor: UIColor.black)
+        let agrume = Agrume(image: self.card.image!)
+//        let agrume = Agrume(url: URL(string: url)!)
         agrume.hideStatusBar = true
-        agrume.download = {url, completion in
-            completion(self.card.image)
-            
-            Alamofire.request(url).response { response in
-                if response.error != nil ||
-                    response.data == nil ||
-                    response.data!.count <= 50 {
-                    return
-                }
-                let image = UIImage(data: response.data!)
-                if image == nil {
-                    return
-                }
-                completion(image)
-            }
-        }
-        agrume.showFrom(self)
+//        agrume.download = {url, completion in
+//            completion(self.card.image)
+//            Alamofire.request(url).response { response in
+//                if response.error != nil ||
+//                    response.data == nil ||
+//                    response.data!.count <= 50 {
+//                    return
+//                }
+//                let image = UIImage(data: response.data!)
+//                if image == nil {
+//                    return
+//                }
+//                completion(image)
+//            }
+//        }
+        agrume.show(from: self)
+    
         
         
         

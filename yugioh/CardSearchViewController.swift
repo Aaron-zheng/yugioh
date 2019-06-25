@@ -80,13 +80,13 @@ class CardSearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        nc.addObserver(self, selector: #selector(CardSearchViewController.keyboardWillShow), name: .UIKeyboardWillChangeFrame, object: nil)
+        nc.addObserver(self, selector: #selector(CardSearchViewController.keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
             self.searchBarViewHeightConstraint.constant = self.rootFrame.height - keyboardHeight
         }
@@ -110,7 +110,7 @@ class CardSearchViewController: UIViewController {
         self.cancelButton.tintColor = UIColor.white
         self.cancelButton.addTarget(self, action: #selector(CardSearchViewController.clickCancelButton), for: .touchUpInside)
         
-        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（卡牌，效果，编号）", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（卡牌，效果，编号）", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         self.inputField.textColor = UIColor.white
         self.inputField.text = nil
         self.inputField.becomeFirstResponder()

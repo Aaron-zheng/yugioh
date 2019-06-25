@@ -11,7 +11,6 @@ import CoreData
 import LeanCloud
 
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
 
@@ -20,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
     
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         
@@ -28,11 +27,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.barTintColor = UIColor.black
         navigationBarAppearance.tintColor = UIColor.white
-        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
         
         //lean cloud 评论用到的初始化注册
-        LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)
+//        LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)
+        
+
+        let configuration = LCApplication.Configuration(
+            customizedServers: [
+                .api("https://avoscloud.com"),
+                .engine("https://avoscloud.com"),
+                .push("https://avoscloud.com"),
+                .rtm("https://router-g0-push.avoscloud.com")
+            ]
+        )
+        do {
+        try LCApplication.default.set(
+            id: leanCloudAppID,
+            key: leanCloudKey,
+            configuration: configuration
+        )
+        } catch {}
         
         //微信接口初始化
         WXApi.registerApp(wechatKey)

@@ -15,25 +15,29 @@ class CommentService {
     
     
     func addComment(commentEntity: CommentEntity, callback: @escaping () -> Void) {
+        do {
+            let post = LCObject(className: "Comment")
+            try post.set("id", value: commentEntity.id)
+            try post.set("content", value: commentEntity.content)
         
-        let post = LCObject(className: "Comment")
-        post.set("id", value: commentEntity.id)
-        post.set("content", value: commentEntity.content)
-        if let user = LCUser.current {
-            if let number = user.get("number") {
-                
-                post.set("userName", value: number.intValue?.description)
+//            if let user = LCUser.current {
+//                if let number = user.get("number") {
+//                    
+//                    post.set("userName", value: number.intValue?.description)
+//                }
+//                post.set("userId", value: user.objectId)
+//            }
+            post.save { (result) in
+                switch result {
+                case .success :
+                    callback()
+                    break
+                case .failure(let error):
+                    print(error)
+                }
             }
-            post.set("userId", value: user.objectId)
-        }
-        post.save { (result) in
-            switch result {
-            case .success :
-                callback()
-                break
-            case .failure(let error):
-                print(error)
-            }
+        }catch {
+            
         }
     }
     

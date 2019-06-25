@@ -89,7 +89,7 @@ class BattleView: UIView {
     
     @objc func draggedView(_ sender:UIPanGestureRecognizer){
         let viewDrag = sender.view!
-        self.bringSubview(toFront: viewDrag)
+        self.bringSubviewToFront(viewDrag)
         let translation = sender.translation(in: self)
         viewDrag.center = CGPoint(x: viewDrag.center.x + translation.x, y: viewDrag.center.y + translation.y)
         sender.setTranslation(CGPoint.zero, in: self)
