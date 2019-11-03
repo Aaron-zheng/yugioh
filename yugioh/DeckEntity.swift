@@ -10,7 +10,7 @@ import Foundation
 
 class DeckEntity {
  
-    //卡牌password
+    //卡牌id，非password
     public var id: String = ""
     
     //卡牌数量

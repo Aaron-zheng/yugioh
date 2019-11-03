@@ -167,7 +167,7 @@ extension CardDeckViewController: UICollectionViewDelegate {
             
             
             if indexPath.section == 0 {
-                v.sectionHeaderLabel.text = "主卡组"
+                v.sectionHeaderLabel.text = "主卡组（" + self.deckViewEntity.title + "）"
             } else if indexPath.section == 1 {
                 v.sectionHeaderLabel.text = "副卡组"
             } else if indexPath.section == 2 {

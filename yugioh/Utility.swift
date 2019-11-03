@@ -91,6 +91,33 @@ func getCardEntity(id: String) -> CardEntity {
     return CardEntity()
 }
 
+func getChampionDeckViewEntity(deckName: String) -> DeckViewEntity {
+    return getDeckViewEntity(deckName: deckName, titleName: deckName + "游戏王世界锦标赛冠军卡组")
+}
+
+func getDeckViewEntity(deckName: String, titleName: String) -> DeckViewEntity {
+    let deckViewEntity = DeckViewEntity()
+    deckViewEntity.id = deckName
+    deckViewEntity.title = titleName
+    deckViewEntity.introduction = titleName
+    var deckEntitys = [String: [DeckEntity]]()
+    deckEntitys["0"] = []
+    deckEntitys["1"] = []
+    deckEntitys["2"] = []
+    do {
+        for each in try getDB().prepare("select b.id, a.type, a.number from deck a inner join info b on a.password = b.password where deckName = \"\(deckName)\"") {
+            let d = DeckEntity()
+            d.id = each[0] as! String
+            d.type = each[1] as! String
+            d.number = Int(truncating: each[2] as! NSNumber)
+            deckEntitys[d.type]!.append(d)
+        }
+    } catch {
+        print(error.localizedDescription)
+    }
+    deckViewEntity.deckEntitys = deckEntitys
+    return deckViewEntity
+}
 
 
 //获取
@@ -110,6 +137,12 @@ func setImage(card: UIImageView, id: String) {
                           completionHandler: { image, error, cacheType, imageURL in
                             
     })
+}
+
+func buildDeckViewEntity(element: [Binding?]) -> DeckViewEntity {
+    let deckViewEntity = DeckViewEntity();
+    
+    return deckViewEntity
 }
 
 

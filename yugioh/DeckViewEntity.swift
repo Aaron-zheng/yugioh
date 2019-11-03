@@ -15,6 +15,9 @@ class DeckViewEntity {
     public var introduction: String = ""
     public var deckEntitys: [String: [DeckEntity]] = [String: [DeckEntity]]()
     
+    init() {
+        
+    }
     
     init(id: String, title: String, introduction: String, deckEntitys:[String: [DeckEntity]]) {
         self.id = id

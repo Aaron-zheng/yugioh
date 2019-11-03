@@ -189,5 +189,20 @@ var deckViewEntitysConstant: [DeckViewEntity] = [
                     DeckEntity(id: "8779", number: 1),
                     DeckEntity(id: "8899", number: 1),
                     DeckEntity(id: "8903", number: 1)
-        ]])
+        ]]),
+    getChampionDeckViewEntity(deckName: "2017"),
+    getChampionDeckViewEntity(deckName: "2016"),
+    getChampionDeckViewEntity(deckName: "2015"),
+    getChampionDeckViewEntity(deckName: "2014"),
+    getChampionDeckViewEntity(deckName: "2013"),
+    getChampionDeckViewEntity(deckName: "2012"),
+    getChampionDeckViewEntity(deckName: "2011"),
+    getChampionDeckViewEntity(deckName: "2010"),
+    getChampionDeckViewEntity(deckName: "2009"),
+    getChampionDeckViewEntity(deckName: "2008"),
+    getChampionDeckViewEntity(deckName: "2007"),
+    getChampionDeckViewEntity(deckName: "2006"),
+    getChampionDeckViewEntity(deckName: "2005"),
+    getChampionDeckViewEntity(deckName: "2004"),
+    getChampionDeckViewEntity(deckName: "2003")
 ]
