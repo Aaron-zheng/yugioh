@@ -15,6 +15,7 @@ class CardDeckViewController: UIViewController {
     
     var rootController: ViewController!
     var deckViewController: DeckViewController!
+    //外部传入的 卡组 数据
     var deckViewEntity: DeckViewEntity!
     
     fileprivate var cardEntitys: Array<CardEntity>! = []
@@ -24,32 +25,22 @@ class CardDeckViewController: UIViewController {
     
     @IBOutlet weak var tableView: UICollectionView!
     
-    //0. 代表我的卡组
-    //1. 代表禁止卡组
-    //2. 代表冠军卡组
-    func cardDeckType() -> Int {
-        if deckViewEntity.id == "0" {
-            return 0
-        } else if deckViewEntity.id == "forbid" || deckViewEntity.id == "limit1" || deckViewEntity.id == "limit2"  {
-            return 1
-        } else {
-            return 2
-        }
-    }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         self.guide.alpha = 0
         
-        if self.cardDeckType() == 0 {
-            deckViewEntity.deckEntitys = deckService.list()
-            if deckViewEntity.deckEntitys["0"]!.count <= 0 &&
-                deckViewEntity.deckEntitys["1"]!.count <= 0 &&
-                deckViewEntity.deckEntitys["2"]!.count <= 0 {
-                //当前为我的卡组，并且卡牌为0，展示引导页
-                self.guide.alpha = 1
-            }
+        //代表是自己的卡组，所以必须请求数据
+        if(deckViewEntity.id == "0") {
+            deckViewEntity.deckEntitys = deckService.list();
         }
+        
+    
+        if deckViewEntity.deckEntitys["0"]!.count <= 0 &&
+            deckViewEntity.deckEntitys["1"]!.count <= 0 &&
+            deckViewEntity.deckEntitys["2"]!.count <= 0 {
+            //卡牌为0，展示引导页
+            self.guide.alpha = 1
+        }
+
         self.tableView.reloadData()
     }
     
@@ -174,17 +165,15 @@ extension CardDeckViewController: UICollectionViewDelegate {
             
             v.sectionHeaderLabel.text = ""
             
-            if self.cardDeckType() == 0 {
-                if indexPath.section == 0 {
-                    v.sectionHeaderLabel.text = "主卡组"
-                } else if indexPath.section == 1 {
-                    v.sectionHeaderLabel.text = "副卡组"
-                } else if indexPath.section == 2 {
-                    v.sectionHeaderLabel.text = "额外卡组"
-                }
-            } else {
-                v.sectionHeaderLabel.text = self.deckViewEntity.title
+            
+            if indexPath.section == 0 {
+                v.sectionHeaderLabel.text = "主卡组"
+            } else if indexPath.section == 1 {
+                v.sectionHeaderLabel.text = "副卡组"
+            } else if indexPath.section == 2 {
+                v.sectionHeaderLabel.text = "额外卡组"
             }
+            
         }
         
         return v
@@ -197,14 +186,15 @@ extension CardDeckViewController: UICollectionViewDataSource {
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if self.cardDeckType() == 0 {
-            return 3
-        } else {
-            return 1
-        }
+        //根据 卡组中的数据 做展示
+        //如果该卡组中 含有3部分，则为 1主 2副 3额外，返回3
+        //如果该卡组中 含有1部分，则为 禁卡/限制卡
+        return deckViewEntity.deckEntitys.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //按照卡组的大小进行展示
+        //如果只有主卡组，只展示1个
         return deckViewEntity.deckEntitys[section.description]!.count
     }
     
@@ -221,11 +211,8 @@ extension CardDeckViewController: UICollectionViewDataSource {
         let deckEntity = deckViewEntity.deckEntitys[indexPath.section.description]![indexPath.row]
         let cardEntity = getCardEntity(id: deckEntity.id)
         
-        if self.cardDeckType() == 1 {
-            cell.titleLabel.text = cardEntity.titleChinese
-        } else {
-            cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
-        }
+        cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
+
         setImage(card: cell.cardImageView, id: cardEntity.id)
 
         

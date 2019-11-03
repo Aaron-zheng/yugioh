@@ -41,8 +41,7 @@ extension DeckViewController: UITableViewDelegate {
         let controller = CardDeckViewController()
         let rootController: ViewController = self.tabBarController as! ViewController
         controller.rootController = rootController
-        let deckViewEntity = deckViewEntitys[indexPath.row]
-        controller.deckViewEntity = deckViewEntity
+        controller.deckViewEntity = deckViewEntitys[indexPath.row]
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

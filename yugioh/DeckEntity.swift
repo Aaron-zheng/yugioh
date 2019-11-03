@@ -10,10 +10,19 @@ import Foundation
 
 class DeckEntity {
  
+    //卡牌password
     public var id: String = ""
-    public var number: Int = 0
-    public var type: String = ""
     
+    //卡牌数量
+    public var number: Int = 0
+    
+    //卡组名称
+    public var type: String = ""
+   
+
+    //目前这里是 1个卡组，可以含有多个卡牌
+    //这里的关系有点奇怪，一个卡组，一个卡牌id，再该卡牌id的数量
+    //这里当初应该是写成了VO输出了
     
     init() {
         

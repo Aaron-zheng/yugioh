@@ -69,15 +69,17 @@ func preCalculateTextHeight(text: String, font: UIFont, width: CGFloat) -> CGFlo
     return label.frame.height
 }
 
+//获取图片链接
 func getCardUrl(id: String) -> String {
     return qiniuUrlPrefix + id + qiniuUrlSuffix
 }
 
+//获取图片详细链接
 func getCardUrl(password: String) -> String {
     return qiniuUrlPrefix + "jp/" + password + qiniuUrlSuffix
 }
 
-
+//获取卡牌详情
 func getCardEntity(id: String) -> CardEntity {
     do {
         for each in try getDB().prepare("select * from info where id = \"\(id)\"") {
@@ -91,11 +93,11 @@ func getCardEntity(id: String) -> CardEntity {
 
 
 
-
+//获取
 fileprivate func extractedFunc(_ id: String) -> String {
     return getCardUrl(id: id)
 }
-
+//设置图片
 func setImage(card: UIImageView, id: String) {
     
     let url = extractedFunc(id)
@@ -110,15 +112,6 @@ func setImage(card: UIImageView, id: String) {
     })
 }
 
-/*
-func setLog(event: String, description: String?) {
-    var outputDescription = ""
-    if let d = description {
-        outputDescription = d
-    }
-    Analytics.logEvent(event, parameters: ["description": outputDescription])
-}
-*/
 
 
 func buildCardEntity(element: [Binding?]) -> CardEntity {
@@ -143,6 +136,7 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     return cardEntity
 }
 
+//获取当前卡牌的使用范围
 func getUsage(id: String) -> String {
     
     for deck in deckViewEntitysConstant[1].deckEntitys["0"]! {
@@ -168,6 +162,7 @@ func getUsage(id: String) -> String {
 }
 
 
+//获取分享时候使用的小图
 func getShareViewImage(v: UIView) -> UIImage {
     let w = v.frame.width
     let h = v.frame.height
@@ -180,6 +175,7 @@ func getShareViewImage(v: UIView) -> UIImage {
     return image
 }
 
+//判断当前是否iphonex，做特殊处理
 func isIPhoneX() -> Bool {
     if UIDevice().userInterfaceIdiom == .phone {
         switch UIScreen.main.nativeBounds.height {
