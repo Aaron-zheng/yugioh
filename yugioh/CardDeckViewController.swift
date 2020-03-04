@@ -165,14 +165,25 @@ extension CardDeckViewController: UICollectionViewDelegate {
             
             v.sectionHeaderLabel.text = ""
             
-            
-            if indexPath.section == 0 {
-                v.sectionHeaderLabel.text = "主卡组（" + self.deckViewEntity.title + "）"
-            } else if indexPath.section == 1 {
-                v.sectionHeaderLabel.text = "副卡组"
-            } else if indexPath.section == 2 {
-                v.sectionHeaderLabel.text = "额外卡组"
+            if deckViewEntity.type == "ban" {
+                if indexPath.section == 0 {
+                    v.sectionHeaderLabel.text = "禁止卡（" + self.deckViewEntity.title + "）"
+                } else if indexPath.section == 1 {
+                    v.sectionHeaderLabel.text = "限制卡"
+                } else if indexPath.section == 2 {
+                    v.sectionHeaderLabel.text = "准限制卡"
+                }
+            } else {
+                if indexPath.section == 0 {
+                    v.sectionHeaderLabel.text = "主卡组（" + self.deckViewEntity.title + "）"
+                } else if indexPath.section == 1 {
+                    v.sectionHeaderLabel.text = "副卡组"
+                } else if indexPath.section == 2 {
+                    v.sectionHeaderLabel.text = "额外卡组"
+                }
             }
+            
+            
             
         }
         
@@ -187,9 +198,10 @@ extension CardDeckViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         //根据 卡组中的数据 做展示
-        //如果该卡组中 含有3部分，则为 1主 2副 3额外，返回3
-        //如果该卡组中 含有1部分，则为 禁卡/限制卡
-        return deckViewEntity.deckEntitys.count
+        //如果该卡组中 含有3部分，则为 0主 1副 2额外，返回数字3
+        //如果该卡组中 含有3部分，则为 3禁止 4限制 5准限制，返回数字3
+//        return deckViewEntity.deckEntitys.count
+        return 3
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

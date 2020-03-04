@@ -95,20 +95,38 @@ func getChampionDeckViewEntity(deckName: String) -> DeckViewEntity {
     return getDeckViewEntity(deckName: deckName, titleName: deckName + "游戏王世界锦标赛冠军卡组")
 }
 
+func getBanDeckViewEntity(deckName: String) -> DeckViewEntity {
+    return getDeckViewEntity(deckName: deckName, titleName: "2020年1月 " + deckName + " 禁止&限制&准限制卡表")
+}
+
 func getDeckViewEntity(deckName: String, titleName: String) -> DeckViewEntity {
     let deckViewEntity = DeckViewEntity()
     deckViewEntity.id = deckName
     deckViewEntity.title = titleName
     deckViewEntity.introduction = titleName
     var deckEntitys = [String: [DeckEntity]]()
+    //主卡组 0
+    //禁止卡 3
     deckEntitys["0"] = []
+    //副卡组 1
+    //限制卡 4
     deckEntitys["1"] = []
+    //额外卡组 2
+    //准限制卡 5
     deckEntitys["2"] = []
+    
+    
     do {
         for each in try getDB().prepare("select b.id, a.type, a.number from deck a inner join info b on a.password = b.password where deckName = \"\(deckName)\"") {
             let d = DeckEntity()
             d.id = each[0] as! String
-            d.type = each[1] as! String
+            let type = each[1] as! NSString
+            if type.integerValue > 2 {
+                d.type = String(type.integerValue - 3)
+                deckViewEntity.type = "ban"
+            } else {
+                d.type = each[1] as! String
+            }
             d.number = Int(truncating: each[2] as! NSNumber)
             deckEntitys[d.type]!.append(d)
         }
