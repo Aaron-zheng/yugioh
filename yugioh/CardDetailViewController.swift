@@ -30,8 +30,9 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var rare: UILabel!
     @IBOutlet weak var adjust: UIVerticalAlignLabel!
     @IBOutlet weak var scale: UILabel!
+    @IBOutlet weak var link: UILabel!
     
-    
+    //
     @IBOutlet weak var innerView: UIView!
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
@@ -188,8 +189,7 @@ class CardDetailViewController: UIViewController {
         self.name.text = cardEntity.titleChinese
         self.effect.text = cardEntity.effect
         self.type.text = cardEntity.type
-        //修改为根据常量池中的判断
-        self.usage.text = getUsage(id: cardEntity.id)
+        self.usage.text = cardEntity.usage
         
         
         self.property.text = ""
@@ -213,7 +213,25 @@ class CardDetailViewController: UIViewController {
         }
         
         self.password.text = "编号: " + cardEntity.password
-        self.scale.text = cardEntity.scale
+        if cardEntity.scale != nil && !cardEntity.scale.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            self.scale.text = "灵摆: " + cardEntity.scale
+        } else {
+            self.scale.text = ""
+        }
+        
+        if cardEntity.link != nil {
+            self.link.text = "连接: " + cardEntity.link + " "
+                + cardEntity.linkMarker
+                    .replacingOccurrences(of: "\"", with: "")
+                    .replacingOccurrences(of: "-", with: "")
+                    .replacingOccurrences(of: "Top", with: "上")
+                    .replacingOccurrences(of: "Bottom", with: "下")
+                    .replacingOccurrences(of: "Left", with: "左")
+                    .replacingOccurrences(of: "Right", with: "右")
+        } else {
+            self.link.text = ""
+        }
+        
         self.rare.text = "卡牌: " + cardEntity.rare
         self.pack.text = "卡包: " + cardEntity.pack
         if cardEntity.adjust == "" {

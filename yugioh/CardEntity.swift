@@ -29,7 +29,6 @@ class CardEntity {
     var password: String! = ""
     
     //用处，禁止，限制，准限制，无限制（目前已经弃用）
-    @available(*, deprecated)
     var usage: String! = ""
     
     //种族，鸟兽，念动力，等等
@@ -56,12 +55,17 @@ class CardEntity {
     //所属卡包
     var pack: String! = ""
     
-    //灵摆
+    //灵摆，数字表示
     var scale: String! = ""
     
     //调整
     var adjust: String! = ""
     
+    //连接，数字表示
+    var link: String! = ""
+    
+    //连接标记，大概为 左上，左下
+    var linkMarker: String! = ""
     
     //额外添加属性
     //var url: String! = ""
