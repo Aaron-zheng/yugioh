@@ -151,22 +151,17 @@ func getDeckViewEntity(deckName: String, titleName: String) -> DeckViewEntity {
 }
 
 
-//获取
-fileprivate func extractedFunc(_ id: String) -> String {
-    return getCardUrl(id: id)
-}
 //设置图片
-func setImage(card: UIImageView, id: String) {
+func setImage(card: UIImageView, id: String, completionHandler: ((Result) -> Void)? = nil) {
     
-    let url = extractedFunc(id)
+    let url = getCardUrl(id: id)
     
     card.kf.setImage(with: URL(string: url),
                           placeholder: UIImage(named: "defaultimg"),
                           options: [
                             .scaleFactor(UIScreen.main.scale),
                             .transition(.fade(0.1)),
-                            .cacheOriginalImage
-        ]
+                            .cacheOriginalImage]
     )
 }
 
@@ -217,7 +212,7 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     //日文名称
     cardEntity.titleJapanese = element[2] as? String
     //英文名称
-    cardEntity.titleEnglish = element[3] as? String
+    cardEntity.titleEnglish = (element[18] != nil ? element[18] : element[3]) as? String
     //类型，
     cardEntity.type = element[4] as? String
     //密码，唯一
@@ -257,19 +252,19 @@ func getUsage(id: String) -> String {
     //常量池计算
     for deck in deckViewEntitysConstant[1].deckEntitys["0"]! {
         if id == deck.id {
-            return yearAndMonthLimitConstant + "禁止卡"
+            return "禁止卡"
         }
     }
     //常量池计算
-    for deck in deckViewEntitysConstant[2].deckEntitys["0"]! {
+    for deck in deckViewEntitysConstant[1].deckEntitys["1"]! {
         if id == deck.id {
-            return yearAndMonthLimitConstant + "限制卡"
+            return "限制卡"
         }
     }
     //常量池计算
-    for deck in deckViewEntitysConstant[3].deckEntitys["0"]! {
+    for deck in deckViewEntitysConstant[1].deckEntitys["2"]! {
         if id == deck.id {
-            return yearAndMonthLimitConstant + "准限制卡"
+            return "准限制卡"
         }
     }
     //默认值

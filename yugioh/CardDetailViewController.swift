@@ -30,23 +30,23 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var rare: UILabel!
     @IBOutlet weak var adjust: UIVerticalAlignLabel!
     @IBOutlet weak var scale: UILabel!
-    @IBOutlet weak var link: UILabel!
-    
+    //朦层玻璃效果
+    @IBOutlet weak var effectView: UIVisualEffectView!
     //
     @IBOutlet weak var innerView: UIView!
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    
+    //浮动按钮
     @IBOutlet weak var floatyButton: Floaty!
     
     
     @IBOutlet weak var tableView: UITableView!
-    
+    //评论文字
     @IBOutlet weak var commentCountLabel: UILabel!
-    
+    //评论输入框
     @IBOutlet weak var commentInputTextField: UITextField!
 
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentView: UIImageView!
     
     @IBOutlet weak var innerViewHeader: NSLayoutConstraint!
     //
@@ -59,27 +59,18 @@ class CardDetailViewController: UIViewController {
     
     fileprivate var commentDAO = CommentService()
     
-    private func setImageView() {
-        let img = card.image
-        print(self.contentView.bounds)
-        let view = UIImageView(frame: self.contentView.bounds)
-        view.image = img
-//        view.layer.cornerRadius = 0
-//        view.layer.masksToBounds = true
-        view.backgroundColor = redColor
-        self.contentView.addSubview(view)
-    }
-    
     
     override func viewDidLoad() {
+        //
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
+        self.effectView.effect = blurEffect
+        
         //如果是iphonex 则高度需要改变
         if isIPhoneX() {
             innerViewHeader.constant = 96
         }
-        
-        //TODO 需要修改的部分
-        self.contentView.backgroundColor = greyColor
-        self.view.backgroundColor = greyColor
+    
+        self.view.backgroundColor = UIColor.clear
         let frameWidth = self.proxy.frame.width
         self.pack.verticalAligment = .VerticalAligmentBottom
         
@@ -215,12 +206,11 @@ class CardDetailViewController: UIViewController {
         self.password.text = "编号: " + cardEntity.password
         if cardEntity.scale != nil && !cardEntity.scale.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.scale.text = "灵摆: " + cardEntity.scale
-        } else {
-            self.scale.text = ""
         }
         
+        //灵摆和连接 不可能同时存在，所以使用共同的label展示好了
         if cardEntity.link != nil {
-            self.link.text = "连接: " + cardEntity.link + " "
+            self.scale.text = "连接: " + cardEntity.link + " "
                 + cardEntity.linkMarker
                     .replacingOccurrences(of: "\"", with: "")
                     .replacingOccurrences(of: "-", with: "")
@@ -228,8 +218,6 @@ class CardDetailViewController: UIViewController {
                     .replacingOccurrences(of: "Bottom", with: "下")
                     .replacingOccurrences(of: "Left", with: "左")
                     .replacingOccurrences(of: "Right", with: "右")
-        } else {
-            self.link.text = ""
         }
         
         self.rare.text = "卡牌: " + cardEntity.rare
@@ -242,7 +230,24 @@ class CardDetailViewController: UIViewController {
         
         
         
-        setImage(card: self.card, id: cardEntity.id)
+        let url = getCardUrl(id: cardEntity.id)
+        self.card.kf.setImage(with: URL(string: url),
+                         placeholder: UIImage(named: "defaultimg"),
+                         options: [
+                            .scaleFactor(UIScreen.main.scale),
+                            .transition(.fade(0.1)),
+                            .cacheOriginalImage]
+        ){
+            result in
+            switch result {
+            case .success(_):
+                self.contentView.image = self.card.image
+            case .failure(_): 
+                self.contentView.image = UIImage(named: "defaultimg")
+            }
+        }
+        
+//        setImage(card: self.card, id: cardEntity.id)
         
         
         
@@ -295,7 +300,8 @@ class CardDetailViewController: UIViewController {
         
         
         prepareTableView()
-
+        
+        self.commentInputTextField.backgroundColor = UIColor.clear
         self.commentInputTextField.delegate = self
         
     }
@@ -366,7 +372,7 @@ class CardDetailViewController: UIViewController {
     private func prepareTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.backgroundColor = greyColor
+        self.tableView.backgroundColor = UIColor.clear
         self.tableView.separatorStyle = .singleLine
         self.tableView.tableHeaderView = UIView(frame: CGRect.zero)
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -389,6 +395,7 @@ extension CardDetailViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CardCommentTableCell.identifier(), for: indexPath) as! CardCommentTableCell
+        cell.backgroundColor = UIColor.clear
         cell.prepare(commentEntity: commentEntitys[indexPath.row])
         
         return cell

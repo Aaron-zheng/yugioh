@@ -318,6 +318,8 @@ extension CardSearchViewController: UITextFieldDelegate {
                 var inputFound = true
                 for inputTmp in inputArray! {
                     if !c.titleChinese.lowercased().contains(inputTmp.description)
+                        && !c.titleEnglish.lowercased().contains(inputTmp.description)
+                        && !c.titleJapanese.lowercased().contains(inputTmp.description)
                         && !c.effect.lowercased().contains(inputTmp.description)
                         && !c.password.lowercased().contains(inputTmp.description) {
                         inputFound = false

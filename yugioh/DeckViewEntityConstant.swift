@@ -8,9 +8,6 @@
 
 import Foundation
 
-var yearAndMonthLimitConstant = "2018年10月OCG"
-
-
 var deckViewEntitysConstant: [DeckViewEntity] = [
     DeckViewEntity(id: "0", title: "我的卡组", introduction: "我的卡组", deckEntitys: [String: [DeckEntity]](), type: ""),
     getBanDeckViewEntity(deckName: "ocg"),
