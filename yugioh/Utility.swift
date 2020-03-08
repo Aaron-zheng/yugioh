@@ -74,10 +74,6 @@ func getCardUrl(id: String) -> String {
     return qiniuUrlPrefix + id + qiniuUrlSuffix
 }
 
-//获取图片详细链接
-func getCardUrl(password: String) -> String {
-    return qiniuUrlPrefix + "jp/" + password + qiniuUrlSuffix
-}
 
 //获取卡牌详情
 func getCardEntity(id: String) -> CardEntity {
@@ -149,12 +145,23 @@ func setImage(card: UIImageView, id: String) {
     
     card.kf.setImage(with: URL(string: url),
                           placeholder: UIImage(named: "defaultimg"),
-                          options: [.transition(.fade(0.1))],
-                          progressBlock: { receivedSize, totalSize in
-        },
-                          completionHandler: { image, error, cacheType, imageURL in
-                            
-    })
+                          options: [
+                            .scaleFactor(UIScreen.main.scale),
+                            .transition(.fade(0.1)),
+                            .cacheOriginalImage
+        ]
+    )
+//    {
+//        result in
+//        switch result {
+//        case .success(let value):
+//            print("set image success: \(value.source.url?.absoluteString ?? "")")
+//        case .failure(let error):
+//            print("set image failed: \(error.localizedDescription)")
+//        }
+//
+//    }
+    
 }
 
 func buildDeckViewEntity(element: [Binding?]) -> DeckViewEntity {

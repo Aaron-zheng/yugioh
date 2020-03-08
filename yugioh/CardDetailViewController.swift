@@ -58,6 +58,16 @@ class CardDetailViewController: UIViewController {
     
     fileprivate var commentDAO = CommentService()
     
+    private func setImageView() {
+        let img = card.image
+        print(self.contentView.bounds)
+        let view = UIImageView(frame: self.contentView.bounds)
+        view.image = img
+//        view.layer.cornerRadius = 0
+//        view.layer.masksToBounds = true
+        view.backgroundColor = redColor
+        self.contentView.addSubview(view)
+    }
     
     
     override func viewDidLoad() {
@@ -66,6 +76,7 @@ class CardDetailViewController: UIViewController {
             innerViewHeader.constant = 96
         }
         
+        //TODO 需要修改的部分
         self.contentView.backgroundColor = greyColor
         self.view.backgroundColor = greyColor
         let frameWidth = self.proxy.frame.width
@@ -140,31 +151,9 @@ class CardDetailViewController: UIViewController {
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        
-        let url = getCardUrl(password: self.cardEntity.password)
         let agrume = Agrume(image: self.card.image!)
-//        let agrume = Agrume(url: URL(string: url)!)
         agrume.hideStatusBar = true
-//        agrume.download = {url, completion in
-//            completion(self.card.image)
-//            Alamofire.request(url).response { response in
-//                if response.error != nil ||
-//                    response.data == nil ||
-//                    response.data!.count <= 50 {
-//                    return
-//                }
-//                let image = UIImage(data: response.data!)
-//                if image == nil {
-//                    return
-//                }
-//                completion(image)
-//            }
-//        }
         agrume.show(from: self)
-    
-        
-        
-        
     }
     
     
