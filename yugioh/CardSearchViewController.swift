@@ -110,7 +110,7 @@ class CardSearchViewController: UIViewController {
         self.cancelButton.tintColor = UIColor.white
         self.cancelButton.addTarget(self, action: #selector(CardSearchViewController.clickCancelButton), for: .touchUpInside)
         
-        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（卡牌，效果，编号）", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（中/日/英 卡牌，效果，编号）", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         self.inputField.textColor = UIColor.white
         self.inputField.text = nil
         self.inputField.becomeFirstResponder()

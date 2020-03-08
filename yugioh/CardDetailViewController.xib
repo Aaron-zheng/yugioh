@@ -64,7 +64,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmW-WK-tS2">
                             <rect key="frame" x="8" y="72" width="359" height="256"/>
                             <subviews>
-                                <view alpha="0.87" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seK-tz-SZl">
+                                <view alpha="0.78000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seK-tz-SZl">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="256"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -229,7 +229,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKN-tD-RHq" userLabel="Adjust View">
                             <rect key="frame" x="8" y="332" width="359" height="120"/>
                             <subviews>
-                                <view alpha="0.87" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAc-YG-Lyz">
+                                <view alpha="0.78000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAc-YG-Lyz">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="120"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -267,7 +267,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmX-Vw-P7d" userLabel="Input View">
                             <rect key="frame" x="8" y="456" width="359" height="32"/>
                             <subviews>
-                                <view alpha="0.87" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-XJ-fCj">
+                                <view alpha="0.78000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-XJ-fCj">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="32"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -305,7 +305,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGt-1W-7Fa" userLabel="Comment View">
                             <rect key="frame" x="8" y="492" width="359" height="167"/>
                             <subviews>
-                                <view alpha="0.87" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-V3-90H">
+                                <view alpha="0.78000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-V3-90H">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="167"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
