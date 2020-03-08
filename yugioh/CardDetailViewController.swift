@@ -19,13 +19,14 @@ class CardDetailViewController: UIViewController {
     //first part
     @IBOutlet weak var card: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var englishName: UILabel!
     @IBOutlet weak var type: UILabel!
-    @IBOutlet weak var effect: UIVerticalAlignLabel!
+    @IBOutlet weak var usage: UIVerticalAlignLabel!
     @IBOutlet weak var star: DOFavoriteButton!
     @IBOutlet weak var attack: UILabel!
     @IBOutlet weak var pack: UIVerticalAlignLabel!
     @IBOutlet weak var property: UILabel!
-    @IBOutlet weak var usage: UILabel!
+    @IBOutlet weak var effect: UILabel!
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var rare: UILabel!
     @IBOutlet weak var adjust: UIVerticalAlignLabel!
@@ -85,8 +86,8 @@ class CardDetailViewController: UIViewController {
             h2 = 16
         }
         //总高度
-        //头部gap8 + title24 + type16 + property16 + effect + gap4 + password16 + pack + rare + gap8
-        let h3 = 8 + 24 + 16 + 16 + h1 + 4 + 16 + h2 + 16 + 8
+        //头部gap8 + title24 + englishTitle16 + type16 + property16 + effect + gap4 + password16 + pack + rare + gap8
+        let h3 = 8 + 24 + 16 + 16 + 16 + h1 + 4 + 16 + h2 + 16 + 8
         
         
         if h0 > h3 {
@@ -178,6 +179,7 @@ class CardDetailViewController: UIViewController {
         }
         
         self.name.text = cardEntity.titleChinese
+        self.englishName.text = cardEntity.titleJapanese + " / " + cardEntity.titleEnglish
         self.effect.text = cardEntity.effect
         self.type.text = cardEntity.type
         self.usage.text = cardEntity.usage
