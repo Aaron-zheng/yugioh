@@ -18,9 +18,6 @@ target 'yugioh' do
   ## sqlite工具
   pod 'SQLite.swift', '~> 0.12.0'
 
-  ## 评论功能
-  pod 'LeanCloud', '~> 16.1.0'
-  
   ## 浮动按钮
   pod 'Floaty', '~> 4.2.0'
 
@@ -37,5 +34,9 @@ target 'yugioh' do
 
   ## 添加阿里云oss
   ## pod 'AliyunOSSiOS'
+
+  ## 评论功能
+  ## pod 'LeanCloud', '~> 16.1.0'
+  
   
 end

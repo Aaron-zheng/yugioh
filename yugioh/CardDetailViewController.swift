@@ -11,7 +11,6 @@ import UIKit
 import Kingfisher
 import Agrume
 import Floaty
-import Alamofire
 
 
 
@@ -40,16 +39,13 @@ class CardDetailViewController: UIViewController {
     //浮动按钮
     @IBOutlet weak var floatyButton: Floaty!
     
-    
-    @IBOutlet weak var tableView: UITableView!
-    //评论文字
-    @IBOutlet weak var commentCountLabel: UILabel!
-    //评论输入框
-    @IBOutlet weak var commentInputTextField: UITextField!
-
     @IBOutlet weak var contentView: UIImageView!
     
     @IBOutlet weak var innerViewHeader: NSLayoutConstraint!
+    
+    @IBOutlet weak var adjustView: UIView!
+    
+    
     //
     var cardEntity: CardEntity!
     var commentEntitys: Array<CommentEntity>! = []
@@ -57,8 +53,6 @@ class CardDetailViewController: UIViewController {
     
     fileprivate var deckService: DeckService = DeckService()
     fileprivate var cardService: CardService = CardService()
-    
-    fileprivate var commentDAO = CommentService()
     
     
     override func viewDidLoad() {
@@ -224,11 +218,10 @@ class CardDetailViewController: UIViewController {
         
         self.rare.text = "卡牌: " + cardEntity.rare
         self.pack.text = "卡包: " + cardEntity.pack
-        if cardEntity.adjust == "" {
-            self.adjust.text = "调整: 无"
-        } else {
-            self.adjust.text = "调整: " + cardEntity.adjust
-        }
+        // 设置调整
+        self.adjust.text = "调整: " + cardEntity.adjust
+        // 设置调整界面直接隐藏
+        self.adjustView.isHidden = true
         
         
         
@@ -299,13 +292,6 @@ class CardDetailViewController: UIViewController {
         floatyButton.addItem(item: item1)
         floatyButton.addItem(item: item2)
         
-        
-        
-        prepareTableView()
-        
-        self.commentInputTextField.backgroundColor = UIColor.clear
-        self.commentInputTextField.delegate = self
-        
     }
     
     
@@ -362,26 +348,6 @@ class CardDetailViewController: UIViewController {
         
     }
     
-    func retriveComment() {
-        commentDAO.getComment(id: cardEntity.id) { (commentEntitys) in
-            self.commentEntitys = commentEntitys
-            self.commentCountLabel.text = "评论 (" + commentEntitys.count.description + ")"
-            self.tableView.reloadData()
-        }
-    }
-    
-    
-    private func prepareTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.backgroundColor = UIColor.clear
-        self.tableView.separatorStyle = .singleLine
-        self.tableView.tableHeaderView = UIView(frame: CGRect.zero)
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        self.tableView.register(CardCommentTableCell.NibObject(), forCellReuseIdentifier: CardCommentTableCell.identifier())
-        
-        retriveComment()
-    }
 }
 
 
@@ -410,32 +376,3 @@ extension CardDetailViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
-
-extension CardDetailViewController: UITextFieldDelegate {
-    
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        let input = textField.text?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        
-        if input != nil && input != "" {
-            
-            let commentEntity = CommentEntity()
-            commentEntity.content = input!
-            commentEntity.id = cardEntity.id
-            self.commentDAO.addComment(commentEntity: commentEntity, callback: {
-                self.retriveComment()
-            })
-        }
-        
-        textField.text = ""
-        
-        return true
-    }
-    
-}
-

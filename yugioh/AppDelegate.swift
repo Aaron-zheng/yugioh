@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import LeanCloud
 
 
 @UIApplicationMain
@@ -29,26 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         navigationBarAppearance.tintColor = UIColor.white
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
-        
-        //lean cloud 评论用到的初始化注册
-//        LeanCloud.initialize(applicationID: leanCloudAppID, applicationKey: leanCloudKey)
-        
-
-        let configuration = LCApplication.Configuration(
-            customizedServers: [
-                .api("https://avoscloud.com"),
-                .engine("https://avoscloud.com"),
-                .push("https://avoscloud.com"),
-                .rtm("https://router-g0-push.avoscloud.com")
-            ]
-        )
-        do {
-        try LCApplication.default.set(
-            id: leanCloudAppID,
-            key: leanCloudKey,
-            configuration: configuration
-        )
-        } catch {}
         
         //微信接口初始化
         WXApi.registerApp(wechatKey)

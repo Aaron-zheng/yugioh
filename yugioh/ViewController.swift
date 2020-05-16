@@ -8,7 +8,6 @@
 
 import UIKit
 import SQLite
-import LeanCloud
 
 class ViewController: UITabBarController {
     
