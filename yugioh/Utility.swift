@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 import SQLite
 
@@ -109,7 +110,7 @@ func getChampionDeckViewEntity(deckName: String) -> DeckViewEntity {
 }
 //获取禁卡组
 func getBanDeckViewEntity(deckName: String) -> DeckViewEntity {
-    return getDeckViewEntity(deckName: deckName, titleName: "2020年1月 " + deckName + " 禁止&限制&准限制卡表")
+    return getDeckViewEntity(deckName: deckName, titleName: "2020年1月" + deckName + "卡表（禁止/限制/准限制）")
 }
 
 // 展示卡组
@@ -235,6 +236,7 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     cardEntity.effect = element[13] as? String
     //卡包
     cardEntity.pack = element[14] as? String
+//    cardEntity.pack = getPack(s: element[30] as? String)
     //灵摆
     cardEntity.scale = element[27] as? String
     //调整
@@ -245,6 +247,26 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     cardEntity.linkMarker = element[29] as? String
     //
     return cardEntity
+}
+
+func getPack(s : String?) -> String {
+    if let tmp = s?.data(using: .utf8, allowLossyConversion: false) {
+        do {
+            let json = try JSON(data: tmp)
+            var cardSet = ""
+            for(_, subJson):(String, JSON) in json {
+                if(cardSet != "") {
+                    cardSet += ","
+                }
+                cardSet = "\(cardSet)\(subJson["set_code"])"
+            }
+            return cardSet
+        } catch {
+            print("ERROR \(error)")
+        }
+    }
+    
+    return ""
 }
 
 //获取当前卡牌的使用范围

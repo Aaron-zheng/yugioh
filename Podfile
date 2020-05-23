@@ -21,6 +21,10 @@ target 'yugioh' do
   ## 浮动按钮
   pod 'Floaty', '~> 4.2.0'
 
+  ## json工具类
+  pod 'SwiftyJSON', '~> 4.0'
+
+
 
 
   ############## 注释不用的 ##############

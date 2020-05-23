@@ -7,6 +7,7 @@ PODS:
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
   - SwiftyGif (5.1.1)
+  - SwiftyJSON (4.3.0)
   - WechatOpenSDK (1.7.9)
 
 DEPENDENCIES:
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Floaty (~> 4.2.0)
   - Kingfisher (~> 5.0)
   - SQLite.swift (~> 0.12.0)
+  - SwiftyJSON (~> 4.0)
   - WechatOpenSDK
 
 SPEC REPOS:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - Kingfisher
     - SQLite.swift
     - SwiftyGif
+    - SwiftyJSON
     - WechatOpenSDK
 
 SPEC CHECKSUMS:
@@ -31,8 +34,9 @@ SPEC CHECKSUMS:
   Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftyGif: f7702483db93586a41f04f4927cd682852a2fa10
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   WechatOpenSDK: 1fe7e3b07db860d6a936c3ff4a5aba6b890958d9
 
-PODFILE CHECKSUM: 8f2579ea4d26d1b929b86b61bca0506a3f9badba
+PODFILE CHECKSUM: af0cf4fee0387b71d063156aff9ee27fcee41193
 
 COCOAPODS: 1.5.3

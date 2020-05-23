@@ -22,8 +22,6 @@ class CardViewController: CardViewBaseController {
         self.setupTableView()
         self.setupSearchButton()
         self.originalCardEntitys = self.cardEntitys
-        
-        CardVariables.packTableViewControllerDelegate = self
     }
     
     
@@ -82,18 +80,4 @@ class CardViewController: CardViewBaseController {
         }
     }
     
-}
-
-
-
-
-
-
-extension CardViewController: PackTableViewControllerDelegate {
-    
-    
-    func didFinish(selectedPack: String?) {
-        filter(selectedPack: selectedPack)
-        self.tableView.reloadData()
-    }
 }

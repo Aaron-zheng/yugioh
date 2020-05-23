@@ -57,19 +57,12 @@ extension DeckViewController: UITableViewDataSource {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: DeckTableCell.identifier(), for: indexPath) as! DeckTableCell
         let deckViewEntity = deckViewEntitys[indexPath.row]
         cell.title.text = deckViewEntity.title
-        cell.introduction.text = deckViewEntity.introduction
-        if deckViewEntity.id == "0" {
-            let array: [String: [DeckEntity]] = deckService.list()
-            cell.introduction.text = "当前主卡组：" + count(array: array["0"]!) + "   副卡组：" + count(array:array["1"]!) + "   额外卡组：" + count(array:array["2"]!)
-        }
+        cell.introduction.text = ""
         return cell
     }
     
-    func count(array: [DeckEntity]) -> String {
-        var result = 0
-        for each in array {
-            result = result + each.number
-        }
-        return result.description
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48
     }
+    
 }
