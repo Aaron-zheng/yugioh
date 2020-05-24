@@ -91,6 +91,20 @@ func getCardEntity() -> Array<CardEntity> {
     return cardEntitys
 }
 
+func getCardEntity(cardSet: String) -> Array<CardEntity> {
+    var cardEntitys: Array<CardEntity> = []
+    do {
+        for each in try getDB().prepare("select a.id, a.titleChinese, a.titleJapanese, a.titleEnglish, a.type, a.password, a.usage, a.race, a.property, a.star, a.attack, a.defense, a.rare, a.effect, a.pack, a.scale, a.adjust, b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from info a left outer join pro b on a.password = b.id where b.card_sets like '%\(cardSet)%' order by (a.id+0) desc") {
+            cardEntitys.append(buildCardEntity(element: each))
+        }
+        
+        
+    } catch {
+        print(error.localizedDescription)
+    }
+    
+    return cardEntitys
+}
 
 //获取卡牌详情
 func getCardEntity(id: String) -> CardEntity {
@@ -106,19 +120,87 @@ func getCardEntity(id: String) -> CardEntity {
 
 //获取冠军卡组
 func getChampionDeckViewEntity(deckName: String) -> DeckViewEntity {
-    return getDeckViewEntity(deckName: deckName, titleName: deckName + "游戏王世界锦标赛冠军卡组")
+    return getDeckViewEntity(deckName: deckName, titleName: deckName + "游戏王世界锦标赛冠军卡组", type: "champion")
 }
 //获取禁卡组
 func getBanDeckViewEntity(deckName: String) -> DeckViewEntity {
-    return getDeckViewEntity(deckName: deckName, titleName: "2020年1月" + deckName + "卡表（禁止/限制/准限制）")
+    return getDeckViewEntity(deckName: deckName, titleName: "2020年1月" + deckName + "卡表[禁止/限制/准限制]", type: "ban")
 }
 
+private var deckViewEntitysConstant: [DeckViewEntity] = [];
+func getDeckViewEntity() -> [DeckViewEntity] {
+    if(deckViewEntitysConstant.count > 0) {
+        return deckViewEntitysConstant
+    }
+    
+    var tmp: [DeckViewEntity] = [
+        DeckViewEntity(id: "0", title: "我的卡组", introduction: "我的卡组", type: "self"),
+        getBanDeckViewEntity(deckName: "ocg"),
+        getBanDeckViewEntity(deckName: "tcg"),
+        getChampionDeckViewEntity(deckName: "2017"),
+        getChampionDeckViewEntity(deckName: "2016"),
+        getChampionDeckViewEntity(deckName: "2015"),
+        getChampionDeckViewEntity(deckName: "2014"),
+        getChampionDeckViewEntity(deckName: "2013"),
+        getChampionDeckViewEntity(deckName: "2012"),
+        getChampionDeckViewEntity(deckName: "2011"),
+        getChampionDeckViewEntity(deckName: "2010"),
+        getChampionDeckViewEntity(deckName: "2009"),
+        getChampionDeckViewEntity(deckName: "2008"),
+        getChampionDeckViewEntity(deckName: "2007"),
+        getChampionDeckViewEntity(deckName: "2006"),
+        getChampionDeckViewEntity(deckName: "2005"),
+        getChampionDeckViewEntity(deckName: "2004"),
+        getChampionDeckViewEntity(deckName: "2003")
+    ]
+
+    
+    do {
+        for each in try getDB().prepare("select set_name, date, num_of_cards, set_code from cardset order by date desc") {
+            let deckViewEntity = DeckViewEntity()
+            let setName = each[0] as! String
+            let date = each[1] as! String
+            let numOfCards = each[2] as! Number
+            let setCode = each[3] as! String
+            deckViewEntity.id = setName
+            deckViewEntity.title = "\(date) \(setCode) 卡包（\(numOfCards)）"
+            deckViewEntity.type = "cardset"
+            tmp.append(deckViewEntity)
+        }
+    } catch {
+        print(error.localizedDescription)
+    }
+    deckViewEntitysConstant = tmp
+    return deckViewEntitysConstant
+}
+
+
 // 展示卡组
-func getDeckViewEntity(deckName: String, titleName: String) -> DeckViewEntity {
+func getDeckViewEntity(deckName: String, titleName: String, type: String) -> DeckViewEntity {
     let deckViewEntity = DeckViewEntity()
     deckViewEntity.id = deckName
     deckViewEntity.title = titleName
     deckViewEntity.introduction = titleName
+    deckViewEntity.type = type
+    return deckViewEntity
+}
+
+func getDeckEntityFromCardSet(setName: String) -> [String: [DeckEntity]]{
+    var deckEntitys = [String: [DeckEntity]]()
+    deckEntitys["0"] = []
+    let cardEntitys: Array<CardEntity> = getCardEntity(cardSet: setName)
+    for each in cardEntitys {
+        let d = DeckEntity()
+        d.id = each.id
+        d.number = 1
+        d.type = "0"
+        deckEntitys["0"]?.append(d)
+    }
+    return deckEntitys
+}
+
+
+func getDeckEntity(deckName: String) -> [String: [DeckEntity]]{
     var deckEntitys = [String: [DeckEntity]]()
     //主卡组 0
     //禁止卡 3
@@ -137,7 +219,6 @@ func getDeckViewEntity(deckName: String, titleName: String) -> DeckViewEntity {
             let type = each[1] as! NSString
             if type.integerValue > 2 {
                 d.type = String(type.integerValue - 3)
-                deckViewEntity.type = "ban"
             } else {
                 d.type = each[1] as! String
             }
@@ -147,8 +228,7 @@ func getDeckViewEntity(deckName: String, titleName: String) -> DeckViewEntity {
     } catch {
         print(error.localizedDescription)
     }
-    deckViewEntity.deckEntitys = deckEntitys
-    return deckViewEntity
+    return deckEntitys
 }
 
 
@@ -271,6 +351,10 @@ func getPack(s : String?) -> String {
 
 //获取当前卡牌的使用范围
 func getUsage(id: String) -> String {
+    // TODO
+    return "无限制"
+    
+    /*
     //常量池计算
     for deck in deckViewEntitysConstant[1].deckEntitys["0"]! {
         if id == deck.id {
@@ -291,8 +375,9 @@ func getUsage(id: String) -> String {
     }
     //默认值
     return "无限制"
-    
+    */
 }
+
 
 
 //获取分享时候使用的小图

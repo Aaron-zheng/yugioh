@@ -18,7 +18,7 @@ class DeckViewController: UIViewController {
     fileprivate var deckService: DeckService = DeckService()
     
     
-    fileprivate var deckViewEntitys: [DeckViewEntity] = deckViewEntitysConstant
+    fileprivate var deckViewEntitys: [DeckViewEntity] = getDeckViewEntity()
     
     
     override func viewDidLoad() {

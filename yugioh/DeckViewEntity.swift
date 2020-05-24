@@ -14,17 +14,15 @@ class DeckViewEntity {
     public var title: String = ""
     public var introduction: String = ""
     public var type: String = ""
-    public var deckEntitys: [String: [DeckEntity]] = [String: [DeckEntity]]()
     
     init() {
         
     }
     
-    init(id: String, title: String, introduction: String, deckEntitys:[String: [DeckEntity]], type: String) {
+    init(id: String, title: String, introduction: String, type: String) {
         self.id = id
         self.title = title
         self.introduction = introduction
-        self.deckEntitys = deckEntitys
         self.type = type
     }
     

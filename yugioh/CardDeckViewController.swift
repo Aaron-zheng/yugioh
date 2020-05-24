@@ -25,18 +25,29 @@ class CardDeckViewController: UIViewController {
     
     @IBOutlet weak var tableView: UICollectionView!
     
+    // 卡组
+    var deckEntitys:[String: [DeckEntity]] = [:]
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.guide.alpha = 0
         
         //代表是自己的卡组，所以必须请求数据
-        if(deckViewEntity.id == "0") {
-            deckViewEntity.deckEntitys = deckService.list();
+        if(deckViewEntity.type == "self") {
+            deckEntitys = deckService.list();
+        } else if(deckViewEntity.type == "ban"){
+            deckEntitys = getDeckEntity(deckName: deckViewEntity.id)
+        } else if(deckViewEntity.type == "champion") {
+            deckEntitys = getDeckEntity(deckName: deckViewEntity.id)
+        } else if(deckViewEntity.type == "cardset") {
+            deckEntitys = getDeckEntityFromCardSet(setName: deckViewEntity.id)
         }
         
     
-        if deckViewEntity.deckEntitys["0"]!.count <= 0 &&
-            deckViewEntity.deckEntitys["1"]!.count <= 0 &&
-            deckViewEntity.deckEntitys["2"]!.count <= 0 {
+        if deckViewEntity.type == "self" &&
+            deckEntitys["0"]!.count <= 0 &&
+            deckEntitys["1"]!.count <= 0 &&
+            deckEntitys["2"]!.count <= 0 {
             //卡牌为0，展示引导页
             self.guide.alpha = 1
         }
@@ -68,12 +79,6 @@ class CardDeckViewController: UIViewController {
     
     @objc func shareButtonHandler() {
         
-        if deckViewEntity.deckEntitys["0"]!.count <= 0 &&
-            deckViewEntity.deckEntitys["1"]!.count <= 0 &&
-            deckViewEntity.deckEntitys["2"]!.count <= 0 {
-            return
-            
-        }
         
         let img = self.getShareViewImage()
         let ext = WXImageObject()
@@ -140,7 +145,7 @@ extension CardDeckViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let deckEntity = deckViewEntity.deckEntitys[indexPath.section.description]![indexPath.row]
+        let deckEntity = deckEntitys[indexPath.section.description]![indexPath.row]
         let cardEntity = getCardEntity(id: deckEntity.id)
         let controller = CardDetailViewController()
         
@@ -201,13 +206,13 @@ extension CardDeckViewController: UICollectionViewDataSource {
         //如果该卡组中 含有3部分，则为 0主 1副 2额外，返回数字3
         //如果该卡组中 含有3部分，则为 3禁止 4限制 5准限制，返回数字3
 //        return deckViewEntity.deckEntitys.count
-        return 3
+        return deckEntitys.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //按照卡组的大小进行展示
         //如果只有主卡组，只展示1个
-        return deckViewEntity.deckEntitys[section.description]!.count
+        return deckEntitys[section.description]!.count
     }
     
     
@@ -220,7 +225,7 @@ extension CardDeckViewController: UICollectionViewDataSource {
         cell.titleLabel.text = ""
         cell.backgroundColor = UIColor.white
         
-        let deckEntity = deckViewEntity.deckEntitys[indexPath.section.description]![indexPath.row]
+        let deckEntity = deckEntitys[indexPath.section.description]![indexPath.row]
         let cardEntity = getCardEntity(id: deckEntity.id)
         
         cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
