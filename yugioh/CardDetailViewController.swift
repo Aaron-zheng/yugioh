@@ -30,8 +30,7 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var rare: UILabel!
     @IBOutlet weak var adjust: UIVerticalAlignLabel!
     @IBOutlet weak var scale: UILabel!
-    //朦层玻璃效果
-    @IBOutlet weak var effectView: UIVisualEffectView!
+    
     //
     @IBOutlet weak var innerView: UIView!
     
@@ -56,9 +55,7 @@ class CardDetailViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        //
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
-        self.effectView.effect = blurEffect
+        self.contentView.backgroundColor = greyColor
         
         //如果是iphonex 则高度需要改变
         if isIPhoneX() {
@@ -69,7 +66,7 @@ class CardDetailViewController: UIViewController {
         let frameWidth = self.proxy.frame.width
         self.pack.verticalAligment = .VerticalAligmentBottom
         
-        print(cardEntity.effect.count)
+        
         //卡牌最高度
         let h0 = (frameWidth - materialGap * 2) / 3 / 160 * 230
         //效果高度
@@ -232,17 +229,7 @@ class CardDetailViewController: UIViewController {
                             .scaleFactor(UIScreen.main.scale),
                             .transition(.fade(0.1)),
                             .cacheOriginalImage]
-        ){
-            result in
-            switch result {
-            case .success(_):
-                self.contentView.image = self.card.image
-            case .failure(_): 
-                self.contentView.image = UIImage(named: "defaultimg")
-            }
-        }
-        
-//        setImage(card: self.card, id: cardEntity.id)
+        )
         
         
         

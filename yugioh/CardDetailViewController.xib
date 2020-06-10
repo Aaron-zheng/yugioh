@@ -23,7 +23,6 @@
                 <outlet property="card" destination="15q-u2-8Rw" id="cgL-m1-F36"/>
                 <outlet property="contentView" destination="EWx-OU-6G3" id="BOf-dr-jz0"/>
                 <outlet property="effect" destination="Hc5-Q7-dQv" id="CeV-gt-y9K"/>
-                <outlet property="effectView" destination="hNm-ZW-SHG" id="6FH-b2-7Pe"/>
                 <outlet property="englishName" destination="cha-Is-0UM" id="Fvy-Zn-4Rw"/>
                 <outlet property="floatyButton" destination="uxT-qi-zxH" id="LiX-al-jwb"/>
                 <outlet property="heightConstraint" destination="4xa-ln-4MD" id="Cbj-k5-tPm"/>
@@ -49,18 +48,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-OU-6G3" userLabel="ContentView" customClass="UIImageView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNm-ZW-SHG">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zgY-1p-093">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </view>
-                            <blurEffect style="light"/>
-                        </visualEffectView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmW-WK-tS2">
                             <rect key="frame" x="8" y="72" width="359" height="256"/>
                             <subviews>
-                                <view alpha="0.38" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seK-tz-SZl">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seK-tz-SZl">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="256"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -225,7 +216,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKN-tD-RHq" userLabel="Adjust View">
                             <rect key="frame" x="8" y="332" width="359" height="120"/>
                             <subviews>
-                                <view alpha="0.78000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAc-YG-Lyz">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAc-YG-Lyz">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="120"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -276,14 +267,10 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="HmW-WK-tS2" secondAttribute="trailing" constant="8" id="5kc-f8-Jzc"/>
                         <constraint firstAttribute="bottom" secondItem="uxT-qi-zxH" secondAttribute="bottom" constant="96" id="7zB-jE-TRb"/>
-                        <constraint firstItem="hNm-ZW-SHG" firstAttribute="height" secondItem="EWx-OU-6G3" secondAttribute="height" id="Acl-zR-Tu3"/>
                         <constraint firstItem="DKN-tD-RHq" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="bottom" constant="4" id="HlU-3s-pqk"/>
                         <constraint firstAttribute="trailing" secondItem="DKN-tD-RHq" secondAttribute="trailing" constant="8" id="M8y-34-9Vv"/>
                         <constraint firstAttribute="trailing" secondItem="uxT-qi-zxH" secondAttribute="trailing" constant="16" id="Pc2-1W-xsh"/>
-                        <constraint firstItem="hNm-ZW-SHG" firstAttribute="width" secondItem="EWx-OU-6G3" secondAttribute="width" id="RA9-OT-J3v"/>
                         <constraint firstItem="HmW-WK-tS2" firstAttribute="top" secondItem="EWx-OU-6G3" secondAttribute="top" constant="72" id="d9E-tv-FbM"/>
-                        <constraint firstItem="hNm-ZW-SHG" firstAttribute="centerY" secondItem="EWx-OU-6G3" secondAttribute="centerY" id="m4f-tp-BL6"/>
-                        <constraint firstItem="hNm-ZW-SHG" firstAttribute="centerX" secondItem="EWx-OU-6G3" secondAttribute="centerX" id="mfL-gX-Mch"/>
                         <constraint firstItem="HmW-WK-tS2" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="pps-Qg-URh"/>
                         <constraint firstItem="DKN-tD-RHq" firstAttribute="leading" secondItem="EWx-OU-6G3" secondAttribute="leading" constant="8" id="rfe-Am-v3P"/>
                     </constraints>
