@@ -79,7 +79,7 @@ func getCardUrl(id: String) -> String {
 func getCardEntity() -> Array<CardEntity> {
     var cardEntitys: Array<CardEntity> = []
     do {
-        for each in try getDB().prepare("select a.id, a.titleChinese, a.titleJapanese, a.titleEnglish, a.type, a.password, a.usage, a.race, a.property, a.star, a.attack, a.defense, a.rare, a.effect, a.pack, a.scale, a.adjust, b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from info a left outer join pro b on a.password = b.id order by (a.id+0) desc") {
+        for each in try getDB().prepare("select b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from  pro b where language = 'cn' order by id desc") {
             cardEntitys.append(buildCardEntity(element: each))
         }
         
@@ -109,7 +109,7 @@ func getCardEntity(cardSet: String) -> Array<CardEntity> {
 //获取卡牌详情
 func getCardEntity(id: String) -> CardEntity {
     do {
-        for each in try getDB().prepare("select a.id, a.titleChinese, a.titleJapanese, a.titleEnglish, a.type, a.password, a.usage, a.race, a.property, a.star, a.attack, a.defense, a.rare, a.effect, a.pack, a.scale, a.adjust, b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from info a left outer join pro b on a.password = b.id where a.id = \"\(id)\"") {
+        for each in try getDB().prepare("select to_char(a.id), a.titleChinese, a.titleJapanese, a.titleEnglish, a.type, a.password, a.usage, a.race, a.property, a.star, a.attack, a.defense, a.rare, a.effect, a.pack, a.scale, a.adjust, b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from info a left outer join pro b on a.password = b.id where a.id = \"\(id)\"") {
             return buildCardEntity(element: each)
         }
     } catch {
@@ -247,84 +247,63 @@ func setImage(card: UIImageView, id: String, completionHandler: ((Result) -> Voi
 }
 
 /**
- 0 a.id,
- 1 a.titleChinese,
- 2 a.titleJapanese,
- 3 a.titleEnglish,
- 4 a.type,
- 5 a.password,
- 6 a.usage,
- 7 a.race,
- 8 a.property,
- 9 a.star,
- 10 a.attack,
- 11 a.defense,
- 12 a.rare,
- 13 a.effect,
- 14 a.pack,
- 15 a.scale,
- 16 a.adjust,
- 17 b.id,
- 18 b.name,
- 19 b.type,
- 20 b.desc,
- 21 b.atk,
- 22 b.def,
- 23 b.level,
- 24 b.race,
- 25 b.attribute,
- 26 b.archetype,
- 27 b.scale,
- 28 b.linkval,
- 29 b.linkmarkers,
- 30 b.card_sets,
- 31 b.card_images,
- 32 b.card_prices,
- 32 b.banlist_info
+ 0 b.id,
+ 1 b.name,
+ 2 b.type,
+ 3 b.desc,
+ 4 b.atk,
+ 5 b.def,
+ 6 b.level,
+ 7 b.race,
+ 8 b.attribute,
+ 9 b.archetype,
+ 10 b.scale,
+ 11 b.linkval,
+ 12 b.linkmarkers,
+ 13 b.card_sets,
+ 14 b.card_images,
+ 15 b.card_prices,
+ 16 b.banlist_info
  **/
 //
 //构建卡片结构
 func buildCardEntity(element: [Binding?]) -> CardEntity {
     let cardEntity = CardEntity()
-    //中文id
-    cardEntity.id = element[0] as? String
+    //password
+    cardEntity.id = String(element[0] as! Int64)
     //中文名称
     cardEntity.titleChinese = element[1] as? String
-    //日文名称
-    cardEntity.titleJapanese = element[2] as? String
-    //英文名称
-    cardEntity.titleEnglish = (element[18] != nil ? element[18] : element[3]) as? String
     //类型，
-    cardEntity.type = element[4] as? String
+    cardEntity.type = element[2] as? String
+    //效果
+    cardEntity.effect = element[3] as? String
     //密码，唯一
-    cardEntity.password = element[5] as? String
+    cardEntity.password = String(element[0] as! Int64)
     //无限制，禁止卡，限制，准限制
-    cardEntity.usage = getUsage(id: cardEntity.id)
+//    cardEntity.usage = getUsage(id: cardEntity.id)
+    //攻击力
+    cardEntity.attack = element[4] as? String
+    //防御力
+    cardEntity.defense = element[5] as? String
+    //星级
+    cardEntity.star = element[6] as? String
     //种族，鸟兽，念动力，等等
     cardEntity.race = element[7] as? String
     //属性，光，暗，风，等灯
     cardEntity.property = element[8] as? String
-    //星级
-    cardEntity.star = element[9] as? String
-    //攻击力
-    cardEntity.attack = element[10] as? String
-    //防御力
-    cardEntity.defense = element[11] as? String
     //稀有程度
-    cardEntity.rare = element[12] as? String
-    //效果
-    cardEntity.effect = element[13] as? String
+    cardEntity.rare = ""
     //卡包
-    cardEntity.pack = element[14] as? String
-//    cardEntity.pack = getPack(s: element[30] as? String)
+    cardEntity.pack = ""
+    //    cardEntity.pack = getPack(s: element[30] as? String)
     //灵摆
-    cardEntity.scale = element[27] as? String
+    cardEntity.scale = element[10] as? String
     //调整
-    cardEntity.adjust = element[16] as? String
+    cardEntity.adjust = ""
     //连接
-    cardEntity.link = element[28] as? String
+    cardEntity.link = element[11] as? String
     //连接标记
-    cardEntity.linkMarker = element[29] as? String
+    cardEntity.linkMarker = element[12] as? String
     //
     return cardEntity
 }
