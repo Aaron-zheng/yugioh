@@ -49,24 +49,27 @@ class CalculateView: UIView {
         Bundle.main.loadNibNamed("CalculateView", owner: self, options: nil)
         self.addSubview(contentView)
         contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //添加计分版按钮
         addButtons(datas: datas, dataWidth: 56, dataHeight: 56, dataDefaultHeight: 200)
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.contentView.backgroundColor = greyColor
     }
+    
+    
     
     
     
     private func addButtons(datas: [String],
                             dataWidth: Int, dataHeight: Int, dataDefaultHeight: Int
         ) {
-        let rootWidth = self.frame.width
+        
+        let rootWidth = self.contentView.frame.width
         let columnGap: Int = 8
         let rowGap: Int = 4
         
         let num = 5
-        let gap = (Int(rootWidth) - (dataWidth + columnGap) * num - columnGap) / 2 + columnGap
-        
+        let gap = (Int(rootWidth) - (dataWidth * num + columnGap * (num - 1))) / 2
+        print(gap)
         var row = 0
         var column = 0
         
@@ -74,14 +77,14 @@ class CalculateView: UIView {
         
         for data in datas {
             
-            let button: DataButton
+            let button: UIButton
             if(row == 0 && column == 2) {
-                let f = CGRect(x: gap + 1 * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: (dataWidth) * 2 + rowGap, height: dataHeight)
-                button = DataButton(frame: f)
+                let f = CGRect.init(x: gap + 1 * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: (dataWidth) * 2 + rowGap, height: dataHeight)
+                button = UIButton(frame: f)
                 button.setTitleColor(UIColor.black.withAlphaComponent(0.54), for: .normal)
                 button.backgroundColor = UIColor.white
                 button.layer.cornerRadius = 4
-                self.calculateButton = button
+//                self.calculateButton = button
                 
             } else if(data == "") {
                 column = column + 1
@@ -91,24 +94,25 @@ class CalculateView: UIView {
                 }
                 continue
             } else if (column % 5 == 0 || column % 5 == 4) {
-                let f = CGRect(x: gap + column * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: dataWidth, height: dataHeight)
-                button = DataButton(frame: f)
+                let f = CGRect.init(x: gap + column * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: dataWidth, height: dataHeight)
+                button = UIButton(frame: f)
                 button.setTitleColor(UIColor.white.withAlphaComponent(0.87), for: .normal)
                 button.backgroundColor = redColor
                 button.layer.cornerRadius = 8
             } else {
-                let f = CGRect(x: gap + column * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: dataWidth, height: dataHeight)
-                button = DataButton(frame: f)
+                let f = CGRect.init(x: gap + column * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: dataWidth, height: dataHeight)
+                button = UIButton(frame: f)
                 button.setTitleColor(UIColor.black.withAlphaComponent(0.54), for: .normal)
                 button.backgroundColor = UIColor.white
                 button.layer.cornerRadius = 4
             }
             
             button.setTitle(data, for: .normal)
-            button.data = data
-            button.index = column
+//            button.data = data
+//            button.index = column
+            print(button.frame)
             button.addTarget(self, action: #selector(CalculateView.performButton), for: .touchUpInside)
-            self.addSubview(button)
+            self.contentView.addSubview(button)
             
             column = column + 1
             if column == num {

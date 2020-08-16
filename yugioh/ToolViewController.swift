@@ -19,6 +19,9 @@ class ToolViewController: UIViewController {
     
     @IBOutlet weak var battleView: BattleView!
     
+    @IBOutlet weak var aboutView: AboutView!
+    
+    
     override func viewDidLoad() {
         self.view.backgroundColor = greyColor
     }
@@ -38,11 +41,15 @@ class ToolViewController: UIViewController {
         if segmentedControl.selectedSegmentIndex == 0 {
             self.calculateView.isHidden = false
             self.battleView.isHidden = true
+            self.aboutView.isHidden = true
         } else if segmentedControl.selectedSegmentIndex == 1 {
             self.calculateView.isHidden = true
             self.battleView.isHidden = false
-        } else {
-            
+            self.aboutView.isHidden = true
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            self.calculateView.isHidden = true
+            self.battleView.isHidden = true
+            self.aboutView.isHidden = false
         }
     }
 }
