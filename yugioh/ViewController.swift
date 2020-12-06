@@ -28,12 +28,6 @@ class ViewController: UITabBarController {
     }
     
     @IBAction func signupHandle(_ sender: Any) {
-//
-//        let aboutController = AboutViewController()
-//        self.navigationController?.pushViewController(aboutController, animated: true)
-//
-//
-//
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

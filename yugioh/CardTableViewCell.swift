@@ -52,33 +52,35 @@ class CardTableViewCell: UITableViewCell {
         cellContentView.backgroundColor = greyColor
         cellContentInnerView.backgroundColor = UIColor.white
         
-        
-        self.title.text = cardEntity.titleChinese
+        // 标题
+        self.title.text = cardEntity.titleName
+        // 效果
         self.effect.text = cardEntity.effect
+        // 类型
         self.type.text = cardEntity.type
-        //从常量池中判断使用范围：禁止，限制，准限制，无限制
+        // 限制：从常量池中判断使用范围：禁止，限制，准限制，无限制
         self.usage.text = cardEntity.usage
-        self.password.text = "编号: " + cardEntity.password
-        
+        // 编号
+        self.password.text = "No: " + cardEntity.password
         
         self.property.text = ""
-        self.property.text = self.property.text! + cardEntity.property
-        if cardEntity.race != "" {
-            self.property.text = self.property.text! + " / "
-            self.property.text = self.property.text! + cardEntity.race
+        if cardEntity.property != nil && cardEntity.property != "" {
+            self.property.text = self.property.text! + cardEntity.property
         }
-        if cardEntity.star != "" {
-            self.property.text = self.property.text! + " / "
-            self.property.text = self.property.text! + cardEntity.star + "星"
+        if cardEntity.race != nil && cardEntity.race != "" {
+            self.property.text = self.property.text! + " / " + cardEntity.race
+        }
+        if cardEntity.star != nil && cardEntity.star != "" {
+            self.property.text = self.property.text! + " / " + cardEntity.star
         }
         
         
-        if !cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if cardEntity.attack != nil && !cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = cardEntity.attack
         } else {
             self.attack.text = ""
         }
-        if !cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if cardEntity.defense != nil && !cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = self.attack.text! + " / " + cardEntity.defense
         }
         

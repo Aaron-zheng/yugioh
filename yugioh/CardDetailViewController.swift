@@ -18,7 +18,6 @@ class CardDetailViewController: UIViewController {
     //first part
     @IBOutlet weak var card: UIImageView!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var englishName: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var usage: UIVerticalAlignLabel!
     @IBOutlet weak var star: DOFavoriteButton!
@@ -47,7 +46,6 @@ class CardDetailViewController: UIViewController {
     
     //
     var cardEntity: CardEntity!
-    var commentEntitys: Array<CommentEntity>! = []
     var proxy: UIScrollView!
     
     fileprivate var deckService: DeckService = DeckService()
@@ -169,8 +167,7 @@ class CardDetailViewController: UIViewController {
             star.deselect()
         }
         
-        self.name.text = cardEntity.titleChinese
-        self.englishName.text = cardEntity.titleJapanese + " / " + cardEntity.titleEnglish
+        self.name.text = cardEntity.titleName
         self.effect.text = cardEntity.effect
         self.type.text = cardEntity.type
         self.usage.text = cardEntity.usage
@@ -178,25 +175,23 @@ class CardDetailViewController: UIViewController {
         
         self.property.text = ""
         self.property.text = self.property.text! + cardEntity.property
-        if cardEntity.race != "" {
-            self.property.text = self.property.text! + " / "
-            self.property.text = self.property.text! + cardEntity.race
+        if cardEntity.race != nil && cardEntity.race != "" {
+            self.property.text = self.property.text! + " / " + cardEntity.race
         }
-        if cardEntity.star != "" {
-            self.property.text = self.property.text! + " / "
-            self.property.text = self.property.text! + cardEntity.star + "星"
+        if cardEntity.star != nil && cardEntity.star != "" {
+            self.property.text = self.property.text! + " / " + cardEntity.star
         }
         
-        if !cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if cardEntity.attack != nil && !cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = cardEntity.attack
         } else {
             self.attack.text = ""
         }
-        if !cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if cardEntity.defense != nil && !cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = self.attack.text! + " / " + cardEntity.defense
         }
         
-        self.password.text = "编号: " + cardEntity.password
+        self.password.text = "No: " + cardEntity.password
         if cardEntity.scale != nil && !cardEntity.scale.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.scale.text = "灵摆: " + cardEntity.scale
         }
@@ -333,27 +328,6 @@ class CardDetailViewController: UIViewController {
         
         self.navigationController!.present(alertController, animated: true, completion: nil)
         
-    }
-    
-}
-
-
-extension CardDetailViewController: UITableViewDataSource {
-    
-    
-    @available(iOS 2.0, *)
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
-        return commentEntitys.count
-    }
-    
-    @available(iOS 2.0, *)
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: CardCommentTableCell.identifier(), for: indexPath) as! CardCommentTableCell
-        cell.backgroundColor = UIColor.clear
-        cell.prepare(commentEntity: commentEntitys[indexPath.row])
-        
-        return cell
     }
     
 }

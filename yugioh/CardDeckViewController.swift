@@ -228,7 +228,7 @@ extension CardDeckViewController: UICollectionViewDataSource {
         let deckEntity = deckEntitys[indexPath.section.description]![indexPath.row]
         let cardEntity = getCardEntity(id: deckEntity.id)
         
-        cell.titleLabel.text = cardEntity.titleChinese + " x " + deckEntity.number.description
+        cell.titleLabel.text = cardEntity.titleName + " x " + deckEntity.number.description
 
         setImage(card: cell.cardImageView, id: cardEntity.id)
 

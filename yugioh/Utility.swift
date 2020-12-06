@@ -109,7 +109,7 @@ func getCardEntity(cardSet: String) -> Array<CardEntity> {
 //获取卡牌详情
 func getCardEntity(id: String) -> CardEntity {
     do {
-        for each in try getDB().prepare("select to_char(a.id), a.titleChinese, a.titleJapanese, a.titleEnglish, a.type, a.password, a.usage, a.race, a.property, a.star, a.attack, a.defense, a.rare, a.effect, a.pack, a.scale, a.adjust, b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from info a left outer join pro b on a.password = b.id where a.id = \"\(id)\"") {
+        for each in try getDB().prepare("select b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from  pro b where language = 'cn' and b.id = \"\(id)\"") {
             return buildCardEntity(element: each)
         }
     } catch {
@@ -272,7 +272,7 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     //password
     cardEntity.id = String(element[0] as! Int64)
     //中文名称
-    cardEntity.titleChinese = element[1] as? String
+    cardEntity.titleName = element[1] as? String
     //类型，
     cardEntity.type = element[2] as? String
     //效果
