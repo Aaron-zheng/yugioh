@@ -63,7 +63,7 @@ class CalculateView: UIView {
                             dataWidth: Int, dataHeight: Int, dataDefaultHeight: Int
         ) {
         
-        let rootWidth = self.contentView.frame.width
+        let rootWidth = UIScreen.main.bounds.size.width
         let columnGap: Int = 8
         let rowGap: Int = 4
         
@@ -77,14 +77,14 @@ class CalculateView: UIView {
         
         for data in datas {
             
-            let button: UIButton
+            let button: DataButton
             if(row == 0 && column == 2) {
                 let f = CGRect.init(x: gap + 1 * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: (dataWidth) * 2 + rowGap, height: dataHeight)
-                button = UIButton(frame: f)
+                button = DataButton(frame: f)
                 button.setTitleColor(UIColor.black.withAlphaComponent(0.54), for: .normal)
                 button.backgroundColor = UIColor.white
                 button.layer.cornerRadius = 4
-//                self.calculateButton = button
+                self.calculateButton = button
                 
             } else if(data == "") {
                 column = column + 1
@@ -95,21 +95,21 @@ class CalculateView: UIView {
                 continue
             } else if (column % 5 == 0 || column % 5 == 4) {
                 let f = CGRect.init(x: gap + column * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: dataWidth, height: dataHeight)
-                button = UIButton(frame: f)
+                button = DataButton(frame: f)
                 button.setTitleColor(UIColor.white.withAlphaComponent(0.87), for: .normal)
                 button.backgroundColor = redColor
                 button.layer.cornerRadius = 8
             } else {
                 let f = CGRect.init(x: gap + column * (dataWidth + columnGap), y: dataDefaultHeight + row * (dataHeight + rowGap), width: dataWidth, height: dataHeight)
-                button = UIButton(frame: f)
+                button = DataButton(frame: f)
                 button.setTitleColor(UIColor.black.withAlphaComponent(0.54), for: .normal)
                 button.backgroundColor = UIColor.white
                 button.layer.cornerRadius = 4
             }
             
             button.setTitle(data, for: .normal)
-//            button.data = data
-//            button.index = column
+            button.data = data
+            button.index = column
             
             button.addTarget(self, action: #selector(CalculateView.performButton), for: .touchUpInside)
             self.contentView.addSubview(button)

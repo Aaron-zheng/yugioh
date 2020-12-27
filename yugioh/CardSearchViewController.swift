@@ -79,6 +79,7 @@ class CardSearchViewController: UIViewController {
         }
     }
     
+    
     override func viewDidLayoutSubviews() {
         self.searchBarView.contentSize = CGSize.init(width: rootFrame.width, height: contentHeight)
     }
@@ -91,9 +92,9 @@ class CardSearchViewController: UIViewController {
     
     
     
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            let keyboardHeight = keyboardSize.height
             self.searchBarViewHeightConstraint.constant = searchBarViewHeightConstraintValue
         }
     }
@@ -107,8 +108,7 @@ class CardSearchViewController: UIViewController {
     private func setup() {
         self.cardEntitys = getCardEntity()
         //
-        self.rootFrame = self.view.frame.size
-        //
+        self.rootFrame = UIScreen.main.bounds.size
         self.inputField.returnKeyType = UIReturnKeyType.search
         self.searchBarView.contentSize.width = self.rootFrame.width
         
