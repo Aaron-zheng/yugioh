@@ -24,7 +24,6 @@ class AboutView: UIView {
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
         self.contentView.backgroundColor = greyColor
     }
     

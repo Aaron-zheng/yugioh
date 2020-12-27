@@ -30,6 +30,7 @@ class CardSearchViewController: UIViewController {
     @IBOutlet weak var searchBarViewTopConstraint: NSLayoutConstraint!
     
     
+    
     var cardEntitys = Array<CardEntity>()
     var searchResult = Array<CardEntity>()
     var cardService = CardService()
@@ -63,11 +64,16 @@ class CardSearchViewController: UIViewController {
     
     let races = ["鱼", "幻龙", "兽战士", "岩石", "炎", "恐龙", "兽", "天使", "创造神", "机械", "植物", "魔法师", "龙", "昆虫", "战士", "念动力", "电子界", "鸟兽", "雷", "水", "幻神兽", "不死", "恶魔", "海龙", "爬虫类"]
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        Bundle.main.loadNibNamed("CardSearchViewController", owner: self, options: nil)
+    }
 
-    
+    fileprivate var searchBarViewHeightConstraintValue:CGFloat = 0;
     override func viewDidLoad() {
+        searchBarViewHeightConstraintValue = searchBarViewHeightConstraint.constant
         setup()
-        
+
         if isIPhoneX() {
             self.searchBarViewTopConstraint.constant = 10
         }
@@ -88,7 +94,7 @@ class CardSearchViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
-            self.searchBarViewHeightConstraint.constant = self.rootFrame.height - keyboardHeight
+            self.searchBarViewHeightConstraint.constant = searchBarViewHeightConstraintValue
         }
     }
     
@@ -99,6 +105,9 @@ class CardSearchViewController: UIViewController {
     }
     
     private func setup() {
+        self.cardEntitys = getCardEntity()
+        //
+        self.rootFrame = self.view.frame.size
         //
         self.inputField.returnKeyType = UIReturnKeyType.search
         self.searchBarView.contentSize.width = self.rootFrame.width
@@ -110,7 +119,7 @@ class CardSearchViewController: UIViewController {
         self.cancelButton.tintColor = UIColor.white
         self.cancelButton.addTarget(self, action: #selector(CardSearchViewController.clickCancelButton), for: .touchUpInside)
         
-        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（中/日/英 卡牌，效果，编号）", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（名称，效果，编号）", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         self.inputField.textColor = UIColor.white
         self.inputField.text = nil
         self.inputField.becomeFirstResponder()

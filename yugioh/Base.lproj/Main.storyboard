@@ -10,7 +10,6 @@
         <!--Navigation Controller-->
         <scene sceneID="f4e-YP-rd1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qz4-rj-Qb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Lkw-10-HkU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Icx-l8-7vA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -20,6 +19,7 @@
                         <segue destination="xgT-iu-NsK" kind="relationship" relationship="rootViewController" id="8rg-lM-cFp"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qz4-rj-Qb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-897" y="78"/>
         </scene>
@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p31-Mc-2m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="78"/>
+            <point key="canvasLocation" x="1487" y="581"/>
         </scene>
         <!--卡牌-->
         <scene sceneID="aro-r0-QTS">
@@ -72,20 +72,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1I-e2-nX9">
-                                <rect key="frame" x="311" y="521" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="dde-Vy-lvv"/>
-                                    <constraint firstAttribute="height" constant="48" id="qJg-8c-Bje"/>
-                                </constraints>
-                                <state key="normal" image="ic_search_white"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="n1I-e2-nX9" secondAttribute="trailing" constant="16" id="CPP-cU-3Qh"/>
                             <constraint firstItem="csZ-O1-NNW" firstAttribute="leading" secondItem="NvS-SE-27W" secondAttribute="leading" id="Mga-P3-dDu"/>
-                            <constraint firstAttribute="bottom" secondItem="n1I-e2-nX9" secondAttribute="bottom" constant="98" id="WNm-Xz-WoA"/>
                             <constraint firstItem="csZ-O1-NNW" firstAttribute="width" secondItem="NvS-SE-27W" secondAttribute="width" id="mbX-8e-ZCP"/>
                             <constraint firstItem="csZ-O1-NNW" firstAttribute="top" secondItem="NvS-SE-27W" secondAttribute="top" id="xNp-9t-atN"/>
                             <constraint firstAttribute="bottom" secondItem="csZ-O1-NNW" secondAttribute="bottom" constant="48" id="ygb-3R-BR4"/>
@@ -94,18 +84,41 @@
                     <tabBarItem key="tabBarItem" title="卡牌" image="ic_view_carousel_white" id="14g-xH-QyR"/>
                     <connections>
                         <outlet property="iTableView" destination="csZ-O1-NNW" id="QmR-1G-BnP"/>
-                        <outlet property="searchButton" destination="n1I-e2-nX9" id="5Wd-Vy-es2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwk-O1-RUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1409" y="881"/>
         </scene>
+        <!--Card Search View Controller-->
+        <scene sceneID="RaI-77-63Y">
+            <objects>
+                <viewController id="tqd-jF-oX0" customClass="CardSearchViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1l8-GM-tvj"/>
+                        <viewControllerLayoutGuide type="bottom" id="7VU-I1-wvo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TUX-LL-A46">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HnR-ec-Rgk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iHY-QY-CZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486" y="-281"/>
+        </scene>
         <!--游戏王卡牌-->
         <scene sceneID="qVe-DU-Jr7">
             <objects>
                 <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="游戏王卡牌" id="2XC-NK-5In">
+                        <barButtonItem key="leftBarButtonItem" title="搜索" id="pS4-JO-S9c">
+                            <connections>
+                                <segue destination="tqd-jF-oX0" kind="show" id="QEh-FM-ud4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="收藏" id="BRq-3Q-8aQ">
                             <connections>
                                 <segue destination="h5i-Tt-P9t" kind="show" id="ynT-3i-UoZ"/>
@@ -233,7 +246,6 @@
     </scenes>
     <resources>
         <image name="ic_account_balance_wallet_white" width="24" height="24"/>
-        <image name="ic_search_white" width="24" height="24"/>
         <image name="ic_surround_sound_white" width="24" height="24"/>
         <image name="ic_view_carousel_white" width="24" height="24"/>
     </resources>

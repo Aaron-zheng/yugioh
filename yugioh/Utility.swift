@@ -75,9 +75,14 @@ func getCardUrl(id: String) -> String {
     return qiniuUrlPrefix + id + qiniuUrlSuffix
 }
 
+
+fileprivate var cardEntitys: Array<CardEntity> = [];
+
 //获取所有卡牌列表
 func getCardEntity() -> Array<CardEntity> {
-    var cardEntitys: Array<CardEntity> = []
+    if cardEntitys.count > 0 {
+        return cardEntitys;
+    }
     do {
         for each in try getDB().prepare("select b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from  pro b where language = 'cn' order by id desc") {
             cardEntitys.append(buildCardEntity(element: each))

@@ -13,57 +13,28 @@ import Kingfisher
 class CardViewController: CardViewBaseController {
     
     @IBOutlet weak var iTableView: UITableView!
-    @IBOutlet weak var searchButton: UIButton!
     
     private var originalCardEntitys: Array<CardEntity>! = []
     
     override func viewDidLoad() {
         self.tableView = iTableView
         self.setupTableView()
-        self.setupSearchButton()
         self.originalCardEntitys = self.cardEntitys
     }
     
-    
-    
-    private var lastContentOffset: CGFloat! = 0
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if cardEntitys.count <= 0 {
-            return
-        }
-        
-        if scrollView.contentOffset.y <= 0 {
-            searchButton.isHidden = false
-        } else {
-            if lastContentOffset < scrollView.contentOffset.y {
-                searchButton.isHidden = true
-            } else {
-                searchButton.isHidden = false
-            }
-        }
-        
-        lastContentOffset = scrollView.contentOffset.y
+        // 原先用于记录，滚动的y坐标
     }
     
-    func setupSearchButton() {
-        
-        let img = UIImage(named: "ic_search_white")?.withRenderingMode(.alwaysTemplate)
-        searchButton.setImage(img, for: .normal)
-        searchButton.tintColor = UIColor.white
-        searchButton.layer.cornerRadius = 25
-        searchButton.backgroundColor = redColor
-        
-        
-        searchButton.addTarget(self, action: #selector(CardViewController.clickSearchButton), for: .touchUpInside)
-    }
-    
+
     @objc func clickSearchButton() {
-        let controller = CardSearchViewController()
-        controller.cardEntitys = cardEntitys
-        controller.hidesBottomBarWhenPushed = true
-        controller.rootFrame = self.view.frame.size
-        
-        self.navigationController?.pushViewController(controller, animated: false)
+//        let controller = CardSearchViewController()
+//        controller.cardEntitys = cardEntitys
+//        controller.hidesBottomBarWhenPushed = true
+//        controller.rootFrame = self.view.frame.size
+//
+//        self.navigationController?.pushViewController(controller, animated: false)
     }
 
     

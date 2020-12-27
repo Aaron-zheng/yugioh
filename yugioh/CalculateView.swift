@@ -69,7 +69,7 @@ class CalculateView: UIView {
         
         let num = 5
         let gap = (Int(rootWidth) - (dataWidth * num + columnGap * (num - 1))) / 2
-        print(gap)
+        
         var row = 0
         var column = 0
         
@@ -110,7 +110,7 @@ class CalculateView: UIView {
             button.setTitle(data, for: .normal)
 //            button.data = data
 //            button.index = column
-            print(button.frame)
+            
             button.addTarget(self, action: #selector(CalculateView.performButton), for: .touchUpInside)
             self.contentView.addSubview(button)
             
