@@ -14,7 +14,7 @@ public class CardPO: NSManagedObject {
     
     @NSManaged public var id: String!
     @NSManaged public var createAt: Date!
-
+    @NSManaged public var version: String?
     
     
 }

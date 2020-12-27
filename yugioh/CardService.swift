@@ -38,7 +38,13 @@ class CardService {
             
             
             for i in 0 ..< r.count {
-                result.append(r[i].value(forKey: "id") as! String)
+                let version = r[i].value(forKey: "version") as? String
+                if version == nil {
+                    managedContex.delete(r[i])
+                    continue
+                }
+                let id = r[i].value(forKey: "id") as? String
+                result.append(id!)
             }
         } catch {
             print("error: list")
@@ -71,8 +77,13 @@ class CardService {
         do {
             let result = try managedContex.fetch(fetchRequest)
             for i in 0 ..< result.count {
-                if id == (result[i].value(forKey: "id") as! String) {
+                let resultId = result[i].value(forKey: "id") as? String
+                if resultId == nil {
+                    continue
+                }
+                if id == resultId {
                     flag = true
+                    break
                 }
             }
         } catch {
@@ -93,7 +104,7 @@ class CardService {
         let card = CardPO(entity: entity, insertInto: managedContex)
         card.id = id
         card.createAt = Date()
-        
+        card.version = "1"
         do {
             try managedContex.save()
         } catch {

@@ -56,6 +56,11 @@ class DeckService {
         do {
             let r = try managedContex.fetch(fetchRequest)
             for i in 0 ..< r.count {
+                let version = r[i].value(forKey: "version") as? String
+                if version == nil {
+                    managedContex.delete(r[i])
+                    continue
+                }
                 let d = DeckEntity()
                 d.id = r[i].value(forKey: "id") as! String
                 d.number = Int(truncating: r[i].value(forKey: "number") as! NSNumber)
@@ -104,6 +109,7 @@ class DeckService {
             deck.id = id
             deck.number = 1
             deck.type = type
+            deck.version = "1"
         }
         
         do {

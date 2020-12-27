@@ -15,5 +15,6 @@ public class DeckPO: NSManagedObject {
     @NSManaged public var id: String!
     @NSManaged public var number: NSNumber!
     @NSManaged public var type: String!
+    @NSManaged public var version: String?
     
 }

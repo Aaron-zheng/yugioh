@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13241" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CardPO" representedClassName="CardPO" syncable="YES">
-        <attribute name="attack" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="createAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="defense" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="effect" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="pack" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="star" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attack" optional="YES" attributeType="String"/>
+        <attribute name="createAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="defense" optional="YES" attributeType="String"/>
+        <attribute name="effect" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="pack" optional="YES" attributeType="String"/>
+        <attribute name="star" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="version" optional="YES" attributeType="String"/>
     </entity>
     <entity name="DeckPO" representedClassName="DeckPO" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="version" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CardPO" positionX="-639" positionY="-594" width="128" height="193"/>
-        <element name="DeckPO" positionX="-828" positionY="-552" width="128" height="90"/>
+        <element name="CardPO" positionX="-639" positionY="-594" width="128" height="208"/>
+        <element name="DeckPO" positionX="-828" positionY="-552" width="128" height="103"/>
     </elements>
 </model>
