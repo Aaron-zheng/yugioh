@@ -139,6 +139,7 @@ func getDeckViewEntity() -> [DeckViewEntity] {
     }
     
     var tmp: [DeckViewEntity] = [
+        DeckViewEntity(id: "1", title: "我的收藏", introduction: "我的收藏", type: "star"),
         DeckViewEntity(id: "0", title: "我的卡组", introduction: "我的卡组", type: "self"),
         getBanDeckViewEntity(deckName: "ocg"),
         getBanDeckViewEntity(deckName: "tcg"),
@@ -161,17 +162,17 @@ func getDeckViewEntity() -> [DeckViewEntity] {
 
     
     do {
-        for each in try getDB().prepare("select set_name, date, num_of_cards, set_code from cardset order by date desc") {
-            let deckViewEntity = DeckViewEntity()
-            let setName = each[0] as! String
-            let date = each[1] as! String
-            let numOfCards = each[2] as! Number
-            let setCode = each[3] as! String
-            deckViewEntity.id = setName
-            deckViewEntity.title = "\(date) \(setCode) 卡包（\(numOfCards)）"
-            deckViewEntity.type = "cardset"
-            tmp.append(deckViewEntity)
-        }
+//        for each in try getDB().prepare("select set_name, date, num_of_cards, set_code from cardset order by date desc") {
+//            let deckViewEntity = DeckViewEntity()
+//            let setName = each[0] as! String
+//            let date = each[1] as! String
+//            let numOfCards = each[2] as! Number
+//            let setCode = each[3] as! String
+//            deckViewEntity.id = setName
+//            deckViewEntity.title = "\(date) \(setCode) 卡包（\(numOfCards)）"
+//            deckViewEntity.type = "cardset"
+//            tmp.append(deckViewEntity)
+//        }
     } catch {
         print(error.localizedDescription)
     }

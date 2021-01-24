@@ -38,11 +38,19 @@ extension DeckViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        let controller = CardDeckViewController()
-        let rootController: ViewController = self.tabBarController as! ViewController
-        controller.rootController = rootController
-        controller.deckViewEntity = deckViewEntitys[indexPath.row]
-        self.navigationController?.pushViewController(controller, animated: true)
+        
+        if deckViewEntitys[indexPath.row].id == "1" {
+            let controller = CardViewWithStarController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        } else {
+            // 卡组展示
+            let controller = CardDeckViewController()
+            let rootController: ViewController = self.tabBarController as! ViewController
+            controller.rootController = rootController
+            controller.deckViewEntity = deckViewEntitys[indexPath.row]
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
     }
     
     

@@ -23,39 +23,6 @@
             </objects>
             <point key="canvasLocation" x="-897" y="78"/>
         </scene>
-        <!--Card View With Star Controller-->
-        <scene sceneID="Dxr-ou-zCg">
-            <objects>
-                <viewController id="h5i-Tt-P9t" customClass="CardViewWithStarController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9uB-dT-9x4"/>
-                        <viewControllerLayoutGuide type="bottom" id="I27-GC-L4t"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0km-PI-zkz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZVl-ko-ra3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZVl-ko-ra3" firstAttribute="width" secondItem="0km-PI-zkz" secondAttribute="width" id="7hg-Vq-K0a"/>
-                            <constraint firstItem="ZVl-ko-ra3" firstAttribute="leading" secondItem="0km-PI-zkz" secondAttribute="leading" id="Cw7-sK-2KM"/>
-                            <constraint firstItem="ZVl-ko-ra3" firstAttribute="top" secondItem="0km-PI-zkz" secondAttribute="top" id="Vbg-JT-IGg"/>
-                            <constraint firstAttribute="bottom" secondItem="ZVl-ko-ra3" secondAttribute="bottom" id="YER-Am-vM0"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="iTableView" destination="ZVl-ko-ra3" id="Yrr-BM-Fda"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p31-Mc-2m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1487" y="581"/>
-        </scene>
         <!--卡牌-->
         <scene sceneID="aro-r0-QTS">
             <objects>
@@ -107,21 +74,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHY-QY-CZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="-281"/>
+            <point key="canvasLocation" x="646" y="78"/>
         </scene>
         <!--游戏王卡牌-->
         <scene sceneID="qVe-DU-Jr7">
             <objects>
                 <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="游戏王卡牌" id="2XC-NK-5In">
-                        <barButtonItem key="leftBarButtonItem" title="搜索" id="pS4-JO-S9c">
+                        <barButtonItem key="leftBarButtonItem" title="语言" id="pS4-JO-S9c"/>
+                        <barButtonItem key="rightBarButtonItem" title="搜索" id="BRq-3Q-8aQ">
                             <connections>
-                                <segue destination="tqd-jF-oX0" kind="show" id="QEh-FM-ud4"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="收藏" id="BRq-3Q-8aQ">
-                            <connections>
-                                <segue destination="h5i-Tt-P9t" kind="show" id="ynT-3i-UoZ"/>
+                                <segue destination="tqd-jF-oX0" kind="show" id="rnL-mx-R6p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

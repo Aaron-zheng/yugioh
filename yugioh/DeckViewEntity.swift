@@ -9,10 +9,13 @@
 import Foundation
 
 class DeckViewEntity {
-    
+    // 卡组的唯一标识
     public var id: String = ""
+    // 卡组名称
     public var title: String = ""
+    // 卡组介绍
     public var introduction: String = ""
+    // 卡组类型
     public var type: String = ""
     
     init() {
