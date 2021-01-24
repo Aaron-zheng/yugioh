@@ -63,6 +63,29 @@ class ViewController: UITabBarController {
         globalCardEntitys = self.cardEntitys
     }
     
+    @IBAction func languageAction(_ sender: Any) {
+        let alertController = UIAlertController(title: "语言选择", message: nil, preferredStyle: .actionSheet)
+        let chinese = UIAlertAction(title: "中文", style: .default, handler: {(action) -> Void in
+            language = "cn"
+            self.setupData()
+            print("tapped cn")
+        })
+        let english = UIAlertAction(title: "英文", style: .default, handler: {(action) -> Void in
+            language = "en"
+            self.setupData()
+            print("tapped en")
+        })
+        let cancelButton = UIAlertAction(title: "取消", style: .cancel, handler: { (action) -> Void in
+            print("Cancel button tapped")
+        })
+        alertController.addAction(chinese)
+        alertController.addAction(english)
+        alertController.addAction(cancelButton)
+        
+        
+        self.navigationController?.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 

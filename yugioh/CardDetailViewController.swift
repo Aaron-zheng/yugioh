@@ -174,7 +174,9 @@ class CardDetailViewController: UIViewController {
         
         
         self.property.text = ""
-        self.property.text = self.property.text! + cardEntity.property
+        if cardEntity.property != nil {
+            self.property.text = self.property.text! + cardEntity.property
+        }
         if cardEntity.race != nil && cardEntity.race != "" {
             self.property.text = self.property.text! + " / " + cardEntity.race
         }

@@ -81,7 +81,11 @@
             <objects>
                 <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="游戏王卡牌" id="2XC-NK-5In">
-                        <barButtonItem key="leftBarButtonItem" title="语言" id="pS4-JO-S9c"/>
+                        <barButtonItem key="leftBarButtonItem" title="语言" id="pS4-JO-S9c">
+                            <connections>
+                                <action selector="languageAction:" destination="xgT-iu-NsK" id="fz8-US-w0J"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="搜索" id="BRq-3Q-8aQ">
                             <connections>
                                 <segue destination="tqd-jF-oX0" kind="show" id="rnL-mx-R6p"/>

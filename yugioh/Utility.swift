@@ -81,14 +81,17 @@ fileprivate var cardEntitys: Array<CardEntity> = [];
 //获取所有卡牌列表
 func getCardEntity() -> Array<CardEntity> {
     if cardEntitys.count > 0 {
-        return cardEntitys;
-    }
-    do {
-        for each in try getDB().prepare("select b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from  pro b where language = 'cn' order by id desc") {
-            cardEntitys.append(buildCardEntity(element: each))
+        if language == preLanuage {
+            return cardEntitys;
         }
         
-        
+    }
+    do {
+        cardEntitys = []
+        for each in try getDB().prepare("select b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from  pro b where language = '\(language)' order by id desc") {
+            cardEntitys.append(buildCardEntity(element: each))
+        }
+        preLanuage = language
     } catch {
         print(error.localizedDescription)
     }
@@ -111,10 +114,13 @@ func getCardEntity(cardSet: String) -> Array<CardEntity> {
     return cardEntitys
 }
 
+var language: String = "cn"
+var preLanuage: String = "cn"
+
 //获取卡牌详情
 func getCardEntity(id: String) -> CardEntity {
     do {
-        for each in try getDB().prepare("select b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from  pro b where language = 'cn' and b.id = \"\(id)\"") {
+        for each in try getDB().prepare("select b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from  pro b where language = '\(language)' and b.id = \"\(id)\"") {
             return buildCardEntity(element: each)
         }
     } catch {
