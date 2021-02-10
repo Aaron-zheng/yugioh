@@ -20,14 +20,21 @@ class CardViewBaseController: UIViewController {
     
     var afterDeselect: (() -> Void)?
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.tableView.reloadData()
+    }
+    
+    @objc func tableViewReload() {
+        print("tableViewReload")
+        self.cardEntitys = getCardEntity()
         self.tableView.reloadData()
     }
     
     
     func setupTableView() {
-        self.cardEntitys = globalCardEntitys
+        self.cardEntitys = getCardEntity()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -36,6 +43,9 @@ class CardViewBaseController: UIViewController {
         self.tableView.separatorStyle = .none
         self.tableView.tableHeaderView = UIView(frame: CGRect.zero)
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+
+        
+        nc.addObserver(self, selector: #selector(CardViewBaseController.tableViewReload), name: Notification.Name.NOTIFICATION_NAME_LANGUAGE_CHANGE, object: nil)
     }
     
     

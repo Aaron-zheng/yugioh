@@ -27,9 +27,6 @@ class ViewController: UITabBarController {
         return .lightContent;
     }
     
-    @IBAction func signupHandle(_ sender: Any) {
-    }
-    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
 
         if item.title!.description != tabBarItemCard {
@@ -60,20 +57,17 @@ class ViewController: UITabBarController {
     
     private func setupData() {
         cardEntitys = getCardEntity()
-        globalCardEntitys = self.cardEntitys
     }
     
     @IBAction func languageAction(_ sender: Any) {
         let alertController = UIAlertController(title: "语言选择", message: nil, preferredStyle: .actionSheet)
         let chinese = UIAlertAction(title: "中文", style: .default, handler: {(action) -> Void in
             language = "cn"
-            self.setupData()
-            print("tapped cn")
+            nc.post(name: Notification.Name.NOTIFICATION_NAME_LANGUAGE_CHANGE, object: nil)
         })
         let english = UIAlertAction(title: "英文", style: .default, handler: {(action) -> Void in
             language = "en"
-            self.setupData()
-            print("tapped en")
+            nc.post(name: Notification.Name.NOTIFICATION_NAME_LANGUAGE_CHANGE, object: nil)
         })
         let cancelButton = UIAlertAction(title: "取消", style: .cancel, handler: { (action) -> Void in
             print("Cancel button tapped")
