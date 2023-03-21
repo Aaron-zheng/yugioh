@@ -327,9 +327,9 @@ extension CardSearchViewController: UITextFieldDelegate {
                 var inputFound = true
                 for inputTmp in inputArray! {
                     // TODO 这里需要找寻日文和英文
-                    if !c.titleName.lowercased().contains(inputTmp.description)
-                        && !c.effect.lowercased().contains(inputTmp.description)
-                        && !c.password.lowercased().contains(inputTmp.description) {
+                    if !c.getName().lowercased().contains(inputTmp.description)
+                        && !c.getDesc().lowercased().contains(inputTmp.description)
+                        && !c.getId().lowercased().contains(inputTmp.description) {
                         inputFound = false
                         break
                     }
@@ -344,7 +344,7 @@ extension CardSearchViewController: UITextFieldDelegate {
                 var searchTypeFound = false
                 
                 for case let t as String in searchType {
-                    if c.type.split(separator: " ").map(String.init).contains(t) {
+                    if c.getType().split(separator: " ").map(String.init).contains(t) {
                         searchTypeFound = true
                     }
                 }
@@ -357,7 +357,7 @@ extension CardSearchViewController: UITextFieldDelegate {
             
             //race search
             if searchRace.count > 0 {
-                if !searchRace.contains(c.race) {
+                if !searchRace.contains(c.getRace()) {
                     continue
                 }
             }
@@ -365,7 +365,7 @@ extension CardSearchViewController: UITextFieldDelegate {
             
             //property search
             if searchProperty.count > 0 {
-                if !searchProperty.contains(c.property) {
+                if !searchProperty.contains(c.getAttribute()) {
                     continue
                 }
             }
@@ -374,7 +374,7 @@ extension CardSearchViewController: UITextFieldDelegate {
             
             //attack search
             if attackLow != 0 {
-                if let attack = Int.init(c.attack) {
+                if let attack = Int.init(c.getAtk()) {
                     if attack < attackLow {
                         continue
                     }
@@ -383,7 +383,7 @@ extension CardSearchViewController: UITextFieldDelegate {
                 }
             }
             if attackUp != 10000 {
-                if let attack = Int.init(c.attack) {
+                if let attack = Int.init(c.getAtk()) {
                     if attack > attackUp {
                         continue
                     }
@@ -395,7 +395,7 @@ extension CardSearchViewController: UITextFieldDelegate {
             
             //defense search
             if defenseLow != 0 {
-                if let defense = Int.init(c.defense) {
+                if let defense = Int.init(c.getDef()) {
                     if defense < defenseLow {
                         continue
                     }
@@ -404,7 +404,7 @@ extension CardSearchViewController: UITextFieldDelegate {
                 }
             }
             if defenseUp != 10000 {
-                if let defense = Int.init(c.defense) {
+                if let defense = Int.init(c.getDef()) {
                     if defense > defenseUp {
                         continue
                     }
@@ -415,7 +415,7 @@ extension CardSearchViewController: UITextFieldDelegate {
             
             //star search
             if starLow != 0 {
-                if let star = Int.init(c.star) {
+                if let star = Int.init(c.getLevel()) {
                     if star < starLow {
                         continue
                     }
@@ -424,7 +424,7 @@ extension CardSearchViewController: UITextFieldDelegate {
                 }
             }
             if starUp != 12 {
-                if let star = Int.init(c.star) {
+                if let star = Int.init(c.getLevel()) {
                     if star > starUp {
                         continue
                     }

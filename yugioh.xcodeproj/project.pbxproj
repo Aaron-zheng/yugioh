@@ -11,11 +11,11 @@
 		A00EAA061DBE862F001FD546 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA051DBE862F001FD546 /* Utility.swift */; };
 		A00EAA081DBE89CD001FD546 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */; };
 		A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */; };
-		A0215436257CEC5500161A23 /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A0215435257CEC5500161A23 /* cards.cdb */; };
 		A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6C71DC0957B00E7D8EE /* CardService.swift */; };
 		A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6E01DC343AA00E7D8EE /* CardPO.swift */; };
 		A02BFF5C1E9155320096DEB7 /* CardViewBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */; };
 		A02ED0D41F40977D007C753C /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */; };
+		A037FA3F29CA14A8001ECCBD /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A037FA3E29CA14A8001ECCBD /* cards.cdb */; };
 		A039AE291D95F17E009ABFD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE281D95F17E009ABFD1 /* AppDelegate.swift */; };
 		A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE2A1D95F17E009ABFD1 /* ViewController.swift */; };
 		A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A039AE2C1D95F17F009ABFD1 /* Main.storyboard */; };
@@ -32,7 +32,6 @@
 		A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB581F1A01FA001EA6C2 /* DeckService.swift */; };
 		A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */; };
 		A04B4D9E22BFFA4F00FD58C4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04B4D9C22BFFA4F00FD58C4 /* libWeChatSDK.a */; };
-		A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A054587B1FDCF78E00916E3D /* libTalkingData.a */; };
 		A05458941FE6CFCF00916E3D /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05458931FE6CFCF00916E3D /* AboutView.xib */; };
 		A059F8FF1F68470600D019F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */; };
 		A05F47541DDB1870005533C9 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F47531DDB1870005533C9 /* RangeSlider.swift */; };
@@ -88,11 +87,11 @@
 		A00EAA071DBE89CD001FD546 /* CardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDetailViewController.xib; sourceTree = "<group>"; };
 		A01E491E1DCDE169003D2F35 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/yugioh-afsqlygzbrafxjgunlidtampkyjt/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
-		A0215435257CEC5500161A23 /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A022E6C71DC0957B00E7D8EE /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		A022E6E01DC343AA00E7D8EE /* CardPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPO.swift; sourceTree = "<group>"; };
 		A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewBaseController.swift; sourceTree = "<group>"; };
 		A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
+		A037FA3E29CA14A8001ECCBD /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A039AE251D95F17E009ABFD1 /* yugioh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yugioh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A039AE281D95F17E009ABFD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A039AE2A1D95F17E009ABFD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,8 +121,6 @@
 		A04B4D9B22BFFA4E00FD58C4 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		A04B4D9C22BFFA4F00FD58C4 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		A04B4D9D22BFFA4F00FD58C4 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		A054587B1FDCF78E00916E3D /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
-		A054587C1FDCF78E00916E3D /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
 		A05458931FE6CFCF00916E3D /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		A059F8FE1F68470600D019F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A05F47531DDB1870005533C9 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
@@ -159,7 +156,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A054587D1FDCF78E00916E3D /* libTalkingData.a in Frameworks */,
 				C7E28034866CB4189C5C8DE5 /* Pods_yugioh.framework in Frameworks */,
 				A04B4D9E22BFFA4F00FD58C4 /* libWeChatSDK.a in Frameworks */,
 			);
@@ -304,7 +300,7 @@
 		A039AE5A1D95F934009ABFD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A0215435257CEC5500161A23 /* cards.cdb */,
+				A037FA3E29CA14A8001ECCBD /* cards.cdb */,
 				A039AE741D973CA3009ABFD1 /* Roboto-Bold.ttf */,
 				A039AE751D973CA3009ABFD1 /* Roboto-Light.ttf */,
 				A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */,
@@ -331,7 +327,6 @@
 			children = (
 				A05458871FE6ABA700916E3D /* DOFavoriteButton */,
 				A05458861FE6AB9C00916E3D /* Wexin */,
-				A05458851FE6AB8500916E3D /* Talkingdata */,
 				A0EDEEFB1E55EDBE00401416 /* Constant.swift */,
 				A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */,
 				A039AE661D95FDED009ABFD1 /* Extension.swift */,
@@ -357,15 +352,6 @@
 				A02BFF561E9145860096DEB7 /* Card */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		A05458851FE6AB8500916E3D /* Talkingdata */ = {
-			isa = PBXGroup;
-			children = (
-				A054587B1FDCF78E00916E3D /* libTalkingData.a */,
-				A054587C1FDCF78E00916E3D /* TalkingData.h */,
-			);
-			name = Talkingdata;
 			sourceTree = "<group>";
 		};
 		A05458861FE6AB9C00916E3D /* Wexin */ = {
@@ -521,10 +507,10 @@
 				A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */,
 				A039AE361D95F17F009ABFD1 /* LaunchScreen.storyboard in Resources */,
 				A0F0E8401F36A63E009B8E85 /* CardDeckViewController.xib in Resources */,
-				A0215436257CEC5500161A23 /* cards.cdb in Resources */,
 				A08E9A8B21DA43F100936C40 /* CalculateView.xib in Resources */,
 				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
 				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
+				A037FA3F29CA14A8001ECCBD /* cards.cdb in Resources */,
 				A0EE4CDD25BD6B8700F0DBE4 /* CardViewWithStarController.xib in Resources */,
 				A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */,
 			);

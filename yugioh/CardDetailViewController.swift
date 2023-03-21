@@ -68,9 +68,9 @@ class CardDetailViewController: UIViewController {
         //卡牌最高度
         let h0 = (frameWidth - materialGap * 2) / 3 / 160 * 230
         //效果高度
-        let h1 = preCalculateTextHeight(text: cardEntity.effect, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+        let h1 = preCalculateTextHeight(text: cardEntity.getDesc(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
         //卡包高度
-        var h2 = preCalculateTextHeight(text: cardEntity.pack, font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+        var h2 = preCalculateTextHeight(text: cardEntity.getDesc(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
         if h2 < 16 {
             h2 = 16
         }
@@ -167,41 +167,41 @@ class CardDetailViewController: UIViewController {
             star.deselect()
         }
         
-        self.name.text = cardEntity.titleName
-        self.effect.text = cardEntity.effect
+        self.name.text = cardEntity.getName()
+        self.effect.text = cardEntity.getDesc()
         self.type.text = cardEntity.type
-        self.usage.text = cardEntity.usage
+        self.usage.text = "456456"
         
         
         self.property.text = ""
-        if cardEntity.property != nil {
-            self.property.text = self.property.text! + cardEntity.property
+        if cardEntity.getAttribute() != "" {
+            self.property.text = self.property.text! + cardEntity.getAttribute()
         }
-        if cardEntity.race != nil && cardEntity.race != "" {
-            self.property.text = self.property.text! + " / " + cardEntity.race
+        if cardEntity.getRace() != "" {
+            self.property.text = self.property.text! + " / " + cardEntity.getRace()
         }
-        if cardEntity.star != nil && cardEntity.star != "" {
-            self.property.text = self.property.text! + " / " + cardEntity.star
+        if cardEntity.getLevel() != "" {
+            self.property.text = self.property.text! + " / " + cardEntity.getLevel()
         }
         
-        if cardEntity.attack != nil && !cardEntity.attack.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            self.attack.text = cardEntity.attack
+        if !cardEntity.getAtk().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            self.attack.text = cardEntity.getAtk()
         } else {
             self.attack.text = ""
         }
-        if cardEntity.defense != nil && !cardEntity.defense.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            self.attack.text = self.attack.text! + " / " + cardEntity.defense
+        if !cardEntity.getDef().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            self.attack.text = self.attack.text! + " / " + cardEntity.getDef()
         }
         
-        self.password.text = "No: " + cardEntity.password
-        if cardEntity.scale != nil && !cardEntity.scale.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        self.password.text = "No: " + cardEntity.getId()
+        if !cardEntity.getScale().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.scale.text = "灵摆: " + cardEntity.scale
         }
         
         //灵摆和连接 不可能同时存在，所以使用共同的label展示好了
-        if cardEntity.link != nil {
-            self.scale.text = "连接: " + cardEntity.link + " "
-                + cardEntity.linkMarker
+        if cardEntity.getLinkval() != "" {
+            self.scale.text = "连接: " + cardEntity.getLinkval() + " "
+                + cardEntity.getLinkmarkers()
                     .replacingOccurrences(of: "\"", with: "")
                     .replacingOccurrences(of: "-", with: "")
                     .replacingOccurrences(of: "Top", with: "上")
@@ -210,10 +210,10 @@ class CardDetailViewController: UIViewController {
                     .replacingOccurrences(of: "Right", with: "右")
         }
         
-        self.rare.text = "卡牌: " + cardEntity.rare
-        self.pack.text = "卡包: " + cardEntity.pack
+        self.rare.text = "卡牌: " + cardEntity.getRace()
+        self.pack.text = "卡包: " + "789"
         // 设置调整
-        self.adjust.text = "调整: " + cardEntity.adjust
+        self.adjust.text = "调整: " + "111111"
         // 设置调整界面直接隐藏
         self.adjustView.isHidden = true
         

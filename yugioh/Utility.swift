@@ -88,7 +88,7 @@ func getCardEntity() -> Array<CardEntity> {
     }
     do {
         cardEntitys = []
-        for each in try getDB().prepare("select b.id, b.name, b.type, b.desc, b.atk, b.def, b.level, b.race, b.attribute, b.archetype, b.scale, b.linkval, b.linkmarkers, b.card_sets, b.card_images, b.card_prices, b.banlist_info from  pro b where language = '\(language)' order by id desc") {
+        for each in try getDB().prepare("select id, enName,frName,deName,itName,ptName,cnName,jpName,enDesc,frDesc,deDesc,itDesc,ptDesc,cnDesc,jpDesc,archetype,frameType,race,type,attribute,cardImages,cardPrices,cardSets,atk,def,level,scale,linkval,linkmarkers,banlistInfo from  newpro order by id desc") {
             cardEntitys.append(buildCardEntity(element: each))
         }
         preLanuage = language
@@ -283,39 +283,35 @@ func buildCardEntity(element: [Binding?]) -> CardEntity {
     let cardEntity = CardEntity()
     //password
     cardEntity.id = String(element[0] as! Int64)
-    //中文名称
-    cardEntity.titleName = element[1] as? String
-    //类型，
-    cardEntity.type = element[2] as? String
-    //效果
-    cardEntity.effect = element[3] as? String
-    //密码，唯一
-    cardEntity.password = String(element[0] as! Int64)
-    //无限制，禁止卡，限制，准限制
-//    cardEntity.usage = getUsage(id: cardEntity.id)
-    //攻击力
-    cardEntity.attack = element[4] as? String
-    //防御力
-    cardEntity.defense = element[5] as? String
-    //星级
-    cardEntity.star = element[6] as? String
-    //种族，鸟兽，念动力，等等
-    cardEntity.race = element[7] as? String
-    //属性，光，暗，风，等灯
-    cardEntity.property = element[8] as? String
-    //稀有程度
-    cardEntity.rare = ""
-    //卡包
-    cardEntity.pack = ""
-    //    cardEntity.pack = getPack(s: element[30] as? String)
-    //灵摆
-    cardEntity.scale = element[10] as? String
-    //调整
-    cardEntity.adjust = ""
-    //连接
-    cardEntity.link = element[11] as? String
-    //连接标记
-    cardEntity.linkMarker = element[12] as? String
+    cardEntity.enName = String(element[1] as? String ?? "")
+    cardEntity.frName  = String(element[2] as? String ?? "")
+    cardEntity.deName  = String(element[3] as? String ?? "")
+    cardEntity.itName  = String(element[4] as? String ?? "")
+    cardEntity.ptName  = String(element[5] as? String ?? "")
+    cardEntity.cnName  = String(element[6] as? String ?? "")
+    cardEntity.jpName  = String(element[7] as? String ?? "")
+    cardEntity.enDesc  = String(element[8] as? String ?? "")
+    cardEntity.frDesc  = String(element[9] as? String ?? "")
+    cardEntity.deDesc  = String(element[10] as? String ?? "")
+    cardEntity.itDesc  = String(element[11] as? String ?? "")
+    cardEntity.ptDesc  = String(element[12] as? String ?? "")
+    cardEntity.cnDesc  = String(element[13] as? String ?? "")
+    cardEntity.jpDesc  = String(element[14] as? String ?? "")
+    cardEntity.archetype = String(element[15] as? String ?? "")
+    cardEntity.frameType = String(element[16] as? String ?? "")
+    cardEntity.race = String(element[17] as? String ?? "")
+    cardEntity.type = String(element[18] as? String ?? "")
+    cardEntity.attribute = String(element[19] as? String ?? "")
+    cardEntity.cardImages = String(element[20] as? String ?? "")
+    cardEntity.cardPrices = String(element[21] as? String ?? "")
+    cardEntity.cardSets = String(element[22] as? String ?? "")
+    cardEntity.atk = String(element[23] as? String ?? "")
+    cardEntity.def = String(element[24] as? String ?? "")
+    cardEntity.level = String(element[25] as? String ?? "")
+    cardEntity.scale = String(element[26] as? String ?? "")
+    cardEntity.linkval = String(element[27] as? String ?? "")
+    cardEntity.linkmarkers = String(element[28] as? String ?? "")
+    cardEntity.banlistInfo = String(element[29] as? String ?? "")
     //
     return cardEntity
 }

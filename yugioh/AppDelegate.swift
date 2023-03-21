@@ -32,12 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         //微信接口初始化
         WXApi.registerApp(wechatKey)
         
-        //初始化talkingdata
-        TalkingData.sessionStarted(takingDataID, withChannelId: "fucheng-ios")
-        
-        //初始化Firebase
-        //FirebaseApp.configure()
-        
         //日志
         let deviceName = UIDevice.current.name  //获取设备名称
         let sysName = UIDevice.current.systemName //获取系统名称
