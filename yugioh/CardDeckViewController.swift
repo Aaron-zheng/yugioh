@@ -35,12 +35,8 @@ class CardDeckViewController: UIViewController {
         //代表是自己的卡组，所以必须请求数据
         if(deckViewEntity.type == "self") {
             deckEntitys = deckService.list();
-        } else if(deckViewEntity.type == "ban"){
-            deckEntitys = getDeckEntity(deckName: deckViewEntity.id)
-        } else if(deckViewEntity.type == "champion") {
-            deckEntitys = getDeckEntity(deckName: deckViewEntity.id)
-        } else if(deckViewEntity.type == "cardset") {
-            deckEntitys = getDeckEntityFromCardSet(setName: deckViewEntity.id)
+        } else {
+            deckEntitys = getDeckEntity(deckFormat: deckViewEntity.type, deckName: deckViewEntity.id)
         }
         
     
@@ -170,23 +166,14 @@ extension CardDeckViewController: UICollectionViewDelegate {
             
             v.sectionHeaderLabel.text = ""
             
-            if deckViewEntity.type == "ban" {
-                if indexPath.section == 0 {
-                    v.sectionHeaderLabel.text = "禁止卡（" + self.deckViewEntity.title + "）"
-                } else if indexPath.section == 1 {
-                    v.sectionHeaderLabel.text = "限制卡"
-                } else if indexPath.section == 2 {
-                    v.sectionHeaderLabel.text = "准限制卡"
-                }
-            } else {
-                if indexPath.section == 0 {
-                    v.sectionHeaderLabel.text = "主卡组（" + self.deckViewEntity.title + "）"
-                } else if indexPath.section == 1 {
-                    v.sectionHeaderLabel.text = "副卡组"
-                } else if indexPath.section == 2 {
-                    v.sectionHeaderLabel.text = "额外卡组"
-                }
+            if indexPath.section == 0 {
+                v.sectionHeaderLabel.text = "主卡组（" + self.deckViewEntity.title + "）"
+            } else if indexPath.section == 1 {
+                v.sectionHeaderLabel.text = "副卡组"
+            } else if indexPath.section == 2 {
+                v.sectionHeaderLabel.text = "额外卡组"
             }
+            
             
             
             

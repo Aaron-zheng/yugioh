@@ -81,7 +81,7 @@
             <objects>
                 <tabBarController id="xgT-iu-NsK" customClass="ViewController" customModule="yugioh" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="游戏王卡牌" id="2XC-NK-5In">
-                        <barButtonItem key="leftBarButtonItem" title="语言" id="pS4-JO-S9c">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" id="pS4-JO-S9c">
                             <connections>
                                 <action selector="languageAction:" destination="xgT-iu-NsK" id="fz8-US-w0J"/>
                             </connections>

@@ -13,9 +13,10 @@
 		A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */; };
 		A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6C71DC0957B00E7D8EE /* CardService.swift */; };
 		A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6E01DC343AA00E7D8EE /* CardPO.swift */; };
+		A024D36529DB5E5800896998 /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A024D36429DB5E5800896998 /* cards.cdb */; };
 		A02BFF5C1E9155320096DEB7 /* CardViewBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */; };
 		A02ED0D41F40977D007C753C /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */; };
-		A037FA3F29CA14A8001ECCBD /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A037FA3E29CA14A8001ECCBD /* cards.cdb */; };
+		A037FA4329CAC49A001ECCBD /* KeyValueEntryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A037FA4229CAC49A001ECCBD /* KeyValueEntryEntity.swift */; };
 		A039AE291D95F17E009ABFD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE281D95F17E009ABFD1 /* AppDelegate.swift */; };
 		A039AE2B1D95F17E009ABFD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE2A1D95F17E009ABFD1 /* ViewController.swift */; };
 		A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A039AE2C1D95F17F009ABFD1 /* Main.storyboard */; };
@@ -89,9 +90,10 @@
 		A01E491E1DCDE169003D2F35 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/yugioh-afsqlygzbrafxjgunlidtampkyjt/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		A022E6C71DC0957B00E7D8EE /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		A022E6E01DC343AA00E7D8EE /* CardPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPO.swift; sourceTree = "<group>"; };
+		A024D36429DB5E5800896998 /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewBaseController.swift; sourceTree = "<group>"; };
 		A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
-		A037FA3E29CA14A8001ECCBD /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
+		A037FA4229CAC49A001ECCBD /* KeyValueEntryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueEntryEntity.swift; sourceTree = "<group>"; };
 		A039AE251D95F17E009ABFD1 /* yugioh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yugioh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A039AE281D95F17E009ABFD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A039AE2A1D95F17E009ABFD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -300,7 +302,7 @@
 		A039AE5A1D95F934009ABFD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A037FA3E29CA14A8001ECCBD /* cards.cdb */,
+				A024D36429DB5E5800896998 /* cards.cdb */,
 				A039AE741D973CA3009ABFD1 /* Roboto-Bold.ttf */,
 				A039AE751D973CA3009ABFD1 /* Roboto-Light.ttf */,
 				A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */,
@@ -318,6 +320,7 @@
 				A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */,
 				A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */,
 				A0F0E8451F36B9B2009B8E85 /* DeckViewEntity.swift */,
+				A037FA4229CAC49A001ECCBD /* KeyValueEntryEntity.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -510,7 +513,7 @@
 				A08E9A8B21DA43F100936C40 /* CalculateView.xib in Resources */,
 				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
 				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
-				A037FA3F29CA14A8001ECCBD /* cards.cdb in Resources */,
+				A024D36529DB5E5800896998 /* cards.cdb in Resources */,
 				A0EE4CDD25BD6B8700F0DBE4 /* CardViewWithStarController.xib in Resources */,
 				A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */,
 			);
@@ -594,6 +597,7 @@
 				A02BFF5C1E9155320096DEB7 /* CardViewBaseController.swift in Sources */,
 				A039AE631D95FC35009ABFD1 /* CardViewController.swift in Sources */,
 				A0972EF11EDB1C18005FAB9C /* DataButton.swift in Sources */,
+				A037FA4329CAC49A001ECCBD /* KeyValueEntryEntity.swift in Sources */,
 				A08E9A9321DA4F7F00936C40 /* BattleView.swift in Sources */,
 				A00EAA081DBE89CD001FD546 /* CardDetailViewController.swift in Sources */,
 				A0609C061E3F3F14005739B7 /* CardViewWithStarController.swift in Sources */,

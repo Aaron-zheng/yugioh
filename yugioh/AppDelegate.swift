@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         
         //初始化洁面颜色
         let navigationBarAppearance = UINavigationBar.appearance()
-        navigationBarAppearance.barTintColor = UIColor.black
-        navigationBarAppearance.tintColor = UIColor.white
-        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+//        navigationBarAppearance.barTintColor = UIColor.black
+        navigationBarAppearance.tintColor = UIColor.black
+//        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         
         
         //微信接口初始化

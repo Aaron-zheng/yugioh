@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wru-YN-TBn" id="y2h-cQ-xOF">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="229.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7K-cH-B5b">
@@ -105,6 +103,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收录日期" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-uy-dC5">
+                                <rect key="frame" x="140.5" y="166.5" width="249.5" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="Pe0-uL-s65"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -120,6 +127,7 @@
                             <constraint firstAttribute="height" secondItem="FDW-5G-6BU" secondAttribute="height" id="JtA-sr-BuL"/>
                             <constraint firstItem="3zb-bv-hte" firstAttribute="trailing" secondItem="JHg-3Z-6K6" secondAttribute="trailing" id="KpV-Xv-VyS"/>
                             <constraint firstItem="j3s-kx-Dz8" firstAttribute="trailing" secondItem="82V-fk-Eg6" secondAttribute="trailing" id="LOc-Nj-Rh3"/>
+                            <constraint firstItem="Btn-uy-dC5" firstAttribute="leading" secondItem="j3s-kx-Dz8" secondAttribute="leading" id="LhJ-Gh-rNy"/>
                             <constraint firstItem="FDW-5G-6BU" firstAttribute="width" secondItem="y7K-cH-B5b" secondAttribute="width" multiplier="1/3" id="Lx0-lD-3zb"/>
                             <constraint firstItem="kVM-xa-Ywm" firstAttribute="trailing" secondItem="JHg-3Z-6K6" secondAttribute="trailing" id="MSU-s7-Sqb"/>
                             <constraint firstItem="82V-fk-Eg6" firstAttribute="bottom" secondItem="j3s-kx-Dz8" secondAttribute="top" id="RI1-x1-p4n"/>
@@ -128,7 +136,9 @@
                             <constraint firstItem="JHg-3Z-6K6" firstAttribute="leading" secondItem="qWS-Rq-MD3" secondAttribute="leading" id="Vdu-Qe-1bE"/>
                             <constraint firstAttribute="bottom" secondItem="j3s-kx-Dz8" secondAttribute="bottom" constant="8" id="XZX-NY-y4P"/>
                             <constraint firstAttribute="trailing" secondItem="mMb-QW-9Hs" secondAttribute="trailing" id="a0L-fj-X43"/>
+                            <constraint firstItem="Btn-uy-dC5" firstAttribute="trailing" secondItem="j3s-kx-Dz8" secondAttribute="trailing" id="a4R-fe-rDi"/>
                             <constraint firstItem="82V-fk-Eg6" firstAttribute="top" secondItem="dNW-1U-11A" secondAttribute="bottom" id="diI-aw-1mt"/>
+                            <constraint firstItem="Btn-uy-dC5" firstAttribute="top" secondItem="j3s-kx-Dz8" secondAttribute="top" id="fAz-FE-iOB"/>
                             <constraint firstItem="qWS-Rq-MD3" firstAttribute="top" secondItem="y7K-cH-B5b" secondAttribute="top" constant="8" id="fYS-KY-kLw"/>
                             <constraint firstItem="JHg-3Z-6K6" firstAttribute="top" secondItem="qWS-Rq-MD3" secondAttribute="bottom" id="g6s-5u-4Ii"/>
                             <constraint firstAttribute="trailing" secondItem="qWS-Rq-MD3" secondAttribute="trailing" constant="8" id="g8V-yb-YMm"/>
@@ -155,6 +165,7 @@
                 <outlet property="password" destination="j3s-kx-Dz8" id="fAH-k4-eBe"/>
                 <outlet property="property" destination="3zb-bv-hte" id="R58-0I-LQZ"/>
                 <outlet property="star" destination="mMb-QW-9Hs" id="Bsk-nB-0XV"/>
+                <outlet property="startDate" destination="Btn-uy-dC5" id="YEY-Nu-9Qu"/>
                 <outlet property="title" destination="qWS-Rq-MD3" id="ox4-iR-VIa"/>
                 <outlet property="type" destination="JHg-3Z-6K6" id="ovR-eL-pQe"/>
                 <outlet property="usage" destination="dNW-1U-11A" id="x9E-ga-GJn"/>

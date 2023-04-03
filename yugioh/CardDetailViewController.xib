@@ -28,12 +28,11 @@
                 <outlet property="innerView" destination="HmW-WK-tS2" id="2UJ-9H-VTs"/>
                 <outlet property="innerViewHeader" destination="d9E-tv-FbM" id="d9R-tw-dNl"/>
                 <outlet property="name" destination="jTx-5G-QQC" id="1IR-Zb-lUo"/>
-                <outlet property="pack" destination="VnC-i7-jLl" id="ARQ-vw-zs5"/>
+                <outlet property="packageSet" destination="49P-sW-e2d" id="X0Y-Y4-Mul"/>
                 <outlet property="password" destination="Yhj-RS-IFv" id="dAs-ql-SM5"/>
                 <outlet property="property" destination="Mh1-cR-MuI" id="mWr-2Y-bcD"/>
-                <outlet property="rare" destination="49P-sW-e2d" id="LEt-YS-f6O"/>
-                <outlet property="scale" destination="hyT-iU-SSo" id="bDu-sK-xD8"/>
                 <outlet property="star" destination="WcV-Bc-Lw5" id="Jdl-rd-4KF"/>
+                <outlet property="startDate" destination="hyT-iU-SSo" id="wox-F9-9A8"/>
                 <outlet property="type" destination="k9Y-vR-bem" id="nMF-uT-x4F"/>
                 <outlet property="usage" destination="3il-Hf-Kuo" id="QkC-pl-j8K"/>
                 <outlet property="view" destination="yRt-6q-7gg" id="EQk-Mh-Kx6"/>
@@ -116,13 +115,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" text="游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌游戏王卡牌效果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc5-Q7-dQv" customClass="UIVerticalAlignLabel" customModule="yugioh" customModuleProvider="target">
-                                    <rect key="frame" x="127.5" y="64" width="223.5" height="136"/>
+                                    <rect key="frame" x="127.5" y="64" width="223.5" height="129.5"/>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡片密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-RS-IFv">
-                                    <rect key="frame" x="127.5" y="200" width="223.5" height="16"/>
+                                    <rect key="frame" x="127.5" y="193.5" width="223.5" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="6P8-hB-kEL"/>
                                     </constraints>
@@ -130,25 +129,16 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-iU-SSo">
-                                    <rect key="frame" x="127.5" y="200" width="223.5" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="录入日期" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-iU-SSo">
+                                    <rect key="frame" x="127.5" y="193.5" width="223.5" height="16"/>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="稀有度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49P-sW-e2d">
-                                    <rect key="frame" x="127.5" y="216" width="223.5" height="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49P-sW-e2d">
+                                    <rect key="frame" x="127.5" y="209.5" width="223.5" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="Tw8-x2-APl"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.38" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡包" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-i7-jLl" customClass="UIVerticalAlignLabel" customModule="yugioh" customModuleProvider="target">
-                                    <rect key="frame" x="127.5" y="232" width="223.5" height="16"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="16" id="9a7-9d-XNq"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="12"/>
                                     <nil key="textColor"/>
@@ -158,7 +148,6 @@
                             <constraints>
                                 <constraint firstItem="15q-u2-8Rw" firstAttribute="width" secondItem="HmW-WK-tS2" secondAttribute="width" multiplier="1/3" id="1jY-QM-61R"/>
                                 <constraint firstItem="Mh1-cR-MuI" firstAttribute="top" secondItem="k9Y-vR-bem" secondAttribute="top" id="3wc-Su-hMH"/>
-                                <constraint firstAttribute="bottom" secondItem="VnC-i7-jLl" secondAttribute="bottom" constant="8" id="4wP-mz-FNo"/>
                                 <constraint firstAttribute="height" constant="256" id="4xa-ln-4MD"/>
                                 <constraint firstItem="hyT-iU-SSo" firstAttribute="leading" secondItem="Yhj-RS-IFv" secondAttribute="leading" id="5Ki-hs-mxh"/>
                                 <constraint firstItem="jTx-5G-QQC" firstAttribute="leading" secondItem="15q-u2-8Rw" secondAttribute="trailing" constant="8" id="5nY-2T-etH"/>
@@ -174,7 +163,6 @@
                                 <constraint firstItem="seK-tz-SZl" firstAttribute="height" secondItem="HmW-WK-tS2" secondAttribute="height" id="Ln5-ot-6wV"/>
                                 <constraint firstItem="3il-Hf-Kuo" firstAttribute="leading" secondItem="k9Y-vR-bem" secondAttribute="leading" id="PEQ-Dw-Gff"/>
                                 <constraint firstItem="seK-tz-SZl" firstAttribute="width" secondItem="HmW-WK-tS2" secondAttribute="width" id="Prh-Eg-BjW"/>
-                                <constraint firstItem="VnC-i7-jLl" firstAttribute="top" secondItem="49P-sW-e2d" secondAttribute="bottom" id="QVI-9F-p4k"/>
                                 <constraint firstItem="mWR-6c-AO7" firstAttribute="leading" secondItem="k9Y-vR-bem" secondAttribute="leading" id="Qa3-23-01N"/>
                                 <constraint firstAttribute="trailing" secondItem="jTx-5G-QQC" secondAttribute="trailing" constant="8" id="SyQ-fQ-HrA"/>
                                 <constraint firstItem="15q-u2-8Rw" firstAttribute="leading" secondItem="HmW-WK-tS2" secondAttribute="leading" id="TMf-M2-NcY"/>
@@ -193,8 +181,6 @@
                                 <constraint firstItem="3il-Hf-Kuo" firstAttribute="top" secondItem="k9Y-vR-bem" secondAttribute="bottom" id="olR-6w-7je"/>
                                 <constraint firstItem="mWR-6c-AO7" firstAttribute="top" secondItem="k9Y-vR-bem" secondAttribute="bottom" id="pZe-iO-z86"/>
                                 <constraint firstItem="jTx-5G-QQC" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="top" constant="8" id="uPm-n3-e9O"/>
-                                <constraint firstItem="VnC-i7-jLl" firstAttribute="leading" secondItem="Hc5-Q7-dQv" secondAttribute="leading" id="vaM-K9-JWs"/>
-                                <constraint firstItem="VnC-i7-jLl" firstAttribute="trailing" secondItem="Hc5-Q7-dQv" secondAttribute="trailing" id="vpo-gB-Rvn"/>
                                 <constraint firstItem="49P-sW-e2d" firstAttribute="leading" secondItem="Hc5-Q7-dQv" secondAttribute="leading" id="wsd-rX-COM"/>
                                 <constraint firstItem="WcV-Bc-Lw5" firstAttribute="top" secondItem="HmW-WK-tS2" secondAttribute="top" id="yPj-h9-Boo"/>
                                 <constraint firstItem="Yhj-RS-IFv" firstAttribute="bottom" secondItem="49P-sW-e2d" secondAttribute="top" id="zxV-nP-0rA"/>

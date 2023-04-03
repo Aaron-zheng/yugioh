@@ -75,6 +75,12 @@ class CardEntity {
     //
     var banlistInfo: String! = ""
     
+    //
+    var miscInfo: String! = ""
+    
+    //
+    var startDate: String! = ""
+    
     // 额外添加属性
     // var url: String! = ""
     var isSelected: Bool = false
@@ -92,6 +98,9 @@ class CardEntity {
         }
         if(language == "cn") {
             r = cnName;
+            if r == "" {
+                r = "[暂无翻译]" + enName
+            }
         }
         if(r == "") {
             return "-";
@@ -106,6 +115,9 @@ class CardEntity {
         }
         if(language == "cn") {
             r = cnDesc
+            if r == "" {
+                r = "[暂无翻译]" + enDesc
+            }
         }
         
         if(r == "") {
@@ -119,9 +131,8 @@ class CardEntity {
         var r = ""
         if(language == "en") {
             r = archetype;
-        }
-        if(language == "cn") {
-            
+        } else {
+            r = getValue(key: "archietype", subKey: archetype, language: language)
         }
         
         if(r == "") {
@@ -140,41 +151,8 @@ class CardEntity {
         var r = ""
         if(language == "en") {
             r = race;
-        }
-        if(language == "cn") {
-            if(race == "Aqua") {r=""}
-            if(race == "Beast") {r="兽"}
-            if(race == "Beast-Warrior") {r="兽战士"}
-            if(race == "Continuous") {r="永续"}
-            if(race == "Counter") {r="反击"}
-            if(race == "Creator-God") {r="创造神"}
-            if(race == "Cyberse") {r="电子界"}
-            if(race == "Dinosaur") {r="恐龙"}
-            if(race == "Divine-Beast") {r="幻神兽"}
-            if(race == "Dragon") {r="龙"}
-            if(race == "Equip") {r="装备"}
-            if(race == "Fairy") {r=""}
-            if(race == "Field") {r=""}
-            if(race == "Fiend") {r=""}
-            if(race == "Fish") {r="鱼"}
-            if(race == "Insect") {r="昆虫"}
-            if(race == "Machine") {r="机械"}
-            if(race == "Normal") {r="通常"}
-            if(race == "Plant") {r="植物"}
-            if(race == "Psychic") {r="念动力"}
-            if(race == "Pyro") {r="炎"}
-            if(race == "Quick-Play") {r="速攻"}
-            if(race == "Reptile") {r="爬虫类"}
-            if(race == "Ritual") {r=""}
-            if(race == "Rock") {r="岩石"}
-            if(race == "Sea Serpent") {r="海龙"}
-            if(race == "Spellcaster") {r=""}
-            if(race == "Thunder") {r="雷"}
-            if(race == "Warrior") {r="战士"}
-            if(race == "Winged Beast") {r=""}
-            if(race == "Wyrm") {r="幻龙"}
-            if(race == "Zombie") {r="不死"}
-            
+        } else {
+            r = getValue(key: "race", subKey: race, language: language)
         }
         return r;
     }
@@ -184,28 +162,8 @@ class CardEntity {
         var r = ""
         if(language == "en") {
             r = type;
-        }
-        if(language == "cn") {
-            r = type
-            .replacingOccurrences(of: "Effect", with: "效果")
-            .replacingOccurrences(of: "Monster", with: "怪兽")
-            .replacingOccurrences(of: "Flip", with: "反转")
-            .replacingOccurrences(of: "Fusion", with: "融合")
-            .replacingOccurrences(of: "Gemini", with: "二重")
-            .replacingOccurrences(of: "Link", with: "连接")
-            .replacingOccurrences(of: "Normal", with: "通常")
-            .replacingOccurrences(of: "Tuner", with: "调整")
-            .replacingOccurrences(of: "Pendulum", with: "灵摆")
-            .replacingOccurrences(of: "Ritual", with: "仪式")
-            .replacingOccurrences(of: "Skill Card", with: "技能")
-            .replacingOccurrences(of: "Spell Card", with: "魔法")
-            .replacingOccurrences(of: "Spirit", with: "灵魂")
-            .replacingOccurrences(of: "Synchro", with: "同调")
-            .replacingOccurrences(of: "Token", with: "Token")
-            .replacingOccurrences(of: "Toon", with: "卡通")
-            .replacingOccurrences(of: "Trap Card", with: "陷阱")
-            .replacingOccurrences(of: "Union", with: "同盟")
-            .replacingOccurrences(of: "XYZ", with: "XYZ")
+        } else {
+            r = handleType(input: type, language: language)
         }
     
         return r;
@@ -216,30 +174,8 @@ class CardEntity {
         var r = ""
         if(language == "en") {
             r = attribute;
-        }
-        if(language == "cn") {
-            if(attribute == "DARK") {
-                r = "暗"
-            }
-            if(attribute == "DIVINE") {
-                r = "神"
-            }
-            if(attribute == "EARTH") {
-                r = "地"
-            }
-            if(attribute == "FIRE") {
-                r = "炎"
-            }
-            if(attribute == "LIGHT") {
-                r = "光"
-            }
-            if(attribute == "WATER") {
-                r = "水"
-            }
-            if(attribute == "WIND") {
-                r = "风"
-            }
-
+        } else {
+            r = getValue(key: "attribute", subKey: attribute, language: language)
         }
         
         
@@ -288,18 +224,38 @@ class CardEntity {
     
     func getBanlistInfoText() -> String {
         // 禁止，限制，准限制，无限制
-        var r = ""
-        if(banlistInfo == nil || banlistInfo == "") {
-            if(language == "en") {
-                r = "";
-            }
-            if(language == "cn") {
-                r = "无限制"
-            }
-        } else {
-            
+        var r = "Unlimited"
+        if banlistInfo != nil && banlistInfo.contains("Semi-Limited") {
+            r = "Semi-Limited"
+        }
+        if banlistInfo != nil && banlistInfo.contains("Limited") {
+            r = "Limited"
+        }
+        if banlistInfo != nil && banlistInfo.contains("Banned") {
+            r = "Forbidden"
+        }
+        
+        if(language != "en") {
+            r = getValue(key: "ban", subKey: r, language: language)
         }
         
         return r;
     }
+    
+    func getStartDate() -> String {
+        return startDate;
+    }
+    
+    func handleType(input: String, language:String) -> String {
+        var output = input;
+        for entry in keyValueMap {
+            if entry.key != "type" {
+                continue
+            }
+            var v = getValue(entry: entry)
+            output = output.replacingOccurrences(of: entry.subKey, with: v)
+        }
+        return output;
+    }
+    
 }

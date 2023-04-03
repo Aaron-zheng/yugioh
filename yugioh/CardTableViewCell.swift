@@ -25,6 +25,7 @@ class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var usage: UILabel!
     @IBOutlet weak var effectConstraint: NSLayoutConstraint!
     @IBOutlet weak var password: UILabel!
+    @IBOutlet weak var startDate: UILabel!
     
     private var tableView: UITableView!
     
@@ -61,17 +62,18 @@ class CardTableViewCell: UITableViewCell {
         // 限制：从常量池中判断使用范围：禁止，限制，准限制，无限制
         self.usage.text = cardEntity.getBanlistInfoText()
         // 编号
-        self.password.text = "No: " + cardEntity.getId()
+        self.password.text = "ID: " + cardEntity.getId()
+        self.startDate.text = cardEntity.getStartDate()
         
         self.property.text = ""
         if cardEntity.getAttribute() != "" {
-            self.property.text = self.property.text! + cardEntity.getAttribute()
+            addPropertyText(paddingText: cardEntity.getAttribute())
         }
         if cardEntity.getRace() != "" {
-            self.property.text = self.property.text! + " / " + cardEntity.getRace()
+            addPropertyText(paddingText: cardEntity.getRace())
         }
         if cardEntity.getLevel() != "" {
-            self.property.text = self.property.text! + " / " + cardEntity.getLevel()
+            addPropertyText(paddingText: cardEntity.getLevel())
         }
         
         
@@ -83,7 +85,13 @@ class CardTableViewCell: UITableViewCell {
         if !cardEntity.getDef().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = self.attack.text! + " / " + cardEntity.getDef()
         }
-        
+    }
+    
+    private func addPropertyText(paddingText: String!) {
+        if self.property.text! != "" {
+            self.property.text! += " / ";
+        }
+        self.property.text! += paddingText;
     }
     
     @IBAction func clickButton(_ sender: Any) {

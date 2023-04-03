@@ -22,13 +22,12 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var usage: UIVerticalAlignLabel!
     @IBOutlet weak var star: DOFavoriteButton!
     @IBOutlet weak var attack: UILabel!
-    @IBOutlet weak var pack: UIVerticalAlignLabel!
     @IBOutlet weak var property: UILabel!
     @IBOutlet weak var effect: UILabel!
     @IBOutlet weak var password: UILabel!
-    @IBOutlet weak var rare: UILabel!
+    @IBOutlet weak var packageSet: UILabel!
     @IBOutlet weak var adjust: UIVerticalAlignLabel!
-    @IBOutlet weak var scale: UILabel!
+    @IBOutlet weak var startDate: UILabel!
     
     //
     @IBOutlet weak var innerView: UIView!
@@ -62,7 +61,6 @@ class CardDetailViewController: UIViewController {
     
         self.view.backgroundColor = UIColor.clear
         let frameWidth = self.proxy.frame.width
-        self.pack.verticalAligment = .VerticalAligmentBottom
         
         
         //卡牌最高度
@@ -70,13 +68,13 @@ class CardDetailViewController: UIViewController {
         //效果高度
         let h1 = preCalculateTextHeight(text: cardEntity.getDesc(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
         //卡包高度
-        var h2 = preCalculateTextHeight(text: cardEntity.getDesc(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
-        if h2 < 16 {
-            h2 = 16
-        }
+//        var h2 = preCalculateTextHeight(text: cardEntity.getName(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+//        if h2 < 16 {
+//            h2 = 16
+//        }
         //总高度
-        //头部gap8 + title24 + englishTitle16 + type16 + property16 + effect + gap4 + password16 + pack + rare + gap8
-        let h3 = 8 + 24 + 16 + 16 + 16 + h1 + 4 + 16 + h2 + 16 + 8
+        //头部gap8 + title24 + type16 + property16 + effect + gap4 + password16 + pack + gap8
+        let h3 = 8 + 24 + 16 + 16 + h1 + 4 + 16 + 16 + 8
         
         
         if h0 > h3 {
@@ -169,20 +167,21 @@ class CardDetailViewController: UIViewController {
         
         self.name.text = cardEntity.getName()
         self.effect.text = cardEntity.getDesc()
-        self.type.text = cardEntity.type
-        self.usage.text = "456456"
+        self.type.text = cardEntity.getType()
+        self.usage.text = cardEntity.getBanlistInfoText()
         
         
         self.property.text = ""
         if cardEntity.getAttribute() != "" {
-            self.property.text = self.property.text! + cardEntity.getAttribute()
+            addPropertyText(paddingText: cardEntity.getAttribute())
         }
         if cardEntity.getRace() != "" {
-            self.property.text = self.property.text! + " / " + cardEntity.getRace()
+            addPropertyText(paddingText: cardEntity.getRace())
         }
         if cardEntity.getLevel() != "" {
-            self.property.text = self.property.text! + " / " + cardEntity.getLevel()
+            addPropertyText(paddingText: cardEntity.getLevel())
         }
+        
         
         if !cardEntity.getAtk().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.attack.text = cardEntity.getAtk()
@@ -193,27 +192,27 @@ class CardDetailViewController: UIViewController {
             self.attack.text = self.attack.text! + " / " + cardEntity.getDef()
         }
         
-        self.password.text = "No: " + cardEntity.getId()
-        if !cardEntity.getScale().trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            self.scale.text = "灵摆: " + cardEntity.scale
+        self.password.text = "ID: " + cardEntity.getId()
+        self.startDate.text = cardEntity.getStartDate()
+        
+        if cardEntity.getScale() != "" {
+//            self.extra.text = "灵摆: " + cardEntity.scale
         }
         
         //灵摆和连接 不可能同时存在，所以使用共同的label展示好了
         if cardEntity.getLinkval() != "" {
-            self.scale.text = "连接: " + cardEntity.getLinkval() + " "
-                + cardEntity.getLinkmarkers()
-                    .replacingOccurrences(of: "\"", with: "")
-                    .replacingOccurrences(of: "-", with: "")
-                    .replacingOccurrences(of: "Top", with: "上")
-                    .replacingOccurrences(of: "Bottom", with: "下")
-                    .replacingOccurrences(of: "Left", with: "左")
-                    .replacingOccurrences(of: "Right", with: "右")
+//            self.extra.text = "连接: " + cardEntity.getLinkval() + " "
+//                + cardEntity.getLinkmarkers()
+//                    .replacingOccurrences(of: "\"", with: "")
+//                    .replacingOccurrences(of: "-", with: "")
+//                    .replacingOccurrences(of: "Top", with: "上")
+//                    .replacingOccurrences(of: "Bottom", with: "下")
+//                    .replacingOccurrences(of: "Left", with: "左")
+//                    .replacingOccurrences(of: "Right", with: "右")
         }
-        
-        self.rare.text = "卡牌: " + cardEntity.getRace()
-        self.pack.text = "卡包: " + "789"
+        self.packageSet.text = "卡包: " + cardEntity.getCardSets()
         // 设置调整
-        self.adjust.text = "调整: " + "111111"
+        self.adjust.text = ""
         // 设置调整界面直接隐藏
         self.adjustView.isHidden = true
         
@@ -278,6 +277,13 @@ class CardDetailViewController: UIViewController {
         
     }
     
+    
+    private func addPropertyText(paddingText: String!) {
+        if self.property.text! != "" {
+            self.property.text! += " / ";
+        }
+        self.property.text! += paddingText;
+    }
     
     func cardInsertSelection(id: String, type: String) {
         
