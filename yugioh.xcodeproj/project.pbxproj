@@ -13,7 +13,6 @@
 		A00EAA0A1DBE8A60001FD546 /* CardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00EAA091DBE8A60001FD546 /* CardDetailViewController.xib */; };
 		A022E6C81DC0957B00E7D8EE /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6C71DC0957B00E7D8EE /* CardService.swift */; };
 		A022E6E21DC343AA00E7D8EE /* CardPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022E6E01DC343AA00E7D8EE /* CardPO.swift */; };
-		A024D36529DB5E5800896998 /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A024D36429DB5E5800896998 /* cards.cdb */; };
 		A02BFF5C1E9155320096DEB7 /* CardViewBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */; };
 		A02ED0D41F40977D007C753C /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */; };
 		A037FA4329CAC49A001ECCBD /* KeyValueEntryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A037FA4229CAC49A001ECCBD /* KeyValueEntryEntity.swift */; };
@@ -48,6 +47,7 @@
 		A0AB33051F079599005211BA /* CardDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB33041F079599005211BA /* CardDeckViewController.swift */; };
 		A0AB33071F079820005211BA /* CardDeckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB33061F079820005211BA /* CardDeckCollectionViewCell.swift */; };
 		A0AB33091F079830005211BA /* CardDeckCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AB33081F079830005211BA /* CardDeckCollectionViewCell.xib */; };
+		A0B126CD29E1E8EA006C739D /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A0B126CC29E1E8EA006C739D /* cards.cdb */; };
 		A0C2AF7F20A9F2D500030D55 /* BattleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C2AF7E20A9F2D500030D55 /* BattleView.xib */; };
 		A0EDEEFA1E55E75C00401416 /* LoadableFromXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */; };
 		A0EDEEFC1E55EDBE00401416 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EDEEFB1E55EDBE00401416 /* Constant.swift */; };
@@ -90,7 +90,6 @@
 		A01E491E1DCDE169003D2F35 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/yugioh-afsqlygzbrafxjgunlidtampkyjt/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		A022E6C71DC0957B00E7D8EE /* CardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		A022E6E01DC343AA00E7D8EE /* CardPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPO.swift; sourceTree = "<group>"; };
-		A024D36429DB5E5800896998 /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A02BFF5B1E9155320096DEB7 /* CardViewBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewBaseController.swift; sourceTree = "<group>"; };
 		A02ED0D31F40977D007C753C /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
 		A037FA4229CAC49A001ECCBD /* KeyValueEntryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueEntryEntity.swift; sourceTree = "<group>"; };
@@ -139,6 +138,7 @@
 		A0AB33041F079599005211BA /* CardDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDeckViewController.swift; sourceTree = "<group>"; };
 		A0AB33061F079820005211BA /* CardDeckCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDeckCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0AB33081F079830005211BA /* CardDeckCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardDeckCollectionViewCell.xib; sourceTree = "<group>"; };
+		A0B126CC29E1E8EA006C739D /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A0C2AF7E20A9F2D500030D55 /* BattleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattleView.xib; sourceTree = "<group>"; };
 		A0EDEEF91E55E75C00401416 /* LoadableFromXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableFromXibView.swift; sourceTree = "<group>"; };
 		A0EDEEFB1E55EDBE00401416 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 		A039AE5A1D95F934009ABFD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A024D36429DB5E5800896998 /* cards.cdb */,
+				A0B126CC29E1E8EA006C739D /* cards.cdb */,
 				A039AE741D973CA3009ABFD1 /* Roboto-Bold.ttf */,
 				A039AE751D973CA3009ABFD1 /* Roboto-Light.ttf */,
 				A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */,
@@ -513,7 +513,7 @@
 				A08E9A8B21DA43F100936C40 /* CalculateView.xib in Resources */,
 				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
 				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
-				A024D36529DB5E5800896998 /* cards.cdb in Resources */,
+				A0B126CD29E1E8EA006C739D /* cards.cdb in Resources */,
 				A0EE4CDD25BD6B8700F0DBE4 /* CardViewWithStarController.xib in Resources */,
 				A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */,
 			);
@@ -806,7 +806,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/yugioh",
 				);
-				MARKETING_VERSION = 1.42.1;
+				MARKETING_VERSION = 1.43.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -832,7 +832,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/yugioh",
 				);
-				MARKETING_VERSION = 1.42.1;
+				MARKETING_VERSION = 1.43.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -974,7 +974,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/yugioh",
 				);
-				MARKETING_VERSION = 1.42.1;
+				MARKETING_VERSION = 1.43.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

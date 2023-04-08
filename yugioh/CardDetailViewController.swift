@@ -210,7 +210,7 @@ class CardDetailViewController: UIViewController {
 //                    .replacingOccurrences(of: "Left", with: "左")
 //                    .replacingOccurrences(of: "Right", with: "右")
         }
-        self.packageSet.text = "卡包: " + cardEntity.getCardSets()
+        self.packageSet.text = "卡包: 暂无" // + cardEntity.getCardSets()
         // 设置调整
         self.adjust.text = ""
         // 设置调整界面直接隐藏

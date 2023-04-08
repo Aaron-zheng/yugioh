@@ -133,23 +133,18 @@ func getCardEntity(id: String) -> CardEntity {
     return CardEntity()
 }
 
-func get1dmDeck() -> [DeckViewEntity] {
+func getDecksByDeckFormat(deckFormat: String) -> [DeckViewEntity] {
     var decks: Array<DeckViewEntity> = [];
     do {
-        for each in try getDB().prepare("select deckCode from newdeck where deckFormat =\"1-dm\" group by deckCode") {
+        for each in try getDB().prepare("select deckCode from newdeck where deckFormat =\"\(deckFormat)\" group by deckCode order by deckCode desc") {
             let deckCode = String(each[0] as? String ?? "");
-            let deck: DeckViewEntity = getDeckViewEntity(deckName: deckCode, titleName: deckCode, type: "1-dm")
+            let deck: DeckViewEntity = getDeckViewEntity(deckName: deckCode, titleName: deckCode, type: deckFormat)
             decks.append(deck)
         }
     } catch {
         print(error.localizedDescription)
     }
     return decks;
-}
-
-//获取冠军卡组
-func getChampionDeckViewEntity(deckName: String) -> DeckViewEntity {
-    return getDeckViewEntity(deckName: deckName, titleName: deckName + "游戏王世界锦标赛冠军卡组", type: "worldchampionship")
 }
 
 private var deckViewEntitysConstant: [DeckViewEntity] = [];
@@ -160,27 +155,12 @@ func getDeckViewEntity() -> [DeckViewEntity] {
     
     var tmp: [DeckViewEntity] = [
         DeckViewEntity(id: "1", title: "我的收藏", introduction: "我的收藏", type: "star"),
-        DeckViewEntity(id: "0", title: "我的卡组", introduction: "我的卡组", type: "self"),
-        getChampionDeckViewEntity(deckName: "2019"),
-        getChampionDeckViewEntity(deckName: "2018"),
-        getChampionDeckViewEntity(deckName: "2017"),
-        getChampionDeckViewEntity(deckName: "2016"),
-        getChampionDeckViewEntity(deckName: "2015"),
-        getChampionDeckViewEntity(deckName: "2014"),
-        getChampionDeckViewEntity(deckName: "2013"),
-        getChampionDeckViewEntity(deckName: "2012"),
-        getChampionDeckViewEntity(deckName: "2011"),
-        getChampionDeckViewEntity(deckName: "2010"),
-        getChampionDeckViewEntity(deckName: "2009"),
-        getChampionDeckViewEntity(deckName: "2008"),
-        getChampionDeckViewEntity(deckName: "2007"),
-        getChampionDeckViewEntity(deckName: "2006"),
-        getChampionDeckViewEntity(deckName: "2005"),
-        getChampionDeckViewEntity(deckName: "2004"),
-        getChampionDeckViewEntity(deckName: "2003")
+        DeckViewEntity(id: "0", title: "我的卡组", introduction: "我的卡组", type: "self")
     ]
-    let dmDeck: [DeckViewEntity] = get1dmDeck()
-    for each in dmDeck {
+    // "游戏王世界锦标赛冠军卡组"
+    let championDecks: [DeckViewEntity] = getDecksByDeckFormat(deckFormat: "worldchampionship")
+    for each in championDecks {
+        each.title = each.title + "游戏王世界锦标赛冠军卡组"
         tmp.append(each)
     }
     
@@ -357,16 +337,19 @@ func getShareViewImage(v: UIView) -> UIImage {
 //判断当前是否iphonex，做特殊处理
 func isIPhoneX() -> Bool {
     if UIDevice().userInterfaceIdiom == .phone {
-        switch UIScreen.main.nativeBounds.height {
-        case 2436:
+        if UIScreen.main.nativeBounds.height >= 1792 {
             return true
-        case 2688:
-            return true
-        case 1792:
-            return true
-        default:
-            return false
         }
+//        switch UIScreen.main.nativeBounds.height {
+//        case 2436:
+//            return true
+//        case 2688:
+//            return true
+//        case 1792:
+//            return true
+//        default:
+//            return false
+//        }
     }
     return false
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,14 +33,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBm-Ya-EoJ" customClass="UIVerticalAlignLabel" customModule="yugioh" customModuleProvider="target">
-                    <rect key="frame" x="16" y="48" width="343" height="443.5"/>
-                    <string key="text">本次更新内容： 1. 更新卡片数据，目前达到10000+  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者微信公众号：whvapp （我在新西兰打工旅行周记）   This app and the logo was created by Aaron-Zheng using Swift4. https://github.com/Aaron-zheng  1. This app is in no way affiliated with the YuGiOh! All related materials copy right @ Kazuki Takahashi. All card info and images are copyright @ Konami Corporation.  2. Menu icons belongs to Google Material design icons https://design.google.com/icons  3. Font belongs to Google Roboto.  https://fonts.google.com/specimen/Roboto</string>
+                    <rect key="frame" x="16" y="48" width="343" height="535.5"/>
+                    <mutableString key="text">本次更新内容： 1）更新了样式，把之前会做的高斯模糊改为了灰色底色。
+2）底层的存储模型重新修改了，自己写了3套不同模型，最后还是决定以这个为主好了。
+3）快3年没有更新了，重新弄起来了。先更新一版本，后续慢慢会恢复更新了，谢谢还保存这个app的朋友。
+
+个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者微信公众号：whvapp （我在新西兰打工旅行周记）   This app and the logo was created by Aaron-Zheng using Swift4. https://github.com/Aaron-zheng  1. This app is in no way affiliated with the YuGiOh! All related materials copy right @ Kazuki Takahashi. All card info and images are copyright @ Konami Corporation.  2. Menu icons belongs to Google Material design icons https://design.google.com/icons  3. Font belongs to Google Roboto.  https://fonts.google.com/specimen/Roboto</mutableString>
                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                     <string key="userLabel">本次更新内容： 1. 更新卡片数据，目前达到10000+  个人时间开发的作品啦，衷心希望你也喜欢。你在 App Store 对该作品的评论，会促使我努力开发下一个版本。哈：）  作者微信公众号：whvapp （我在新西兰打工旅行周记）   This app and the logo was created by Aaron-Zheng using Swift4. https://github.com/Aaron-zheng  1. This app is in no way affiliated with the YuGiOh! All related materials copy right @ Kazuki Takahashi. All card info and images are copyright @ Konami Corporation.  2. Menu icons belongs to Google Material design icons https://design.google.com/icons  3. Font belongs to Google Roboto.  https://fonts.google.com/specimen/Roboto</string>
                 </label>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="rE0-AX-JxG"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="dBm-Ya-EoJ" secondAttribute="trailing" constant="16" id="8p3-ag-GPo"/>
@@ -50,7 +55,6 @@
                 <constraint firstItem="weN-S5-yJb" firstAttribute="leading" secondItem="rE0-AX-JxG" secondAttribute="leading" constant="16" id="hZp-VM-Xnu"/>
                 <constraint firstItem="dBm-Ya-EoJ" firstAttribute="top" secondItem="weN-S5-yJb" secondAttribute="top" constant="32" id="n6T-zs-Sab"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="rE0-AX-JxG"/>
             <point key="canvasLocation" x="58.5" y="93.5"/>
         </view>
     </objects>

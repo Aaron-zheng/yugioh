@@ -99,7 +99,7 @@ class CardEntity {
         if(language == "cn") {
             r = cnName;
             if r == "" {
-                r = "[暂无翻译]" + enName
+                r = "[待译] " + enName
             }
         }
         if(r == "") {
@@ -116,7 +116,7 @@ class CardEntity {
         if(language == "cn") {
             r = cnDesc
             if r == "" {
-                r = "[暂无翻译]" + enDesc
+                r = "[待译] " + enDesc
             }
         }
         

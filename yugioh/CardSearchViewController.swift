@@ -70,7 +70,7 @@ class CardSearchViewController: UIViewController {
         setup()
 
         if isIPhoneX() {
-            self.searchBarViewTopConstraint.constant = 10
+            self.searchBarViewTopConstraint.constant = 24
         }
     }
     
