@@ -31,7 +31,7 @@ class CardDetailViewController: UIViewController {
     
     //
     @IBOutlet weak var innerView: UIView!
-    
+    //
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     //浮动按钮
     @IBOutlet weak var floatyButton: Floaty!
@@ -42,6 +42,8 @@ class CardDetailViewController: UIViewController {
     
     @IBOutlet weak var adjustView: UIView!
     
+    @IBOutlet weak var defaultImageTopConstraint: NSLayoutConstraint!
+    
     
     //
     var cardEntity: CardEntity!
@@ -49,6 +51,10 @@ class CardDetailViewController: UIViewController {
     
     fileprivate var deckService: DeckService = DeckService()
     fileprivate var cardService: CardService = CardService()
+    
+    class CustomTapGestureRecognizer: UITapGestureRecognizer {
+        var imgView: UIImageView!
+    }
     
     
     override func viewDidLoad() {
@@ -64,24 +70,70 @@ class CardDetailViewController: UIViewController {
         
         
         //卡牌最高度
-        let h0 = (frameWidth - materialGap * 2) / 3 / 160 * 230
+        let w0: CGFloat = (frameWidth - materialGap * 2) / 3
+        let h0: CGFloat = w0 / 160 * 230
+        // 如果有超出1张图，那么小图的高度计算
+        let otherWidth = w0 / 4
+        let otherHeight = (otherWidth / 160 * 230)
         //效果高度
         let h1 = preCalculateTextHeight(text: cardEntity.getDesc(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
-        //卡包高度
-//        var h2 = preCalculateTextHeight(text: cardEntity.getName(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
-//        if h2 < 16 {
-//            h2 = 16
-//        }
-        //总高度
-        //头部gap8 + title24 + type16 + property16 + effect + gap4 + password16 + pack + gap8
         let h3 = 8 + 24 + 16 + 16 + h1 + 4 + 16 + 16 + 8
-        
-        
+        var hResult: CGFloat = h3
         if h0 > h3 {
-            self.heightConstraint.constant = h0
-        } else {
-            self.heightConstraint.constant = h3
+            hResult = h0
+            self.effect.numberOfLines = 0 // 允许多行显示
+            self.effect.lineBreakMode = .byWordWrapping // 按单词换行
+            self.effect.translatesAutoresizingMaskIntoConstraints = false
+            self.effect.heightAnchor.constraint(equalToConstant: CGFloat(h0 - h3 + h1)).isActive = true
         }
+        
+        let str = cardEntity.getCardImages()
+        let jsonData = Data(str.utf8)
+        do {
+            let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [Any]
+            if jsonArray.count > 1 {
+                // 调整高度，排除自己
+                let actualCount = jsonArray.count - 1
+                let row = (actualCount) / 4 + (actualCount % 4 == 0 ? 0 : 1)
+                hResult = h0 + otherHeight * CGFloat(row)
+            }
+            // 图片导入
+            var index = 0
+            for element in jsonArray {
+                if let dictionary = element as? [String: Any] {
+                    let id = dictionary["id"] as! Int
+                    if id.description == cardEntity.id {
+                        continue
+                    }
+                    let url = getCardUrl(id: id.description)
+                    let f = CGRect(x: 0, y: 0, width: w0/4, height: otherHeight)
+                    let img: UIImageView = UIImageView(frame: f)
+                    img.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "defaultimg"), options: [.scaleFactor(UIScreen.main.scale),.transition(.fade(0.1)),.cacheOriginalImage])
+                    self.view.addSubview(img)
+                    img.isUserInteractionEnabled = true
+                    let customTapGesture = CustomTapGestureRecognizer(target: self, action: #selector(CardDetailViewController.imageTappedOther(customTapGesture:)))
+                    customTapGesture.imgView = img
+                    img.addGestureRecognizer(customTapGesture)
+                    img.translatesAutoresizingMaskIntoConstraints = false
+                    let xValue: CGFloat = CGFloat(index % 4) * otherWidth
+                    let yValue: CGFloat = CGFloat(materialGap / 2) + (CGFloat((index) / 4) * otherHeight)
+                    let yConstraint = NSLayoutConstraint(item: img, attribute: .top, relatedBy: .equal, toItem: card, attribute: .bottom, multiplier: 1.0, constant: yValue)
+                    let xConstraint = NSLayoutConstraint(item: img, attribute: .left, relatedBy: .equal, toItem: card, attribute: .left, multiplier: 1.0, constant: xValue)
+                    let widthConstraint = NSLayoutConstraint(item: img, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: w0/4)
+                    let heightConstraint = NSLayoutConstraint(item: img, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: otherHeight)
+                    NSLayoutConstraint.activate([xConstraint, yConstraint, widthConstraint, heightConstraint])
+                    index+=1;
+                }
+            }
+            
+        } catch let error as NSError {
+            print("Failed to load: \(error.localizedDescription)")
+        }
+            
+        
+        
+        
+        self.heightConstraint.constant = hResult
         
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CardDetailViewController.imageTapped(tapGestureRecognizer:)))
@@ -136,6 +188,12 @@ class CardDetailViewController: UIViewController {
         agrume.show(from: self)
     }
     
+    
+    @objc func imageTappedOther(customTapGesture: CustomTapGestureRecognizer) {
+        let agrume = Agrume(image: customTapGesture.imgView.image!)
+        agrume.hideStatusBar = true
+        agrume.show(from: self)
+    }
     
     
     @IBAction func clickStarButton(_ sender: DOFavoriteButton) {

@@ -163,6 +163,10 @@ func getDeckViewEntity() -> [DeckViewEntity] {
         each.title = each.title + "游戏王世界锦标赛冠军卡组"
         tmp.append(each)
     }
+    let dm1: [DeckViewEntity] = getDecksByDeckFormat(deckFormat: "1-dm")
+    for each in dm1 {
+        tmp.append(each)
+    }
     
     
     deckViewEntitysConstant = tmp
