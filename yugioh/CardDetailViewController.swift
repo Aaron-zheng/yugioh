@@ -89,6 +89,7 @@ class CardDetailViewController: UIViewController {
         
         let str = cardEntity.getCardImages()
         let jsonData = Data(str.utf8)
+        var moreThanOneImage: Bool = false;
         do {
             let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [Any]
             if jsonArray.count > 1 {
@@ -96,6 +97,7 @@ class CardDetailViewController: UIViewController {
                 let actualCount = jsonArray.count - 1
                 let row = (actualCount) / 4 + (actualCount % 4 == 0 ? 0 : 1)
                 hResult = h0 + otherHeight * CGFloat(row)
+                moreThanOneImage = true
             }
             // 图片导入
             var index = 0
@@ -134,6 +136,9 @@ class CardDetailViewController: UIViewController {
         
         
         self.heightConstraint.constant = hResult
+        if !moreThanOneImage {
+            self.defaultImageTopConstraint.constant = (hResult - h0) / 2
+        }
         
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CardDetailViewController.imageTapped(tapGestureRecognizer:)))
