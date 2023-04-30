@@ -111,7 +111,7 @@ class CardDetailViewController: UIViewController {
                     let f = CGRect(x: 0, y: 0, width: w0/4, height: otherHeight)
                     let img: UIImageView = UIImageView(frame: f)
                     img.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "defaultimg"), options: [.scaleFactor(UIScreen.main.scale),.transition(.fade(0.1)),.cacheOriginalImage])
-                    self.view.addSubview(img)
+                    innerView.addSubview(img)
                     img.isUserInteractionEnabled = true
                     let customTapGesture = CustomTapGestureRecognizer(target: self, action: #selector(CardDetailViewController.imageTappedOther(customTapGesture:)))
                     customTapGesture.imgView = img
