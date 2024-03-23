@@ -96,7 +96,7 @@ class CardDetailViewController: UIViewController {
                 // 调整高度，排除自己
                 let actualCount = jsonArray.count - 1
                 let row = (actualCount) / 4 + (actualCount % 4 == 0 ? 0 : 1)
-                hResult = h0 + otherHeight * CGFloat(row)
+                hResult = h0 + otherHeight * CGFloat(row) + materialGap / 2
                 moreThanOneImage = true
             }
             // 图片导入
@@ -121,7 +121,7 @@ class CardDetailViewController: UIViewController {
                     let yValue: CGFloat = CGFloat(materialGap / 2) + (CGFloat((index) / 4) * otherHeight)
                     let yConstraint = NSLayoutConstraint(item: img, attribute: .top, relatedBy: .equal, toItem: card, attribute: .bottom, multiplier: 1.0, constant: yValue)
                     let xConstraint = NSLayoutConstraint(item: img, attribute: .left, relatedBy: .equal, toItem: card, attribute: .left, multiplier: 1.0, constant: xValue)
-                    let widthConstraint = NSLayoutConstraint(item: img, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: w0/4)
+                    let widthConstraint = NSLayoutConstraint(item: img, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: otherWidth)
                     let heightConstraint = NSLayoutConstraint(item: img, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: otherHeight)
                     NSLayoutConstraint.activate([xConstraint, yConstraint, widthConstraint, heightConstraint])
                     index+=1;
