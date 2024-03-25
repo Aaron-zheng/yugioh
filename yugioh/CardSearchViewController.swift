@@ -90,7 +90,8 @@ class CardSearchViewController: UIViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            self.searchBarViewHeightConstraint.constant = searchBarViewHeightConstraintValue
+            self.searchBarViewHeightConstraint.constant = self.rootFrame.height - 16
+            - keyboardSize.height
         }
     }
     

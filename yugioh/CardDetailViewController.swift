@@ -77,6 +77,7 @@ class CardDetailViewController: UIViewController {
         let otherHeight = (otherWidth / 160 * 230)
         //效果高度
         let h1 = preCalculateTextHeight(text: cardEntity.getDesc(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
+        // gap8 + 标题24 + 效果怪兽16 + 无限制16 + 解释描述h1 + 间隔4 + 日期16 + 卡包16 + gap8
         let h3 = 8 + 24 + 16 + 16 + h1 + 4 + 16 + 16 + 8
         var hResult: CGFloat = h3
         if h0 > h3 {
@@ -86,25 +87,36 @@ class CardDetailViewController: UIViewController {
             self.effect.translatesAutoresizingMaskIntoConstraints = false
             self.effect.heightAnchor.constraint(equalToConstant: CGFloat(h0 - h3 + h1)).isActive = true
         }
-        
+        // 拿出卡牌对应的图片数据
         let str = cardEntity.getCardImages()
         let jsonData = Data(str.utf8)
         var moreThanOneImage: Bool = false;
         do {
+            // 转换为数组
             let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [Any]
+            // 图片是否超过1张
             if jsonArray.count > 1 {
                 // 调整高度，排除自己
                 let actualCount = jsonArray.count - 1
+                // 每4张需要重新计算
                 let row = (actualCount) / 4 + (actualCount % 4 == 0 ? 0 : 1)
-                hResult = h0 + otherHeight * CGFloat(row) + materialGap / 2
+                // 这个是多张图片情况下的高度（但不一定是最终的）
+                let h4 = h0 + otherHeight * CGFloat(row) + materialGap / 2
+                // 还需要与之前通过效果计算的高度做比较
+                if h4 > hResult {
+                    // 只有比之前计算的效果高度要高的时候，才做替换
+                    hResult = h4
+                }
                 moreThanOneImage = true
             }
             // 图片导入
             var index = 0
+            // 当图片超过1张的时候，需要构造图片展示
             for element in jsonArray {
                 if let dictionary = element as? [String: Any] {
                     let id = dictionary["id"] as! Int
                     if id.description == cardEntity.id {
+                        // 图片等于自己，就不用做处理
                         continue
                     }
                     let url = getCardUrl(id: id.description)
@@ -134,9 +146,12 @@ class CardDetailViewController: UIViewController {
             
         
         
-        
+        // 当前总高度
         self.heightConstraint.constant = hResult
+        
+        // 如果是单一图片
         if !moreThanOneImage {
+            // 单一图片，顶部要做缩减，总高度-当前卡片/2，这样就可以居中
             self.defaultImageTopConstraint.constant = (hResult - h0) / 2
         }
         

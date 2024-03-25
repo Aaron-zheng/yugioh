@@ -66,7 +66,10 @@ func preCalculateTextHeight(text: String, font: UIFont, width: CGFloat) -> CGFlo
     label.lineBreakMode = .byWordWrapping
     label.font = font
     label.text = text
+    label.translatesAutoresizingMaskIntoConstraints = false
+//    label.heightAnchor.constraint(equalToConstant: <#T##CGFloat#>).isActive = true
     label.sizeToFit()
+    
     return label.frame.height
 }
 
