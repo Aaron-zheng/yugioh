@@ -382,6 +382,9 @@ func getValue(entry: KeyValueEntryEntity) -> String {
     if language == "jp" {
         return entry.jpValue
     }
+    if language == "en" {
+        return entry.subKey
+    }
     return ""
 }
 
@@ -393,4 +396,17 @@ func getValue(key: String, subKey: String, language: String) -> String {
         }
     }
     return ""
+}
+
+
+func getValues(inputKey: String) -> Array<String> {
+    var values: Array<String>! = []
+    for entry in keyValueMap {
+        if entry.key == inputKey {
+            let value = getValue(entry: entry)
+            values.append(value)
+        }
+    }
+    
+    return values;
 }

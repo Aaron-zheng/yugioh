@@ -102,6 +102,15 @@ class CardEntity {
                 r = "[待译] " + enName
             }
         }
+        if(language == "fr") {
+            r = frName;
+        }
+        if(language == "it") {
+            r = itName
+        }
+        if(language == "pt") {
+            r = ptName
+        }
         if(r == "") {
             return "-";
         }
@@ -119,7 +128,15 @@ class CardEntity {
                 r = "[待译] " + enDesc
             }
         }
-        
+        if(language == "fr") {
+            r = frDesc;
+        }
+        if(language == "it") {
+            r = itDesc
+        }
+        if(language == "pt") {
+            r = ptDesc
+        }
         if(r == "") {
             return "-";
         }
@@ -252,7 +269,7 @@ class CardEntity {
             if entry.key != "type" {
                 continue
             }
-            var v = getValue(entry: entry)
+            let v = getValue(entry: entry)
             output = output.replacingOccurrences(of: entry.subKey, with: v)
         }
         return output;

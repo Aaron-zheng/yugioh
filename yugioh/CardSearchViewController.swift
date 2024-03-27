@@ -52,12 +52,6 @@ class CardSearchViewController: UIViewController {
     var searchRace = NSMutableSet()
     
     
-    let types =  ["效果","反转","融合","二重","连接","怪兽","通常","灵摆","仪式","技能卡","魔法卡","灵魂","同调","Token","卡通","陷阱卡","调整","同盟","XYZ"
-    ]
-    
-    let propertys = ["暗", "地", "神", "光", "风", "水", "炎"]
-    
-    let races = ["水","兽","兽战士","永续","反击","创造神","电子界","恐龙","幻神兽","龙","装备","天使","场地","恶魔","鱼","昆虫","机械","通常","植物","念动力","炎","速攻","爬虫类","仪式","岩石","海龙","魔法师","雷","战士","鸟兽","幻龙","不死"]
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -65,6 +59,7 @@ class CardSearchViewController: UIViewController {
     }
 
     fileprivate var searchBarViewHeightConstraintValue:CGFloat = 0;
+    
     override func viewDidLoad() {
         searchBarViewHeightConstraintValue = searchBarViewHeightConstraint.constant
         setup()
@@ -115,7 +110,13 @@ class CardSearchViewController: UIViewController {
         self.cancelButton.tintColor = UIColor.white
         self.cancelButton.addTarget(self, action: #selector(CardSearchViewController.clickCancelButton), for: .touchUpInside)
         
-        self.inputField.attributedPlaceholder = NSAttributedString(string: "输入搜索（名称，效果，编号）", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        var inputKeyWordText = "输入搜索（名称，效果，编号）";
+        
+        if language != "cn" {
+            inputKeyWordText = "search for (name, effect, id)"
+        }
+        
+        self.inputField.attributedPlaceholder = NSAttributedString(string: inputKeyWordText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         self.inputField.textColor = UIColor.white
         self.inputField.text = nil
         self.inputField.becomeFirstResponder()
@@ -138,13 +139,16 @@ class CardSearchViewController: UIViewController {
         
         //types
         var defaultHeight = 120
+        let types = getValues(inputKey: "type")
         defaultHeight = self.addButtons(datas: types, selector: #selector(clickTypeButton), dataWidth: 64, dataHeight: 32, dataDefaultHeight: defaultHeight)
         
         //propertys
-        defaultHeight = self.addButtons(datas: propertys, selector: #selector(clickPropertyButton), dataWidth: 32, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
+        let propertys = getValues(inputKey: "attribute")
+        defaultHeight = self.addButtons(datas: propertys, selector: #selector(clickPropertyButton), dataWidth: 60, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8 + 4)
         
         //races
-        defaultHeight = self.addButtons(datas: races, selector: #selector(clickRaceButton), dataWidth: 48, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8)
+        let races = getValues(inputKey: "race")
+        defaultHeight = self.addButtons(datas: races, selector: #selector(clickRaceButton), dataWidth: 56, dataHeight: 32, dataDefaultHeight: defaultHeight + 32 + 8 + 4)
         
         
         self.contentHeight = CGFloat(defaultHeight + 32 + 16)
@@ -180,6 +184,7 @@ class CardSearchViewController: UIViewController {
             button.backgroundColor = greyColor.withAlphaComponent(0.12)
             button.data = data
             button.setTitle(data, for: .normal)
+            button.titleLabel?.lineBreakMode = .byTruncatingTail
             button.addTarget(self, action: selector, for: .touchUpInside)
             self.searchBarView.addSubview(button)
             
@@ -221,15 +226,23 @@ class CardSearchViewController: UIViewController {
     private func setupRangeSlider() {
         setupRangeSliderStyle(rangeSlider: self.attackRangeSlider)
         self.attackRangeSlider.addTarget(self, action: #selector(CardSearchViewController.attackRangeSliderHandler), for: .valueChanged)
-        self.attackRangeLabel.text = "攻 无限制"
+        var atkText = "攻 "
+        var defText = "防 "
+        var starText = "星 "
+        if language != "cn" {
+            atkText = "atk "
+            defText = "def "
+            starText = "star "
+        }
+        self.attackRangeLabel.text = atkText + attackLow.description + " ~ " + attackUp.description
         
         setupRangeSliderStyle(rangeSlider: self.defenseRangeSlider)
         self.defenseRangeSlider.addTarget(self, action: #selector(CardSearchViewController.defenseRangeSliderHandler), for: .valueChanged)
-        self.defenseRangeLabel.text = "守 无限制"
+        defenseRangeLabel.text = defText + defenseLow.description + " ~ " + defenseUp.description
         
         setupRangeSliderStyle(rangeSlider: self.starRangeSlider)
         self.starRangeSlider.addTarget(self, action: #selector(CardSearchViewController.starRangeSliderHandler), for: .valueChanged)
-        self.starRangeLabel.text = "星 无限制"
+        starRangeLabel.text = starText + starLow.description + " ~ " + starUp.description
     }
     
     private func setupRangeSliderStyle(rangeSlider: RangeSlider) {
@@ -246,37 +259,33 @@ class CardSearchViewController: UIViewController {
     }
     
     @objc func attackRangeSliderHandler(sender: RangeSlider) {
+        var atkText = "攻 "
+        if language != "cn" {
+            atkText = "atk "
+        }
         attackLow = Int(sender.lowerValue / 500) * 500
         attackUp = Int(sender.upperValue / 500) * 500
-        
-        if attackLow == 0 && attackUp == 10000 {
-            attackRangeLabel.text = "攻 无限制"
-        } else {
-            attackRangeLabel.text = "攻 " + attackLow.description + " ~ " + attackUp.description
-        }
-        
+        attackRangeLabel.text = atkText + attackLow.description + " ~ " + attackUp.description
     }
     
     @objc func defenseRangeSliderHandler(sender: RangeSlider) {
+        var defText = "防 "
+        if language != "cn" {
+            defText = "def "
+        }
         defenseLow = Int(sender.lowerValue / 500) * 500
         defenseUp = Int(sender.upperValue / 500) * 500
-        
-        if defenseLow == 0 && defenseUp == 10000 {
-            defenseRangeLabel.text = "守 无限制"
-        } else {
-            defenseRangeLabel.text = "守 " + defenseLow.description + " ~ " + defenseUp.description
-        }
+        defenseRangeLabel.text = defText + defenseLow.description + " ~ " + defenseUp.description
     }
     
     @objc func starRangeSliderHandler(sender: RangeSlider) {
+        var starText = "星 "
+        if language != "cn" {
+            starText = "star "
+        }
         starLow = Int(sender.lowerValue)
         starUp = Int(sender.upperValue)
-        
-        if starLow == 0 && starUp == 12 {
-            starRangeLabel.text = "星 无限制"
-        } else {
-            starRangeLabel.text = "星 " + starLow.description + " ~ " + starUp.description
-        }
+        starRangeLabel.text = starText + starLow.description + " ~ " + starUp.description
     }
     
     @objc(tableView:didSelectRowAtIndexPath:)
@@ -353,7 +362,7 @@ extension CardSearchViewController: UITextFieldDelegate {
             
             //race search
             if searchRace.count > 0 {
-                if !searchRace.contains(c.getRace()) {
+                if !searchRace.contains(c.getRace()!) {
                     continue
                 }
             }
@@ -361,7 +370,7 @@ extension CardSearchViewController: UITextFieldDelegate {
             
             //property search
             if searchProperty.count > 0 {
-                if !searchProperty.contains(c.getAttribute()) {
+                if !searchProperty.contains(c.getAttribute()!) {
                     continue
                 }
             }

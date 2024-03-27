@@ -77,8 +77,9 @@ class CardDetailViewController: UIViewController {
         let otherHeight = (otherWidth / 160 * 230)
         //效果高度
         let h1 = preCalculateTextHeight(text: cardEntity.getDesc(), font: effect.font, width: (frameWidth - materialGap * 2) / 3 * 2 - materialGap * 2)
-        // gap8 + 标题24 + 效果怪兽16 + 无限制16 + 解释描述h1 + 间隔4 + 日期16 + 卡包16 + gap8
-        let h3 = 8 + 24 + 16 + 16 + h1 + 4 + 16 + 16 + 8
+        // gap8 + 标题24 + 效果怪兽16 + 无限制16 + 解释描述h1 + 间隔4 + 日期16 + gap8
+        // (卡包16) 先移除了
+        let h3 = 8 + 24 + 16 + 16 + h1 + 4 + 16 + 8
         var hResult: CGFloat = h3
         if h0 > h3 {
             hResult = h0
@@ -288,7 +289,7 @@ class CardDetailViewController: UIViewController {
 //                    .replacingOccurrences(of: "Left", with: "左")
 //                    .replacingOccurrences(of: "Right", with: "右")
         }
-        self.packageSet.text = "卡包: 暂无" // + cardEntity.getCardSets()
+        self.packageSet.text = "" //卡包: 暂无 // + cardEntity.getCardSets()
         // 设置调整
         self.adjust.text = ""
         // 设置调整界面直接隐藏
