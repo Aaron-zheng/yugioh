@@ -28,6 +28,7 @@
 		A039AE671D95FDED009ABFD1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE661D95FDED009ABFD1 /* Extension.swift */; };
 		A039AE711D9734D6009ABFD1 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A039AE701D9734D6009ABFD1 /* CardTableViewCell.swift */; };
 		A039AE731D9734DF009ABFD1 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A039AE721D9734DF009ABFD1 /* CardTableViewCell.xib */; };
+		A03F9FE42BCBD2E4002D611A /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A03F9FE32BCBD2E3002D611A /* cards.cdb */; };
 		A03FDB571F19FCA3001EA6C2 /* DeckPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */; };
 		A03FDB591F1A01FA001EA6C2 /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB581F1A01FA001EA6C2 /* DeckService.swift */; };
 		A03FDB5B1F1A1A0E001EA6C2 /* DeckEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */; };
@@ -42,7 +43,6 @@
 		A08E9A8B21DA43F100936C40 /* CalculateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08E9A8A21DA43F100936C40 /* CalculateView.xib */; };
 		A08E9A8F21DA466200936C40 /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E9A8E21DA466200936C40 /* CalculateView.swift */; };
 		A08E9A9321DA4F7F00936C40 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E9A9221DA4F7F00936C40 /* BattleView.swift */; };
-		A08F03372BAF406000C74B48 /* cards.cdb in Resources */ = {isa = PBXBuildFile; fileRef = A08F03362BAF406000C74B48 /* cards.cdb */; };
 		A0972EF11EDB1C18005FAB9C /* DataButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0972EF01EDB1C18005FAB9C /* DataButton.swift */; };
 		A0A4F17A24E9199200121604 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A4F17924E9199200121604 /* AboutView.swift */; };
 		A0AB33051F079599005211BA /* CardDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AB33041F079599005211BA /* CardDeckViewController.swift */; };
@@ -116,6 +116,7 @@
 		A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		A039AE771D973CA3009ABFD1 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A039AE781D973CA3009ABFD1 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		A03F9FE32BCBD2E3002D611A /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A03FDB561F19FCA3001EA6C2 /* DeckPO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckPO.swift; sourceTree = "<group>"; };
 		A03FDB581F1A01FA001EA6C2 /* DeckService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		A03FDB5A1F1A1A0E001EA6C2 /* DeckEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckEntity.swift; sourceTree = "<group>"; };
@@ -133,7 +134,6 @@
 		A08E9A8A21DA43F100936C40 /* CalculateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculateView.xib; sourceTree = "<group>"; };
 		A08E9A8E21DA466200936C40 /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
 		A08E9A9221DA4F7F00936C40 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BattleView.swift; path = /Users/zhengfucheng/Documents/github_workspace/yugioh/yugioh/BattleView.swift; sourceTree = "<absolute>"; };
-		A08F03362BAF406000C74B48 /* cards.cdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.cdb; sourceTree = "<group>"; };
 		A0972EF01EDB1C18005FAB9C /* DataButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataButton.swift; sourceTree = "<group>"; };
 		A0A4F17924E9199200121604 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		A0AB33041F079599005211BA /* CardDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDeckViewController.swift; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 		A039AE5A1D95F934009ABFD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A08F03362BAF406000C74B48 /* cards.cdb */,
+				A03F9FE32BCBD2E3002D611A /* cards.cdb */,
 				A039AE741D973CA3009ABFD1 /* Roboto-Bold.ttf */,
 				A039AE751D973CA3009ABFD1 /* Roboto-Light.ttf */,
 				A039AE761D973CA3009ABFD1 /* Roboto-Medium.ttf */,
@@ -513,7 +513,7 @@
 				A08E9A8B21DA43F100936C40 /* CalculateView.xib in Resources */,
 				A0F93DCB1DC941550001289D /* CardSearchViewController.xib in Resources */,
 				A039AE331D95F17F009ABFD1 /* Assets.xcassets in Resources */,
-				A08F03372BAF406000C74B48 /* cards.cdb in Resources */,
+				A03F9FE42BCBD2E4002D611A /* cards.cdb in Resources */,
 				A0EE4CDD25BD6B8700F0DBE4 /* CardViewWithStarController.xib in Resources */,
 				A039AE2E1D95F17F009ABFD1 /* Main.storyboard in Resources */,
 			);
@@ -808,7 +808,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/yugioh",
 				);
-				MARKETING_VERSION = 1.46.1;
+				MARKETING_VERSION = 1.47.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -834,7 +834,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/yugioh",
 				);
-				MARKETING_VERSION = 1.46.1;
+				MARKETING_VERSION = 1.47.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -977,7 +977,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/yugioh",
 				);
-				MARKETING_VERSION = 1.46.1;
+				MARKETING_VERSION = 1.47.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.yugioh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

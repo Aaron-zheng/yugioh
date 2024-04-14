@@ -98,9 +98,6 @@ class CardEntity {
         }
         if(language == "cn") {
             r = cnName;
-            if r == "" {
-                r = "[待译] " + enName
-            }
         }
         if(language == "fr") {
             r = frName;
@@ -111,8 +108,12 @@ class CardEntity {
         if(language == "pt") {
             r = ptName
         }
-        if(r == "") {
-            return "-";
+        if r == "" {
+            if language == "cn" {
+                r = "[待译] " + enName
+            } else {
+                r = "[To be translated]  " + enName
+            }
         }
         return r;
     }
@@ -124,9 +125,6 @@ class CardEntity {
         }
         if(language == "cn") {
             r = cnDesc
-            if r == "" {
-                r = "[待译] " + enDesc
-            }
         }
         if(language == "fr") {
             r = frDesc;
@@ -137,8 +135,13 @@ class CardEntity {
         if(language == "pt") {
             r = ptDesc
         }
-        if(r == "") {
-            return "-";
+        
+        if r == "" {
+            if language == "cn" {
+                r = "[待译] " + enDesc
+            } else {
+                r = "[To be translated]  " + enDesc
+            }
         }
         return r;
     }

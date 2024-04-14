@@ -100,9 +100,9 @@ class ViewController: UITabBarController {
         })
         alertController.addAction(chinese)
         alertController.addAction(english)
-//        alertController.addAction(fr)
-//        alertController.addAction(it)
-//        alertController.addAction(pt)
+        alertController.addAction(fr)
+        alertController.addAction(it)
+        alertController.addAction(pt)
         alertController.addAction(cancelButton)
         
         

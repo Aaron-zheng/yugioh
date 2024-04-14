@@ -349,7 +349,7 @@ extension CardSearchViewController: UITextFieldDelegate {
                 var searchTypeFound = false
                 
                 for case let t as String in searchType {
-                    if c.getType().split(separator: " ").map(String.init).contains(t) {
+                    if c.getType().contains(t) {
                         searchTypeFound = true
                     }
                 }
